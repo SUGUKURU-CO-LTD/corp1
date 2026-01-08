@@ -1,0 +1,56 @@
+steps:
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
+      - '-t'
+      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:latest'
+      - '.'
+
+  # Push to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:latest'
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'sugukurucorpsite'
+      - '--image'
+      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
+      - '--region'
+      - 'asia-northeast1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+      - '--memory'
+      - '512Mi'
+      - '--cpu'
+      - '1'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '10'
+
+images:
+  - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
+  - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:latest'
+
+substitutions:
+  _IMAGE_TAG: 'latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
