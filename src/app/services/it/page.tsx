@@ -286,7 +286,7 @@ export default function ITPage() {
                 </div>
             </section>
 
-            {/* Case - スグスタ */}
+            {/* Case - 自社開発プロダクト */}
             <section className="section bg-white">
                 <div className="container mx-auto">
                     <motion.div
@@ -297,7 +297,7 @@ export default function ITPage() {
                         className="text-center mb-12"
                     >
                         <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
-                            Case
+                            Products
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
@@ -307,37 +307,87 @@ export default function ITPage() {
                         </h2>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="max-w-3xl mx-auto bg-gradient-to-r from-[#FFB7C5] to-[#FFD4DC] rounded-2xl p-8 md:p-12"
-                    >
-                        <div className="flex flex-col md:flex-row gap-8 items-center">
-                            <div className="flex-1">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <Lightbulb className="w-8 h-8 text-[#E91E63]" />
-                                    <span className="text-[#E91E63] font-bold">スグスタ</span>
-                                </div>
-                                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">
-                                    外国人材のための学習支援プラットフォーム
-                                </h3>
-                                <p className="text-gray-700 leading-relaxed mb-6">
-                                    特定技能2号取得を目指す外国人材のための学習支援プラットフォーム。
-                                    「外国人移民時代の社会インフラ」として、完全無償で提供中。
-                                </p>
-                                <Link
-                                    href="https://www.sugu-study.com"
-                                    target="_blank"
-                                    className="btn bg-white text-[#E91E63] hover:bg-gray-50"
-                                >
-                                    スグスタを見る
-                                    <ArrowRight className="w-4 h-4" />
-                                </Link>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        {/* スグスタ */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="bg-gradient-to-br from-[#FFB7C5] to-[#FFD4DC] rounded-2xl p-8 hover:shadow-xl transition-shadow"
+                        >
+                            <div className="flex items-center gap-3 mb-4">
+                                <Lightbulb className="w-8 h-8 text-[#E91E63]" />
+                                <span className="text-[#E91E63] font-bold text-xl">スグスタ</span>
                             </div>
-                        </div>
-                    </motion.div>
+                            <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
+                                外国人材のための学習支援プラットフォーム
+                            </h3>
+                            <p className="text-gray-700 leading-relaxed mb-6 text-sm">
+                                特定技能2号取得を目指す外国人材のための学習支援プラットフォーム。
+                                「外国人移民時代の社会インフラ」として、完全無償で提供中。
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                <span className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#E91E63]">
+                                    完全無償
+                                </span>
+                                <span className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#E91E63]">
+                                    学習支援
+                                </span>
+                                <span className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#E91E63]">
+                                    特定技能2号
+                                </span>
+                            </div>
+                            <Link
+                                href="https://www.sugu-study.com"
+                                target="_blank"
+                                className="btn bg-white text-[#E91E63] hover:bg-gray-50 w-full justify-center group"
+                            >
+                                スグスタを見る
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
+
+                        {/* NENKIN-PASS */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] rounded-2xl p-8 hover:shadow-xl transition-shadow"
+                        >
+                            <div className="flex items-center gap-3 mb-4">
+                                <CheckCircle2 className="w-8 h-8 text-white" />
+                                <span className="text-white font-bold text-xl">NENKIN-PASS</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">
+                                外国人のための年金申請支援サービス
+                            </h3>
+                            <p className="text-white/90 leading-relaxed mb-6 text-sm">
+                                複雑な年金申請手続きを、AIとチャットで簡単に。
+                                外国人材が安心して日本で働き続けるための、デジタル支援プラットフォーム。
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
+                                    AI対応
+                                </span>
+                                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
+                                    年金申請
+                                </span>
+                                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
+                                    多言語対応
+                                </span>
+                            </div>
+                            <Link
+                                href="https://nenkin1-9bihlgf5w-sugukurus-projects.vercel.app/"
+                                target="_blank"
+                                className="btn bg-white text-[#2563EB] hover:bg-gray-50 w-full justify-center group"
+                            >
+                                NENKIN-PASSを見る
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
