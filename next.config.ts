@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
         hostname: 'sugu-kuru.co.jp',
       },
     ],
-    // Ensure images work in standalone mode
-    unoptimized: false,
+    // Disable optimization for standalone mode to ensure images display correctly
+    unoptimized: true,
   },
 };
 
