@@ -15,7 +15,7 @@ const AuroraBackground = () => {
                     filter: ["hue-rotate(0deg)", "hue-rotate(30deg)", "hue-rotate(0deg)"],
                 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 opacity-40"
+                className="absolute inset-0 opacity-15"
                 style={{
                     background: `radial-gradient(ellipse at 20% 20%, #1B5E38 0%, transparent 50%),
                                  radial-gradient(ellipse at 80% 80%, #D4A853 0%, transparent 50%),
@@ -34,7 +34,7 @@ const AuroraBackground = () => {
                         scale: [1, 1.2, 1],
                     }}
                     transition={{ duration: 10 + i * 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                    className="absolute rounded-full blur-3xl opacity-20"
+                    className="absolute rounded-full blur-2xl opacity-8"
                     style={{
                         width: 300 + i * 100,
                         height: 300 + i * 100,
@@ -89,11 +89,10 @@ const GlowingButton = ({
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Link
                 href={href}
-                className={`relative inline-flex items-center gap-2 px-8 py-4 text-lg font-bold rounded-full overflow-hidden group ${
-                    primary
+                className={`relative inline-flex items-center gap-2 px-8 py-4 text-lg font-bold rounded-full overflow-hidden group ${primary
                         ? "bg-white text-[#1B5E38]"
                         : "bg-transparent text-white border-2 border-white/40"
-                }`}
+                    }`}
             >
                 {/* Glow effect */}
                 <motion.div
@@ -169,6 +168,9 @@ export default function HeroSection() {
 
             {/* Noise Overlay */}
             <NoiseOverlay />
+
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-transparent" />
 
             {/* Animated mesh grid */}
             <div className="absolute inset-0 opacity-[0.03]">
@@ -267,9 +269,8 @@ export default function HeroSection() {
                                     onClick={() => setCurrentIndex(index)}
                                     whileHover={{ scale: 1.2 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className={`relative w-12 h-3 rounded-full overflow-hidden ${
-                                        index === currentIndex ? "bg-[#D4A853]" : "bg-white/20"
-                                    }`}
+                                    className={`relative w-12 h-3 rounded-full overflow-hidden ${index === currentIndex ? "bg-[#D4A853]" : "bg-white/20"
+                                        }`}
                                 >
                                     {/* Progress indicator */}
                                     {index === currentIndex && (
