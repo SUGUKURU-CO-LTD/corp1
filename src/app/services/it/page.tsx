@@ -339,7 +339,7 @@ export default function ITPage() {
                                 </span>
                             </div>
                             <Link
-                                href="https://www.sugu-study.com"
+                                href="https://sugu-study.com"
                                 target="_blank"
                                 className="btn bg-white text-[#E91E63] hover:bg-gray-50 w-full justify-center group"
                             >

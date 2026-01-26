@@ -414,7 +414,7 @@ export default function ServicesPage() {
                         </p>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                             <Link
-                                href="https://www.sugu-study.com"
+                                href="https://sugu-study.com"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#E91E63] text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-shadow"
                             >
                                 スグスタについて詳しく

@@ -8,7 +8,7 @@ const footerLinks = {
         { name: "農作業受託", href: "/services/contracting" },
         { name: "有料職業紹介", href: "/services/placement" },
         { name: "IT事業", href: "/services/it" },
-        { name: "スグスタ", href: "https://www.sugu-study.com", external: true },
+        { name: "スグスタ", href: "https://sugu-study.com", external: true },
     ],
     company: [
         { name: "会社概要", href: "/about" },
@@ -28,10 +28,7 @@ const footerLinks = {
 
 const offices = [
     { name: "本社", location: "鹿児島県霧島市" },
-    { name: "福島", location: "福島県" },
-    { name: "宮崎", location: "宮崎県" },
-    { name: "愛知", location: "愛知県" },
-    { name: "愛媛", location: "愛媛県" },
+    { name: "名古屋支所", location: "愛知県名古屋市" },
 ];
 
 export default function Footer() {

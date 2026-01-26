@@ -18,7 +18,7 @@ const navigation = [
             { name: "IT事業", href: "/services/it" },
         ],
     },
-    { name: "スグスタ", href: "https://www.sugu-study.com", external: true },
+    { name: "スグスタ", href: "https://sugu-study.com", external: true },
     { name: "会社概要", href: "/about" },
     { name: "導入事例", href: "/cases" },
     { name: "お知らせ", href: "/journal" },

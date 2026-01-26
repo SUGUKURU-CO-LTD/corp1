@@ -121,7 +121,7 @@ const sugusta = {
     name: "スグスタ",
     description: "学びたい人に、学びの場を。特定技能2号への道を、完全無償で照らす——外国人材のための社会インフラ。",
     icon: GraduationCap,
-    href: "https://www.sugu-study.com",
+    href: "https://sugu-study.com",
     color: "#FFB7C5",
     isExternal: true,
     delay: 0.4,
