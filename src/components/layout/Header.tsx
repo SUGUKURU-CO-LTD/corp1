@@ -46,12 +46,12 @@ export default function Header() {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="relative w-48 h-12">
+                        <div className="relative w-40 h-10 md:w-48 md:h-12">
                             <Image
                                 src="/images/logo-horizontal.png"
                                 alt="スグクル"
                                 fill
-                                className="object-contain"
+                                className="object-contain object-left"
                                 priority
                             />
                         </div>

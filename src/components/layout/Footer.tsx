@@ -45,10 +45,10 @@ export default function Footer() {
                         <Link href="/" className="inline-block mb-6">
                             <div className="relative w-48 h-12">
                                 <Image
-                                    src="/images/logo-horizontal-white.png"
+                                    src="/images/logo-horizontal.png"
                                     alt="スグクル"
                                     fill
-                                    className="object-contain"
+                                    className="object-contain object-left brightness-0 invert"
                                 />
                             </div>
                         </Link>
