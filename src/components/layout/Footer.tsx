@@ -21,6 +21,7 @@ const footerLinks = {
         { name: "マージン率公開", href: "/compliance" },
         { name: "派遣法に基づく情報", href: "/compliance#dispatch-law" },
         { name: "プライバシーポリシー", href: "/privacy" },
+        { name: "KIRIM Privacy Policy", href: "/kirim-privacy" },
         { name: "利用規約", href: "/legal" },
         { name: "お問い合わせ", href: "/contact" },
     ],
