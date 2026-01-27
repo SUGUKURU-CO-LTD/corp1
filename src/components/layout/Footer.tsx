@@ -43,14 +43,13 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="inline-block mb-6">
-                            <div className="relative w-48 h-12">
-                                <Image
-                                    src="/images/logo-horizontal.png"
-                                    alt="スグクル"
-                                    fill
-                                    className="object-contain object-left brightness-0 invert"
-                                />
-                            </div>
+                            <Image
+                                src="/images/logo-horizontal.png"
+                                alt="スグクル"
+                                width={180}
+                                height={40}
+                                className="h-10 w-auto brightness-0 invert"
+                            />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             「スグクル」、だから変われる。<br />
