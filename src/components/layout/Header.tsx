@@ -47,7 +47,7 @@ export default function Header() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                         <Image
-                            src="/images/logo-horizontal.png"
+                            src="/images/logo-main.png"
                             alt="スグクル"
                             width={180}
                             height={40}

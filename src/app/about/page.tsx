@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 
 const companyInfo = {
@@ -285,6 +286,21 @@ export default function AboutPage() {
 
                 <motion.div style={{ y: heroY }} className="container mx-auto relative z-10 px-6">
                     <div className="max-w-4xl">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, ease: "backOut" }}
+                            className="mb-8"
+                        >
+                            <Image
+                                src="/images/logo-horizontal-white.png"
+                                alt="スグクル"
+                                width={240}
+                                height={60}
+                                className="h-12 md:h-16 w-auto"
+                            />
+                        </motion.div>
+
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}

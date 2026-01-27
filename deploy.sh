@@ -7,7 +7,7 @@
 set -e
 
 # Configuration
-PROJECT_ID="${PROJECT_ID:-sugukuru7}"
+PROJECT_ID="${PROJECT_ID:-sugukurucorpsite}"
 REGION="${REGION:-asia-northeast1}"
 SERVICE_NAME="sugukurucorpsite"
 REPOSITORY_NAME="sugukurucorpsite"
