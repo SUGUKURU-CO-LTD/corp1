@@ -122,7 +122,7 @@ const GlowingButton = ({
 // 3メッセージ
 const heroMessages = [
     {
-        headline: "「すぐ来る」と、約束した。",
+        headline: "「スグクル」と、約束した。",
         subline: "だから、私たちはここにいる。",
         description: "耕す手が足りない——その叫びに、私たちは走った。最短2週間で即戦力を届ける。それが「スグクル」という名前に込めた、私たちの誓い。",
     },
