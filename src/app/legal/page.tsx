@@ -228,7 +228,7 @@ export default function LegalPage() {
                                     </h2>
                                     <div className="text-gray-600 space-y-2">
                                         <p><strong>スグクル株式会社</strong></p>
-                                        <p>〒899-4332 鹿児島県霧島市国府中央3丁目42-8 翔陽A103</p>
+                                        <p>〒899-4332 鹿児島県霧島市国分中央3丁目42-8 翔陽A103</p>
                                         <p>TEL: 0995-73-9939</p>
                                         <p>Email: info@sugu-kuru.co.jp</p>
                                     </div>

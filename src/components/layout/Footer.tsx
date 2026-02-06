@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const footerLinks = {
@@ -43,11 +42,9 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="inline-block mb-6">
-                            <Image
+                            <img
                                 src="/images/logo-horizontal-white.png"
                                 alt="スグクル"
-                                width={180}
-                                height={40}
                                 className="h-10 w-auto"
                             />
                         </Link>
@@ -62,7 +59,7 @@ export default function Footer() {
                                 <MapPin className="w-4 h-4 text-[#D4A853] mt-1 flex-shrink-0" />
                                 <span className="text-gray-300">
                                     〒899-4332<br />
-                                    鹿児島県霧島市国府中央3丁目42-8 翔陽A103
+                                    鹿児島県霧島市国分中央3丁目42-8 翔陽A103
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">

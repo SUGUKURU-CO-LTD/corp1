@@ -26,7 +26,7 @@ export function OrganizationSchema({
     logo = 'https://sugu-kuru.co.jp/images/logo-horizontal-white.png',
     description = 'スグクル株式会社は、農業派遣・農作業受託・有料職業紹介・IT事業を通じて、日本の農業を外国人材の力で支えます。',
     address = {
-        streetAddress: '国府中央3丁目42-8 翔陽A103',
+        streetAddress: '国分中央3丁目42-8 翔陽A103',
         addressLocality: '霧島市',
         addressRegion: '鹿児島県',
         postalCode: '899-4332',
@@ -160,7 +160,7 @@ export function LocalBusinessSchema({
     telephone = '+81-995-73-9939',
     email = 'info@sugu-kuru.co.jp',
     address = {
-        streetAddress: '国府中央3丁目42-8 翔陽A103',
+        streetAddress: '国分中央3丁目42-8 翔陽A103',
         addressLocality: '霧島市',
         addressRegion: '鹿児島県',
         postalCode: '899-4332',

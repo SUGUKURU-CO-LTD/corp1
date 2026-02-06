@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -46,13 +45,10 @@ export default function Header() {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <Image
+                        <img
                             src="/images/logo-main.png"
                             alt="スグクル"
-                            width={180}
-                            height={40}
                             className="h-8 md:h-10 w-auto"
-                            priority
                         />
                     </Link>
 
