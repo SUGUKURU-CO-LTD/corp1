@@ -699,6 +699,5 @@ function ArrowRight({ className }: { className?: string }) {
         </svg>
     );
 }
-// テスト送信
-// テスト送信2
+
 
