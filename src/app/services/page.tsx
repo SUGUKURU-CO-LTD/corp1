@@ -107,10 +107,11 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
             }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: service.delay }}
-            className={`relative overflow-hidden rounded-3xl ${service.isMain
+            className={`relative overflow-hidden rounded-3xl ${
+                service.isMain
                     ? "bg-gradient-to-br from-[#1B5E38]/10 to-[#1B5E38]/5 border-2 border-[#1B5E38]"
                     : "bg-white border border-gray-100"
-                }`}
+            }`}
         >
             {/* Hover gradient overlay */}
             <motion.div
@@ -291,7 +292,7 @@ export default function ServicesPage() {
 
                 <motion.div style={{ y: heroY }} className="container mx-auto relative z-10 px-6">
                     <div className="max-w-4xl">
-                        <motion.div
+                    <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "backOut" }}
@@ -299,8 +300,8 @@ export default function ServicesPage() {
                         >
                             <Sparkles className="w-5 h-5 text-[#D4A853] animate-pulse" />
                             <span className="px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-sm font-medium text-white/90">
-                                Our Services
-                            </span>
+                            Our Services
+                        </span>
                         </motion.div>
 
                         <motion.h1
@@ -315,8 +316,8 @@ export default function ServicesPage() {
                                 animate={{ clipPath: "inset(0 0 0 0)" }}
                                 transition={{ duration: 1, delay: 0.3 }}
                                 className="block"
-                            >
-                                人が足りない、を解決する。
+                        >
+                            人が足りない、を解決する。
                             </motion.span>
                         </motion.h1>
 
@@ -330,7 +331,7 @@ export default function ServicesPage() {
                             私たちは「農業の人手不足」という複雑な課題を、あらゆる角度から解きほぐす。
                         </motion.p>
                     </div>
-                </motion.div>
+                    </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -343,10 +344,10 @@ export default function ServicesPage() {
             {/* Services List */}
             <section className="section bg-[#FAFAF7]">
                 <div className="container mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                         className="text-center mb-16"
                     >
@@ -355,9 +356,9 @@ export default function ServicesPage() {
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             サービス一覧
-                        </h2>
+                                                    </h2>
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
-                    </motion.div>
+                            </motion.div>
 
                     <div className="space-y-8">
                         {services.map((service) => (
@@ -413,19 +414,19 @@ export default function ServicesPage() {
                             外国人移民時代の社会インフラとして、完全無償で提供しています。
                         </p>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                            <Link
-                                href="https://sugu-study.com"
+                        <Link
+                            href="https://www.sugu-study.com"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#E91E63] text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-shadow"
-                            >
-                                スグスタについて詳しく
+                        >
+                            スグスタについて詳しく
                                 <ArrowRight className="w-5 h-5" />
-                            </Link>
+                        </Link>
                         </motion.div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Service Achievements Section */}
+            {/* Clients Section */}
             <section className="section bg-white">
                 <div className="container mx-auto">
                     <motion.div
@@ -439,84 +440,55 @@ export default function ServicesPage() {
                             className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
-                            導入実績
+                            主要取引先
                         </h2>
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
                         {[
-                            { number: "60+", label: "派遣スタッフ数", icon: "👥", color: "#1B5E38" },
-                            { number: "30+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
-                            { number: "6", label: "対応地域", icon: "📍", color: "#7C3AED" },
-                        ].map((stat, i) => (
+                            { name: "霧島中央製茶", area: "鹿児島", type: "お茶" },
+                            { name: "ヘンタ製茶", area: "鹿児島", type: "お茶" },
+                            { name: "カゴシマ農園", area: "鹿児島", type: "野菜" },
+                            { name: "サングリーン", area: "鹿児島", type: "野菜" },
+                            { name: "旬彩ファーム", area: "福島", type: "野菜" },
+                            { name: "新口農園", area: "愛媛", type: "柑橘" },
+                            { name: "日本農業", area: "青森", type: "りんご" },
+                            { name: "新保農園", area: "鹿児島", type: "畜産" },
+                        ].map((client, i) => (
                             <motion.div
-                                key={stat.label}
+                                key={client.name}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 whileHover={{ scale: 1.05, y: -5 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: i * 0.1 }}
-                                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow"
+                                transition={{ duration: 0.5, delay: i * 0.05 }}
+                                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow"
                             >
-                                <motion.div
-                                    initial={{ scale: 0 }}
-                                    whileInView={{ scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 + 0.2, type: "spring" }}
-                                    className="text-5xl mb-4"
+                                <motion.h3
+                                    whileHover={{ scale: 1.05 }}
+                                    className="font-bold text-[#1A1A1A] text-sm"
                                 >
-                                    {stat.icon}
-                                </motion.div>
-                                <motion.p
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 + 0.3 }}
-                                    className="text-4xl font-bold mb-2"
-                                    style={{ color: stat.color }}
-                                >
-                                    {stat.number}
-                                </motion.p>
-                                <p className="text-gray-600 font-medium">{stat.label}</p>
+                                    {client.name}
+                                </motion.h3>
+                                <p className="text-xs text-gray-500 mt-2">
+                                    <span className="inline-block px-2 py-1 bg-[#1B5E38]/10 text-[#1B5E38] rounded-full text-xs">
+                                        {client.area}
+                                    </span>
+                                    <span className="ml-2 text-gray-400">{client.type}</span>
+                                </p>
                             </motion.div>
                         ))}
                     </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                        className="max-w-4xl mx-auto"
+                        transition={{ delay: 0.5 }}
+                        className="text-center text-gray-500 text-sm mt-8"
                     >
-                        <h3 className="text-2xl font-bold text-[#1A1A1A] text-center mb-8">対応地域</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {[
-                                { region: "鹿児島県", type: "お茶・野菜・畜産", icon: "🌿" },
-                                { region: "福島県", type: "野菜", icon: "🥬" },
-                                { region: "愛媛県", type: "柑橘", icon: "🍊" },
-                                { region: "青森県", type: "りんご", icon: "🍎" },
-                                { region: "愛知県", type: "野菜・IT", icon: "💻" },
-                                { region: "その他", type: "全国対応可", icon: "🗾" },
-                            ].map((area, i) => (
-                                <motion.div
-                                    key={area.region}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    className="flex items-center gap-3 p-4 bg-gradient-to-r from-[#1B5E38]/5 to-transparent rounded-xl"
-                                >
-                                    <span className="text-2xl">{area.icon}</span>
-                                    <div>
-                                        <p className="font-bold text-[#1A1A1A]">{area.region}</p>
-                                        <p className="text-sm text-gray-500">{area.type}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
+                        ...他、鹿児島県内の製茶組合約10社と提携
+                    </motion.p>
                 </div>
             </section>
 
@@ -597,9 +569,9 @@ export default function ServicesPage() {
                                 href="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1B5E38] text-lg font-bold rounded-full shadow-xl shadow-black/20"
                             >
-                                無料相談を予約
-                                <ArrowRight className="w-5 h-5" />
-                            </Link>
+                            無料相談を予約
+                            <ArrowRight className="w-5 h-5" />
+                        </Link>
                         </motion.div>
                     </motion.div>
                 </div>

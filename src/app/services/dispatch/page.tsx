@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
     ArrowRight,
     Clock,
@@ -72,6 +73,49 @@ const pricing = {
         "ミスマッチ時の交代対応",
     ],
 };
+
+const galleryImages = [
+    {
+        src: "/images/svs2.jpg",
+        alt: "農業現場での作業風景",
+    },
+    {
+        src: "/images/svs1.jpg",
+        alt: "農業現場での作業",
+    },
+    {
+        src: "/images/svs3.jpg",
+        alt: "チームでの作業",
+    },
+    {
+        src: "/images/svs4.jpg",
+        alt: "作業の様子",
+    },
+    {
+        src: "/images/svs5.jpg",
+        alt: "農作業",
+    },
+    {
+        src: "/images/svs6.png",
+        alt: "現場作業",
+    },
+    {
+        src: "/images/svs7.jpg",
+        alt: "作業風景",
+    },
+    {
+        src: "/images/svs8.jpg",
+        alt: "農業現場",
+    },
+    {
+        src: "/images/svs9.jpg",
+        alt: "チームワーク",
+    },
+    {
+        src: "/images/svs10.jpg",
+        alt: "作業の現場",
+    },
+];
 
 export default function DispatchPage() {
     return (
@@ -157,13 +201,28 @@ export default function DispatchPage() {
                         >
                             なぜ、外国人材なのか。
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-gray-600 text-lg leading-relaxed mb-8">
                             日本の農業は今、静かな危機に直面している。<br />
                             高齢化、後継者不足、そして増え続ける耕作放棄地。<br /><br />
                             しかし、海の向こうには「働きたい」と願う若者たちがいる。<br />
                             彼らに「居場所」を、そして日本の農業に「未来」を——<br />
                             私たちは、その架け橋になる。
                         </p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg"
+                        >
+                            <Image
+                                src="/images/why.jpg"
+                                alt="外国人材と共に働く風景"
+                                width={800}
+                                height={500}
+                                className="w-full h-auto object-cover"
+                            />
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
@@ -210,6 +269,154 @@ export default function DispatchPage() {
                                 </p>
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Gallery - マソンリーレイアウト */}
+            <section className="section bg-gradient-to-br from-[#1B5E38]/5 via-white to-[#1B5E38]/5 overflow-hidden py-20">
+                <div className="container mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                            Gallery
+                        </span>
+                        <h2
+                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4"
+                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
+                        >
+                            現場の様子
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            実際の農業現場で活躍する人材の姿をご覧ください
+                        </p>
+                    </motion.div>
+
+                    <div className="relative overflow-hidden py-8">
+                        {/* 完全にシームレスに流れ続ける */}
+                        <motion.div
+                            className="flex gap-6"
+                            animate={{
+                                x: [0, -2400]
+                            }}
+                            transition={{
+                                x: {
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                    duration: 30,
+                                    ease: "linear"
+                                }
+                            }}
+                        >
+                            {/* 十分な枚数でシームレスに */}
+                            {[
+                                { src: "/images/svs1.jpg", alt: "農業現場" },
+                                { src: "/images/svs2.jpg", alt: "作業風景" },
+                                { src: "/images/svs3.jpg", alt: "チーム作業" },
+                                { src: "/images/svs4.jpg", alt: "農作業" },
+                                { src: "/images/svs5.jpg", alt: "収穫作業" },
+                                { src: "/images/svs6.png", alt: "現場の様子" },
+                                { src: "/images/svs9.jpg", alt: "チーム派遣" },
+                                { src: "/images/svs10.jpg", alt: "繁忙期作業" },
+                                { src: "/images/svs11.jpg", alt: "新規作業1" },
+                                { src: "/images/svs12.jpg", alt: "新規作業2" },
+                            ].map((image, index) => (
+                                <motion.div
+                                    key={`set1-${index}`}
+                                    className="flex-shrink-0 w-48 md:w-64 relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="aspect-square relative">
+                                        <Image
+                                            src={image.src}
+                                            alt={image.alt}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute bottom-3 left-3 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                            <p className="text-white text-sm font-medium">{image.alt}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                            {/* 2セット目 */}
+                            {[
+                                { src: "/images/svs1.jpg", alt: "農業現場" },
+                                { src: "/images/svs2.jpg", alt: "作業風景" },
+                                { src: "/images/svs3.jpg", alt: "チーム作業" },
+                                { src: "/images/svs4.jpg", alt: "農作業" },
+                                { src: "/images/svs5.jpg", alt: "収穫作業" },
+                                { src: "/images/svs6.png", alt: "現場の様子" },
+                                { src: "/images/svs9.jpg", alt: "チーム派遣" },
+                                { src: "/images/svs10.jpg", alt: "繁忙期作業" },
+                                { src: "/images/svs11.jpg", alt: "新規作業1" },
+                                { src: "/images/svs12.jpg", alt: "新規作業2" },
+                            ].map((image, index) => (
+                                <motion.div
+                                    key={`set2-${index}`}
+                                    className="flex-shrink-0 w-48 md:w-64 relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="aspect-square relative">
+                                        <Image
+                                            src={image.src}
+                                            alt={image.alt}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute bottom-3 left-3 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                            <p className="text-white text-sm font-medium">{image.alt}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                            {/* 3セット目 */}
+                            {[
+                                { src: "/images/svs1.jpg", alt: "農業現場" },
+                                { src: "/images/svs2.jpg", alt: "作業風景" },
+                                { src: "/images/svs3.jpg", alt: "チーム作業" },
+                                { src: "/images/svs4.jpg", alt: "農作業" },
+                                { src: "/images/svs5.jpg", alt: "収穫作業" },
+                                { src: "/images/svs6.png", alt: "現場の様子" },
+                                { src: "/images/svs9.jpg", alt: "チーム派遣" },
+                                { src: "/images/svs10.jpg", alt: "繁忙期作業" },
+                                { src: "/images/svs11.jpg", alt: "新規作業1" },
+                                { src: "/images/svs12.jpg", alt: "新規作業2" },
+                            ].map((image, index) => (
+                                <motion.div
+                                    key={`set3-${index}`}
+                                    className="flex-shrink-0 w-48 md:w-64 relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="aspect-square relative">
+                                        <Image
+                                            src={image.src}
+                                            alt={image.alt}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute bottom-3 left-3 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                            <p className="text-white text-sm font-medium">{image.alt}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                        
+                        {/* 左右のグラデーションフェード */}
+                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none" />
                     </div>
                 </div>
             </section>

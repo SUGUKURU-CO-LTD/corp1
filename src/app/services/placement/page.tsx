@@ -135,6 +135,49 @@ export default function PlacementPage() {
                             雇用する側もされる側も、納得の上で「仲間」になれる仕組み。<br />
                             私たちは、その出会いを確かなものにする。
                         </p>
+
+                        {/* 画像3枚 */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="rounded-2xl overflow-hidden h-[300px] transform transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-2xl cursor-pointer"
+                            >
+                                <img
+                                    src="/images/services555.jpg"
+                                    alt="職業紹介サービス1"
+                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="rounded-2xl overflow-hidden h-[300px] transform transition-all duration-500 hover:scale-105 hover:-rotate-2 hover:shadow-2xl cursor-pointer"
+                            >
+                                <img
+                                    src="/images/services777.jpg"
+                                    alt="職業紹介サービス3"
+                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                className="rounded-2xl overflow-hidden h-[300px] transform transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-2xl cursor-pointer"
+                            >
+                                <img
+                                    src="/images/services666.jpg"
+                                    alt="職業紹介サービス2"
+                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                />
+                            </motion.div>
+                        </div>
                     </motion.div>
                 </div>
             </section>
