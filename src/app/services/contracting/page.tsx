@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
     ArrowRight,
     Users,
@@ -18,21 +20,25 @@ const services = [
         icon: Leaf,
         title: "収穫作業",
         description: "野菜、果物、お茶——季節の作物を、熟練のチームで収穫。",
+        image: "/images/services3.jpg",
     },
     {
         icon: Package,
         title: "選果・梱包",
         description: "品質基準に沿った選別と、丁寧な梱包作業。",
+        image: "/images/services2.png",
     },
     {
         icon: Truck,
         title: "出荷準備",
         description: "倉庫整理から出荷準備まで、一連の作業をチームで完結。",
+        image: "/images/services5.png",
     },
     {
         icon: Users,
         title: "チーム派遣",
         description: "繁忙期には20名規模のチームを一斉派遣。大規模案件に対応。",
+        image: "/images/services7.jpg",
     },
 ];
 
@@ -46,6 +52,22 @@ const benefits = [
 ];
 
 export default function ContractingPage() {
+    // フェードイン・アウトする画像
+    const fadeImages = [
+        { src: "/images/services111.jpg", alt: "農業作業風景1" },
+        { src: "/images/services333.jpg", alt: "農業作業風景2" },
+    ];
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // 5秒ごとに画像を切り替え
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % fadeImages.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="pt-20">
             {/* Hero */}
@@ -136,6 +158,23 @@ export default function ContractingPage() {
                             人材の採用も管理も、すべて私たちの責任。<br />
                             あなたは、あなたにしかできないことに集中してほしい。
                         </p>
+
+                        {/* フェードイン・アウト画像 */}
+                        <div className="mt-8 w-full overflow-hidden rounded-2xl relative h-[300px] md:h-[400px]">
+                            {fadeImages.map((image, index) => (
+                                <motion.img
+                                    key={image.src}
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="w-full h-full object-cover absolute top-0 left-0"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ 
+                                        opacity: currentImageIndex === index ? 1 : 0 
+                                    }}
+                                    transition={{ duration: 1.5 }}
+                                />
+                            ))}
+                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -177,9 +216,20 @@ export default function ContractingPage() {
                                 <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-4 min-h-[3rem]">
                                     {service.description}
                                 </p>
+                                {service.image && (
+                                    <div className="mt-4 rounded-xl overflow-hidden">
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            width={400}
+                                            height={300}
+                                            className="w-full h-48 object-cover"
+                                        />
+                                    </div>
+                                )}
                             </motion.div>
                         ))}
                     </div>
