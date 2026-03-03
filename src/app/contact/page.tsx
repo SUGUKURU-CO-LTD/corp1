@@ -237,8 +237,9 @@ export default function ContactPage() {
                                                 backgroundColor: step >= s ? "#1B5E38" : "#e5e7eb",
                                             }}
                                             transition={{ duration: 0.3 }}
-                                            className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step >= s ? "text-white" : "text-gray-500"
-                                                }`}
+                                            className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
+                                                step >= s ? "text-white" : "text-gray-500"
+                                            }`}
                                         >
                                             {step >= s ? <Check className="w-5 h-5" /> : s}
                                         </motion.div>
@@ -246,8 +247,9 @@ export default function ContactPage() {
                                             <motion.div
                                                 initial={{ scaleX: 0 }}
                                                 animate={{ scaleX: step > s ? 1 : 0 }}
-                                                className={`w-16 h-1 mx-2 rounded-full ${step > s ? "bg-[#1B5E38]" : "bg-gray-200"
-                                                    }`}
+                                                className={`w-16 h-1 mx-2 rounded-full ${
+                                                    step > s ? "bg-[#1B5E38]" : "bg-gray-200"
+                                                }`}
                                             />
                                         )}
                                     </motion.div>
@@ -286,10 +288,11 @@ export default function ContactPage() {
                                                     setFormData({ ...formData, inquiryType: type.id as InquiryType });
                                                     setStep(2);
                                                 }}
-                                                className={`p-6 rounded-2xl border-2 text-left transition-all relative overflow-hidden ${formData.inquiryType === type.id
+                                                className={`p-6 rounded-2xl border-2 text-left transition-all relative overflow-hidden ${
+                                                    formData.inquiryType === type.id
                                                         ? "border-[#1B5E38] bg-[#1B5E38]/5"
                                                         : "border-gray-200 hover:border-gray-300 bg-white"
-                                                    }`}
+                                                }`}
                                             >
                                                 <motion.div
                                                     initial={{ x: "-100%" }}

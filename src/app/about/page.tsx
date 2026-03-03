@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRef } from "react";
 
 const companyInfo = {
@@ -201,16 +200,18 @@ const OfficeCard = ({ office }: { office: typeof offices[0] }) => {
             whileHover={{ y: -5, scale: 1.02 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className={`relative p-6 rounded-2xl overflow-hidden ${office.isHQ
+            className={`relative p-6 rounded-2xl overflow-hidden ${
+                office.isHQ
                     ? "bg-gradient-to-br from-[#1B5E38]/10 to-[#1B5E38]/5 border-2 border-[#1B5E38]"
                     : "bg-white border border-gray-200"
-                }`}
+            }`}
         >
             <div className="flex items-start gap-4">
                 <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${office.isHQ ? "bg-[#1B5E38]" : "bg-[#D4A853]"
-                        }`}
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                        office.isHQ ? "bg-[#1B5E38]" : "bg-[#D4A853]"
+                    }`}
                 >
                     <MapPin className="w-6 h-6 text-white" />
                 </motion.div>
@@ -288,27 +289,12 @@ export default function AboutPage() {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "backOut" }}
-                            className="mb-8"
-                        >
-                            <Image
-                                src="/images/logo-horizontal-white.png"
-                                alt="スグクル"
-                                width={240}
-                                height={60}
-                                className="h-12 md:h-16 w-auto"
-                            />
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, ease: "backOut" }}
                             className="inline-flex items-center gap-2 mb-6"
                         >
                             <Sparkles className="w-5 h-5 text-[#D4A853] animate-pulse" />
                             <span className="px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-sm font-medium text-white/90">
-                                About Us
-                            </span>
+                            About Us
+                        </span>
                         </motion.div>
 
                         <motion.h1
@@ -346,7 +332,7 @@ export default function AboutPage() {
                             すぐに来る——その約束を胸に、日本中の農地へ即戦力を届ける。
                         </motion.p>
                     </div>
-                </motion.div>
+                    </motion.div>
 
                 {/* Bottom gradient */}
                 <motion.div
@@ -442,34 +428,34 @@ export default function AboutPage() {
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Left: Basic Info */}
                             <div className="p-8 border-b md:border-b-0 md:border-r border-gray-100">
-                                <table className="w-full">
-                                    <tbody>
+                            <table className="w-full">
+                                <tbody>
                                         <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A] w-1/3">会社名</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.name}</td>
-                                        </tr>
+                                    </tr>
                                         <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">英語表記</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.nameEn}</td>
-                                        </tr>
+                                    </tr>
                                         <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">設立</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.established}</td>
-                                        </tr>
+                                    </tr>
                                         <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">資本金</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.capital}</td>
-                                        </tr>
+                                    </tr>
                                         <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">所在地</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.address}</td>
-                                        </tr>
-                                        <tr>
+                                    </tr>
+                                    <tr>
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">電話番号</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.phone}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    </tr>
+                                </tbody>
+                            </table>
                             </div>
 
                             {/* Right: Officers & Business */}
@@ -576,11 +562,11 @@ export default function AboutPage() {
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
                     </motion.div>
 
-                    <div className="max-w-3xl mx-auto">
-                        {timeline.map((item, index) => (
+                        <div className="max-w-3xl mx-auto">
+                            {timeline.map((item, index) => (
                             <TimelineItem key={index} item={item} index={index} />
-                        ))}
-                    </div>
+                            ))}
+                        </div>
                 </div>
             </section>
 
@@ -604,12 +590,12 @@ export default function AboutPage() {
                     </motion.div>
 
                     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
-                        {offices.map((office) => (
+                            {offices.map((office) => (
                             <OfficeCard key={office.name} office={office} />
-                        ))}
-                    </div>
+                            ))}
+                        </div>
 
-                    {/* Map placeholder */}
+                    {/* Google Maps */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -617,16 +603,17 @@ export default function AboutPage() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <div className="bg-gradient-to-br from-[#1B5E38]/10 to-[#D4A853]/10 rounded-3xl overflow-hidden h-80 flex items-center justify-center relative">
-                            <motion.div
-                                animate={{ scale: [1, 1.02, 1] }}
-                                transition={{ duration: 4, repeat: Infinity }}
-                                className="text-center"
-                            >
-                                <MapPin className="w-12 h-12 text-[#1B5E38] mx-auto mb-4" />
-                                <p className="text-gray-600">鹿児島県霧島市国分中央3丁目42-8</p>
-                                <p className="text-sm text-gray-500 mt-2">Google Maps 埋め込み</p>
-                            </motion.div>
+                        <div className="rounded-3xl overflow-hidden h-80">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.0734825424834!2d130.7572328758328!3d31.74119517411367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353efdfbd92e1fc7%3A0xc8c891839408fcac!2z44K544Kw44Kv44Or5qCq5byP5Lya56S-!5e0!3m2!1sja!2sjp!4v1768529007110!5m2!1sja!2sjp"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="スグクル株式会社 本社"
+                            />
                         </div>
                     </motion.div>
                 </div>
@@ -669,13 +656,13 @@ export default function AboutPage() {
                             ご質問・ご相談がございましたら、お気軽にお問い合わせください。
                         </p>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                            <Link
-                                href="/contact"
+                        <Link
+                            href="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1B5E38] text-lg font-bold rounded-full shadow-xl hover:shadow-2xl transition-shadow"
-                            >
+                        >
                                 お問い合わせフォームへ
                                 <ArrowRight className="w-5 h-5" />
-                            </Link>
+                        </Link>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -699,5 +686,3 @@ function ArrowRight({ className }: { className?: string }) {
         </svg>
     );
 }
-
-
