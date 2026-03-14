@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRef } from "react";
 
 const companyInfo = {
@@ -16,7 +15,7 @@ const companyInfo = {
         "特定技能 農業・畜産派遣事業",
         "農作業受託事業",
         "有料職業紹介事業（紹介予定派遣）",
-        "IT事業（システム開発・コンサルティング）",
+        "IT事業（システム開発・コンサルティング、オンライン学習コースの運営、MCPサーバーベースのシステム開発、A2Aを用いたエージェント駆動システムの開発）",
     ],
     address: "〒899-4332 鹿児島県霧島市国分中央3丁目42-8 翔陽A103",
     phone: "0995-73-9939",
@@ -290,11 +289,9 @@ export default function AboutPage() {
                             transition={{ duration: 0.8, ease: "backOut" }}
                             className="mb-8"
                         >
-                            <Image
+                            <img
                                 src="/images/logo-horizontal-white.png"
                                 alt="スグクル"
-                                width={240}
-                                height={60}
                                 className="h-12 md:h-16 w-auto"
                             />
                         </motion.div>

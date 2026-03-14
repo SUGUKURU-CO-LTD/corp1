@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 
@@ -139,7 +139,9 @@ const heroMessages = [
 ];
 
 export default function HeroSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(
+        () => Math.floor(Math.random() * heroMessages.length)
+    );
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: containerRef });
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
@@ -147,11 +149,6 @@ export default function HeroSection() {
 
     // Smooth scroll progress
     const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-
-    useEffect(() => {
-        const randomIndex = Math.floor(Math.random() * heroMessages.length);
-        setCurrentIndex(randomIndex);
-    }, []);
 
     const currentMessage = heroMessages[currentIndex];
 
@@ -166,11 +163,17 @@ export default function HeroSection() {
             {/* Aurora Background */}
             <AuroraBackground />
 
+            {/* Real hero image from GitHub assets */}
+            <div
+                className="absolute inset-0 bg-center bg-cover opacity-35"
+                style={{ backgroundImage: 'url("/images/cases/organic-tea-cultivation.png")' }}
+            />
+
             {/* Noise Overlay */}
             <NoiseOverlay />
 
             {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/30" />
 
             {/* Animated mesh grid */}
             <div className="absolute inset-0 opacity-[0.03]">
@@ -189,8 +192,9 @@ export default function HeroSection() {
 
             {/* Parallax Content */}
             <motion.div style={{ y, opacity }} className="relative z-10">
-                <div className="container mx-auto px-6 min-h-screen flex flex-col justify-center">
-                    <div className="max-w-5xl">
+                <div className="container mx-auto px-6 min-h-screen flex items-center">
+                    <div className="grid lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] gap-10 items-center w-full">
+                        <div className="max-w-5xl">
                         {/* Badge with sparkles */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -309,6 +313,34 @@ export default function HeroSection() {
                                     {item}
                                 </motion.span>
                             ))}
+                        </motion.div>
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                            className="hidden lg:block"
+                        >
+                            <div className="relative rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl shadow-black/40 bg-white/5 backdrop-blur-sm">
+                                <img
+                                    src="/images/cases/tea-farm-workers.png"
+                                    alt="スグクルの派遣スタッフが農場で働く様子"
+                                    className="w-full h-[520px] object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 p-6">
+                                    <p className="text-white text-sm tracking-[0.18em] uppercase mb-2">
+                                        Field Photo
+                                    </p>
+                                    <p className="text-white text-2xl font-bold mb-2">
+                                        現場で機能する即戦力を、最短2週間で。
+                                    </p>
+                                    <p className="text-white/80 text-sm leading-relaxed">
+                                        GitHub に残っていた実写真アセットをベースに、スグクルらしい現場感が見えるトップへ戻しました。
+                                    </p>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
                 </div>

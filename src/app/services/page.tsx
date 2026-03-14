@@ -446,8 +446,8 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
                         {[
-                            { number: "60+", label: "派遣スタッフ数", icon: "👥", color: "#1B5E38" },
-                            { number: "30+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
+                            { number: "120+", label: "派遣スタッフ数", icon: "👥", color: "#1B5E38" },
+                            { number: "40+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
                             { number: "6", label: "対応地域", icon: "📍", color: "#7C3AED" },
                         ].map((stat, i) => (
                             <motion.div

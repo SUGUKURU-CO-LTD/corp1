@@ -16,45 +16,60 @@ import {
     Share2,
 } from "lucide-react";
 
-// モックデータ - Facebookの最新投稿を表示
-// 実際の運用ではFacebook Graph APIで取得することを推奨
-const recentPosts = [
+type FeedPost = {
+    id: string;
+    date: string;
+    content: string;
+    likes: number;
+    comments: number;
+    image: string | null;
+    permalink: string | null;
+};
+
+const fallbackPosts: FeedPost[] = [
     {
-        id: 1,
+        id: "fallback-1",
         date: "2024年12月28日",
         content: "【年末のご挨拶】\n\n本年も大変お世話になりました。2024年は多くの農家様・企業様にご利用いただき、誠にありがとうございました。\n\n来年も皆様のお役に立てるよう、スタッフ一同精進してまいります。良いお年をお迎えください。",
         likes: 45,
         comments: 8,
         image: null,
+        permalink: "https://www.facebook.com/profile.php?id=61558366208114",
     },
     {
-        id: 2,
+        id: "fallback-2",
         date: "2024年12月20日",
         content: "【新規スタッフ研修完了🎉】\n\nインドネシアからの新しい仲間が研修を終え、各農場への配属が決まりました！\n\n日本語能力も高く、農業への熱意に満ちたメンバーです。これから各地で活躍してくれることでしょう。",
         likes: 89,
         comments: 15,
         image: "/images/cases/tea-farm-workers.png",
+        permalink: "https://www.facebook.com/profile.php?id=61558366208114",
     },
     {
-        id: 3,
+        id: "fallback-3",
         date: "2024年12月15日",
         content: "【導入事例を更新しました】\n\n霧島中央製茶様、ヘンタ製茶様の事例を公開しました。実際にスグクルをご利用いただいている企業様の声をぜひご覧ください。\n\n👉 詳しくはウェブサイトの「導入事例」ページへ",
         likes: 32,
         comments: 4,
         image: null,
-    },
-    {
-        id: 4,
-        date: "2024年12月10日",
-        content: "【畜産分野にも対応開始📣】\n\n和牛の飼育管理、酪農作業など、畜産分野への人材派遣も本格的にスタートしました。\n\n農業だけでなく、畜産業の人手不足解消にも貢献してまいります。お気軽にご相談ください。",
-        likes: 67,
-        comments: 12,
-        image: "/images/cases/livestock-farm-workers.png",
+        permalink: "https://www.facebook.com/profile.php?id=61558366208114",
     },
 ];
 
+declare global {
+    interface Window {
+        FB?: {
+            XFBML?: { parse: () => void };
+        };
+    }
+}
+
 export default function JournalPage() {
     const [fbLoaded, setFbLoaded] = useState(false);
+    const [posts, setPosts] = useState<FeedPost[]>(fallbackPosts);
+    const [loadingPosts, setLoadingPosts] = useState(true);
+    const [feedSource, setFeedSource] = useState<"facebook" | "fallback">("fallback");
+    const [feedWarning, setFeedWarning] = useState<string | null>(null);
 
     useEffect(() => {
         // Load Facebook SDK
@@ -75,6 +90,42 @@ export default function JournalPage() {
         };
 
         loadFacebookSDK();
+    }, []);
+
+    useEffect(() => {
+        if (fbLoaded) {
+            window.FB?.XFBML?.parse();
+        }
+    }, [fbLoaded]);
+
+    useEffect(() => {
+        const loadFeed = async () => {
+            try {
+                const response = await fetch("/api/facebook/posts?limit=6");
+                const data = (await response.json()) as {
+                    source?: "facebook" | "fallback";
+                    warning?: string;
+                    posts?: FeedPost[];
+                };
+
+                if (Array.isArray(data.posts) && data.posts.length > 0) {
+                    setPosts(data.posts);
+                } else {
+                    setPosts(fallbackPosts);
+                }
+
+                setFeedSource(data.source === "facebook" ? "facebook" : "fallback");
+                setFeedWarning(data.warning ?? null);
+            } catch {
+                setPosts(fallbackPosts);
+                setFeedSource("fallback");
+                setFeedWarning("Facebook連携の取得に失敗したため、サンプル投稿を表示しています。");
+            } finally {
+                setLoadingPosts(false);
+            }
+        };
+
+        loadFeed();
     }, []);
 
     return (
@@ -135,11 +186,45 @@ export default function JournalPage() {
                                 </div>
                                 <div>
                                     <h2 className="font-bold text-[#1A1A1A]">最新の投稿</h2>
-                                    <p className="text-gray-500 text-sm">Sugukuru Agency</p>
+                                    <p className="text-gray-500 text-sm">
+                                        Sugukuru Agency
+                                        <span
+                                            className={`ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
+                                                feedSource === "facebook"
+                                                    ? "bg-emerald-100 text-emerald-700"
+                                                    : "bg-amber-100 text-amber-700"
+                                            }`}
+                                        >
+                                            {feedSource === "facebook" ? "自動連携中" : "サンプル表示"}
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
 
-                            {recentPosts.map((post, index) => (
+                            {feedWarning && (
+                                <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                                    {feedWarning}
+                                </div>
+                            )}
+
+                            {loadingPosts &&
+                                Array.from({ length: 3 }).map((_, index) => (
+                                    <motion.div
+                                        key={`skeleton-${index}`}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                                        className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden p-5"
+                                    >
+                                        <div className="h-4 w-40 rounded bg-gray-200 animate-pulse mb-3" />
+                                        <div className="h-4 w-full rounded bg-gray-100 animate-pulse mb-2" />
+                                        <div className="h-4 w-[85%] rounded bg-gray-100 animate-pulse mb-2" />
+                                        <div className="h-4 w-[70%] rounded bg-gray-100 animate-pulse" />
+                                    </motion.div>
+                                ))}
+
+                            {!loadingPosts &&
+                                posts.map((post, index) => (
                                 <motion.article
                                     key={post.id}
                                     initial={{ opacity: 0, y: 20 }}
@@ -190,13 +275,20 @@ export default function JournalPage() {
                                             <MessageCircle className="w-4 h-4" />
                                             <span>{post.comments}</span>
                                         </button>
-                                        <button className="flex items-center gap-2 text-gray-500 hover:text-[#1877F2] transition-colors text-sm ml-auto">
-                                            <Share2 className="w-4 h-4" />
-                                            <span>シェア</span>
-                                        </button>
+                                        {post.permalink && (
+                                            <a
+                                                href={post.permalink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2 text-gray-500 hover:text-[#1877F2] transition-colors text-sm ml-auto"
+                                            >
+                                                <Share2 className="w-4 h-4" />
+                                                <span>投稿を見る</span>
+                                            </a>
+                                        )}
                                     </div>
                                 </motion.article>
-                            ))}
+                                ))}
 
                             {/* View More on Facebook */}
                             <motion.div

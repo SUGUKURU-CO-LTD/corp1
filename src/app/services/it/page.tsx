@@ -379,8 +379,7 @@ export default function ITPage() {
                                 </span>
                             </div>
                             <Link
-                                href="https://nenkin1-9bihlgf5w-sugukurus-projects.vercel.app/"
-                                target="_blank"
+                                href="/contact?service=nenkin-pass"
                                 className="btn bg-white text-[#2563EB] hover:bg-gray-50 w-full justify-center group"
                             >
                                 NENKIN-PASSを見る

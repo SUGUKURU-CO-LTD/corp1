@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import {
     ArrowRight,
     Building2,
@@ -70,8 +69,8 @@ const caseStudies = [
 ];
 
 const stats = [
-    { value: "20+", label: "導入企業数", icon: Building2 },
-    { value: "60+", label: "派遣スタッフ", icon: Users },
+    { value: "40+", label: "導入企業数", icon: Building2 },
+    { value: "120+", label: "派遣スタッフ", icon: Users },
     { value: "99%", label: "継続率", icon: TrendingUp },
     { value: "15+", label: "連携産地", icon: MapPin },
 ];
@@ -180,11 +179,10 @@ export default function CasesPage() {
                             >
                                 {/* Image Section */}
                                 <div className="relative h-64 md:h-80 overflow-hidden">
-                                    <Image
+                                    <img
                                         src={caseStudy.image}
                                         alt={`${caseStudy.company}の現場写真`}
-                                        fill
-                                        className="object-cover"
+                                        className="w-full h-full object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">

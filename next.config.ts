@@ -6,7 +6,6 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
-  output: 'standalone',
   images: {
     remotePatterns: [
       {
@@ -14,7 +13,6 @@ const nextConfig: NextConfig = {
         hostname: 'sugu-kuru.co.jp',
       },
     ],
-    // Disable optimization for standalone mode to ensure images display correctly
     unoptimized: true,
   },
   async headers() {
