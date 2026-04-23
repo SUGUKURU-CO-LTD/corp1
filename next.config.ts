@@ -5,7 +5,14 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   /* config options here */
-  reactCompiler: true,
+  // React Compiler は Framer Motion のアニメーションと相性が悪く、
+  // ヒーロー等の初期状態（opacity:0, clipPath:inset(0 100% 0 0)）から
+  // 復帰しない問題が発生したため、一時的に無効化する。
+  // React Compiler is incompatible with Framer Motion animations and caused
+  // elements to get stuck in their initial hidden state. Temporarily disabled.
+  // React Compiler tidak kompatibel dengan animasi Framer Motion sehingga
+  // elemen terjebak pada kondisi awal (tersembunyi). Dinonaktifkan sementara.
+  // reactCompiler: true,
   images: {
     remotePatterns: [
       {
