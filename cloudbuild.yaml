@@ -1,56 +1,60 @@
 steps:
-  # Build the Docker image
-  - name: 'gcr.io/cloud-builders/docker'
+  # Build both immutable and convenience tags.
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - 'build'
-      - '-t'
-      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
-      - '-t'
-      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:latest'
-      - '.'
+      - "build"
+      - "-t"
+      - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:${_IMAGE_TAG}"
+      - "-t"
+      - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:latest"
+      - "."
 
-  # Push to Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - 'push'
-      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
+      - "push"
+      - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:${_IMAGE_TAG}"
 
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - 'push'
-      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:latest'
+      - "push"
+      - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:latest"
 
-  # Deploy to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gcloud"
     args:
-      - 'run'
-      - 'deploy'
-      - 'sugukurucorpsite'
-      - '--image'
-      - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
-      - '--region'
-      - 'asia-northeast1'
-      - '--platform'
-      - 'managed'
-      - '--allow-unauthenticated'
-      - '--port'
-      - '8080'
-      - '--memory'
-      - '512Mi'
-      - '--cpu'
-      - '1'
-      - '--min-instances'
-      - '0'
-      - '--max-instances'
-      - '10'
+      - "run"
+      - "deploy"
+      - "${_SERVICE_NAME}"
+      - "--image"
+      - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:${_IMAGE_TAG}"
+      - "--region"
+      - "${_REGION}"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+      - "--port"
+      - "8080"
+      - "--memory"
+      - "512Mi"
+      - "--cpu"
+      - "1"
+      - "--min-instances"
+      - "0"
+      - "--max-instances"
+      - "10"
+      - "--labels"
+      - "managed-by=cloud-build,commit-sha=${_IMAGE_TAG}"
 
 images:
-  - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:${_IMAGE_TAG}'
-  - 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/sugukurucorpsite/website:latest'
+  - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:${_IMAGE_TAG}"
+  - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/${_IMAGE_NAME}:latest"
 
 substitutions:
-  _IMAGE_TAG: 'latest'
+  _REGION: "asia-northeast1"
+  _SERVICE_NAME: "sugukurucorpsite"
+  _REPOSITORY_NAME: "sugukurucorpsite"
+  _IMAGE_NAME: "website"
+  _IMAGE_TAG: "manual"
 
 options:
   logging: CLOUD_LOGGING_ONLY

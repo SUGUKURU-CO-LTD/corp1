@@ -22,16 +22,18 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=8080
+ENV HOSTNAME="0.0.0.0"
 
 # Create non-root user
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy built application
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+# Install runtime dependencies only
+COPY package*.json ./
+RUN npm install --omit=dev --legacy-peer-deps
 
-# Copy public folder to both root and standalone location
+# Copy Next.js production output and static assets
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
 # Set correct permissions
@@ -41,6 +43,4 @@ USER nextjs
 
 EXPOSE 8080
 
-ENV HOSTNAME="0.0.0.0"
-
-CMD ["node", "server.js"]
+CMD ["npm", "run", "start"]

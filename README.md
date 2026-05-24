@@ -1,8 +1,17 @@
 # corp1 プロジェクト
 
-**スグクル株式会社（sugu-kuru.co.jp）の企業サイト**です。Next.js 16 ベースのコーポレートサイトで、農業派遣・IT事業を中心とした法人向けサービスを紹介しています。
+**スグクル株式会社（sugu-kuru.co.jp）の企業サイト**です。Next.js 16 ベースのコーポレートサイトで、農業派遣・IT事業を中心とした法人向けサービスを紹介しています。  
+このリポジトリでは **GitHub `main` が唯一の正本** で、**本番配信は GCP Cloud Run のみ** を使用します。
 
----
+## Production Of Record
+
+- Source of truth: `main` branch
+- Production domain: `https://sugu-kuru.co.jp`
+- Production domain (www): `https://www.sugu-kuru.co.jp`
+- Runtime platform: Cloud Run (service: `sugukurucorpsite`)
+- Region: `asia-northeast1`
+- Artifact Registry repository: `sugukurucorpsite`
+- Container image: `website`
 
 ## 技術スタック
 
@@ -14,8 +23,6 @@
 | UIコンポーネント | Radix UI（アコーディオン、ダイアログ、ドロップダウンなど）|
 | 国際化 | next-intl（日本語・インドネシア語・英語）|
 | フォント | Noto Sans JP, Shippori Mincho, Inter, JetBrains Mono |
-
----
 
 ## プロジェクト構成
 
@@ -36,8 +43,6 @@
 5. **WhyUsSection** - 選ばれる理由
 6. **CTASection** - お問い合わせ案内
 
----
-
 ## 主要コンポーネントの解説
 
 ### Header（ヘッダー）
@@ -48,23 +53,16 @@
 
 ### HeroSection（ヒーロー）
 - **フルスクリーンヒーロー**
-- **背景**: オーロラ風グラデーションとノイズオーバーレイ
+- **背景**: オーロラ風グラデーションと実写真
 - **メッセージ**: 3パターンがあり、表示時にランダム選択
-  - 「スグクル」と、約束した。
-  - 人手不足という社会課題。私たちは、それを終わらせに来た。
-  - 日本の農業が止まる前に。私たちは、動き始めた。
 - **アニメーション**: パララックス、スクロールプログレスバー、キネティックタイポグラフィ
 - **許可証**: 労働者派遣事業許可、有料職業紹介事業許可、特定技能派遣認定を表示
-
----
 
 ## 国際化（i18n）
 
 - **対応言語**: 日本語（ja）・インドネシア語（id）・英語（en）
 - **デフォルト**: 日本語
 - **ルーティング**: `next-intl` で `ja` / `id` / `en` の切り替えを管理
-
----
 
 ## ページ一覧
 
@@ -85,42 +83,61 @@
 | `/legal` | 利用規約 |
 | `/privacy` | プライバシーポリシー |
 
----
-
-## Next.js 設定 (`next.config.ts`)
-
-- **React Compiler**: 有効
-- **output**: `standalone`（Docker デプロイ向け）
-- **next-intl**: 国際化プラグインを適用
-- **セキュリティヘッダー**: HSTS, X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy を設定
-
----
-
 ## 開発の始め方
 
-開発サーバーを起動するには、以下のいずれかのコマンドを実行してください。
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-ブラウザで [http://localhost:3000](http://localhost:3000) を開いて確認できます。
+Open `http://localhost:3000`.
 
-ページの編集は `src/app/page.tsx` から行えます。編集すると自動で反映されます。
+## Deployment
 
----
+### 1) One-time trigger setup (GitHub main -> Cloud Run)
 
-## デプロイ
+```bash
+./scripts/setup_production_trigger.sh
+```
 
-- `Dockerfile` と `cloudbuild.yaml` により、**Google Cloud Build** を利用したデプロイ環境が整っています。
+This creates/updates a Cloud Build trigger with:
 
----
+- repo: `SUGUKURU-CO-LTD/corp1`
+- branch pattern: `^main$`
+- build config: `cloudbuild.yaml`
+- substitutions:
+  - `_REGION=asia-northeast1`
+  - `_SERVICE_NAME=sugukurucorpsite`
+  - `_REPOSITORY_NAME=sugukurucorpsite`
+  - `_IMAGE_NAME=website`
+  - `_IMAGE_TAG=$COMMIT_SHA`
+
+### 2) Manual production deploy
+
+```bash
+./deploy.sh
+```
+
+`deploy.sh` computes an immutable image tag from the current git commit SHA and executes the Cloud Build pipeline in `cloudbuild.yaml`.
+
+## Security Baseline
+
+- Do not store API keys/tokens/passwords in Cloud Build trigger substitutions.
+- Use Secret Manager for secrets that are actually required by runtime.
+- Facebook feed integration uses server-side env vars:
+  - `FACEBOOK_PAGE_ID` (default: `61558366208114`)
+  - `FACEBOOK_PAGE_ACCESS_TOKEN` (required for live feed)
+- Audit trigger substitutions:
+
+```bash
+./scripts/audit_build_triggers.sh
+```
+
+## Operations Handover
+
+Production runbook is maintained here:
+
+- `docs/PRODUCTION_HANDOVER.md`
 
 ## 参考リンク
 

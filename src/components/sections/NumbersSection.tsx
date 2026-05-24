@@ -57,9 +57,9 @@ function Counter({ end, duration = 2, color }: { end: number; duration?: number;
 }
 
 const stats = [
-    { value: 60, suffix: "名", label: "派遣スタッフ", description: "インドネシア・フィリピン出身", color: "#1B5E38", delay: 0 },
+    { value: 120, suffix: "名", label: "派遣スタッフ", description: "インドネシア・フィリピン出身", color: "#1B5E38", delay: 0 },
     { value: 5, suffix: "拠点", label: "全国展開", description: "鹿児島から青森まで", color: "#D4A853", delay: 0.1 },
-    { value: 20, suffix: "+", label: "取引先農家", description: "全国の主要農場と提携", color: "#0D9488", delay: 0.2 },
+    { value: 40, suffix: "+", label: "取引先農家", description: "全国の主要農場と提携", color: "#0D9488", delay: 0.2 },
     { value: 2, suffix: "週間", label: "最短派遣", description: "スピード感のある対応", color: "#7C3AED", delay: 0.3 },
 ];
 
