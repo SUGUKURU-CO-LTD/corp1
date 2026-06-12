@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
 
 // Animated counter with glow
 function Counter({ end, duration = 2, color }: { end: number; duration?: number; color: string }) {
@@ -56,32 +57,36 @@ function Counter({ end, duration = 2, color }: { end: number; duration?: number;
     );
 }
 
+// 誇張しないため、会社概要と整合する検証可能な数値のみ掲載する。
+// Show only verifiable figures consistent with the company profile (no exaggeration).
+// Tampilkan hanya angka yang dapat diverifikasi sesuai profil perusahaan (tanpa berlebihan).
+// TODO(要確認): 従業員数など最新の確定値が出たら更新する。
 const stats = [
-    { value: 120, suffix: "名", label: "派遣スタッフ", description: "インドネシア・フィリピン出身", color: "#1B5E38", delay: 0 },
-    { value: 5, suffix: "拠点", label: "全国展開", description: "鹿児島から青森まで", color: "#D4A853", delay: 0.1 },
-    { value: 40, suffix: "+", label: "取引先農家", description: "全国の主要農場と提携", color: "#0D9488", delay: 0.2 },
-    { value: 2, suffix: "週間", label: "最短派遣", description: "スピード感のある対応", color: "#7C3AED", delay: 0.3 },
+    { value: 120, suffix: "名", label: "従業員数", description: "派遣スタッフを含む（2025年時点）", color: "#1B5E38", delay: 0 },
+    { value: 5, suffix: "エリア", label: "稼働地域", description: "鹿児島・福島・愛知・愛媛・青森", color: "#D4A853", delay: 0.1 },
+    { value: 2, suffix: "拠点", label: "事業所", description: "本社（霧島）・名古屋支所", color: "#0D9488", delay: 0.2 },
+    { value: 2, suffix: "週間", label: "最短就業開始", description: "条件により異なります", color: "#7C3AED", delay: 0.3 },
 ];
 
-// Animated region badge
-const RegionBadge = ({ region, crops, color, delay }: { region: string; crops: string; color: string; delay: number }) => {
+// 稼働エリアのカード（収穫リレー）。地域・作目・繁忙期を見やすく示す。
+// Region card (harvest relay): region, crops, peak season — easy to scan.
+// Kartu wilayah (estafet panen): wilayah, tanaman, musim sibuk.
+const RegionBadge = ({ region, crops, season, color, delay }: { region: string; crops: string; season: string; color: string; delay: number }) => {
     return (
-        <motion.span
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            whileHover={{ scale: 1.05, y: -3 }}
+        <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay }}
-            className="inline-flex items-center gap-2 px-5 py-2 bg-[#1B5E38]/10 border border-[#1B5E38]/30 rounded-full text-[#D4A853] text-sm font-medium cursor-default"
+            transition={{ duration: 0.45, delay }}
+            className="flex items-start gap-3 px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-left"
         >
-            <motion.span
-                animate={{ x: [0, 3, 0] }}
-                transition={{ repeat: Infinity, duration: 2, delay: delay * 0.5 }}
-            >
-                📍
-            </motion.span>
-            {region}（{crops}）
-        </motion.span>
+            <span className="mt-0.5 h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+            <div>
+                <p className="text-white font-bold text-sm">{region}</p>
+                <p className="text-white/70 text-xs mt-0.5">{crops}</p>
+                <p className="text-[#E8C77A] text-xs mt-1">繁忙期: {season}</p>
+            </div>
+        </motion.div>
     );
 };
 
@@ -139,7 +144,7 @@ export default function NumbersSection() {
                     >
                         Results
                     </motion.span>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +152,7 @@ export default function NumbersSection() {
                             transition={{ delay: 0.2 }}
                             className="block"
                         >
-                            実績で証明する信頼
+                            数字で見るスグクル
                         </motion.span>
                     </h2>
                     <motion.div
@@ -228,28 +233,36 @@ export default function NumbersSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.5 }}
-                    className="mt-20 text-center"
+                    className="mt-20"
                 >
-                    <div className="inline-flex flex-wrap justify-center gap-3">
+                    <h3 className="text-center text-xl font-bold text-white mb-2">
+                        全国の収穫リレー（稼働エリア）
+                    </h3>
+                    <p className="text-center text-gray-400 text-sm mb-8">
+                        地域ごとの繁忙期に合わせて人材を配置し、年間を通じた安定就業につなげます。
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
                         {[
-                            { region: "鹿児島", crops: "サツマイモ・お茶", color: "#1B5E38" },
-                            { region: "福島", crops: "野菜", color: "#D4A853" },
-                            { region: "愛知", crops: "野菜", color: "#0D9488" },
-                            { region: "愛媛", crops: "柑橘", color: "#7C3AED" },
-                            { region: "青森", crops: "りんご", color: "#E91E63" },
+                            { region: "鹿児島", crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月", color: "#1B5E38" },
+                            { region: "福島", crops: "野菜", season: "夏〜秋", color: "#D4A853" },
+                            { region: "愛知", crops: "野菜", season: "通年", color: "#0D9488" },
+                            { region: "愛媛", crops: "柑橘", season: "11〜2月", color: "#7C3AED" },
+                            { region: "青森", crops: "りんご", season: "9〜11月", color: "#E91E63" },
                         ].map((item, i) => (
-                            <RegionBadge key={item.region} {...item} delay={0.7 + i * 0.1} />
+                            <RegionBadge key={item.region} {...item} delay={0.1 + i * 0.08} />
                         ))}
                     </div>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 1 }}
-                        className="text-gray-500 text-sm mt-6"
-                    >
-                        全国「収穫リレー」で年間安定雇用を実現
-                    </motion.p>
+                    <p className="text-center text-gray-500 text-xs mt-8">
+                        ※ 数値は2025年時点の自社実績に基づきます。許認可情報は
+                        <a href="/about" className="underline hover:text-gray-300">会社概要</a>
+                        {IS_MARGIN_RATE_PUBLISHED && (
+                            <>
+                                ・
+                                <a href="/margin-rate" className="underline hover:text-gray-300">マージン率等の情報公開</a>
+                            </>
+                        )}
+                        をご確認ください。
+                    </p>
                 </motion.div>
             </div>
         </section>

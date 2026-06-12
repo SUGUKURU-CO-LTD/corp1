@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { IS_MARGIN_RATE_PUBLISHED } from '@/lib/feature-flags';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://sugu-kuru.co.jp';
@@ -72,12 +73,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly' as const,
             priority: 0.6,
         },
-        {
-            url: `${baseUrl}/compliance`,
-            lastModified: currentDate,
-            changeFrequency: 'yearly' as const,
-            priority: 0.5,
-        },
+        ...(IS_MARGIN_RATE_PUBLISHED
+            ? [{
+                url: `${baseUrl}/margin-rate`,
+                lastModified: currentDate,
+                changeFrequency: 'yearly' as const,
+                priority: 0.5,
+            }]
+            : []),
         {
             url: `${baseUrl}/contact`,
             lastModified: currentDate,

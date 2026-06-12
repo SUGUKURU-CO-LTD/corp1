@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import MissionSection from "@/components/sections/MissionSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import NumbersSection from "@/components/sections/NumbersSection";
+import HomeInfoSection from "@/components/sections/HomeInfoSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import CTASection from "@/components/sections/CTASection";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <MissionSection />
       <ServicesSection />
       <NumbersSection />
+      <HomeInfoSection />
       <WhyUsSection />
       <CTASection />
     </>

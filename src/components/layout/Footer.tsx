@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
 
 const footerLinks = {
     services: [
@@ -7,18 +8,19 @@ const footerLinks = {
         { name: "農作業受託", href: "/services/contracting" },
         { name: "有料職業紹介", href: "/services/placement" },
         { name: "IT事業", href: "/services/it" },
-        { name: "スグスタ", href: "https://sugu-study.com", external: true },
+        { name: "料金について", href: "/pricing" },
     ],
     company: [
         { name: "会社概要", href: "/about" },
-        { name: "経営方針", href: "/about#policy" },
-        { name: "拠点・アクセス", href: "/about#offices" },
+        { name: "制度ガイド・必要書類", href: "/guide" },
+        { name: "よくある質問", href: "/faq" },
         { name: "採用情報", href: "/careers" },
         { name: "お知らせ", href: "/journal" },
     ],
     legal: [
-        { name: "マージン率公開", href: "/compliance" },
-        { name: "派遣法に基づく情報", href: "/compliance#dispatch-law" },
+        ...(IS_MARGIN_RATE_PUBLISHED
+            ? [{ name: "マージン率等の情報公開", href: "/margin-rate" }]
+            : []),
         { name: "返戻金制度", href: "/refund-policy" },
         { name: "プライバシーポリシー", href: "/privacy" },
         { name: "KIRIM Privacy Policy", href: "/kirim-privacy" },
@@ -84,23 +86,12 @@ export default function Footer() {
                         <ul className="space-y-3">
                             {footerLinks.services.map((link) => (
                                 <li key={link.name}>
-                                    {link.external ? (
-                                        <a
-                                            href={link.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-400 text-sm hover:text-white transition-colors"
-                                        >
-                                            {link.name}
-                                        </a>
-                                    ) : (
-                                        <Link
-                                            href={link.href}
-                                            className="text-gray-400 text-sm hover:text-white transition-colors"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    )}
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-400 text-sm hover:text-white transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -161,10 +152,10 @@ export default function Footer() {
                 <div className="mt-12 pt-8 border-t border-gray-800">
                     <div className="flex flex-wrap gap-4">
                         <div className="license-badge">
-                            労働者派遣事業許可: 派46-300156
+                            労働者派遣事業許可: 派46-300262
                         </div>
                         <div className="license-badge">
-                            有料職業紹介事業許可: 46-ユ-300117
+                            有料職業紹介事業許可: 46-ユ-300203
                         </div>
                     </div>
                 </div>

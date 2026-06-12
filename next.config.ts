@@ -22,6 +22,15 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/compliance',
+        destination: '/margin-rate',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

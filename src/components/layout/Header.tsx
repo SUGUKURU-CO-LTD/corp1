@@ -4,8 +4,17 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
 
-const navigation = [
+type NavChild = { name: string; href: string };
+type NavItem = {
+    name: string;
+    href: string;
+    external?: boolean;
+    children?: NavChild[];
+};
+
+const navigation: NavItem[] = [
     { name: "ホーム", href: "/" },
     {
         name: "サービス",
@@ -17,10 +26,20 @@ const navigation = [
             { name: "IT事業", href: "/services/it" },
         ],
     },
-    { name: "スグスタ", href: "https://sugu-study.com", external: true },
-    { name: "会社概要", href: "/about" },
+    { name: "料金", href: "/pricing" },
+    {
+        name: "ご利用案内",
+        href: "/guide",
+        children: [
+            { name: "制度ガイド・必要書類", href: "/guide" },
+            { name: "よくある質問", href: "/faq" },
+            ...(IS_MARGIN_RATE_PUBLISHED
+                ? [{ name: "マージン率等の情報公開", href: "/margin-rate" }]
+                : []),
+        ],
+    },
     { name: "導入事例", href: "/cases" },
-    { name: "お知らせ", href: "/journal" },
+    { name: "会社概要", href: "/about" },
     { name: "採用情報", href: "/careers" },
 ];
 

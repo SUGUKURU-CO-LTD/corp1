@@ -29,8 +29,8 @@ const companyInfo = {
 };
 
 const licenses = [
-    { name: "労働者派遣事業許可", number: "派46-300156", color: "#1B5E38" },
-    { name: "有料職業紹介事業許可", number: "46-ユ-300117", color: "#D4A853" },
+    { name: "労働者派遣事業許可", number: "派46-300262", color: "#1B5E38" },
+    { name: "有料職業紹介事業許可", number: "46-ユ-300203", color: "#D4A853" },
     { name: "特定技能派遣認定", number: "入国管理局認定済", color: "#7C3AED" },
 ];
 

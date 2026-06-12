@@ -121,11 +121,11 @@ export const pageMetadata = {
         keywords: 'ジャーナル, ブログ, ニュース, 農業情報',
         path: '/journal',
     }),
-    compliance: generatePageMetadata({
-        title: 'コンプライアンス',
-        description: 'スグクル株式会社のコンプライアンス方針。法令遵守と倫理的な事業運営に取り組んでいます。',
-        keywords: 'コンプライアンス, 法令遵守, 企業倫理',
-        path: '/compliance',
+    marginRate: generatePageMetadata({
+        title: 'マージン率等の情報公開',
+        description: '労働者派遣法第23条第5項に基づくマージン率等の情報公開。スグクル株式会社。',
+        keywords: 'マージン率, 労働者派遣法, 情報公開, スグクル',
+        path: '/margin-rate',
     }),
     contact: generatePageMetadata({
         title: 'お問い合わせ',
