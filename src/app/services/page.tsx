@@ -388,7 +388,7 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
                         {[
-                            { number: "111", label: "稼働スタッフ数", icon: "👥", color: "#1B5E38" },
+                            { number: "120", label: "稼働スタッフ数", icon: "👥", color: "#1B5E38" },
                             { number: "60+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
                             { number: "5", label: "稼働エリア", icon: "📍", color: "#7C3AED" },
                         ].map((stat, i) => (

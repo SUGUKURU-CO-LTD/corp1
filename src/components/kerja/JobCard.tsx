@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { MapPin, Sparkles } from "lucide-react";
 import { JAPANESE_LEVEL_LABELS, SOURCE_LABELS, VISA_TAG_LABELS } from "@/lib/kerja/labels";
-import { occupationPhoto } from "@/lib/kerja/occupation-photos";
+import { jobPhoto } from "@/lib/kerja/job-photos";
 import { prefectureRomaji } from "@/lib/kerja/prefectures";
 import type { KerjaJob } from "@/lib/kerja/types";
 
@@ -28,7 +28,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
     >
       <div className="relative aspect-[4/3] w-full flex-shrink-0 bg-gray-100">
         <Image
-          src={occupationPhoto(job.occupationJa)}
+          src={jobPhoto(job.id)}
           alt={job.occupationId}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

@@ -10,7 +10,7 @@ const companyInfo = {
     nameEn: "SUGUKURU., CO., LTD",
     established: "2023年12月",
     capital: "2,000万円",
-    employees: "稼働スタッフ111名（労働者派遣・農作業受託を含む・2026年8月1日現在）",
+    employees: "120名（労働者派遣・農作業受託・請負受託を含む・2026年8月1日現在）",
     business: [
         "特定技能 農業・畜産派遣事業",
         "農作業受託事業",
@@ -464,9 +464,13 @@ export default function AboutPage() {
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">所在地</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.address}</td>
                                         </tr>
-                                        <tr>
+                                        <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">電話番号</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.phone}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">稼働スタッフ</td>
+                                            <td className="px-4 py-4 text-gray-700">{companyInfo.employees}</td>
                                         </tr>
                                     </tbody>
                                 </table>

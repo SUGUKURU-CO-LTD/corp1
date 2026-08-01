@@ -6,7 +6,7 @@ import { Mail, MapPin, Phone, X } from "lucide-react";
 import { useEffect } from "react";
 import { recruitmentChannels } from "@/lib/recruitment-channels";
 import { JAPANESE_LEVEL_LABELS, SOURCE_LABELS, VISA_TAG_LABELS } from "@/lib/kerja/labels";
-import { occupationPhoto } from "@/lib/kerja/occupation-photos";
+import { jobPhoto } from "@/lib/kerja/job-photos";
 import { prefectureRomaji } from "@/lib/kerja/prefectures";
 import type { KerjaJob } from "@/lib/kerja/types";
 
@@ -60,7 +60,7 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
           >
             <div className="relative aspect-[16/9] w-full flex-shrink-0 bg-gray-100">
               <Image
-                src={occupationPhoto(job.occupationJa)}
+                src={jobPhoto(job.id)}
                 alt={job.occupationId}
                 fill
                 sizes="(min-width: 768px) 512px, 100vw"
