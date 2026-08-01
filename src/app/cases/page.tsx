@@ -14,10 +14,13 @@ import {
     Leaf,
 } from "lucide-react";
 
+// 取引先の実名は開示しない。地域・業種のみを記載し「〜様」として匿名化する。
+// Client company names are not disclosed. Only region and industry are shown, anonymized as "〜様".
+// Nama perusahaan klien tidak diungkapkan. Hanya wilayah dan jenis usaha yang dicantumkan, dianonimkan sebagai "〜様".
 const caseStudies = [
     {
         id: 1,
-        company: "霧島中央製茶",
+        company: "霧島市 お茶生産法人様",
         industry: "茶業（製茶・茶園管理）",
         location: "鹿児島県霧島市",
         staffCount: 10,
@@ -26,7 +29,7 @@ const caseStudies = [
             "繁忙期の茶摘みシーズンに人手が大幅に不足。地元の雇用だけでは対応しきれず、収穫期の品質維持が課題でした。",
         solution:
             "インドネシアからの特定技能人材10名を派遣。茶摘みから製茶工程まで、一貫したサポート体制を構築しました。",
-        result: "収穫効率が前年比30%向上。安定した人材確保により、品質の高い茶葉の生産が可能になりました。",
+        result: "繁忙期も安定した人材確保ができるようになり、品質を保った茶葉の生産を続けています。",
         testimonial:
             "スグクルさんのおかげで、繁忙期も安心して乗り越えられるようになりました。スタッフの皆さんは真面目で、技術の習得も早いです。",
         testimonialAuthor: "代表取締役",
@@ -34,7 +37,7 @@ const caseStudies = [
     },
     {
         id: 2,
-        company: "ヘンタ製茶",
+        company: "鹿児島県 有機茶生産法人様",
         industry: "茶業（有機茶栽培）",
         location: "鹿児島県",
         staffCount: 8,
@@ -43,7 +46,7 @@ const caseStudies = [
             "有機茶栽培は機械化が難しく、手作業が中心。熟練した労働力の確保が長年の課題でした。",
         solution:
             "農業経験のあるインドネシア人材8名を派遣。有機栽培の特性を理解した丁寧な指導で、即戦力として活躍。",
-        result: "品質を維持しながら生産性が25%向上。有機認証の厳しい基準もクリアし続けています。",
+        result: "品質を維持しながら、有機認証の基準をクリアし続けています。",
         testimonial:
             "有機栽培は手間がかかりますが、派遣スタッフの皆さんは細かい作業も丁寧にこなしてくれます。言葉の壁もスグクルさんが通訳してくれるので安心です。",
         testimonialAuthor: "農場長",
@@ -51,7 +54,7 @@ const caseStudies = [
     },
     {
         id: 3,
-        company: "JA物流かごしま",
+        company: "鹿児島県 農業物流法人様",
         industry: "農業物流（集出荷・配送）",
         location: "鹿児島県",
         staffCount: null,
@@ -181,7 +184,7 @@ export default function CasesPage() {
                                 <div className="relative h-64 md:h-80 overflow-hidden">
                                     <img
                                         src={caseStudy.image}
-                                        alt={`${caseStudy.company}の現場写真`}
+                                        alt={`${caseStudy.industry}のイメージ写真`}
                                         className="w-full h-full object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
