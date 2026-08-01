@@ -124,6 +124,15 @@ export default function Header() {
                             </div>
                         ))}
 
+                        {/* Bahasa Indonesia → インドネシア人向け求人 /kerja */}
+                        <Link
+                            href="/kerja"
+                            className="text-sm font-semibold px-3 py-1.5 rounded-full border border-[#1B5E38]/30 text-[#1B5E38] hover:bg-[#1B5E38] hover:text-white transition-colors"
+                            lang="id"
+                        >
+                            Bahasa Indonesia
+                        </Link>
+
                         {/* CTA Button */}
                         <Link
                             href="/contact"
@@ -182,7 +191,15 @@ export default function Header() {
                                         )}
                                     </div>
                                 ))}
-                                <div className="px-6 pt-4">
+                                <div className="px-6 pt-4 space-y-3">
+                                    <Link
+                                        href="/kerja"
+                                        className="block w-full text-center text-sm font-semibold px-3 py-2.5 rounded-full border border-[#1B5E38]/30 text-[#1B5E38]"
+                                        lang="id"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Bahasa Indonesia
+                                    </Link>
                                     <Link
                                         href="/contact"
                                         className="btn btn-primary w-full text-center"

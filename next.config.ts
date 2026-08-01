@@ -29,6 +29,14 @@ const nextConfig: NextConfig = {
         destination: '/margin-rate',
         permanent: true,
       },
+      {
+        // スグスタサービス終了に伴う恒久リダイレクト
+        // Permanent redirect after SUGUSTA service retirement
+        // Pengalihan permanen setelah layanan SUGUSTA dihentikan
+        source: '/sugusta',
+        destination: '/services',
+        permanent: true,
+      },
     ];
   },
   async headers() {

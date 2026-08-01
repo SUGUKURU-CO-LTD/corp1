@@ -36,3 +36,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cookbook-scout local candidates
+.cookbook-candidates/
+
+# ローカル確認用スクリーンショット
+.screenshots/

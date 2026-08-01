@@ -10,12 +10,12 @@ const companyInfo = {
     nameEn: "SUGUKURU., CO., LTD",
     established: "2023年12月",
     capital: "2,000万円",
-    employees: "60名（派遣社員含む）",
+    employees: "稼働スタッフ111名（労働者派遣・農作業受託を含む・2026年8月1日現在）",
     business: [
         "特定技能 農業・畜産派遣事業",
         "農作業受託事業",
-        "有料職業紹介事業（紹介予定派遣）",
-        "IT事業（システム開発・コンサルティング、オンライン学習コースの運営、MCPサーバーベースのシステム開発、A2Aを用いたエージェント駆動システムの開発）",
+        "有料職業紹介事業",
+        "IT事業（システム開発・コンサルティング、MCPサーバーベースのシステム開発）",
     ],
     address: "〒899-4332 鹿児島県霧島市国分中央3丁目42-8 翔陽A103",
     phone: "0995-73-9939",
@@ -31,12 +31,12 @@ const companyInfo = {
 const licenses = [
     { name: "労働者派遣事業許可", number: "派46-300262", color: "#1B5E38" },
     { name: "有料職業紹介事業許可", number: "46-ユ-300203", color: "#D4A853" },
-    { name: "特定技能派遣認定", number: "入国管理局認定済", color: "#7C3AED" },
 ];
 
 const offices = [
     { name: "本社", location: "鹿児島県霧島市国分中央3丁目42-8", isHQ: true },
     { name: "名古屋支所", location: "愛知県名古屋市名東区牧の原2-901", isHQ: false },
+    { name: "ロンボク拠点", location: "インドネシア・ロンボク島", isHQ: false },
 ];
 
 const timeline = [
@@ -45,9 +45,12 @@ const timeline = [
     { year: "2024年4月", event: "労働者派遣事業許可 取得" },
     { year: "2024年6月", event: "有料職業紹介事業許可 取得" },
     { year: "2024年8月", event: "IT事業部 設立" },
-    { year: "2024年10月", event: "福島・愛知・愛媛・青森に拠点展開" },
+    { year: "2024年10月", event: "福島・愛知・愛媛・青森など全国の就業エリアへ展開" },
     { year: "2025年1月", event: "スグスタ（学習支援プラットフォーム）リリース" },
     { year: "2025年7月", event: "名古屋支所 開設" },
+    { year: "2025年9月", event: "JA物流かごしま 派遣開始" },
+    { year: "2026年6月", event: "第4期事業年度 開始（派遣・農作業受託・ロンボク送り出しを主軸に）" },
+    { year: "2026年8月", event: "ロンボク拠点（PT MIRAI JAPAN）設立" },
 ];
 
 const values = [
@@ -546,7 +549,7 @@ export default function AboutPage() {
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
                     </motion.div>
 
-                    <div className="max-w-3xl mx-auto grid md:grid-cols-3 gap-6">
+                    <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-6">
                         {licenses.map((license, index) => (
                             <LicenseBadge key={license.name} license={license} index={index} />
                         ))}

@@ -2,7 +2,6 @@
   "nav": {
     "home": "Home",
     "services": "Services",
-    "sugusta": "Sugu-Study",
     "about": "About Us",
     "cases": "Case Studies",
     "news": "News",
@@ -44,12 +43,7 @@
     "placementTitle": "Fee-charging Job Placement",
     "placementDesc": "Not dispatch, but welcoming as colleagues. Careful matching towards direct employment.",
     "itTitle": "IT Services",
-    "itDesc": "Digital for agriculture too. Web system and app development to evolve the field.",
-    "sugustaTitle": "Sugu-Study",
-    "sugustaSubtitle": "Social Infrastructure for Foreigners",
-    "sugustaBadge": "Completely Free",
-    "sugustaDesc": "A place to learn for those who want to learn. Illuminating the path to Specified Skills level 2 completely free—social infrastructure for foreign workers.",
-    "sugustaLink": "To External Site"
+    "itDesc": "Digital for agriculture too. Web system and app development to evolve the field."
   },
   "numbers": {
     "badge": "Results",

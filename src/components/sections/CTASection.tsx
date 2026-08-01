@@ -132,7 +132,7 @@ export default function CTASection() {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed"
                         >
-                            最短2週間。話を聞くだけでも、きっと何かが変わります。
+                            人手不足のご相談から、お気軽にどうぞ。まずはお話をお聞かせください。
                         </motion.p>
 
                         {/* Buttons */}

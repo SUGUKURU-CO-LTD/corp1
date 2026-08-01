@@ -170,7 +170,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 .section {
-  padding: var(--space-20) var(--space-6);
+  /* セクション間にゆとりを持たせ、内容を見やすくする */
+  /* More breathing room between sections for readability */
+  /* Lebih banyak ruang antar bagian agar mudah dibaca */
+  padding: clamp(80px, 9vw, 128px) var(--space-6);
 }
 
 .container {

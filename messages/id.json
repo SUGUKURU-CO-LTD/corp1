@@ -2,7 +2,6 @@
   "nav": {
     "home": "Beranda",
     "services": "Layanan",
-    "sugusta": "Sugu-Study",
     "about": "Tentang Kami",
     "cases": "Studi Kasus",
     "news": "Berita",
@@ -44,12 +43,7 @@
     "placementTitle": "Penempatan Kerja Berbayar",
     "placementDesc": "Bukan dispatch, tetapi menyambut sebagai rekan. Pencocokan yang cermat menuju pekerjaan langsung.",
     "itTitle": "Layanan IT",
-    "itDesc": "Digital untuk pertanian juga. Pengembangan sistem web dan aplikasi untuk mengembangkan lapangan.",
-    "sugustaTitle": "Sugu-Study",
-    "sugustaSubtitle": "Infrastruktur Sosial untuk Orang Asing",
-    "sugustaBadge": "Sepenuhnya Gratis",
-    "sugustaDesc": "Tempat belajar bagi mereka yang ingin belajar. Menerangi jalan menuju Keterampilan Khusus tingkat 2 secara gratis—infrastruktur sosial untuk tenaga kerja asing.",
-    "sugustaLink": "Ke Situs Eksternal"
+    "itDesc": "Digital untuk pertanian juga. Pengembangan sistem web dan aplikasi untuk mengembangkan lapangan."
   },
   "numbers": {
     "badge": "Hasil",

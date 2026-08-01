@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { Tractor, Wrench, Users, Code, GraduationCap, ArrowUpRight } from "lucide-react";
+import { Tractor, Wrench, Users, Code, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 
 // Holographic card effect
@@ -117,16 +117,6 @@ const services = [
     },
 ];
 
-const sugusta = {
-    name: "スグスタ",
-    description: "学びたい人に、学びの場を。特定技能2号への道を、完全無償で照らす——外国人材のための社会インフラ。",
-    icon: GraduationCap,
-    href: "https://sugu-study.com",
-    color: "#FFB7C5",
-    isExternal: true,
-    delay: 0.4,
-};
-
 export default function ServicesSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -162,7 +152,7 @@ export default function ServicesSection() {
                     >
                         Our Services
                     </motion.span>
-                    <h2 className="text-4xl md:text-6xl font-bold text-[#1A1A1A]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -183,7 +173,7 @@ export default function ServicesSection() {
                 </motion.div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {services.map((service) => (
                         <HolographicCard key={service.id} service={service}>
                             <Link href={service.href} className="block h-full">
@@ -210,67 +200,6 @@ export default function ServicesSection() {
                     ))}
                 </div>
 
-                {/* Sugusta Banner */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.98 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    whileHover={{ scale: 1.01 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: sugusta.delay }}
-                >
-                    <a href={sugusta.href} target="_blank" rel="noopener noreferrer" className="block">
-                        <motion.div
-                            className="relative p-8 rounded-2xl overflow-hidden"
-                            style={{
-                                background: `linear-gradient(135deg, ${sugusta.color}20 0%, ${sugusta.color}40 100%)`,
-                                border: `1px solid ${sugusta.color}30`,
-                            }}
-                        >
-                            {/* Animated shimmer */}
-                            <motion.div
-                                initial={{ x: "-100%" }}
-                                whileHover={{ x: "100%" }}
-                                transition={{ duration: 1 }}
-                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none skew-x-12"
-                            />
-
-                            <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
-                                <motion.div
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
-                                    transition={{ type: "spring", stiffness: 400 }}
-                                    className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center"
-                                >
-                                    <sugusta.icon className="w-8 h-8" style={{ color: "#E91E63" }} />
-                                </motion.div>
-                                <div className="flex-1 text-center md:text-left">
-                                    <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start mb-2">
-                                        <h3 className="text-2xl font-bold text-[#1A1A1A]">{sugusta.name}</h3>
-                                        <motion.span
-                                            whileHover={{ scale: 1.05 }}
-                                            className="px-3 py-1 bg-[#E91E63] text-white text-xs font-bold rounded-full shadow-md"
-                                        >
-                                            外国人のための社会インフラ
-                                        </motion.span>
-                                        <motion.span
-                                            whileHover={{ scale: 1.05 }}
-                                            className="px-3 py-1 bg-[#1B5E38] text-white text-xs font-bold rounded-full shadow-md"
-                                        >
-                                            完全無償
-                                        </motion.span>
-                                    </div>
-                                    <p className="text-gray-700">{sugusta.description}</p>
-                                </div>
-                                <motion.div
-                                    whileHover={{ x: 8 }}
-                                    className="flex items-center gap-2 text-[#E91E63] font-medium"
-                                >
-                                    外部サイトへ
-                                    <ArrowUpRight className="w-5 h-5" />
-                                </motion.div>
-                            </div>
-                        </motion.div>
-                    </a>
-                </motion.div>
             </div>
         </section>
     );

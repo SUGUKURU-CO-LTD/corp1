@@ -1,0 +1,959 @@
+[
+  {
+    "id": "z-0001",
+    "source": "zcareer",
+    "occupationJa": "機械・機構設計・金型設計",
+    "occupationId": "Desain Mesin/Mekanisme/Cetakan (Mold)",
+    "industryJa": null,
+    "prefectures": [
+      "京都府",
+      "大阪府",
+      "兵庫県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 4500000,
+    "visaTags": [
+      "gijinkoku"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0002",
+    "source": "zcareer",
+    "occupationJa": "Webサービス系エンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Layanan Web",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 2500000,
+    "annualSalaryMax": 7000000,
+    "visaTags": [
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0003",
+    "source": "zcareer",
+    "occupationJa": "回路・システム設計",
+    "occupationId": "Desain Sirkuit/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 8500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "none",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0004",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0005",
+    "source": "zcareer",
+    "occupationJa": "インフラエンジニア",
+    "occupationId": "Insinyur Infrastruktur TI",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0006",
+    "source": "zcareer",
+    "occupationJa": "業務系アプリケーションエンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Aplikasi Bisnis",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0007",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0008",
+    "source": "zcareer",
+    "occupationJa": "業務系アプリケーションエンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Aplikasi Bisnis",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0009",
+    "source": "zcareer",
+    "occupationJa": "インフラエンジニア",
+    "occupationId": "Insinyur Infrastruktur TI",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0010",
+    "source": "zcareer",
+    "occupationJa": "機械・機構設計・金型設計",
+    "occupationId": "Desain Mesin/Mekanisme/Cetakan (Mold)",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4000000,
+    "annualSalaryMax": 7500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "none",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0011",
+    "source": "zcareer",
+    "occupationJa": "回路・システム設計",
+    "occupationId": "Desain Sirkuit/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "山梨県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4000000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0012",
+    "source": "zcareer",
+    "occupationJa": "機械・機構設計・金型設計",
+    "occupationId": "Desain Mesin/Mekanisme/Cetakan (Mold)",
+    "industryJa": null,
+    "prefectures": [
+      "神奈川県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 4000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0013",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 7000000,
+    "annualSalaryMax": 9000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "none",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0014",
+    "source": "zcareer",
+    "occupationJa": "機械・機構設計・金型設計",
+    "occupationId": "Desain Mesin/Mekanisme/Cetakan (Mold)",
+    "industryJa": null,
+    "prefectures": [
+      "山形県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 2500000,
+    "annualSalaryMax": 3500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0015",
+    "source": "zcareer",
+    "occupationJa": "インフラエンジニア",
+    "occupationId": "Insinyur Infrastruktur TI",
+    "industryJa": null,
+    "prefectures": [
+      "東京都",
+      "愛知県",
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 7000000,
+    "visaTags": [
+      "haiguusha"
+    ],
+    "japaneseLevel": "conversational",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0016",
+    "source": "zcareer",
+    "occupationJa": "サービスエンジニア・サポートエンジニア",
+    "occupationId": "Insinyur Layanan/Dukungan Teknis",
+    "industryJa": null,
+    "prefectures": [
+      "山形県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 4500000,
+    "visaTags": [
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0017",
+    "source": "zcareer",
+    "occupationJa": "素材・半導体素材・化成品関連",
+    "occupationId": "Material/Semikonduktor/Bahan Kimia",
+    "industryJa": null,
+    "prefectures": [
+      "山形県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 4500000,
+    "visaTags": [
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0018",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "岩手県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4000000,
+    "annualSalaryMax": 10000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0019",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0020",
+    "source": "zcareer",
+    "occupationJa": "インフラエンジニア",
+    "occupationId": "Insinyur Infrastruktur TI",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 5000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0021",
+    "source": "zcareer",
+    "occupationJa": "総務・事務",
+    "occupationId": "Umum & Administrasi",
+    "industryJa": null,
+    "prefectures": [
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 4500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0022",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "岐阜県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 6000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0023",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "岐阜県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 6000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0024",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4000000,
+    "annualSalaryMax": 5000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0025",
+    "source": "zcareer",
+    "occupationJa": "業務系アプリケーションエンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Aplikasi Bisnis",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 9000000,
+    "annualSalaryMax": 12000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0026",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 10000000,
+    "annualSalaryMax": 12000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0027",
+    "source": "zcareer",
+    "occupationJa": "総務・事務",
+    "occupationId": "Umum & Administrasi",
+    "industryJa": null,
+    "prefectures": [
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 9500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0028",
+    "source": "zcareer",
+    "occupationJa": "業務系アプリケーションエンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Aplikasi Bisnis",
+    "industryJa": null,
+    "prefectures": [
+      "東京都",
+      "愛知県",
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3000000,
+    "annualSalaryMax": 6000000,
+    "visaTags": [
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0029",
+    "source": "zcareer",
+    "occupationJa": "機械・機構設計・金型設計",
+    "occupationId": "Desain Mesin/Mekanisme/Cetakan (Mold)",
+    "industryJa": null,
+    "prefectures": [
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 6500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0030",
+    "source": "zcareer",
+    "occupationJa": "機械・機構設計・金型設計",
+    "occupationId": "Desain Mesin/Mekanisme/Cetakan (Mold)",
+    "industryJa": null,
+    "prefectures": [
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4500000,
+    "annualSalaryMax": 7000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0031",
+    "source": "zcareer",
+    "occupationJa": "回路・システム設計",
+    "occupationId": "Desain Sirkuit/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "大阪府"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4000000,
+    "annualSalaryMax": 5500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0032",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4500000,
+    "annualSalaryMax": 14500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0033",
+    "source": "zcareer",
+    "occupationJa": "制御系ソフトウェア開発（通信・ネットワーク・IoT関連）",
+    "occupationId": "Pengembangan Software Kontrol (Telekomunikasi/Jaringan/IoT)",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4500000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0034",
+    "source": "zcareer",
+    "occupationJa": "業務系アプリケーションエンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Aplikasi Bisnis",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 12000000,
+    "annualSalaryMax": 24000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0035",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "宮崎県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 2500000,
+    "annualSalaryMax": 2500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0036",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "宮崎県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0037",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 10000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0038",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 10000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0039",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 4500000,
+    "annualSalaryMax": 10000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0040",
+    "source": "zcareer",
+    "occupationJa": "業務系アプリケーションエンジニア・プログラマ",
+    "occupationId": "Insinyur/Programmer Aplikasi Bisnis",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": false,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 10000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0041",
+    "source": "zcareer",
+    "occupationJa": "インフラエンジニア",
+    "occupationId": "Insinyur Infrastruktur TI",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 6500000,
+    "annualSalaryMax": 9500000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0042",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 8000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0043",
+    "source": "zcareer",
+    "occupationJa": "IT・システムコンサルタント",
+    "occupationId": "Konsultan TI/Sistem",
+    "industryJa": null,
+    "prefectures": [
+      "東京都"
+    ],
+    "remote": true,
+    "annualSalaryMin": 5000000,
+    "annualSalaryMax": 18000000,
+    "visaTags": [
+      "gijinkoku",
+      "eijuu",
+      "teijuu",
+      "haiguusha"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": false,
+    "reviewedAt": "2026-07-26"
+  },
+  {
+    "id": "z-0044",
+    "source": "zcareer",
+    "occupationJa": "サービスエンジニア・サポートエンジニア",
+    "occupationId": "Insinyur Layanan/Dukungan Teknis",
+    "industryJa": null,
+    "prefectures": [
+      "静岡県"
+    ],
+    "remote": false,
+    "annualSalaryMin": 3500000,
+    "annualSalaryMax": 4000000,
+    "visaTags": [
+      "gijinkoku"
+    ],
+    "japaneseLevel": "business",
+    "inexperiencedOk": true,
+    "reviewedAt": "2026-07-26"
+  }
+]

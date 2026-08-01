@@ -34,13 +34,13 @@ const businessRows: TableRow[] = [
 ];
 
 const marginRows: TableRow[] = [
-    { label: "派遣労働者の数（2026年6月1日現在）", value: "◯◯ 名" },
-    { label: "派遣先の数（実事業所数・年度実績）", value: "◯◯ 件" },
-    { label: "派遣料金の平均額（1日8時間当たり）", value: "◯◯,◯◯◯ 円" },
-    { label: "派遣労働者の賃金の平均額（1日8時間当たり）", value: "◯◯,◯◯◯ 円" },
+    { label: "派遣労働者の数（2026年6月1日現在）", value: "78 名" },
+    { label: "派遣先の数（実事業所数・年度実績）", value: "29 事業所" },
+    { label: "派遣料金の平均額（1日8時間当たり）", value: "12,775 円" },
+    { label: "派遣労働者の賃金の平均額（1日8時間当たり）", value: "8,494 円" },
     {
         label: "マージン率",
-        value: "◯◯.◯ ％",
+        value: "33.5 ％",
         valueClassName: "text-2xl font-bold text-[#1B5E38]",
     },
 ];
@@ -65,8 +65,8 @@ const laborAgreementRows: TableRow[] = [
         label: "労使協定の締結",
         value: "有（労働者派遣法第30条の4第1項に基づく労使協定方式）",
     },
-    { label: "対象となる派遣労働者の範囲", value: "当社が雇用するすべての派遣労働者" },
-    { label: "労使協定の有効期間の終期", value: "◯◯◯◯年◯月◯日" },
+    { label: "対象となる派遣労働者の範囲", value: "当社が雇用するすべての派遣労働者（農業に従事する派遣労働者）" },
+    { label: "労使協定の有効期間の終期", value: "2027年5月31日" },
 ];
 
 const welfareItems = [
@@ -161,17 +161,19 @@ export default function MarginRatePage() {
                     <DisclosureList items={welfareItems} />
 
                     <footer className="mt-12 border-t border-gray-200 pt-5 text-sm leading-7 text-gray-600">
-                        最終更新日：2026年◯月◯日
+                        最終更新日：2026年8月2日
                         <br />
                         本ページに関するお問い合わせ：スグクル株式会社（TEL 0995-73-9939）
                         <br />
                         ※ 本情報は毎事業年度終了後、労働者派遣事業報告書の提出に合わせて更新します。
+                        <br />
+                        ※ 本ページの「派遣労働者の数（78名）」は労働者派遣法に基づく許可事業所の派遣労働者数です。トップページ等の「稼働スタッフ（111名）」は農作業受託を含む総稼働数であり、定義が異なります。
                     </footer>
 
                     {/*
                     【社内メモ・画面非表示】
-                    1. ◯◯の数値ソース：様式第11号の提出値（賃金=MoneyForward／料金=freee／人数・件数=台帳）と一字一句一致させる。公開前に壁の最終確認必須。
-                    2. 数値確定までは noindex ＋ フッターリンク非表示。確定したら両方解除。
+                    1. 数値ソース：Web公開用マージン率等情報提供シート（様式第11号提出値と一致させる）。
+                    2. IS_MARGIN_RATE_PUBLISHED=true で公開中。再非公開にする場合は feature-flags を false に戻す。
                     3. 更新サイクル：毎年7月初（労働者派遣事業報告書の提出に合わせる）。
                     */}
                 </article>

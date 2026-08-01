@@ -93,8 +93,8 @@ export const pageMetadata = {
     }),
     servicesIt: generatePageMetadata({
         title: 'IT事業',
-        description: 'システム開発・コンサルティングを通じて、農業のDX化を推進。SUGUSTA、NENKIN-PASSなど自社プロダクトも展開。',
-        keywords: 'IT事業, システム開発, DX, 農業IT, SUGUSTA, NENKIN-PASS',
+        description: 'システム開発・コンサルティングを通じて、農業のDX化を推進。MCPサーバーベースのシステム開発など自社プロダクトも展開。',
+        keywords: 'IT事業, システム開発, DX, 農業IT, MCP, NENKIN-PASS',
         path: '/services/it',
     }),
     cases: generatePageMetadata({
@@ -103,11 +103,11 @@ export const pageMetadata = {
         keywords: '導入事例, 実績, 成功事例, 農業派遣実績',
         path: '/cases',
     }),
-    sugusta: generatePageMetadata({
-        title: 'SUGUSTA - 学習支援プラットフォーム',
-        description: 'SUGUSTAは外国人材向けの学習支援プラットフォーム。日本語学習から農業技能まで、総合的にサポートします。',
-        keywords: 'SUGUSTA, 学習支援, 日本語学習, 農業技能, eラーニング',
-        path: '/sugusta',
+    kerja: generatePageMetadata({
+        title: 'Lowongan Kerja untuk Orang Indonesia di Jepang',
+        description: 'Papan lowongan kerja kantoran (transfer) di Jepang untuk warga Indonesia yang sudah tinggal di Jepang (Gijinkoku, Eijuu, Teijuu, Haiguusha). Gratis, tanpa biaya dari pelamar.',
+        keywords: 'lowongan kerja, orang Indonesia di Jepang, gijinkoku, eijuu, teijuu, haiguusha, transfer kerja Jepang, Sugukuru',
+        path: '/kerja',
     }),
     careers: generatePageMetadata({
         title: '採用情報',

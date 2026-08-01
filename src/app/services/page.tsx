@@ -367,64 +367,6 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Sugusta Banner */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-[#FFB7C5] via-[#FFD4DC] to-[#FFE4E8]">
-                <motion.div
-                    animate={{
-                        x: [0, 50, 0],
-                        y: [0, -30, 0],
-                    }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-[#E91E63]/10 rounded-full blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        x: [0, -30, 0],
-                        y: [0, 50, 0],
-                    }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -bottom-1/2 -left-1/4 w-[500px] h-[500px] bg-[#7C3AED]/10 rounded-full blur-3xl"
-                />
-
-                <div className="container mx-auto relative z-10 py-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center max-w-2xl mx-auto"
-                    >
-                        <motion.span
-                            initial={{ scale: 0.8 }}
-                            whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
-                            className="inline-block px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full text-[#E91E63] text-sm font-bold mb-6"
-                        >
-                            🌸 完全無償提供中
-                        </motion.span>
-                        <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
-                        >
-                            スグスタ - SUGUSTA
-                        </h2>
-                        <p className="text-gray-700 text-lg mb-8 leading-relaxed">
-                            特定技能2号取得を目指す外国人材のための学習支援プラットフォーム。
-                            外国人移民時代の社会インフラとして、完全無償で提供しています。
-                        </p>
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                            <Link
-                                href="https://sugu-study.com"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#E91E63] text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-shadow"
-                            >
-                                スグスタについて詳しく
-                                <ArrowRight className="w-5 h-5" />
-                            </Link>
-                        </motion.div>
-                    </motion.div>
-                </div>
-            </section>
-
             {/* Service Achievements Section */}
             <section className="section bg-white">
                 <div className="container mx-auto">
@@ -446,9 +388,9 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
                         {[
-                            { number: "120+", label: "派遣スタッフ数", icon: "👥", color: "#1B5E38" },
-                            { number: "40+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
-                            { number: "6", label: "対応地域", icon: "📍", color: "#7C3AED" },
+                            { number: "111", label: "稼働スタッフ数", icon: "👥", color: "#1B5E38" },
+                            { number: "60+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
+                            { number: "5", label: "稼働エリア", icon: "📍", color: "#7C3AED" },
                         ].map((stat, i) => (
                             <motion.div
                                 key={stat.label}

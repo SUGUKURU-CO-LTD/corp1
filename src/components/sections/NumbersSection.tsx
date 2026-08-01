@@ -60,11 +60,11 @@ function Counter({ end, duration = 2, color }: { end: number; duration?: number;
 // 誇張しないため、会社概要と整合する検証可能な数値のみ掲載する。
 // Show only verifiable figures consistent with the company profile (no exaggeration).
 // Tampilkan hanya angka yang dapat diverifikasi sesuai profil perusahaan (tanpa berlebihan).
-// TODO(要確認): 従業員数など最新の確定値が出たら更新する。
+// 111名 = 労働者派遣＋農作業受託の総稼働（2026年8月1日）。法定開示の78名（許可事業所の派遣労働者）とは定義が異なる。
 const stats = [
-    { value: 120, suffix: "名", label: "従業員数", description: "派遣スタッフを含む（2025年時点）", color: "#1B5E38", delay: 0 },
+    { value: 111, suffix: "名", label: "稼働スタッフ", description: "労働者派遣・農作業受託を含む（2026年8月1日現在）", color: "#1B5E38", delay: 0 },
     { value: 5, suffix: "エリア", label: "稼働地域", description: "鹿児島・福島・愛知・愛媛・青森", color: "#D4A853", delay: 0.1 },
-    { value: 2, suffix: "拠点", label: "事業所", description: "本社（霧島）・名古屋支所", color: "#0D9488", delay: 0.2 },
+    { value: 3, suffix: "拠点", label: "事業所", description: "本社（霧島）・名古屋支所・ロンボク", color: "#0D9488", delay: 0.2 },
     { value: 2, suffix: "週間", label: "最短就業開始", description: "条件により異なります", color: "#7C3AED", delay: 0.3 },
 ];
 
@@ -253,7 +253,7 @@ export default function NumbersSection() {
                         ))}
                     </div>
                     <p className="text-center text-gray-500 text-xs mt-8">
-                        ※ 数値は2025年時点の自社実績に基づきます。許認可情報は
+                        ※ 稼働スタッフ111名は労働者派遣・農作業受託を含む総稼働数（2026年8月1日現在）です。労働者派遣法に基づく許可事業所の派遣労働者数（78名・2026年6月1日現在）とは定義が異なります。許認可情報は
                         <a href="/about" className="underline hover:text-gray-300">会社概要</a>
                         {IS_MARGIN_RATE_PUBLISHED && (
                             <>

@@ -2,7 +2,6 @@
   "nav": {
     "home": "ホーム",
     "services": "サービス",
-    "sugusta": "スグスタ",
     "about": "会社概要",
     "cases": "導入事例",
     "news": "お知らせ",
@@ -21,8 +20,7 @@
     "cta1": "今すぐ相談する",
     "cta2": "私たちができること",
     "license1": "労働者派遣事業許可",
-    "license2": "有料職業紹介事業許可",
-    "license3": "特定技能派遣認定"
+    "license2": "有料職業紹介事業許可"
   },
   "mission": {
     "badge": "Our Mission",
@@ -44,12 +42,7 @@
     "placementTitle": "有料職業紹介",
     "placementDesc": "派遣ではなく、仲間として迎えたい。直接雇用へ導く、じっくりマッチング。",
     "itTitle": "IT事業",
-    "itDesc": "農業にもデジタルを。Webシステム・アプリ開発で、現場を進化させる。",
-    "sugustaTitle": "スグスタ",
-    "sugustaSubtitle": "外国人のための社会インフラ",
-    "sugustaBadge": "完全無償",
-    "sugustaDesc": "学びたい人に、学びの場を。特定技能2号への道を、完全無償で照らす——外国人材のための社会インフラ。",
-    "sugustaLink": "外部サイトへ"
+    "itDesc": "農業にもデジタルを。Webシステム・アプリ開発で、現場を進化させる。"
   },
   "numbers": {
     "badge": "Results",

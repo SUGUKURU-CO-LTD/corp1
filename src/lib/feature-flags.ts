@@ -7,4 +7,4 @@
 // フッター/ナビのリンク表示と sitemap 登録、metadata.robots を同時に切替える単一スイッチ。
 // A single switch for footer/nav links, sitemap registration, and metadata.robots.
 // Satu sakelar untuk tautan footer/nav, pendaftaran sitemap, dan metadata.robots.
-export const IS_MARGIN_RATE_PUBLISHED = false;
+export const IS_MARGIN_RATE_PUBLISHED = true;

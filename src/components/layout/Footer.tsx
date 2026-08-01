@@ -15,6 +15,7 @@ const footerLinks = {
         { name: "制度ガイド・必要書類", href: "/guide" },
         { name: "よくある質問", href: "/faq" },
         { name: "採用情報", href: "/careers" },
+        { name: "Lowongan (Bahasa Indonesia)", href: "/kerja" },
         { name: "お知らせ", href: "/journal" },
     ],
     legal: [
@@ -32,6 +33,7 @@ const footerLinks = {
 const offices = [
     { name: "本社", location: "鹿児島県霧島市" },
     { name: "名古屋支所", location: "愛知県名古屋市" },
+    { name: "ロンボク拠点", location: "インドネシア・ロンボク島" },
 ];
 
 export default function Footer() {

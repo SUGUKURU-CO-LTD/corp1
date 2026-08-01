@@ -11,7 +11,6 @@ import {
     GitBranch,
     Phone,
     CheckCircle2,
-    Lightbulb,
 } from "lucide-react";
 
 const services = [
@@ -307,47 +306,7 @@ export default function ITPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {/* スグスタ */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="bg-gradient-to-br from-[#FFB7C5] to-[#FFD4DC] rounded-2xl p-8 hover:shadow-xl transition-shadow"
-                        >
-                            <div className="flex items-center gap-3 mb-4">
-                                <Lightbulb className="w-8 h-8 text-[#E91E63]" />
-                                <span className="text-[#E91E63] font-bold text-xl">スグスタ</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
-                                外国人材のための学習支援プラットフォーム
-                            </h3>
-                            <p className="text-gray-700 leading-relaxed mb-6 text-sm">
-                                特定技能2号取得を目指す外国人材のための学習支援プラットフォーム。
-                                「外国人移民時代の社会インフラ」として、完全無償で提供中。
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                <span className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#E91E63]">
-                                    完全無償
-                                </span>
-                                <span className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#E91E63]">
-                                    学習支援
-                                </span>
-                                <span className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#E91E63]">
-                                    特定技能2号
-                                </span>
-                            </div>
-                            <Link
-                                href="https://sugu-study.com"
-                                target="_blank"
-                                className="btn bg-white text-[#E91E63] hover:bg-gray-50 w-full justify-center group"
-                            >
-                                スグスタを見る
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </motion.div>
-
+                    <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
                         {/* NENKIN-PASS */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

@@ -16,7 +16,7 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
             }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.8, delay: reason.delay, ease: [0.25, 0.4, 0.25, 1] }}
-            className="relative group bg-white dark:bg-gray-900 rounded-2xl p-6 overflow-hidden"
+            className="relative group bg-white dark:bg-gray-900 border border-gray-100 shadow-sm rounded-2xl p-6 overflow-hidden"
         >
             {/* Hover gradient overlay */}
             <motion.div
@@ -92,8 +92,7 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
                             />
                         </motion.div>
                         <motion.h3
-                            initial={{ opacity: 0.9 }}
-                            whileHover={{ opacity: 1, x: 5 }}
+                            whileHover={{ x: 5 }}
                             className="text-lg font-bold text-[#1A1A1A] dark:text-white"
                         >
                             {reason.title}
@@ -101,13 +100,9 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
                     </div>
 
                     {/* Description */}
-                    <motion.p
-                        initial={{ opacity: 0.6 }}
-                        whileHover={{ opacity: 1 }}
-                        className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed"
-                    >
+                    <p className="text-gray-700 dark:text-gray-300 text-[15px] leading-relaxed">
                         {reason.description}
-                    </motion.p>
+                    </p>
                 </div>
             </div>
         </motion.div>
@@ -117,43 +112,43 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
 const reasons = [
     {
         icon: Zap,
-        title: "最短2週間。それが私たちのスピード。",
-        description: "人手不足は待ってくれない。だから私たちは、通常1.5ヶ月、最短2週間で即戦力を届ける。",
+        title: "最短2週間で就業開始",
+        description: "条件が整っていれば最短2週間が目安です（状況により異なります）。お急ぎのご相談も承ります。",
         color: "#1B5E38",
         delay: 0,
     },
     {
         icon: FileCheck,
-        title: "ビザの迷路を、最速で抜ける",
-        description: "複雑な在留資格、煩雑な書類。グループ内監理組合との連携で、すべてお任せください。",
+        title: "在留資格の手続きを支援",
+        description: "複雑な在留資格や書類は、グループ内の体制と連携して支援します。お客様の負担を抑えます。",
         color: "#D4A853",
         delay: 0.1,
     },
     {
         icon: Globe,
-        title: "言葉の壁は、私たちが壊す",
-        description: "日本語・英語・インドネシア語。24時間体制で、現場の「困った」に即座に応える。",
+        title: "多言語で現場をサポート",
+        description: "日本語・英語・インドネシア語で、現場のやり取りや緊急時の一次対応を支援します。",
         color: "#0D9488",
         delay: 0.2,
     },
     {
         icon: Home,
-        title: "住む場所から、私たちは創る",
-        description: "住居手配、入退去、行政手続き——彼らが「働く」前に「暮らす」場所を整える。",
+        title: "住まいから整える",
+        description: "住居手配、入退去、行政手続きまで。働く前の「暮らす」準備を整えます。",
         color: "#7C3AED",
         delay: 0.3,
     },
     {
         icon: Dumbbell,
-        title: "大型特殊もフォークリフトも。",
-        description: "ただの人材ではない。農業・畜産の経験者、免許保持者を厳選。現場で即戦力。",
+        title: "経験・資格のある人材",
+        description: "農業・畜産の経験者や、大型特殊・フォークリフト等の資格保持者をご紹介できます。",
         color: "#2563EB",
         delay: 0.4,
     },
     {
         icon: ClipboardCheck,
-        title: "合わなければ、交代する。",
-        description: "ミスマッチは起こりうる。起きたときに、迅速に対応する——それが私たちの責任。",
+        title: "ミスマッチ時は交代対応",
+        description: "相性が合わない場合は、迅速な交代対応を行います。受入れが続くよう支援します。",
         color: "#E91E63",
         delay: 0.5,
     },
@@ -194,7 +189,7 @@ export default function WhyUsSection() {
                     >
                         Why SUGUKURU
                     </motion.span>
-                    <h2 className="text-4xl md:text-6xl font-bold text-[#1A1A1A]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
