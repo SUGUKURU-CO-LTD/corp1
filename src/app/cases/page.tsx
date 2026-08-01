@@ -51,27 +51,26 @@ const caseStudies = [
     },
     {
         id: 3,
-        company: "南九州畜産組合",
-        industry: "畜産業（和牛肥育）",
+        company: "JA物流かごしま",
+        industry: "農業物流（集出荷・配送）",
         location: "鹿児島県",
-        staffCount: 12,
-        image: "/images/cases/livestock-farm-workers.png",
+        staffCount: null,
+        image: "/images/cases/ja-logistics-kagoshima.jpg",
         challenge:
-            "和牛の飼育管理は24時間体制が必要。高齢化が進む中、若い労働力の確保が急務でした。",
+            "集出荷場での仕分け・積み込み作業の人手が不足し、繁忙期の出荷対応に課題を抱えていました。",
         solution:
-            "畜産経験のあるインドネシア・フィリピン人材12名を派遣。飼料管理から健康チェックまで、丁寧な指導のもとで即戦力に。",
-        result: "牛舎の管理体制が安定し、肥育期間の効率が20%改善。品質評価でA5ランクの比率も向上しました。",
-        testimonial:
-            "動物が好きで真剣に仕事に取り組んでくれるスタッフばかり。牛の体調変化にもすぐ気づいて報告してくれるので、とても助かっています。",
-        testimonialAuthor: "組合長",
+            "特定技能人材を派遣し、集出荷場での仕分け・積み込み業務からサポートしています。",
+        result: "2025年9月から受け入れを継続中です。",
+        testimonial: null,
+        testimonialAuthor: null,
         color: "#D4A853",
     },
 ];
 
 const stats = [
-    { value: "40+", label: "導入企業数", icon: Building2 },
-    { value: "120+", label: "派遣スタッフ", icon: Users },
-    { value: "99%", label: "継続率", icon: TrendingUp },
+    { value: "60+", label: "導入企業数", icon: Building2 },
+    { value: "120", label: "稼働スタッフ", icon: Users },
+    { value: "5", label: "稼働エリア", icon: TrendingUp },
     { value: "15+", label: "連携産地", icon: MapPin },
 ];
 
@@ -165,6 +164,7 @@ export default function CasesPage() {
                         >
                             導入企業様の声
                         </h2>
+                        <p className="text-gray-400 text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
                     </motion.div>
 
                     <div className="space-y-12">
@@ -210,10 +210,12 @@ export default function CasesPage() {
                                                     <MapPin className="w-4 h-4" />
                                                     {caseStudy.location}
                                                 </span>
-                                                <span className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                                                    <Users className="w-4 h-4" />
-                                                    {caseStudy.staffCount}名派遣
-                                                </span>
+                                                {caseStudy.staffCount !== null && (
+                                                    <span className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                                                        <Users className="w-4 h-4" />
+                                                        {caseStudy.staffCount}名派遣
+                                                    </span>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -255,22 +257,24 @@ export default function CasesPage() {
                                         </div>
                                     </div>
 
-                                    {/* Testimonial */}
-                                    <div
-                                        className="rounded-xl p-6 relative"
-                                        style={{ backgroundColor: `${caseStudy.color}08` }}
-                                    >
-                                        <Quote
-                                            className="absolute top-4 left-4 w-8 h-8 opacity-20"
-                                            style={{ color: caseStudy.color }}
-                                        />
-                                        <p className="text-gray-700 leading-relaxed pl-8 italic">
-                                            「{caseStudy.testimonial}」
-                                        </p>
-                                        <p className="text-right mt-4 text-sm text-gray-500">
-                                            — {caseStudy.company} {caseStudy.testimonialAuthor}
-                                        </p>
-                                    </div>
+                                    {/* Testimonial（掲載許諾を得たコメントがある場合のみ表示） */}
+                                    {caseStudy.testimonial && (
+                                        <div
+                                            className="rounded-xl p-6 relative"
+                                            style={{ backgroundColor: `${caseStudy.color}08` }}
+                                        >
+                                            <Quote
+                                                className="absolute top-4 left-4 w-8 h-8 opacity-20"
+                                                style={{ color: caseStudy.color }}
+                                            />
+                                            <p className="text-gray-700 leading-relaxed pl-8 italic">
+                                                「{caseStudy.testimonial}」
+                                            </p>
+                                            <p className="text-right mt-4 text-sm text-gray-500">
+                                                — {caseStudy.company} {caseStudy.testimonialAuthor}
+                                            </p>
+                                        </div>
+                                    )}
                                 </div>
                             </motion.div>
                         ))}
@@ -301,12 +305,12 @@ export default function CasesPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {[
-                            { title: "最短2週間で派遣開始", desc: "スピード感のある対応力" },
-                            { title: "24時間多言語サポート", desc: "日本語・英語・インドネシア語対応" },
+                            { title: "最短2週間で就業開始", desc: "条件が整えばスピード対応" },
+                            { title: "多言語で現場をサポート", desc: "日本語・英語・インドネシア語対応" },
                             { title: "住居・行政手続き代行", desc: "受け入れの手間を最小化" },
-                            { title: "農業・畜産経験者を厳選", desc: "即戦力人材をマッチング" },
-                            { title: "ミスマッチ時の交代対応", desc: "リスクを最小限に" },
-                            { title: "継続率99%", desc: "長期パートナーシップ実現" },
+                            { title: "農業・畜産経験者をご紹介", desc: "経験を踏まえたマッチング" },
+                            { title: "ミスマッチ時の交代対応", desc: "受入れが続くよう支援" },
+                            { title: "丁寧なアフターフォロー", desc: "長期的な受入れを支援" },
                         ].map((item, index) => (
                             <motion.div
                                 key={item.title}
