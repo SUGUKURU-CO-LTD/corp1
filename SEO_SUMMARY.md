@@ -28,7 +28,6 @@ https://sugu-kuru.co.jp/sitemap.xml
   - 有料職業紹介
   - IT事業
 - 導入事例 (priority: 0.7)
-- SUGUSTA (priority: 0.7)
 - 採用情報 (priority: 0.7)
 - ジャーナル (priority: 0.6)
 - コンプライアンス (priority: 0.5)
@@ -155,7 +154,6 @@ Sitemap: https://sugu-kuru.co.jp/sitemap.xml
 - servicesPlacement（有料職業紹介）
 - servicesIt（IT事業）
 - cases（導入事例）
-- sugusta（SUGUSTA）
 - careers（採用情報）
 - journal（ジャーナル）
 - compliance（コンプライアンス）
