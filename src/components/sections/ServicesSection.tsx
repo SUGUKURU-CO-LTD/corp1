@@ -21,7 +21,7 @@ const HolographicCard = ({ service, children }: { service: any; children: React.
                 <div
                     className="absolute inset-0 rounded-2xl"
                     style={{
-                        background: `conic-gradient(from 0deg, transparent, ${service.color}, transparent 120deg)`,
+                        background: "conic-gradient(from 0deg, transparent, var(--color-accent), transparent 120deg)",
                         filter: "blur(2px)",
                     }}
                 />
@@ -29,7 +29,7 @@ const HolographicCard = ({ service, children }: { service: any; children: React.
 
             {/* Main card */}
             <div
-                className={`relative h-full bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl overflow-hidden ${service.size === "large" ? "p-8" : "p-6"}`}
+                className={`relative h-full bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden ${service.size === "large" ? "p-8" : "p-6"}`}
                 style={{
                     boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
                 }}
@@ -57,18 +57,15 @@ const HolographicCard = ({ service, children }: { service: any; children: React.
 };
 
 // Animated icon with rotation
-const RotatingIcon = ({ icon: Icon, color }: { icon: any; color: string }) => {
+const RotatingIcon = ({ icon: Icon }: { icon: any }) => {
     return (
         <motion.div
             whileHover={{ rotate: 360, scale: 1.1 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="relative"
         >
-            <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: `${color}15` }}
-            >
-                <Icon className="w-6 h-6" style={{ color }} />
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-accent/[0.08]">
+                <Icon className="w-6 h-6 text-accent" />
             </div>
         </motion.div>
     );
@@ -81,7 +78,6 @@ const services = [
         description: "人手が足りない——その声に、最短2週間で応える。即戦力の外国人材をあなたの農場へ。",
         icon: Tractor,
         href: "/services/dispatch",
-        color: "#1B5E38",
         size: "large",
         delay: 0,
     },
@@ -91,7 +87,6 @@ const services = [
         description: "収穫も選果も、丸ごと任せる。繁忙期の「困った」を、チームで解決。",
         icon: Wrench,
         href: "/services/contracting",
-        color: "#0D9488",
         size: "small",
         delay: 0.1,
     },
@@ -101,7 +96,6 @@ const services = [
         description: "派遣ではなく、仲間として迎えたい。直接雇用へ導く、じっくりマッチング。",
         icon: Users,
         href: "/services/placement",
-        color: "#7C3AED",
         size: "small",
         delay: 0.2,
     },
@@ -111,7 +105,6 @@ const services = [
         description: "農業にもデジタルを。Webシステム・アプリ開発で、現場を進化させる。",
         icon: Code,
         href: "/services/it",
-        color: "#2563EB",
         size: "medium",
         delay: 0.3,
     },
@@ -130,8 +123,8 @@ export default function ServicesSection() {
         <section ref={sectionRef} className="section relative bg-gray-50 overflow-hidden">
             {/* Background decorations */}
             <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1B5E38]/3 rounded-full blur-3xl" />
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4A853]/5 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
             </motion.div>
 
             <div className="container mx-auto relative z-10">
@@ -148,11 +141,11 @@ export default function ServicesSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="inline-block px-4 py-2 bg-gradient-to-r from-[#1B5E38]/10 to-[#D4A853]/10 text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 rounded-full border border-[#D4A853]/20"
+                        className="inline-block px-4 py-2 bg-gradient-to-r from-accent/10 to-accent/10 text-accent font-medium text-sm tracking-wider uppercase mb-4 rounded-full border border-accent/20"
                     >
                         Our Services
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A]" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-ink" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +161,7 @@ export default function ServicesSection() {
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]"
+                        className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent-light"
                     />
                 </motion.div>
 
@@ -177,10 +170,10 @@ export default function ServicesSection() {
                     {services.map((service) => (
                         <HolographicCard key={service.id} service={service}>
                             <Link href={service.href} className="block h-full">
-                                <RotatingIcon icon={service.icon} color={service.color} />
+                                <RotatingIcon icon={service.icon} />
 
                                 <h3
-                                    className={`font-bold text-[#1A1A1A] mb-2 mt-4 ${service.size === "large" ? "text-2xl" : "text-lg"}`}
+                                    className={`font-bold text-ink mb-2 mt-4 ${service.size === "large" ? "text-2xl" : "text-lg"}`}
                                 >
                                     {service.name}
                                 </h3>
@@ -190,8 +183,7 @@ export default function ServicesSection() {
                                 <motion.div
                                     initial={{ opacity: 0, x: -10 }}
                                     whileHover={{ opacity: 1, x: 0 }}
-                                    className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center"
-                                    style={{ backgroundColor: service.color }}
+                                    className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-accent"
                                 >
                                     <ArrowUpRight className="w-4 h-4 text-white" />
                                 </motion.div>

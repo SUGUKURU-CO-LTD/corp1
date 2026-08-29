@@ -77,8 +77,8 @@ export default function DispatchPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-[#1B5E38] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]" />
+            <section className="section bg-accent text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
                 <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
@@ -99,7 +99,7 @@ export default function DispatchPage() {
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             耕す手が足りない。<br />
-                            <span className="text-[#D4A853]">その声に、応えに行く。</span>
+                            <span className="text-accent">その声に、応えに行く。</span>
                         </motion.h1>
 
                         <motion.p
@@ -121,7 +121,7 @@ export default function DispatchPage() {
                         >
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#1B5E38] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 今すぐ相談する
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -139,7 +139,7 @@ export default function DispatchPage() {
             </section>
 
             {/* Philosophy Section */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -148,11 +148,11 @@ export default function DispatchPage() {
                         transition={{ duration: 0.6 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Philosophy
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8"
+                            className="text-3xl md:text-4xl font-bold text-ink mb-8"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             なぜ、外国人材なのか。
@@ -178,11 +178,11 @@ export default function DispatchPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Features
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             私たちが選ばれる理由
@@ -199,10 +199,10 @@ export default function DispatchPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="card group"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-[#1B5E38]/10 flex items-center justify-center mb-4 group-hover:bg-[#1B5E38]/20 transition-colors">
-                                    <feature.icon className="w-6 h-6 text-[#1B5E38]" />
+                                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                                    <feature.icon className="w-6 h-6 text-accent" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
+                                <h3 className="text-lg font-bold text-ink mb-2">
                                     {feature.title}
                                 </h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -215,7 +215,7 @@ export default function DispatchPage() {
             </section>
 
             {/* Flow Section */}
-            <section className="section bg-[#1A1A1A]">
+            <section className="section bg-ink">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -224,7 +224,7 @@ export default function DispatchPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Flow
                         </span>
                         <h2
@@ -247,14 +247,14 @@ export default function DispatchPage() {
                                     className="relative"
                                 >
                                     <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center border border-white/10 h-full">
-                                        <div className="w-10 h-10 bg-[#1B5E38] text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                                        <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                                             {item.step}
                                         </div>
                                         <h3 className="font-bold text-white mb-2">{item.title}</h3>
                                         <p className="text-sm text-gray-400">{item.description}</p>
                                     </div>
                                     {i < 4 && (
-                                        <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-[#D4A853]">
+                                        <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">
                                             →
                                         </div>
                                     )}
@@ -266,7 +266,7 @@ export default function DispatchPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
@@ -276,11 +276,11 @@ export default function DispatchPage() {
                             transition={{ duration: 0.6 }}
                             className="text-center mb-12"
                         >
-                            <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                            <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                                 Pricing
                             </span>
                             <h2
-                                className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                                className="text-3xl md:text-4xl font-bold text-ink"
                                 style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 料金について
@@ -297,7 +297,7 @@ export default function DispatchPage() {
                             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                                 <div>
                                     <p className="text-gray-500 text-sm mb-2">標準時給</p>
-                                    <p className="text-4xl md:text-5xl font-bold text-[#1B5E38]">
+                                    <p className="text-4xl md:text-5xl font-bold text-accent">
                                         {pricing.hourlyRate}
                                     </p>
                                     <p className="text-gray-500 text-sm mt-2">{pricing.note}</p>
@@ -314,11 +314,11 @@ export default function DispatchPage() {
                             </div>
 
                             <div className="border-t border-gray-100 pt-8">
-                                <p className="font-bold text-[#1A1A1A] mb-4">含まれるサポート</p>
+                                <p className="font-bold text-ink mb-4">含まれるサポート</p>
                                 <div className="grid md:grid-cols-2 gap-3">
                                     {pricing.includes.map((item) => (
                                         <div key={item} className="flex items-center gap-2">
-                                            <CheckCircle2 className="w-5 h-5 text-[#1B5E38]" />
+                                            <CheckCircle2 className="w-5 h-5 text-accent" />
                                             <span className="text-gray-600">{item}</span>
                                         </div>
                                     ))}
@@ -330,7 +330,7 @@ export default function DispatchPage() {
             </section>
 
             {/* CTA */}
-            <section className="section bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent">
                 <div className="container mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -351,7 +351,7 @@ export default function DispatchPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#1B5E38] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 今すぐ相談する
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

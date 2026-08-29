@@ -59,8 +59,8 @@ export default function ITPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-[#2563EB] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB] via-[#3b82f6] to-[#1d4ed8]" />
+            <section className="section bg-accent text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent-strong" />
                 <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
@@ -81,7 +81,7 @@ export default function ITPage() {
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             コードで、<br />
-                            <span className="text-[#D4A853]">課題を解く。</span>
+                            <span className="text-accent">課題を解く。</span>
                         </motion.h1>
 
                         <motion.p
@@ -103,7 +103,7 @@ export default function ITPage() {
                         >
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#2563EB] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 開発相談をする
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -121,7 +121,7 @@ export default function ITPage() {
             </section>
 
             {/* Philosophy */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -130,11 +130,11 @@ export default function ITPage() {
                         transition={{ duration: 0.6 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Philosophy
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8"
+                            className="text-3xl md:text-4xl font-bold text-ink mb-8"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術は、手段に過ぎない。
@@ -160,11 +160,11 @@ export default function ITPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Services
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             提供サービス
@@ -181,10 +181,10 @@ export default function ITPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="card text-center group"
                             >
-                                <div className="w-14 h-14 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#2563EB]/20 transition-colors">
-                                    <service.icon className="w-7 h-7 text-[#2563EB]" />
+                                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-accent/20 transition-colors">
+                                    <service.icon className="w-7 h-7 text-accent" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
+                                <h3 className="text-lg font-bold text-ink mb-2">
                                     {service.title}
                                 </h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -197,7 +197,7 @@ export default function ITPage() {
             </section>
 
             {/* Tech Stack */}
-            <section className="section bg-[#1A1A1A]">
+            <section className="section bg-ink">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export default function ITPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-12"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Tech Stack
                         </span>
                         <h2
@@ -235,7 +235,7 @@ export default function ITPage() {
             </section>
 
             {/* Flow */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -244,11 +244,11 @@ export default function ITPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Flow
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             開発の流れ
@@ -267,14 +267,14 @@ export default function ITPage() {
                                     className="relative"
                                 >
                                     <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 h-full">
-                                        <div className="w-10 h-10 bg-[#2563EB] text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                                        <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                                             {item.step}
                                         </div>
-                                        <h3 className="font-bold text-[#1A1A1A] mb-2">{item.title}</h3>
+                                        <h3 className="font-bold text-ink mb-2">{item.title}</h3>
                                         <p className="text-sm text-gray-500">{item.description}</p>
                                     </div>
                                     {i < 4 && (
-                                        <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-[#2563EB]">
+                                        <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">
                                             →
                                         </div>
                                     )}
@@ -295,11 +295,11 @@ export default function ITPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-12"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Products
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             自社開発プロダクト
@@ -313,7 +313,7 @@ export default function ITPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] rounded-2xl p-8 hover:shadow-xl transition-shadow"
+                            className="bg-gradient-to-br from-accent-light to-accent-light rounded-2xl p-8 hover:shadow-xl transition-shadow"
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <CheckCircle2 className="w-8 h-8 text-white" />
@@ -339,7 +339,7 @@ export default function ITPage() {
                             </div>
                             <Link
                                 href="/contact?service=nenkin-pass"
-                                className="btn bg-white text-[#2563EB] hover:bg-gray-50 w-full justify-center group"
+                                className="btn bg-white text-accent hover:bg-gray-50 w-full justify-center group"
                             >
                                 NENKIN-PASSを見る
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -350,7 +350,7 @@ export default function ITPage() {
             </section>
 
             {/* CTA */}
-            <section className="section bg-gradient-to-br from-[#2563EB] via-[#3b82f6] to-[#1d4ed8]">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent-strong">
                 <div className="container mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -371,7 +371,7 @@ export default function ITPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#2563EB] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 開発相談をする
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

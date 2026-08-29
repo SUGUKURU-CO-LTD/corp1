@@ -41,7 +41,7 @@ export default function VisaPicker({
               aria-pressed={active}
               className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                 active
-                  ? "border-[#D4A853] bg-[#D4A853] text-[#1A1A1A]"
+                  ? "border-accent bg-accent text-ink"
                   : "border-white/30 bg-white/5 text-white hover:border-white/60"
               }`}
             >
@@ -56,7 +56,7 @@ export default function VisaPicker({
           aria-pressed={otherStatusSelected}
           className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
             otherStatusSelected
-              ? "border-[#D4A853] bg-[#D4A853] text-[#1A1A1A]"
+              ? "border-accent bg-accent text-ink"
               : "border-dashed border-white/30 bg-transparent text-white/70 hover:border-white/60"
           }`}
         >
@@ -71,7 +71,7 @@ export default function VisaPicker({
           className="mt-4 rounded-2xl border border-white/15 bg-white/10 p-4 text-sm leading-6 text-white/90"
         >
           <div className="flex gap-2">
-            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#D4A853]" />
+            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
             <div>
               <p className="font-semibold text-white">
                 Lowongan di halaman ini untuk pemegang: {VISA_TAG_ORDER.map((t) => VISA_TAG_LABELS[t].id).join(", ")}.

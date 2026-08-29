@@ -9,7 +9,7 @@ export default function PrivacyPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 bg-[#1A1A1A] text-white">
+            <section className="py-16 bg-ink text-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -17,8 +17,8 @@ export default function PrivacyPage() {
                         transition={{ duration: 0.5 }}
                         className="flex items-center gap-4"
                     >
-                        <div className="w-14 h-14 rounded-2xl bg-[#1B5E38]/20 flex items-center justify-center">
-                            <Shield className="w-7 h-7 text-[#1B5E38]" />
+                        <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
+                            <Shield className="w-7 h-7 text-accent" />
                         </div>
                         <div>
                             <h1
@@ -50,9 +50,9 @@ export default function PrivacyPage() {
 
                             <div className="space-y-10">
                                 {/* Section 1 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">1</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">1</span>
                                         個人情報の定義
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -64,9 +64,9 @@ export default function PrivacyPage() {
                                 </div>
 
                                 {/* Section 2 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">2</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">2</span>
                                         個人情報の収集
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -74,28 +74,28 @@ export default function PrivacyPage() {
                                     </p>
                                     <ul className="space-y-2 text-gray-600">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             お問い合わせフォームからのご連絡時
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             人材派遣・職業紹介サービスへのお申し込み時
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             採用応募時
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             その他、当社サービスをご利用いただく際
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Section 3 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">3</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">3</span>
                                         個人情報の利用目的
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -103,32 +103,32 @@ export default function PrivacyPage() {
                                     </p>
                                     <ul className="space-y-2 text-gray-600">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             人材派遣・職業紹介サービスの提供
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             お問い合わせへの回答・対応
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             サービス向上のための調査・分析
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             法令に基づく届出・報告
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             採用選考および人事管理
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Section 4 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">4</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">4</span>
                                         個人情報の第三者提供
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -136,28 +136,28 @@ export default function PrivacyPage() {
                                     </p>
                                     <ul className="space-y-2 text-gray-600">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             ご本人の同意がある場合
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             法令に基づく場合
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             人材派遣・職業紹介サービスにおいて、派遣先・紹介先企業への情報提供が必要な場合
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#1B5E38] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             業務委託先に対して、業務遂行上必要な範囲で提供する場合
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Section 5 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">5</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">5</span>
                                         個人情報の安全管理
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -167,9 +167,9 @@ export default function PrivacyPage() {
                                 </div>
 
                                 {/* Section 6 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">6</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">6</span>
                                         個人情報の開示・訂正・削除
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -180,9 +180,9 @@ export default function PrivacyPage() {
                                 </div>
 
                                 {/* Section 7 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">7</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">7</span>
                                         Cookieの使用について
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -193,9 +193,9 @@ export default function PrivacyPage() {
                                 </div>
 
                                 {/* Section 8 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#1B5E38] text-white flex items-center justify-center text-sm font-bold">8</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">8</span>
                                         プライバシーポリシーの変更
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -206,8 +206,8 @@ export default function PrivacyPage() {
                                 </div>
 
                                 {/* Contact */}
-                                <div className="bg-[#1B5E38]/10 rounded-xl p-6 md:p-8 border border-[#1B5E38]/20">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4">
+                                <div className="bg-accent/10 rounded-xl p-6 md:p-8 border border-accent/20">
+                                    <h2 className="text-xl font-bold text-ink mb-4">
                                         お問い合わせ窓口
                                     </h2>
                                     <div className="text-gray-600 space-y-2">
@@ -230,7 +230,7 @@ export default function PrivacyPage() {
                         <div className="mt-12 pt-8 border-t border-gray-200">
                             <Link
                                 href="/"
-                                className="inline-flex items-center gap-2 text-[#1B5E38] hover:underline"
+                                className="inline-flex items-center gap-2 text-accent hover:underline"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 トップページに戻る

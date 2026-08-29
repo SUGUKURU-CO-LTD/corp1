@@ -10,7 +10,7 @@ export default function KirimPrivacyPage() {
         <div className="min-h-screen bg-gray-50 py-16">
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 border-b-4 border-[#1B5E38] pb-4 mb-6">
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 border-b-4 border-accent pb-4 mb-6">
                         KIRIM プライバシーポリシー / Kebijakan Privasi KIRIM
                     </h1>
                     <p className="text-sm text-gray-600 mb-8">
@@ -19,7 +19,7 @@ export default function KirimPrivacyPage() {
 
                     {/* 日本語版 */}
                     <section className="mb-16">
-                        <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-[#1B5E38] pl-4 mb-6">
+                        <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-accent pl-4 mb-6">
                             日本語版
                         </h2>
 
@@ -250,11 +250,11 @@ export default function KirimPrivacyPage() {
                     </section>
 
                     {/* 区切り線 */}
-                    <div className="border-t-2 border-[#1B5E38] my-12"></div>
+                    <div className="border-t-2 border-accent my-12"></div>
 
                     {/* Indonesian Version */}
                     <section>
-                        <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-[#1B5E38] pl-4 mb-6">
+                        <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-accent pl-4 mb-6">
                             Bahasa Indonesia
                         </h2>
 

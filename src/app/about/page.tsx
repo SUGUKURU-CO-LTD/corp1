@@ -30,13 +30,12 @@ const companyInfo = {
 };
 
 const licenses = [
-    { name: "労働者派遣事業許可", number: "派46-300262", color: "#1B5E38" },
-    { name: "有料職業紹介事業許可", number: "46-ユ-300203", color: "#D4A853" },
+    { name: "労働者派遣事業許可", number: "派46-300262" },
+    { name: "有料職業紹介事業許可", number: "46-ユ-300203" },
 ];
 
 const offices = [
     { name: "本社", location: COMPANY_ADDRESS_LINE_JA, isHQ: true },
-    { name: "名古屋支所", location: "愛知県名古屋市名東区牧の原2-901", isHQ: false },
     { name: "ロンボク拠点", location: "インドネシア・ロンボク島", isHQ: false },
 ];
 
@@ -58,21 +57,18 @@ const values = [
         icon: Target,
         title: "ミッション",
         description: "疲弊する地方、消えゆく農地。日本人だけでは届かない場所へ、世界から手を伸ばす。人手の確保を通じて、耕作放棄地が再び実りある大地に戻る後押しをする。",
-        color: "#1B5E38",
         delay: 0,
     },
     {
         icon: Eye,
         title: "ビジョン",
         description: "食料自給率が高く、地方が笑顔で溢れる日本へ。収穫の喜びが、次の世代へと受け継がれる社会を創る。",
-        color: "#D4A853",
         delay: 0.1,
     },
     {
         icon: Heart,
         title: "バリュー",
         description: "言葉にならない不安も、解決する。住居から医療、言葉の壁まで——フルコースのサポートで、彼らの「居場所」を創り出す。",
-        color: "#0D9488",
         delay: 0.2,
     },
 ];
@@ -97,7 +93,7 @@ const GlassCard = ({ children, delay }: { children: React.ReactNode; delay: numb
 };
 
 // Glowing icon component
-const GlowingIcon = ({ icon: Icon, color, delay }: { icon: any; color: string; delay: number }) => {
+const GlowingIcon = ({ icon: Icon, delay }: { icon: any; delay: number }) => {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -112,15 +108,14 @@ const GlowingIcon = ({ icon: Icon, color, delay }: { icon: any; color: string; d
                     opacity: [0.3, 0.6, 0.3],
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute inset-0 rounded-2xl blur-xl"
-                style={{ backgroundColor: color }}
+                className="absolute inset-0 rounded-2xl blur-xl bg-accent"
             />
             <div className="relative w-16 h-16 rounded-2xl flex items-center justify-center bg-white/[0.1] border border-white/10 backdrop-blur-sm">
                 <motion.div
                     animate={{ y: [0, -4, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                    <Icon className="w-8 h-8" style={{ color }} />
+                    <Icon className="w-8 h-8 text-accent" />
                 </motion.div>
             </div>
         </motion.div>
@@ -138,13 +133,7 @@ const LicenseBadge = ({ license, index }: { license: typeof licenses[0]; index: 
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="relative group"
         >
-            <div
-                className="p-6 rounded-2xl text-center relative overflow-hidden"
-                style={{
-                    background: `linear-gradient(135deg, ${license.color}20 0%, ${license.color}30 100%)`,
-                    border: `1px solid ${license.color}30`,
-                }}
-            >
+            <div className="p-6 rounded-2xl text-center relative overflow-hidden bg-gradient-to-br from-accent/[0.125] to-accent/[0.188] border border-accent/[0.188]">
                 <motion.div
                     initial={{ x: "-100%" }}
                     whileHover={{ x: "100%" }}
@@ -154,13 +143,12 @@ const LicenseBadge = ({ license, index }: { license: typeof licenses[0]; index: 
                 <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
-                    className="w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center"
-                    style={{ backgroundColor: `${license.color}20` }}
+                    className="w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center bg-accent/[0.125]"
                 >
-                    <Award className="w-6 h-6" style={{ color: license.color }} />
+                    <Award className="w-6 h-6 text-accent" />
                 </motion.div>
                 <p className="text-sm text-gray-600 mb-2">{license.name}</p>
-                <p className="text-xl font-bold text-[#1A1A1A]">{license.number}</p>
+                <p className="text-xl font-bold text-ink">{license.number}</p>
             </div>
         </motion.div>
     );
@@ -177,11 +165,11 @@ const TimelineItem = ({ item, index }: { item: typeof timeline[0]; index: number
             className="flex gap-6 group"
         >
             <div className="w-28 flex-shrink-0 text-right relative">
-                <span className="text-[#1B5E38] font-bold text-lg">{item.year}</span>
-                <div className="absolute right-0 top-1/2 w-3 h-3 bg-[#1B5E38] rounded-full -translate-y-1/2 translate-x-[18px] group-hover:scale-150 transition-transform" />
+                <span className="text-accent font-bold text-lg">{item.year}</span>
+                <div className="absolute right-0 top-1/2 w-3 h-3 bg-accent rounded-full -translate-y-1/2 translate-x-[18px] group-hover:scale-150 transition-transform" />
             </div>
-            <div className="relative flex-1 pb-8 border-l-2 border-[#1B5E38]/20 pl-8">
-                <div className="absolute left-0 top-1 w-4 h-4 bg-[#1B5E38] rounded-full -translate-x-1/2 shadow-lg shadow-[#1B5E38]/30" />
+            <div className="relative flex-1 pb-8 border-l-2 border-accent/20 pl-8">
+                <div className="absolute left-0 top-1 w-4 h-4 bg-accent rounded-full -translate-x-1/2 shadow-lg shadow-accent/30" />
                 <motion.p
                     initial={{ opacity: 0.7 }}
                     whileHover={{ opacity: 1 }}
@@ -204,27 +192,27 @@ const OfficeCard = ({ office }: { office: typeof offices[0] }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className={`relative p-6 rounded-2xl overflow-hidden ${office.isHQ
-                    ? "bg-gradient-to-br from-[#1B5E38]/10 to-[#1B5E38]/5 border-2 border-[#1B5E38]"
+                    ? "bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent"
                     : "bg-white border border-gray-200"
                 }`}
         >
             <div className="flex items-start gap-4">
                 <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${office.isHQ ? "bg-[#1B5E38]" : "bg-[#D4A853]"
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${office.isHQ ? "bg-accent" : "bg-accent"
                         }`}
                 >
                     <MapPin className="w-6 h-6 text-white" />
                 </motion.div>
                 <div>
-                    <h3 className="font-bold text-[#1A1A1A] text-lg flex items-center gap-2">
+                    <h3 className="font-bold text-ink text-lg flex items-center gap-2">
                         {office.name}
                         {office.isHQ && (
                             <motion.span
                                 initial={{ scale: 0 }}
                                 whileInView={{ scale: 1 }}
                                 viewport={{ once: true }}
-                                className="text-xs bg-[#1B5E38] text-white px-2 py-0.5 rounded-full"
+                                className="text-xs bg-accent text-white px-2 py-0.5 rounded-full"
                             >
                                 本社
                             </motion.span>
@@ -247,11 +235,11 @@ export default function AboutPage() {
             {/* Scroll Progress */}
             <motion.div
                 style={{ scaleX: scrollYProgress, originX: 0 }}
-                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1B5E38] via-[#D4A853] to-[#7C3AED] z-50"
+                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent to-accent z-50"
             />
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#0A0A0A] min-h-[70vh] flex items-center">
+            <section className="relative overflow-hidden bg-ink-strong min-h-[70vh] flex items-center">
                 {/* Aurora Background */}
                 <motion.div
                     animate={{
@@ -260,9 +248,9 @@ export default function AboutPage() {
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute inset-0 opacity-40"
                     style={{
-                        background: `radial-gradient(ellipse at 30% 30%, #1B5E38 0%, transparent 50%),
-                                     radial-gradient(ellipse at 70% 70%, #D4A853 0%, transparent 50%),
-                                     radial-gradient(ellipse at 50% 50%, #7C3AED 0%, transparent 50%)`,
+                        background: `radial-gradient(ellipse at 30% 30%, var(--color-accent) 0%, transparent 50%),
+                                     radial-gradient(ellipse at 70% 70%, var(--color-accent-light) 0%, transparent 50%),
+                                     radial-gradient(ellipse at 50% 50%, var(--color-accent-strong) 0%, transparent 50%)`,
                         backgroundSize: "200% 200%",
                     }}
                 />
@@ -277,7 +265,7 @@ export default function AboutPage() {
                         transition={{ duration: 5 + Math.random() * 3, repeat: Infinity, delay: i * 0.3 }}
                         className="absolute w-2 h-2 rounded-full"
                         style={{
-                            background: i % 2 === 0 ? "#1B5E38" : "#D4A853",
+                            background: i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-light)",
                             left: `${10 + i * 10}%`,
                             top: `${20 + Math.random() * 60}%`,
                         }}
@@ -305,7 +293,7 @@ export default function AboutPage() {
                             transition={{ duration: 0.8, ease: "backOut" }}
                             className="inline-flex items-center gap-2 mb-6"
                         >
-                            <Sparkles className="w-5 h-5 text-[#D4A853] animate-pulse" />
+                            <Sparkles className="w-5 h-5 text-accent animate-pulse" />
                             <span className="px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-sm font-medium text-white/90">
                                 About Us
                             </span>
@@ -330,7 +318,7 @@ export default function AboutPage() {
                                 initial={{ clipPath: "inset(0 100% 0 0)" }}
                                 animate={{ clipPath: "inset(0 0 0 0)" }}
                                 transition={{ duration: 1, delay: 0.5 }}
-                                className="block bg-gradient-to-r from-[#D4A853] via-[#F0C850] to-[#D4A853] bg-clip-text text-transparent"
+                                className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent"
                             >
                                 日本を耕す。
                             </motion.span>
@@ -353,12 +341,12 @@ export default function AboutPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent"
+                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-canvas to-transparent"
                 />
             </section>
 
             {/* Values */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -371,12 +359,12 @@ export default function AboutPage() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="inline-block px-4 py-2 bg-gradient-to-r from-[#1B5E38]/10 to-[#D4A853]/10 text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 rounded-full border border-[#D4A853]/20"
+                            className="inline-block px-4 py-2 bg-gradient-to-r from-accent/10 to-accent/10 text-accent font-medium text-sm tracking-wider uppercase mb-4 rounded-full border border-accent/20"
                         >
                             Philosophy
                         </motion.span>
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             企業理念
@@ -385,18 +373,18 @@ export default function AboutPage() {
                             initial={{ scaleX: 0 }}
                             whileInView={{ scaleX: 1 }}
                             viewport={{ once: true }}
-                            className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]"
+                            className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent"
                         />
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {values.map((value) => (
                             <GlassCard key={value.title} delay={value.delay}>
-                                <GlowingIcon icon={value.icon} color={value.color} delay={0} />
+                                <GlowingIcon icon={value.icon} delay={0} />
                                 <motion.h3
                                     initial={{ opacity: 0.8 }}
                                     whileHover={{ opacity: 1 }}
-                                    className="text-xl font-bold text-[#1A1A1A] mt-4 mb-3 relative z-10"
+                                    className="text-xl font-bold text-ink mt-4 mb-3 relative z-10"
                                 >
                                     {value.title}
                                 </motion.h3>
@@ -424,12 +412,12 @@ export default function AboutPage() {
                         className="text-center mb-12"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             会社概要
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <motion.div
@@ -445,31 +433,31 @@ export default function AboutPage() {
                                 <table className="w-full">
                                     <tbody>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A] w-1/3">会社名</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink w-1/3">会社名</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.name}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">英語表記</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">英語表記</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.nameEn}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">設立</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">設立</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.established}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">資本金</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">資本金</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.capital}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">所在地</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">所在地</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.address}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">電話番号</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">電話番号</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.phone}</td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-[#1A1A1A]">稼働スタッフ</td>
+                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">稼働スタッフ</td>
                                             <td className="px-4 py-4 text-gray-700">{companyInfo.employees}</td>
                                         </tr>
                                     </tbody>
@@ -479,8 +467,8 @@ export default function AboutPage() {
                             {/* Right: Officers & Business */}
                             <div className="p-8">
                                 <div className="mb-8">
-                                    <h3 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
-                                        <Users className="w-5 h-5 text-[#1B5E38]" />
+                                    <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
+                                        <Users className="w-5 h-5 text-accent" />
                                         役員
                                     </h3>
                                     <div className="space-y-3">
@@ -496,11 +484,11 @@ export default function AboutPage() {
                                                 <motion.span
                                                     whileHover={{ scale: 1.1 }}
                                                     className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                                                    style={{ backgroundColor: index < 2 ? "#1B5E38" : "#D4A853" }}
+                                                    style={{ backgroundColor: index < 2 ? "var(--color-accent)" : "var(--color-accent-light)" }}
                                                 >
                                                     {index + 1}
                                                 </motion.span>
-                                                <span className="font-medium text-[#1A1A1A]">{officer.position}</span>
+                                                <span className="font-medium text-ink">{officer.position}</span>
                                                 <span className="text-gray-600">{officer.name}</span>
                                             </motion.div>
                                         ))}
@@ -508,8 +496,8 @@ export default function AboutPage() {
                                 </div>
 
                                 <div>
-                                    <h3 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
-                                        <Building2 className="w-5 h-5 text-[#1B5E38]" />
+                                    <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
+                                        <Building2 className="w-5 h-5 text-accent" />
                                         事業内容
                                     </h3>
                                     <ul className="space-y-2">
@@ -522,7 +510,7 @@ export default function AboutPage() {
                                                 transition={{ delay: 0.5 + index * 0.1 }}
                                                 className="flex items-start gap-2"
                                             >
-                                                <span className="w-2 h-2 rounded-full bg-[#D4A853] mt-2 flex-shrink-0" />
+                                                <span className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
                                                 <span className="text-gray-700 text-sm">{item}</span>
                                             </motion.li>
                                         ))}
@@ -545,12 +533,12 @@ export default function AboutPage() {
                         className="text-center mb-12"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             許認可情報
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-6">
@@ -562,7 +550,7 @@ export default function AboutPage() {
             </section>
 
             {/* Timeline */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -572,12 +560,12 @@ export default function AboutPage() {
                         className="text-center mb-16"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             沿革
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <div className="max-w-3xl mx-auto">
@@ -599,12 +587,12 @@ export default function AboutPage() {
                         className="text-center mb-12"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             拠点・アクセス
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
@@ -621,13 +609,13 @@ export default function AboutPage() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <div className="bg-gradient-to-br from-[#1B5E38]/10 to-[#D4A853]/10 rounded-3xl overflow-hidden h-80 flex items-center justify-center relative">
+                        <div className="bg-gradient-to-br from-accent/10 to-accent/10 rounded-3xl overflow-hidden h-80 flex items-center justify-center relative">
                             <motion.div
                                 animate={{ scale: [1, 1.02, 1] }}
                                 transition={{ duration: 4, repeat: Infinity }}
                                 className="text-center"
                             >
-                                <MapPin className="w-12 h-12 text-[#1B5E38] mx-auto mb-4" />
+                                <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
                                 <p className="text-gray-600">{COMPANY_ADDRESS_LINE_JA}</p>
                                 <p className="text-sm text-gray-500 mt-2">Google Maps 埋め込み</p>
                             </motion.div>
@@ -637,14 +625,14 @@ export default function AboutPage() {
             </section>
 
             {/* CTA */}
-            <section className="section bg-[#0A0A0A] relative overflow-hidden">
+            <section className="section bg-ink-strong relative overflow-hidden">
                 {/* Animated background */}
                 <motion.div
                     animate={{
                         backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
                     }}
                     transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]"
+                    className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent"
                     style={{ backgroundSize: "200% 200%" }}
                 />
                 <motion.div
@@ -653,7 +641,7 @@ export default function AboutPage() {
                         y: [0, 30, 0],
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-[#D4A853]/10 rounded-full blur-3xl"
+                    className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"
                 />
 
                 <div className="container mx-auto relative z-10 text-center">
@@ -675,7 +663,7 @@ export default function AboutPage() {
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1B5E38] text-lg font-bold rounded-full shadow-xl hover:shadow-2xl transition-shadow"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent text-lg font-bold rounded-full shadow-xl hover:shadow-2xl transition-shadow"
                             >
                                 お問い合わせフォームへ
                                 <ArrowRight className="w-5 h-5" />
@@ -689,7 +677,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent"
+                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-canvas to-transparent"
                 />
             </section>
         </div>

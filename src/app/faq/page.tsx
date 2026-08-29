@@ -119,10 +119,10 @@ export default function FaqPage() {
             <FaqSchema />
 
             {/* Hero */}
-            <section className="bg-[#0E2A1B] text-white">
+            <section className="bg-accent-dark text-white">
                 <div className="container mx-auto px-6 py-20 md:py-24">
                     <div className="max-w-3xl">
-                        <span className="text-[#E8C77A] text-sm font-medium tracking-wider uppercase">
+                        <span className="text-accent-light text-sm font-medium tracking-wider uppercase">
                             FAQ
                         </span>
                         <h1 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
@@ -137,12 +137,12 @@ export default function FaqPage() {
             </section>
 
             {/* FAQ本体 */}
-            <section className="bg-[#FAFAF7]">
+            <section className="bg-canvas">
                 <div className="container mx-auto px-6 py-24 md:py-32">
                     <div className="max-w-3xl mx-auto space-y-14 md:space-y-16">
                         {faqGroups.map((group) => (
                             <div key={group.category}>
-                                <h2 className="text-lg font-bold text-[#1B5E38] mb-4">
+                                <h2 className="text-lg font-bold text-accent mb-4">
                                     {group.category}
                                 </h2>
                                 <div className="space-y-3">
@@ -151,7 +151,7 @@ export default function FaqPage() {
                                             key={item.q}
                                             className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
                                         >
-                                            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-[#1A1A1A]">
+                                            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-ink">
                                                 {item.q}
                                                 <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" />
                                             </summary>
@@ -168,7 +168,7 @@ export default function FaqPage() {
             </section>
 
             {/* CTA */}
-            <section className="bg-[#1B5E38]">
+            <section className="bg-accent">
                 <div className="container mx-auto px-6 py-20 md:py-24 text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                         解決しないご質問は、お気軽に
@@ -177,7 +177,7 @@ export default function FaqPage() {
                         担当者が内容を確認し、ご相談に丁寧にお答えします。
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/contact" className="btn bg-white text-[#1B5E38] hover:bg-gray-100">
+                        <Link href="/contact" className="btn bg-white text-accent hover:bg-gray-100">
                             無料で相談する
                             <ArrowRight className="w-5 h-5" />
                         </Link>

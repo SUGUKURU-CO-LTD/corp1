@@ -78,12 +78,12 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
             </div>
 
             <div className="p-6">
-              <h2 id="kerja-job-detail-title" className="text-xl font-bold text-[#1A1A1A]">
+              <h2 id="kerja-job-detail-title" className="text-xl font-bold text-ink">
                 {job.occupationId}
               </h2>
               <p className="mt-0.5 text-sm text-gray-400">{job.occupationJa}</p>
 
-              <p className="mt-4 text-2xl font-bold text-[#1B5E38]">
+              <p className="mt-4 text-2xl font-bold text-accent">
                 {formatYen(job.annualSalaryMin)} – {formatYen(job.annualSalaryMax)}
                 <span className="ml-1 text-base font-normal text-gray-500">/tahun</span>
               </p>
@@ -102,14 +102,14 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
                     {JAPANESE_LEVEL_LABELS[job.japaneseLevel].id}
                   </span>
                   {job.inexperiencedOk && (
-                    <span className="rounded-full bg-[#D4A853]/15 px-2.5 py-1 text-xs font-semibold text-[#8a6a1f]">
+                    <span className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent-strong">
                       Tanpa Pengalaman OK
                     </span>
                   )}
                   {job.visaTags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-[#1B5E38]/10 px-2.5 py-1 text-xs font-medium text-[#1B5E38]"
+                      className="rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent"
                     >
                       {VISA_TAG_LABELS[tag].id}
                     </span>
@@ -117,13 +117,13 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
                 </div>
               </dl>
 
-              <div className="mt-5 rounded-xl border border-gray-200 bg-[#FAFAF7] px-4 py-3 text-xs leading-6 text-gray-600">
+              <div className="mt-5 rounded-xl border border-gray-200 bg-canvas px-4 py-3 text-xs leading-6 text-gray-600">
                 Nama perusahaan akan diberitahukan setelah Anda melamar. Sugukuru{" "}
                 <strong>tidak memungut biaya apa pun dari pelamar</strong> (izin 有料職業紹介事業 46-ユ-300203).
                 Sumber: {SOURCE_LABELS[job.source]} · Diperbarui: {job.reviewedAt}
               </div>
 
-              <p className="mt-5 text-sm font-semibold text-[#1A1A1A]">Cara melamar</p>
+              <p className="mt-5 text-sm font-semibold text-ink">Cara melamar</p>
               <div className="mt-2 space-y-2">
                 {recruitmentChannels.map((channel) => {
                   const Icon = CHANNEL_ICONS[channel.id];
@@ -149,7 +149,7 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
                     <a
                       key={channel.id}
                       href={href}
-                      className="flex items-center justify-between gap-3 rounded-xl border border-[#1B5E38]/30 bg-[#1B5E38]/5 px-4 py-3 text-sm font-semibold text-[#1B5E38] transition-colors hover:bg-[#1B5E38]/10"
+                      className="flex items-center justify-between gap-3 rounded-xl border border-accent/30 bg-accent/5 px-4 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
                     >
                       <span className="flex items-center gap-2">
                         <Icon className="h-4 w-4" />

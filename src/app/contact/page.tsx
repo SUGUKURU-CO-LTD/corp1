@@ -5,14 +5,15 @@ import { useState } from "react";
 import { Send, Phone, Mail, MapPin, Check, ArrowRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import { COMPANY_ADDRESS, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
+import { IS_CONTACT_FORM_ENABLED } from "@/lib/feature-flags";
 
 type InquiryType = "dispatch" | "it" | "recruit" | "other";
 
 const inquiryTypes = [
-    { id: "dispatch", label: "派遣・人材のご相談", icon: "👨‍🌾", color: "#1B5E38" },
-    { id: "it", label: "IT開発のご相談", icon: "💻", color: "#2563EB" },
-    { id: "recruit", label: "採用について", icon: "👥", color: "#7C3AED" },
-    { id: "other", label: "その他", icon: "📝", color: "#D4A853" },
+    { id: "dispatch", label: "派遣・人材のご相談", icon: "👨‍🌾" },
+    { id: "it", label: "IT開発のご相談", icon: "💻" },
+    { id: "recruit", label: "採用について", icon: "👥" },
+    { id: "other", label: "その他", icon: "📝" },
 ];
 
 // Floating particles component
@@ -29,7 +30,7 @@ const FloatingParticles = () => {
                     transition={{ duration: 4 + Math.random() * 2, repeat: Infinity, delay: i * 0.3 }}
                     className="absolute w-2 h-2 rounded-full"
                     style={{
-                        background: i % 2 === 0 ? "#1B5E38" : "#D4A853",
+                        background: i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-light)",
                         left: `${10 + i * 10}%`,
                         top: `${Math.random() * 100}%`,
                     }}
@@ -96,7 +97,7 @@ export default function ContactPage() {
 
     if (isSubmitted) {
         return (
-            <div ref={containerRef} className="pt-20 min-h-screen bg-[#FAFAF7] flex items-center justify-center">
+            <div ref={containerRef} className="pt-20 min-h-screen bg-canvas flex items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -107,7 +108,7 @@ export default function ContactPage() {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                        className="w-24 h-24 bg-[#1B5E38] rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg shadow-[#1B5E38]/30"
+                        className="w-24 h-24 bg-accent rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg shadow-accent/30"
                     >
                         <Check className="w-12 h-12 text-white" />
                     </motion.div>
@@ -115,7 +116,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="text-2xl font-bold text-[#1A1A1A] mb-4"
+                        className="text-2xl font-bold text-ink mb-4"
                     >
                         お問い合わせありがとうございます
                     </motion.h1>
@@ -132,7 +133,7 @@ export default function ContactPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8 }}
                         href="/"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B5E38] text-white font-bold rounded-full hover:bg-[#1B5E38]/90 transition-colors"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-bold rounded-full hover:bg-accent/90 transition-colors"
                     >
                         トップページに戻る
                     </motion.a>
@@ -146,11 +147,11 @@ export default function ContactPage() {
             {/* Scroll Progress */}
             <motion.div
                 style={{ scaleX: scrollYProgress, originX: 0 }}
-                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1B5E38] via-[#D4A853] to-[#7C3AED] z-50"
+                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent to-accent z-50"
             />
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#0A0A0A] min-h-[60vh] flex items-center">
+            <section className="relative overflow-hidden bg-ink-strong min-h-[60vh] flex items-center">
                 {/* Aurora Background */}
                 <motion.div
                     animate={{
@@ -159,8 +160,8 @@ export default function ContactPage() {
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute inset-0 opacity-40"
                     style={{
-                        background: `radial-gradient(ellipse at 30% 30%, #1B5E38 0%, transparent 50%),
-                                     radial-gradient(ellipse at 70% 70%, #D4A853 0%, transparent 50%)`,
+                        background: `radial-gradient(ellipse at 30% 30%, var(--color-accent) 0%, transparent 50%),
+                                     radial-gradient(ellipse at 70% 70%, var(--color-accent-light) 0%, transparent 50%)`,
                         backgroundSize: "200% 200%",
                     }}
                 />
@@ -174,7 +175,7 @@ export default function ContactPage() {
                             transition={{ duration: 0.8, ease: "backOut" }}
                             className="inline-flex items-center gap-2 mb-6"
                         >
-                            <Sparkles className="w-5 h-5 text-[#D4A853] animate-pulse" />
+                            <Sparkles className="w-5 h-5 text-accent animate-pulse" />
                             <span className="px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-sm font-medium text-white/90">
                                 Contact
                             </span>
@@ -213,7 +214,7 @@ export default function ContactPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent"
+                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-canvas to-transparent"
                 />
             </section>
 
@@ -228,10 +229,10 @@ export default function ContactPage() {
                             transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
                             className="bg-white rounded-3xl shadow-2xl overflow-hidden p-8 md:p-12 text-center"
                         >
-                            <div className="w-16 h-16 bg-[#D4A853]/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                                <Sparkles className="w-8 h-8 text-[#D4A853]" />
+                            <div className="w-16 h-16 bg-accent/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                <Sparkles className="w-8 h-8 text-accent" />
                             </div>
-                            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+                            <h2 className="text-2xl font-bold text-ink mb-4">
                                 現在フォームを調整中です
                             </h2>
                             <p className="text-gray-600 mb-8 leading-relaxed">
@@ -242,7 +243,7 @@ export default function ContactPage() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <a
                                     href="tel:0995-73-9939"
-                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#1B5E38] text-white font-bold rounded-full hover:bg-[#1B5E38]/90 transition-colors"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-accent text-white font-bold rounded-full hover:bg-accent/90 transition-colors"
                                 >
                                     <Phone className="w-4 h-4" />
                                     0995-73-9939 に電話する
@@ -265,7 +266,7 @@ export default function ContactPage() {
                         className="bg-white rounded-3xl shadow-2xl overflow-hidden"
                     >
                         {/* Progress Bar */}
-                        <div className="px-8 py-6 bg-gradient-to-r from-[#1B5E38]/10 to-[#D4A853]/10 border-b border-white/10">
+                        <div className="px-8 py-6 bg-gradient-to-r from-accent/10 to-accent/10 border-b border-white/10">
                             <div className="flex items-center justify-between max-w-md mx-auto">
                                 {[1, 2, 3].map((s) => (
                                     <motion.div
@@ -277,7 +278,7 @@ export default function ContactPage() {
                                         <motion.div
                                             animate={{
                                                 scale: step >= s ? [1, 1.1, 1] : 1,
-                                                backgroundColor: step >= s ? "#1B5E38" : "#e5e7eb",
+                                                backgroundColor: step >= s ? "var(--color-accent)" : "var(--color-line)",
                                             }}
                                             transition={{ duration: 0.3 }}
                                             className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step >= s ? "text-white" : "text-gray-500"
@@ -289,7 +290,7 @@ export default function ContactPage() {
                                             <motion.div
                                                 initial={{ scaleX: 0 }}
                                                 animate={{ scaleX: step > s ? 1 : 0 }}
-                                                className={`w-16 h-1 mx-2 rounded-full ${step > s ? "bg-[#1B5E38]" : "bg-gray-200"
+                                                className={`w-16 h-1 mx-2 rounded-full ${step > s ? "bg-accent" : "bg-gray-200"
                                                     }`}
                                             />
                                         )}
@@ -297,9 +298,9 @@ export default function ContactPage() {
                                 ))}
                             </div>
                             <div className="flex justify-between max-w-md mx-auto mt-3 text-xs font-medium text-gray-500">
-                                <span className={step >= 1 ? "text-[#1B5E38]" : ""}>種類を選択</span>
-                                <span className={step >= 2 ? "text-[#1B5E38]" : ""}>基本情報</span>
-                                <span className={step >= 3 ? "text-[#1B5E38]" : ""}>詳細・送信</span>
+                                <span className={step >= 1 ? "text-accent" : ""}>種類を選択</span>
+                                <span className={step >= 2 ? "text-accent" : ""}>基本情報</span>
+                                <span className={step >= 3 ? "text-accent" : ""}>詳細・送信</span>
                             </div>
                         </div>
 
@@ -312,7 +313,7 @@ export default function ContactPage() {
                                     exit={{ opacity: 0, x: -30 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <h2 className="text-2xl font-bold text-[#1A1A1A] mb-8 text-center">
+                                    <h2 className="text-2xl font-bold text-ink mb-8 text-center">
                                         お問い合わせの種類を選択してください
                                     </h2>
                                     <div className="grid md:grid-cols-2 gap-4">
@@ -330,7 +331,7 @@ export default function ContactPage() {
                                                     setStep(2);
                                                 }}
                                                 className={`p-6 rounded-2xl border-2 text-left transition-all relative overflow-hidden ${formData.inquiryType === type.id
-                                                        ? "border-[#1B5E38] bg-[#1B5E38]/5"
+                                                        ? "border-accent bg-accent/5"
                                                         : "border-gray-200 hover:border-gray-300 bg-white"
                                                     }`}
                                             >
@@ -347,13 +348,13 @@ export default function ContactPage() {
                                                     >
                                                         {type.icon}
                                                     </motion.span>
-                                                    <span className="font-bold text-[#1A1A1A]">{type.label}</span>
+                                                    <span className="font-bold text-ink">{type.label}</span>
                                                 </div>
                                                 {formData.inquiryType === type.id && (
                                                     <motion.div
                                                         initial={{ scale: 0 }}
                                                         animate={{ scale: 1 }}
-                                                        className="absolute top-3 right-3 w-6 h-6 bg-[#1B5E38] rounded-full flex items-center justify-center"
+                                                        className="absolute top-3 right-3 w-6 h-6 bg-accent rounded-full flex items-center justify-center"
                                                     >
                                                         <Check className="w-4 h-4 text-white" />
                                                     </motion.div>
@@ -373,7 +374,7 @@ export default function ContactPage() {
                                     transition={{ duration: 0.5 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold text-[#1A1A1A] mb-6 text-center">
+                                    <h2 className="text-2xl font-bold text-ink mb-6 text-center">
                                         基本情報をご入力ください
                                     </h2>
                                     <div className="grid md:grid-cols-2 gap-6">
@@ -399,7 +400,7 @@ export default function ContactPage() {
                                                     onChange={(e) =>
                                                         setFormData({ ...formData, [field.key]: e.target.value })
                                                     }
-                                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1B5E38] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
+                                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
                                                     placeholder={field.placeholder}
                                                 />
                                             </motion.div>
@@ -421,7 +422,7 @@ export default function ContactPage() {
                                             disabled={!formData.companyName || !formData.name || !formData.email}
                                             whileHover={{ scale: !formData.companyName || !formData.name || !formData.email ? 1 : 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="px-8 py-3 bg-[#1B5E38] text-white font-bold rounded-full hover:bg-[#1B5E38]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                            className="px-8 py-3 bg-accent text-white font-bold rounded-full hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                                         >
                                             次へ
                                             <ArrowRight className="w-4 h-4" />
@@ -439,7 +440,7 @@ export default function ContactPage() {
                                     transition={{ duration: 0.5 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold text-[#1A1A1A] mb-6 text-center">
+                                    <h2 className="text-2xl font-bold text-ink mb-6 text-center">
                                         詳細をお聞かせください
                                     </h2>
 
@@ -448,7 +449,7 @@ export default function ContactPage() {
                                         <motion.div
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="grid md:grid-cols-3 gap-6 p-6 bg-[#1B5E38]/5 rounded-2xl"
+                                            className="grid md:grid-cols-3 gap-6 p-6 bg-accent/5 rounded-2xl"
                                         >
                                             {[
                                                 { label: "希望人数", key: "workerCount", placeholder: "例: 5名" },
@@ -470,7 +471,7 @@ export default function ContactPage() {
                                                         onChange={(e) =>
                                                             setFormData({ ...formData, [field.key]: e.target.value })
                                                         }
-                                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1B5E38] focus:border-transparent outline-none bg-white"
+                                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
                                                         placeholder={field.placeholder}
                                                     />
                                                 </motion.div>
@@ -483,7 +484,7 @@ export default function ContactPage() {
                                         <motion.div
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="grid md:grid-cols-3 gap-6 p-6 bg-[#2563EB]/5 rounded-2xl"
+                                            className="grid md:grid-cols-3 gap-6 p-6 bg-accent/5 rounded-2xl"
                                         >
                                             {[
                                                 { label: "開発種別", key: "projectType", options: ["選択してください", "Webアプリ開発", "モバイルアプリ開発", "業務システム開発", "技術コンサルティング"] },
@@ -505,7 +506,7 @@ export default function ContactPage() {
                                                             onChange={(e) =>
                                                                 setFormData({ ...formData, [field.key]: e.target.value })
                                                             }
-                                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent outline-none bg-white"
+                                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
                                                         >
                                                             {field.options.map((opt, optIndex) => (
                                                                 <option key={opt} value={optIndex === 0 ? "" : opt}>
@@ -520,7 +521,7 @@ export default function ContactPage() {
                                                             onChange={(e) =>
                                                                 setFormData({ ...formData, [field.key]: e.target.value })
                                                             }
-                                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent outline-none bg-white"
+                                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
                                                             placeholder={field.placeholder}
                                                         />
                                                     )}
@@ -542,7 +543,7 @@ export default function ContactPage() {
                                             rows={5}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1B5E38] focus:border-transparent outline-none resize-none bg-gray-50 focus:bg-white"
+                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none resize-none bg-gray-50 focus:bg-white"
                                             placeholder="ご相談内容をご記入ください"
                                         />
                                     </motion.div>
@@ -562,7 +563,7 @@ export default function ContactPage() {
                                             disabled={isSubmitting || !formData.message}
                                             whileHover={{ scale: isSubmitting || !formData.message ? 1 : 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="px-8 py-3 bg-[#1B5E38] text-white font-bold rounded-full hover:bg-[#1B5E38]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg shadow-[#1B5E38]/30"
+                                            className="px-8 py-3 bg-accent text-white font-bold rounded-full hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg shadow-accent/30"
                                         >
                                             {isSubmitting ? (
                                                 <span className="flex items-center gap-2">
@@ -590,7 +591,7 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Info */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -600,36 +601,35 @@ export default function ContactPage() {
                         className="text-center mb-12"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             直接のお問い合わせ
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
-                            { icon: Phone, title: "お電話", value: "0995-73-9939", sub: "平日 9:00〜18:00", color: "#1B5E38" },
-                            { icon: Mail, title: "メール", value: "info@sugu-kuru.co.jp", sub: "24時間受付", color: "#D4A853" },
-                            { icon: MapPin, title: "所在地", value: COMPANY_ADDRESS_LINE_JA, sub: `〒${COMPANY_ADDRESS.postalCode}`, color: "#7C3AED" },
+                            { icon: Phone, title: "お電話", value: "0995-73-9939", sub: "平日 9:00〜18:00" },
+                            { icon: Mail, title: "メール", value: "info@sugu-kuru.co.jp", sub: "24時間受付" },
+                            { icon: MapPin, title: "所在地", value: COMPANY_ADDRESS_LINE_JA, sub: `〒${COMPANY_ADDRESS.postalCode}` },
                         ].map((item, index) => (
                             <GlassCard key={item.title} delay={index * 0.1}>
                                 <motion.div
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                     transition={{ type: "spring", stiffness: 400 }}
-                                    className={`w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center`}
-                                    style={{ backgroundColor: `${item.color}20` }}
+                                    className="w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-accent/[0.125]"
                                 >
-                                    <item.icon className="w-7 h-7" style={{ color: item.color }} />
+                                    <item.icon className="w-7 h-7 text-accent" />
                                 </motion.div>
-                                <h3 className="font-bold text-[#1A1A1A] mb-2">{item.title}</h3>
+                                <h3 className="font-bold text-ink mb-2">{item.title}</h3>
                                 {item.title === "お電話" ? (
-                                    <a href="tel:0995-73-9939" className="text-[#1B5E38] font-bold text-lg hover:underline block">
+                                    <a href="tel:0995-73-9939" className="text-accent font-bold text-lg hover:underline block">
                                         {item.value}
                                     </a>
                                 ) : item.title === "メール" ? (
-                                    <a href="mailto:info@sugu-kuru.co.jp" className="text-[#1B5E38] hover:underline block">
+                                    <a href="mailto:info@sugu-kuru.co.jp" className="text-accent hover:underline block">
                                         {item.value}
                                     </a>
                                 ) : (

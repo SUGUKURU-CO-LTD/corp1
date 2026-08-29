@@ -63,14 +63,14 @@ export default function LanguageSwitcher() {
                             <button
                                 key={lang.code}
                                 onClick={() => handleLanguageChange(lang.code)}
-                                className={`w-full text-left px-4 py-2 text-sm hover:bg-[#1B5E38] hover:text-white transition-colors flex items-center gap-2 ${
+                                className={`w-full text-left px-4 py-2 text-sm hover:bg-accent hover:text-white transition-colors flex items-center gap-2 ${
                                     locale === lang.code ? 'bg-gray-100 font-semibold' : ''
                                 }`}
                             >
                                 <span>{lang.flag}</span>
                                 <span>{lang.name}</span>
                                 {locale === lang.code && (
-                                    <span className="ml-auto text-[#1B5E38]">✓</span>
+                                    <span className="ml-auto text-accent">✓</span>
                                 )}
                             </button>
                         ))}

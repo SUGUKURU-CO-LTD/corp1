@@ -87,9 +87,15 @@ export const pageMetadata = {
     }),
     servicesPlacement: generatePageMetadata({
         title: '有料職業紹介サービス',
-        description: '農業分野における有料職業紹介サービス。紹介予定派遣で最適な人材をマッチングします。',
-        keywords: '有料職業紹介, 人材紹介, 紹介予定派遣, 農業人材',
+        description: '九州の企業様向けに外国人材の有料職業紹介・紹介予定派遣を提供。ホテル・外食・製造・建設等、業種別の受け入れ方法をご案内します。',
+        keywords: '有料職業紹介, 人材紹介, 紹介予定派遣, 外国人材, 九州, 特定技能, 技人国',
         path: '/services/placement',
+    }),
+    servicesGijinkoku: generatePageMetadata({
+        title: '技術・人文知識・国際業務（技人国）人材の派遣・紹介',
+        description: '九州の製造・建設・サービス業へ、技人国人材を派遣・職業紹介・紹介予定派遣でご案内。生産管理・品質保証・通訳翻訳・施工管理等、専門職としての受け入れをサポートします。',
+        keywords: '技人国, 技術人文知識国際業務, 外国人材, 人材派遣, 職業紹介, 九州, 生産管理, 施工管理',
+        path: '/services/gijinkoku',
     }),
     servicesIt: generatePageMetadata({
         title: 'IT事業',

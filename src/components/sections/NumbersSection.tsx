@@ -5,7 +5,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
 
 // Animated counter with glow
-function Counter({ end, duration = 2, color }: { end: number; duration?: number; color: string }) {
+function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
     const [count, setCount] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
     const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -40,16 +40,14 @@ function Counter({ end, duration = 2, color }: { end: number; duration?: number;
                 whileInView={{ opacity: 0.4, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="absolute -inset-4 rounded-full blur-xl"
-                style={{ backgroundColor: color }}
+                className="absolute -inset-4 rounded-full blur-xl bg-accent"
             />
             <motion.span
                 ref={ref}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="relative text-5xl md:text-6xl lg:text-7xl font-bold"
-                style={{ color }}
+                className="relative text-5xl md:text-6xl lg:text-7xl font-bold text-accent"
             >
                 {count}
             </motion.span>
@@ -64,16 +62,16 @@ function Counter({ end, duration = 2, color }: { end: number; duration?: number;
 // Headcount is disclosed on the company profile page, not promoted here.
 // Jumlah staf dicantumkan di halaman profil perusahaan, bukan dipromosikan di sini.
 const stats = [
-    { value: 60, suffix: "社+", label: "導入企業", description: "農業法人・JA・食品関連など", color: "#1B5E38", delay: 0 },
-    { value: 5, suffix: "エリア", label: "稼働地域", description: "鹿児島・福島・愛知・愛媛・青森", color: "#D4A853", delay: 0.1 },
-    { value: 3, suffix: "拠点", label: "事業所", description: "本社（霧島）・名古屋支所・ロンボク", color: "#0D9488", delay: 0.2 },
-    { value: 2, suffix: "週間", label: "最短就業開始", description: "条件により異なります", color: "#7C3AED", delay: 0.3 },
+    { value: 60, suffix: "社+", label: "導入企業", description: "農業法人・JA・食品関連など", delay: 0 },
+    { value: 5, suffix: "エリア", label: "稼働地域", description: "鹿児島・福島・愛知・愛媛・青森", delay: 0.1 },
+    { value: 2, suffix: "拠点", label: "事業所", description: "本社（霧島）・ロンボク", delay: 0.2 },
+    { value: 2, suffix: "週間", label: "最短就業開始", description: "条件により異なります", delay: 0.3 },
 ];
 
 // 稼働エリアのカード（収穫リレー）。地域・作目・繁忙期を見やすく示す。
 // Region card (harvest relay): region, crops, peak season — easy to scan.
 // Kartu wilayah (estafet panen): wilayah, tanaman, musim sibuk.
-const RegionBadge = ({ region, crops, season, color, delay }: { region: string; crops: string; season: string; color: string; delay: number }) => {
+const RegionBadge = ({ region, crops, season, delay }: { region: string; crops: string; season: string; delay: number }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -82,11 +80,11 @@ const RegionBadge = ({ region, crops, season, color, delay }: { region: string; 
             transition={{ duration: 0.45, delay }}
             className="flex items-start gap-3 px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-left"
         >
-            <span className="mt-0.5 h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+            <span className="mt-0.5 h-2.5 w-2.5 rounded-full flex-shrink-0 bg-accent" />
             <div>
                 <p className="text-white font-bold text-sm">{region}</p>
                 <p className="text-white/70 text-xs mt-0.5">{crops}</p>
-                <p className="text-[#E8C77A] text-xs mt-1">繁忙期: {season}</p>
+                <p className="text-accent-light text-xs mt-1">繁忙期: {season}</p>
             </div>
         </motion.div>
     );
@@ -103,12 +101,12 @@ export default function NumbersSection() {
     const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
     return (
-        <section ref={sectionRef} className="section relative bg-[#0A0A0A] overflow-hidden">
+        <section ref={sectionRef} className="section relative bg-ink-strong overflow-hidden">
             {/* Animated background */}
             <motion.div style={{ y: backgroundY }} className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#1B5E38]/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#D4A853]/10 rounded-full blur-3xl" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-r from-[#1B5E38]/20 to-[#D4A853]/20 rounded-full blur-3xl" />
+                <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-r from-accent/20 to-accent/20 rounded-full blur-3xl" />
             </motion.div>
 
             {/* Grid pattern */}
@@ -120,8 +118,8 @@ export default function NumbersSection() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     backgroundImage: `
-                        linear-gradient(rgba(212, 168, 83, 0.1) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(212, 168, 83, 0.1) 1px, transparent 1px)
+                        linear-gradient(color-mix(in oklch, var(--color-accent) 10%, transparent) 1px, transparent 1px),
+                        linear-gradient(90deg, color-mix(in oklch, var(--color-accent) 10%, transparent) 1px, transparent 1px)
                     `,
                     backgroundSize: "50px 50px",
                     maskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
@@ -142,7 +140,7 @@ export default function NumbersSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="inline-block px-4 py-2 bg-gradient-to-r from-[#1B5E38]/10 to-[#D4A853]/10 text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 rounded-full border border-[#D4A853]/20"
+                        className="inline-block px-4 py-2 bg-gradient-to-r from-accent/10 to-accent/10 text-accent font-medium text-sm tracking-wider uppercase mb-4 rounded-full border border-accent/20"
                     >
                         Results
                     </motion.span>
@@ -162,7 +160,7 @@ export default function NumbersSection() {
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] via-[#D4A853] to-[#1B5E38]"
+                        className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent via-accent to-accent"
                     />
                 </motion.div>
 
@@ -185,19 +183,18 @@ export default function NumbersSection() {
                                 transition={{ duration: 0.3 }}
                                 className="absolute bottom-0 left-0 right-0 h-0.5"
                                 style={{
-                                    background: `linear-gradient(90deg, transparent, ${stat.color}, transparent)`,
+                                    background: "linear-gradient(90deg, transparent, var(--color-accent), transparent)",
                                 }}
                             />
 
                             <div className="mb-4 relative">
-                                <Counter end={stat.value} color={stat.color} />
+                                <Counter end={stat.value} />
                                 <motion.span
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: stat.delay + 0.3 }}
-                                    className="text-3xl md:text-4xl font-bold ml-1"
-                                    style={{ color: stat.color }}
+                                    className="text-3xl md:text-4xl font-bold ml-1 text-accent"
                                 >
                                     {stat.suffix}
                                 </motion.span>
@@ -219,10 +216,7 @@ export default function NumbersSection() {
                             </motion.p>
 
                             {/* Number badge */}
-                            <div
-                                className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold opacity-15"
-                                style={{ backgroundColor: stat.color, color: stat.color }}
-                            >
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold opacity-15 bg-accent text-accent">
                                 {index + 1}
                             </div>
                         </motion.div>
@@ -245,11 +239,11 @@ export default function NumbersSection() {
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
                         {[
-                            { region: "鹿児島", crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月", color: "#1B5E38" },
-                            { region: "福島", crops: "野菜", season: "夏〜秋", color: "#D4A853" },
-                            { region: "愛知", crops: "野菜", season: "通年", color: "#0D9488" },
-                            { region: "愛媛", crops: "柑橘", season: "11〜2月", color: "#7C3AED" },
-                            { region: "青森", crops: "りんご", season: "9〜11月", color: "#E91E63" },
+                            { region: "鹿児島", crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月" },
+                            { region: "福島", crops: "野菜", season: "夏〜秋" },
+                            { region: "愛知", crops: "野菜", season: "通年" },
+                            { region: "愛媛", crops: "柑橘", season: "11〜2月" },
+                            { region: "青森", crops: "りんご", season: "9〜11月" },
                         ].map((item, i) => (
                             <RegionBadge key={item.region} {...item} delay={0.1 + i * 0.08} />
                         ))}

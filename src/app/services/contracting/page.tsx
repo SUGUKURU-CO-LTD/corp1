@@ -49,8 +49,8 @@ export default function ContractingPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-[#0D9488] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0D9488] via-[#14b8a6] to-[#0D9488]" />
+            <section className="section bg-accent text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
                 <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
@@ -71,7 +71,7 @@ export default function ContractingPage() {
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             収穫も選果も、<br />
-                            <span className="text-[#D4A853]">丸ごと任せる。</span>
+                            <span className="text-accent">丸ごと任せる。</span>
                         </motion.h1>
 
                         <motion.p
@@ -93,7 +93,7 @@ export default function ContractingPage() {
                         >
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#0D9488] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 お見積もり依頼
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -111,7 +111,7 @@ export default function ContractingPage() {
             </section>
 
             {/* Philosophy */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -120,11 +120,11 @@ export default function ContractingPage() {
                         transition={{ duration: 0.6 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Philosophy
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8"
+                            className="text-3xl md:text-4xl font-bold text-ink mb-8"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             あなたの時間を、取り戻す。
@@ -150,11 +150,11 @@ export default function ContractingPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Services
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             対応可能な作業
@@ -171,10 +171,10 @@ export default function ContractingPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="card text-center group"
                             >
-                                <div className="w-14 h-14 rounded-xl bg-[#0D9488]/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#0D9488]/20 transition-colors">
-                                    <service.icon className="w-7 h-7 text-[#0D9488]" />
+                                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-accent/20 transition-colors">
+                                    <service.icon className="w-7 h-7 text-accent" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
+                                <h3 className="text-lg font-bold text-ink mb-2">
                                     {service.title}
                                 </h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -187,7 +187,7 @@ export default function ContractingPage() {
             </section>
 
             {/* Benefits */}
-            <section className="section bg-[#1A1A1A]">
+            <section className="section bg-ink">
                 <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
@@ -197,7 +197,7 @@ export default function ContractingPage() {
                             transition={{ duration: 0.6 }}
                             className="text-center mb-12"
                         >
-                            <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                            <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                                 Benefits
                             </span>
                             <h2
@@ -218,7 +218,7 @@ export default function ContractingPage() {
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
                                     className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
                                 >
-                                    <CheckCircle2 className="w-5 h-5 text-[#0D9488] flex-shrink-0" />
+                                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
                                     <span className="text-white">{benefit}</span>
                                 </motion.div>
                             ))}
@@ -228,7 +228,7 @@ export default function ContractingPage() {
             </section>
 
             {/* Case Study */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -237,11 +237,11 @@ export default function ContractingPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-12"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Case
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入事例
@@ -257,8 +257,8 @@ export default function ContractingPage() {
                     >
                         <div className="flex flex-col md:flex-row gap-8">
                             <div className="flex-1">
-                                <p className="text-[#0D9488] font-bold mb-2">鹿児島県 製茶組合</p>
-                                <h3 className="text-xl font-bold text-[#1A1A1A] mb-4">
+                                <p className="text-accent font-bold mb-2">鹿児島県 製茶組合</p>
+                                <h3 className="text-xl font-bold text-ink mb-4">
                                     茶摘みシーズンに20名を一斉派遣
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed mb-6">
@@ -266,7 +266,7 @@ export default function ContractingPage() {
                                     南大隅から霧島エリアまで、20名のチームを一斉に派遣いただきました。
                                     作業の質も高く、今では毎年お願いしています。
                                 </p>
-                                <ClipboardCheck className="w-8 h-8 text-[#D4A853]" />
+                                <ClipboardCheck className="w-8 h-8 text-accent" />
                             </div>
                         </div>
                     </motion.div>
@@ -274,7 +274,7 @@ export default function ContractingPage() {
             </section>
 
             {/* CTA */}
-            <section className="section bg-gradient-to-br from-[#0D9488] via-[#14b8a6] to-[#0D9488]">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent">
                 <div className="container mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -295,7 +295,7 @@ export default function ContractingPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#0D9488] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 お見積もり依頼
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -5,31 +5,73 @@
    =========================================== */
 
 :root {
-  /* Core Brand Colors */
-  --forest-green: #1B5E38;
-  --forest-green-light: #2d7a4e;
-  --forest-green-dark: #144429;
-  --golden-harvest: #D4A853;
-  --golden-harvest-light: #e8c77a;
-  --golden-harvest-dark: #b8923f;
-  --carbon-black: #1A1A1A;
-  --warm-white: #FAFAF7;
+  /* ===========================================
+     配色基盤 v3.0 — OKLCHセマンティックトークン
+     プリミティブ（gray-* / accent-*）は直接参照しない。
+     コンポーネントはセマンティック層（--color-canvas等）のみ使用する。
+     ダークモード追加時は、このセマンティック層だけを
+     @media (prefers-color-scheme: dark) で再定義すればよい。
+     =========================================== */
+  color-scheme: light;
 
-  /* Service Colors */
-  --color-dispatch: #1B5E38;
-  --color-contracting: #0D9488;
-  --color-placement: #7C3AED;
-  --color-it: #2563EB;
+  /* ---- プリミティブ：ニュートラル（温かみを残す暖色寄りグレースケール） ---- */
+  --gray-0: oklch(99.2% 0.002 95);
+  --gray-50: oklch(97.4% 0.003 95);
+  --gray-100: oklch(94.5% 0.004 95);
+  --gray-200: oklch(89% 0.005 95);
+  --gray-300: oklch(80% 0.006 95);
+  --gray-400: oklch(65% 0.007 95);
+  --gray-500: oklch(52% 0.007 95);
+  --gray-600: oklch(42% 0.007 95);
+  --gray-700: oklch(32% 0.006 95);
+  --gray-800: oklch(22% 0.005 95);
+  --gray-900: oklch(16% 0.004 95);
+  --gray-950: oklch(11% 0.003 95);
 
-  /* Semantic Colors */
-  --color-success: #22C55E;
-  --color-warning: #F59E0B;
-  --color-error: #EF4444;
+  /* ---- プリミティブ：アクセント（グリーン。旧#1B5E38比で明度・彩度を引き上げ） ---- */
+  /* 旧 #1B5E38 = oklch(43.0% 0.092 154.4) → 色相154°は維持し、明度・彩度を現代的な水準へ */
+  --accent-50: oklch(95% 0.035 154);
+  --accent-100: oklch(90% 0.06 154);
+  --accent-200: oklch(82% 0.09 154);
+  --accent-300: oklch(72% 0.12 154);
+  --accent-400: oklch(63% 0.145 154);
+  --accent-500: oklch(55% 0.155 154);
+  --accent-600: oklch(47% 0.145 154);
+  --accent-700: oklch(39% 0.13 154);
+  --accent-800: oklch(30% 0.1 154);
+  --accent-900: oklch(21% 0.07 154);
 
-  /* Neutral Colors */
-  --light-gray: #F3F4F6;
-  --muted-gray: #6B7280;
-  --border-gray: #E5E7EB;
+  /* ---- セマンティック層（コンポーネントが参照するのはここだけ） ---- */
+  --color-canvas: var(--gray-0);
+  --color-surface: #ffffff;
+  --color-ink: var(--gray-900);
+  --color-ink-muted: var(--gray-600);
+  --color-ink-strong: var(--gray-950);
+  --color-line: var(--gray-200);
+  --color-accent-soft: var(--accent-50);
+  --color-accent-light: var(--accent-400);
+  --color-accent: var(--accent-500);
+  --color-accent-strong: var(--accent-700);
+  --color-accent-dark: var(--accent-900);
+  --color-on-accent: #ffffff;
+  --color-error: oklch(63.7% 0.208 25.3);
+  --color-warning: oklch(75% 0.16 70);
+  --color-success: var(--color-accent);
+
+  /* ---- 旧トークンのブリッジ（.btn/.card 等の既存クラスが参照。値のみ新トークンへ差し替え） ---- */
+  --forest-green: var(--color-accent);
+  --forest-green-light: var(--accent-400);
+  --forest-green-dark: var(--color-accent-strong);
+  --golden-harvest: var(--color-accent);
+  --golden-harvest-light: var(--accent-300);
+  --golden-harvest-dark: var(--accent-600);
+  --carbon-black: var(--color-ink);
+  --warm-white: var(--color-canvas);
+
+  /* Neutral Colors（旧名、セマンティック層へブリッジ） */
+  --light-gray: var(--gray-100);
+  --muted-gray: var(--color-ink-muted);
+  --border-gray: var(--color-line);
 
   /* Background & Foreground */
   --background: var(--warm-white);
@@ -69,6 +111,26 @@
   --color-foreground: var(--foreground);
   --color-forest-green: var(--forest-green);
   --color-golden-harvest: var(--golden-harvest);
+
+  /* セマンティックトークンをTailwindユーティリティへ露出。
+     bg-canvas / bg-surface / text-ink / text-ink-muted / border-line /
+     bg-accent / text-accent / border-accent / bg-accent-strong /
+     bg-accent-soft / text-on-accent / text-error 等が使えるようになる。 */
+  --color-canvas: var(--color-canvas);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-strong: var(--color-ink-strong);
+  --color-line: var(--color-line);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-light: var(--color-accent-light);
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-on-accent: var(--color-on-accent);
+  --color-error: var(--color-error);
+  --color-warning: var(--color-warning);
+
   --font-sans: var(--font-noto-sans);
   --font-serif: var(--font-shippori-mincho);
   --font-mono: var(--font-jetbrains-mono);

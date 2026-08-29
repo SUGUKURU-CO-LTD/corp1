@@ -13,21 +13,18 @@ const missions = [
         title: "ローカルをグローバルでつなぐ",
         description:
             "過疎化が進む地方、人手が足りない農業。日本人だけでは届かない現場に、海外の人材の力を届けます。土地と人をつなぐ架け橋になります。",
-        color: "#1B5E38",
     },
     {
         icon: Users,
         title: "人材に「居場所」をつくる",
         description:
             "単なる労働力ではなく、暮らす人として。住居・医療・言葉・文化のサポートまで、働く前後の生活を一貫して支えます。",
-        color: "#D4A853",
     },
     {
         icon: Heart,
         title: "耕作放棄地を、実りへ",
         description:
             "全国で農地が静かに減っています。人手の確保を通じて、使われなくなった土地が再び実りある大地に戻る後押しをします。",
-        color: "#0D9488",
     },
 ];
 
@@ -43,11 +40,11 @@ export default function MissionSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-14"
                 >
-                    <span className="inline-block px-4 py-1.5 bg-[#1B5E38]/8 text-[#1B5E38] font-medium text-sm tracking-wider uppercase mb-4 rounded-full">
+                    <span className="inline-block px-4 py-1.5 bg-accent/8 text-accent font-medium text-sm tracking-wider uppercase mb-4 rounded-full">
                         Our Mission
                     </span>
                     <h2
-                        className="text-3xl md:text-5xl font-bold text-[#1A1A1A] mb-5"
+                        className="text-3xl md:text-5xl font-bold text-ink mb-5"
                         style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                     >
                         私たちの使命
@@ -56,7 +53,7 @@ export default function MissionSection() {
                         人手不足を解決するだけでなく、人材が安心して働き、暮らせる環境をつくる。
                         その先に、日本の農業の持続を見据えています。
                     </p>
-                    <div className="w-20 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                    <div className="w-20 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                 </motion.div>
 
                 {/* ミッションカード */}
@@ -69,15 +66,12 @@ export default function MissionSection() {
                             viewport={{ once: true, margin: "-60px" }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             className="bg-white rounded-2xl border border-gray-150 shadow-sm hover:shadow-md transition-shadow p-8"
-                            style={{ borderColor: "#EBEBE6" }}
+                            style={{ borderColor: "var(--color-line)" }}
                         >
-                            <div
-                                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-                                style={{ backgroundColor: `${mission.color}15` }}
-                            >
-                                <mission.icon className="w-7 h-7" style={{ color: mission.color }} />
+                            <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 bg-accent/[0.08]">
+                                <mission.icon className="w-7 h-7 text-accent" />
                             </div>
-                            <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">
+                            <h3 className="text-xl font-bold text-ink mb-3">
                                 {mission.title}
                             </h3>
                             <p className="text-gray-600 leading-relaxed">

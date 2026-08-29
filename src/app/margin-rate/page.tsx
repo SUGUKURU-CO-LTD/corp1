@@ -42,7 +42,7 @@ const marginRows: TableRow[] = [
     {
         label: "マージン率",
         value: "33.5 ％",
-        valueClassName: "text-2xl font-bold text-[#1B5E38]",
+        valueClassName: "text-2xl font-bold text-accent",
     },
 ];
 
@@ -78,7 +78,7 @@ const welfareItems = [
 
 function SectionHeading({ children }: { children: ReactNode }) {
     return (
-        <h2 className="mt-12 border-l-4 border-[#1B5E38] pl-4 text-xl font-bold text-[#1B5E38]">
+        <h2 className="mt-12 border-l-4 border-accent pl-4 text-xl font-bold text-accent">
             {children}
         </h2>
     );
@@ -93,7 +93,7 @@ function DisclosureTable({ rows }: { rows: TableRow[] }) {
                         <tr key={row.label} className="border-b border-gray-200 last:border-b-0">
                             <th
                                 scope="row"
-                                className="w-[38%] bg-[#E8F2E8] px-4 py-3 align-top font-semibold text-[#1A1A1A]"
+                                className="w-[38%] bg-accent-soft px-4 py-3 align-top font-semibold text-ink"
                             >
                                 {row.label}
                             </th>
@@ -121,13 +121,13 @@ function DisclosureList({ items }: { items: string[] }) {
 export default function MarginRatePage() {
     return (
         <div className="pt-20">
-            <section className="bg-[#FAFAF7] px-6 py-20 md:py-28">
-                <article className="mx-auto max-w-4xl rounded-3xl border border-[#1B5E38]/10 bg-white p-6 shadow-sm md:p-10">
+            <section className="bg-canvas px-6 py-20 md:py-28">
+                <article className="mx-auto max-w-4xl rounded-3xl border border-accent/10 bg-white p-6 shadow-sm md:p-10">
                     <header>
-                        <p className="mb-3 text-sm font-medium tracking-[0.18em] text-[#D4A853] uppercase">
+                        <p className="mb-3 text-sm font-medium tracking-[0.18em] text-accent uppercase">
                             Disclosure
                         </p>
-                        <h1 className="border-b-4 border-[#1B5E38] pb-4 text-3xl font-bold text-[#1B5E38] md:text-4xl">
+                        <h1 className="border-b-4 border-accent pb-4 text-3xl font-bold text-accent md:text-4xl">
                             マージン率等の情報公開
                         </h1>
                         <p className="mt-6 leading-8 text-gray-700">
@@ -141,8 +141,8 @@ export default function MarginRatePage() {
                     <SectionHeading>マージン率等</SectionHeading>
                     <DisclosureTable rows={marginRows} />
 
-                    <div className="mt-5 rounded-xl border border-dashed border-gray-300 bg-[#F7F7F5] px-5 py-4 text-sm leading-7 text-gray-700">
-                        <strong className="block text-[#1A1A1A]">マージン率の計算方法</strong>
+                    <div className="mt-5 rounded-xl border border-dashed border-gray-300 bg-gray-50 px-5 py-4 text-sm leading-7 text-gray-700">
+                        <strong className="block text-ink">マージン率の計算方法</strong>
                         マージン率 ＝（派遣料金の平均額 − 派遣労働者の賃金の平均額）÷ 派遣料金の平均額
                     </div>
 

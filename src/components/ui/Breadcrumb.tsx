@@ -24,7 +24,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                 >
                     <Link
                         href="/"
-                        className="flex items-center gap-1 text-gray-500 hover:text-[#1B5E38] transition-colors"
+                        className="flex items-center gap-1 text-gray-500 hover:text-accent transition-colors"
                     >
                         <Home className="w-4 h-4" />
                         <span>ホーム</span>
@@ -47,7 +47,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                         ) : (
                             <Link
                                 href={item.href}
-                                className="text-gray-500 hover:text-[#1B5E38] transition-colors"
+                                className="text-gray-500 hover:text-accent transition-colors"
                             >
                                 {item.name}
                             </Link>
