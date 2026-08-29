@@ -124,7 +124,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="text-gray-600 mb-8"
+                        className="text-ink-muted mb-8"
                     >
                         内容を確認の上、担当者より3営業日以内にご連絡いたします。
                     </motion.p>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
-                            className="text-xl text-gray-300 leading-relaxed max-w-2xl"
+                            className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
                             ご質問・ご相談がございましたら、お気軽にお問い合わせください。
                             担当者より迅速にご対応いたします。
@@ -235,7 +235,7 @@ export default function ContactPage() {
                             <h2 className="text-2xl font-bold text-ink mb-4">
                                 現在フォームを調整中です
                             </h2>
-                            <p className="text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-ink-muted mb-8 leading-relaxed">
                                 大変申し訳ございませんが、お問い合わせフォームは現在準備中のため、
                                 一時的にご利用いただけません。お急ぎのご相談は、お手数ですが
                                 下記のお電話またはメールにて直接ご連絡ください。
@@ -250,7 +250,7 @@ export default function ContactPage() {
                                 </a>
                                 <a
                                     href="mailto:info@sugu-kuru.co.jp"
-                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-300 text-gray-700 font-bold rounded-full hover:bg-gray-50 transition-colors"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-line text-ink font-bold rounded-full hover:bg-gray-50 transition-colors"
                                 >
                                     <Mail className="w-4 h-4" />
                                     info@sugu-kuru.co.jp
@@ -281,7 +281,7 @@ export default function ContactPage() {
                                                 backgroundColor: step >= s ? "var(--color-accent)" : "var(--color-line)",
                                             }}
                                             transition={{ duration: 0.3 }}
-                                            className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step >= s ? "text-white" : "text-gray-500"
+                                            className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step >= s ? "text-white" : "text-ink-muted"
                                                 }`}
                                         >
                                             {step >= s ? <Check className="w-5 h-5" /> : s}
@@ -297,7 +297,7 @@ export default function ContactPage() {
                                     </motion.div>
                                 ))}
                             </div>
-                            <div className="flex justify-between max-w-md mx-auto mt-3 text-xs font-medium text-gray-500">
+                            <div className="flex justify-between max-w-md mx-auto mt-3 text-xs font-medium text-ink-muted">
                                 <span className={step >= 1 ? "text-accent" : ""}>種類を選択</span>
                                 <span className={step >= 2 ? "text-accent" : ""}>基本情報</span>
                                 <span className={step >= 3 ? "text-accent" : ""}>詳細・送信</span>
@@ -332,7 +332,7 @@ export default function ContactPage() {
                                                 }}
                                                 className={`p-6 rounded-2xl border-2 text-left transition-all relative overflow-hidden ${formData.inquiryType === type.id
                                                         ? "border-accent bg-accent/5"
-                                                        : "border-gray-200 hover:border-gray-300 bg-white"
+                                                        : "border-line hover:border-accent/30 bg-white"
                                                     }`}
                                             >
                                                 <motion.div
@@ -390,7 +390,7 @@ export default function ContactPage() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: index * 0.1 }}
                                             >
-                                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                <label className="block text-sm font-medium text-ink mb-2">
                                                     {field.label} {field.required && <span className="text-red-500">*</span>}
                                                 </label>
                                                 <input
@@ -400,7 +400,7 @@ export default function ContactPage() {
                                                     onChange={(e) =>
                                                         setFormData({ ...formData, [field.key]: e.target.value })
                                                     }
-                                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
+                                                    className="w-full px-4 py-3 border border-line rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all bg-canvas focus:bg-white"
                                                     placeholder={field.placeholder}
                                                 />
                                             </motion.div>
@@ -412,7 +412,7 @@ export default function ContactPage() {
                                             onClick={() => setStep(1)}
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-full hover:bg-gray-50 transition-colors"
+                                            className="px-6 py-3 border border-line text-ink font-medium rounded-full hover:bg-gray-50 transition-colors"
                                         >
                                             戻る
                                         </motion.button>
@@ -462,7 +462,7 @@ export default function ContactPage() {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     transition={{ delay: index * 0.1 }}
                                                 >
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                    <label className="block text-sm font-medium text-ink mb-2">
                                                         {field.label}
                                                     </label>
                                                     <input
@@ -471,7 +471,7 @@ export default function ContactPage() {
                                                         onChange={(e) =>
                                                             setFormData({ ...formData, [field.key]: e.target.value })
                                                         }
-                                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
+                                                        className="w-full px-4 py-3 border border-line rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
                                                         placeholder={field.placeholder}
                                                     />
                                                 </motion.div>
@@ -497,7 +497,7 @@ export default function ContactPage() {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     transition={{ delay: index * 0.1 }}
                                                 >
-                                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                                    <label className="block text-sm font-medium text-ink mb-2">
                                                         {field.label}
                                                     </label>
                                                     {"options" in field && field.options ? (
@@ -506,7 +506,7 @@ export default function ContactPage() {
                                                             onChange={(e) =>
                                                                 setFormData({ ...formData, [field.key]: e.target.value })
                                                             }
-                                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
+                                                            className="w-full px-4 py-3 border border-line rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
                                                         >
                                                             {field.options.map((opt, optIndex) => (
                                                                 <option key={opt} value={optIndex === 0 ? "" : opt}>
@@ -521,7 +521,7 @@ export default function ContactPage() {
                                                             onChange={(e) =>
                                                                 setFormData({ ...formData, [field.key]: e.target.value })
                                                             }
-                                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
+                                                            className="w-full px-4 py-3 border border-line rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none bg-white"
                                                             placeholder={field.placeholder}
                                                         />
                                                     )}
@@ -535,7 +535,7 @@ export default function ContactPage() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.3 }}
                                     >
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        <label className="block text-sm font-medium text-ink mb-2">
                                             お問い合わせ内容 <span className="text-red-500">*</span>
                                         </label>
                                         <textarea
@@ -543,7 +543,7 @@ export default function ContactPage() {
                                             rows={5}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none resize-none bg-gray-50 focus:bg-white"
+                                            className="w-full px-4 py-3 border border-line rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none resize-none bg-canvas focus:bg-white"
                                             placeholder="ご相談内容をご記入ください"
                                         />
                                     </motion.div>
@@ -554,7 +554,7 @@ export default function ContactPage() {
                                             onClick={() => setStep(2)}
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
-                                            className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-full hover:bg-gray-50 transition-colors"
+                                            className="px-6 py-3 border border-line text-ink font-medium rounded-full hover:bg-gray-50 transition-colors"
                                         >
                                             戻る
                                         </motion.button>
@@ -633,9 +633,9 @@ export default function ContactPage() {
                                         {item.value}
                                     </a>
                                 ) : (
-                                    <p className="text-gray-600">{item.value}</p>
+                                    <p className="text-ink-muted">{item.value}</p>
                                 )}
-                                <p className="text-sm text-gray-500 mt-2">{item.sub}</p>
+                                <p className="text-sm text-ink-muted mt-2">{item.sub}</p>
                             </GlassCard>
                         ))}
                     </div>

@@ -154,7 +154,7 @@ export default function PlacementPage() {
                         >
                             3つの採用形態、雇用主で見分ける
                         </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-ink-muted max-w-2xl mx-auto">
                             違いを分けるのは「今、誰が雇用主か」です。まずはこの1点から整理します。
                         </p>
                     </motion.div>
@@ -182,7 +182,7 @@ export default function PlacementPage() {
                         >
                             紹介予定派遣という選択肢
                         </h2>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-ink-muted leading-relaxed">
                             採用は、賭けではありません。履歴書だけでは見えない、仕事への姿勢やチームとの相性。<br />
                             紹介予定派遣は、実際に働いてもらう期間を設けることで、雇用する側もされる側も
                             納得の上で次の一歩に進める仕組みです。
@@ -212,7 +212,7 @@ export default function PlacementPage() {
                         >
                             在留資格ごとに、できる受け入れ方が違います
                         </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-ink-muted max-w-2xl mx-auto">
                             とくに特定技能は、<strong className="text-ink">派遣が認められるのは農業・漁業の2分野のみ</strong>
                             です。それ以外の分野では、紹介（直接雇用）でのご案内が基本となります。
                         </p>
@@ -257,9 +257,9 @@ export default function PlacementPage() {
                                     <ind.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <h3 className="font-bold text-ink mb-1">{ind.name}</h3>
-                                <p className="text-sm text-gray-500 mb-3">{ind.roles}</p>
+                                <p className="text-sm text-ink-muted mb-3">{ind.roles}</p>
                                 <p className="text-xs font-medium text-accent-strong mb-3">{ind.visas}</p>
-                                <p className="text-sm text-gray-600 leading-relaxed">{ind.note}</p>
+                                <p className="text-sm text-ink-muted leading-relaxed">{ind.note}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -303,7 +303,7 @@ export default function PlacementPage() {
                                             {item.step}
                                         </div>
                                         <h3 className="font-bold text-white mb-2 text-sm">{item.title}</h3>
-                                        <p className="text-xs text-gray-400">{item.description}</p>
+                                        <p className="text-xs text-ink-inverse-muted">{item.description}</p>
                                     </div>
                                     {i < flow.length - 1 && (
                                         <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">
@@ -344,7 +344,7 @@ export default function PlacementPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100"
+                            className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-line"
                         >
                             <div className="flex items-start gap-4 mb-8">
                                 <Handshake className="w-8 h-8 text-accent flex-shrink-0" />
@@ -352,7 +352,7 @@ export default function PlacementPage() {
                                     <h3 className="text-xl font-bold text-ink mb-2">
                                         成功報酬型
                                     </h3>
-                                    <p className="text-gray-600">
+                                    <p className="text-ink-muted">
                                         紹介手数料は、就職が成立した場合にのみ発生します。
                                         紹介予定派遣の場合、派遣期間中は派遣料金のみで、
                                         直接雇用への転換時に紹介手数料が発生します。
@@ -361,7 +361,7 @@ export default function PlacementPage() {
                                 </div>
                             </div>
 
-                            <div className="border-t border-gray-100 pt-8">
+                            <div className="border-t border-line pt-8">
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {[
                                         "求職者からは一切費用をいただきません（職業安定法）",
@@ -371,7 +371,7 @@ export default function PlacementPage() {
                                     ].map((item) => (
                                         <div key={item} className="flex items-center gap-2">
                                             <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                                            <span className="text-gray-600 text-sm">{item}</span>
+                                            <span className="text-ink-muted text-sm">{item}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -402,7 +402,7 @@ export default function PlacementPage() {
                                 私たちが「やらないこと」
                             </h2>
                         </div>
-                        <div className="bg-gray-50 rounded-2xl p-8 space-y-4">
+                        <div className="bg-canvas rounded-2xl p-8 space-y-4">
                             {[
                                 "建設現場での作業そのものへの紹介・派遣（施工管理・現場監督等の管理業務は対象内）",
                                 "特定技能人材の製造業等での派遣（派遣が認められるのは農業・漁業のみ）",
@@ -410,8 +410,8 @@ export default function PlacementPage() {
                                 "在職中の方への直接的な転職勧誘",
                             ].map((item) => (
                                 <div key={item} className="flex items-start gap-3">
-                                    <span className="text-gray-400 font-bold flex-shrink-0">✕</span>
-                                    <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
+                                    <span className="text-ink-muted font-bold flex-shrink-0">✕</span>
+                                    <span className="text-ink-muted text-sm leading-relaxed">{item}</span>
                                 </div>
                             ))}
                         </div>

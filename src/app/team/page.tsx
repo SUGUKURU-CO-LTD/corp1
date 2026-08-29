@@ -128,7 +128,7 @@ export default function TeamIntelPage() {
 
     if (!res) {
         return (
-            <div className="pt-28 pb-20 container mx-auto px-6 flex items-center gap-3 text-gray-500">
+            <div className="pt-28 pb-20 container mx-auto px-6 flex items-center gap-3 text-ink-muted">
                 <Loader2 className="w-5 h-5 animate-spin" />
                 インテリジェンスを読み込み中…
             </div>
@@ -143,7 +143,7 @@ export default function TeamIntelPage() {
                 {/* 社内限定バナー */}
                 <div className="rounded-xl border border-amber-300/50 bg-amber-50 p-4 flex items-start gap-3 mb-8">
                     <ShieldAlert className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                    <div className="text-sm text-gray-700">
+                    <div className="text-sm text-ink">
                         <span className="font-bold">チーム限定 / 社内資料</span>
                         ：このページは Google Cloud IAP で保護されています。一般公開・外部共有は禁止です。
                     </div>
@@ -155,13 +155,13 @@ export default function TeamIntelPage() {
                         <h1 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
                             {d.meta.title}
                         </h1>
-                        <p className="text-gray-500 text-sm mt-1">
+                        <p className="text-ink-muted text-sm mt-1">
                             {d.meta.prefecture}｜提供: {d.meta.provider}
                         </p>
                     </div>
                     <div className="flex items-center gap-2">
                         <span
-                            className={`px-3 py-1 rounded-full text-xs font-bold ${res.dataMode === "live" ? "bg-[#1B5E38] text-white" : "bg-gray-200 text-gray-700"}`}
+                            className={`px-3 py-1 rounded-full text-xs font-bold ${res.dataMode === "live" ? "bg-[#1B5E38] text-white" : "bg-gray-200 text-ink"}`}
                         >
                             {res.dataMode === "live" ? "ライブ" : `スナップショット（${res.fetchedAt ?? "—"}取得）`}
                         </span>
@@ -169,7 +169,7 @@ export default function TeamIntelPage() {
                 </div>
 
                 {/* 労働力統計 */}
-                <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 mb-8">
+                <section className="bg-white rounded-2xl border border-line shadow-sm p-6 md:p-8 mb-8">
                     <div className="flex items-center gap-2 mb-4">
                         <Users className="w-5 h-5 text-[#1B5E38]" />
                         <h2 className="text-lg font-bold text-[#1A1A1A]">農業労働力（{d.meta.prefecture}）</h2>
@@ -177,14 +177,14 @@ export default function TeamIntelPage() {
                             不足度: {d.labor.shortageLevel}
                         </span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{d.labor.summary}</p>
+                    <p className="text-ink-muted text-sm leading-relaxed mb-6">{d.labor.summary}</p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <Stat label="農業就業人口 (2020)" value={`${d.labor.stats.population2020.toLocaleString()}人`} sub={`2015: ${d.labor.stats.population2015.toLocaleString()}人`} />
                         <Stat label="5年間変化" value={`${d.labor.stats.changePct}%`} sub="九州内で最小の減少率" />
                         <Stat label="平均年齢" value={`${d.labor.stats.averageAge}歳`} sub={`65歳以上 ${d.labor.stats.over65Pct}%`} />
                         <Stat label="農業経営体数" value={`${d.labor.stats.farmEntities.toLocaleString()}`} sub="経営体" />
                     </div>
-                    <p className="text-xs text-gray-400 mt-5">出典: {d.labor.source}</p>
+                    <p className="text-xs text-ink-muted mt-5">出典: {d.labor.source}</p>
                 </section>
 
                 {/* SSWコンパス */}
@@ -195,26 +195,26 @@ export default function TeamIntelPage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                         {d.sswCompass.map((c) => (
-                            <div key={c.crop} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                            <div key={c.crop} className="bg-white rounded-2xl border border-line shadow-sm p-6">
                                 <div className="flex items-center gap-4 mb-4">
                                     <ScoreRing score={c.score} />
                                     <div>
                                         <h3 className="font-bold text-[#1A1A1A]">{c.crop}</h3>
                                         <p className="text-sm text-[#1B5E38] font-medium">{c.grade}</p>
-                                        <p className="text-xs text-gray-500 mt-0.5">収穫: {c.harvestMonths}</p>
+                                        <p className="text-xs text-ink-muted mt-0.5">収穫: {c.harvestMonths}</p>
                                     </div>
                                 </div>
                                 <div className="space-y-2 mb-4">
                                     {breakdownLabels.map((b) => (
                                         <div key={b.key} className="flex items-center gap-3">
-                                            <span className="text-xs text-gray-500 w-24 flex-shrink-0">{b.label}</span>
+                                            <span className="text-xs text-ink-muted w-24 flex-shrink-0">{b.label}</span>
                                             <div className="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden">
                                                 <div
                                                     className="h-full rounded-full bg-[#1B5E38]"
                                                     style={{ width: `${(c.breakdown[b.key] / 20) * 100}%` }}
                                                 />
                                             </div>
-                                            <span className="text-xs text-gray-400 w-10 text-right">{c.breakdown[b.key]}/20</span>
+                                            <span className="text-xs text-ink-muted w-10 text-right">{c.breakdown[b.key]}/20</span>
                                         </div>
                                     ))}
                                 </div>
@@ -223,26 +223,26 @@ export default function TeamIntelPage() {
                                         <span key={t} className="px-2 py-1 rounded-md bg-[#1B5E38]/8 text-[#1B5E38] text-xs">{t}</span>
                                     ))}
                                 </div>
-                                <p className="text-sm text-gray-600 leading-relaxed">{c.note}</p>
+                                <p className="text-sm text-ink-muted leading-relaxed">{c.note}</p>
                                 <p className="text-xs text-amber-600 mt-2">注意: {c.caution}</p>
-                                <p className="text-xs text-gray-400 mt-2">有望産地: {c.regions.join(" / ")}</p>
+                                <p className="text-xs text-ink-muted mt-2">有望産地: {c.regions.join(" / ")}</p>
                             </div>
                         ))}
                     </div>
-                    <p className="text-xs text-gray-400 mt-3">出典: {d.sswCompassSource}</p>
+                    <p className="text-xs text-ink-muted mt-3">出典: {d.sswCompassSource}</p>
                 </section>
 
                 {/* 作物プロファイル / 収穫リレー */}
-                <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 mb-8">
+                <section className="bg-white rounded-2xl border border-line shadow-sm p-6 md:p-8 mb-8">
                     <div className="flex items-center gap-2 mb-4">
                         <Sprout className="w-5 h-5 text-[#1B5E38]" />
                         <h2 className="text-lg font-bold text-[#1A1A1A]">主要作物・収穫リレー</h2>
-                        <span className="ml-2 text-xs text-gray-500">労働ピーク: {d.cropProfile.peakMonths}</span>
+                        <span className="ml-2 text-xs text-ink-muted">労働ピーク: {d.cropProfile.peakMonths}</span>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="text-left text-gray-400 border-b border-gray-100">
+                                <tr className="text-left text-ink-muted border-b border-line">
                                     <th className="py-2 pr-4 font-medium">作物</th>
                                     <th className="py-2 pr-4 font-medium">収穫月</th>
                                     <th className="py-2 pr-4 font-medium">ピーク</th>
@@ -254,41 +254,41 @@ export default function TeamIntelPage() {
                                 {d.cropProfile.crops.map((crop) => (
                                     <tr key={crop.name} className="border-b border-gray-50 last:border-0 align-top">
                                         <td className="py-3 pr-4 font-medium text-[#1A1A1A]">{crop.name}</td>
-                                        <td className="py-3 pr-4 text-gray-600">{crop.harvestMonths}</td>
-                                        <td className="py-3 pr-4 text-gray-600">{crop.peak}</td>
-                                        <td className="py-3 pr-4 text-gray-600">{crop.intensity}</td>
-                                        <td className="py-3 text-gray-500 text-xs">{crop.marketNote}</td>
+                                        <td className="py-3 pr-4 text-ink-muted">{crop.harvestMonths}</td>
+                                        <td className="py-3 pr-4 text-ink-muted">{crop.peak}</td>
+                                        <td className="py-3 pr-4 text-ink-muted">{crop.intensity}</td>
+                                        <td className="py-3 text-ink-muted text-xs">{crop.marketNote}</td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
                     </div>
-                    <p className="text-sm text-gray-600 mt-4">{d.cropProfile.note}</p>
-                    <p className="text-xs text-gray-400 mt-2">出典: {d.cropProfile.source}</p>
+                    <p className="text-sm text-ink-muted mt-4">{d.cropProfile.note}</p>
+                    <p className="text-xs text-ink-muted mt-2">出典: {d.cropProfile.source}</p>
                 </section>
 
                 {/* 畜産統計 */}
-                <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 mb-8">
+                <section className="bg-white rounded-2xl border border-line shadow-sm p-6 md:p-8 mb-8">
                     <div className="flex items-center gap-2 mb-4">
                         <Beef className="w-5 h-5 text-[#1B5E38]" />
                         <h2 className="text-lg font-bold text-[#1A1A1A]">畜産SSW適性</h2>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{d.livestock.summary}</p>
+                    <p className="text-ink-muted text-sm leading-relaxed mb-6">{d.livestock.summary}</p>
                     <div className="grid md:grid-cols-2 gap-4 mb-6">
                         {d.livestock.categories.map((cat) => (
-                            <div key={cat.name} className="rounded-xl border border-gray-100 bg-[#FAFAF7] p-5">
+                            <div key={cat.name} className="rounded-xl border border-line bg-[#FAFAF7] p-5">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="font-bold text-[#1A1A1A]">{cat.name}</h3>
                                     <span className="px-2 py-0.5 rounded-full bg-[#1B5E38] text-white text-xs font-bold">{cat.score}/100</span>
                                 </div>
-                                <p className="text-xs text-gray-500">{cat.scale}</p>
-                                <p className="text-xs text-gray-500">{cat.farms}｜人手不足: {cat.shortage}</p>
+                                <p className="text-xs text-ink-muted">{cat.scale}</p>
+                                <p className="text-xs text-ink-muted">{cat.farms}｜人手不足: {cat.shortage}</p>
                                 <div className="flex flex-wrap gap-1.5 my-2">
                                     {cat.tasks.map((t) => (
-                                        <span key={t} className="px-2 py-0.5 rounded bg-white border border-gray-100 text-gray-600 text-xs">{t}</span>
+                                        <span key={t} className="px-2 py-0.5 rounded bg-white border border-line text-ink-muted text-xs">{t}</span>
                                     ))}
                                 </div>
-                                <p className="text-sm text-gray-600 leading-relaxed">{cat.note}</p>
+                                <p className="text-sm text-ink-muted leading-relaxed">{cat.note}</p>
                             </div>
                         ))}
                     </div>
@@ -299,17 +299,17 @@ export default function TeamIntelPage() {
                         </div>
                         <ul className="space-y-2">
                             {d.livestock.winPattern.map((w) => (
-                                <li key={w} className="text-sm text-gray-700 flex items-start gap-2">
+                                <li key={w} className="text-sm text-ink flex items-start gap-2">
                                     <span className="text-[#1B5E38] mt-0.5">▸</span>
                                     {w}
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <p className="text-xs text-gray-400 mt-4">出典: {d.livestock.source}</p>
+                    <p className="text-xs text-ink-muted mt-4">出典: {d.livestock.source}</p>
                 </section>
 
-                <p className="text-xs text-gray-400">{d.meta.note}</p>
+                <p className="text-xs text-ink-muted">{d.meta.note}</p>
             </div>
         </div>
     );
@@ -317,10 +317,10 @@ export default function TeamIntelPage() {
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
     return (
-        <div className="rounded-xl border border-gray-100 bg-[#FAFAF7] p-4">
-            <p className="text-xs text-gray-500">{label}</p>
+        <div className="rounded-xl border border-line bg-[#FAFAF7] p-4">
+            <p className="text-xs text-ink-muted">{label}</p>
             <p className="text-xl font-bold text-[#1A1A1A] mt-1">{value}</p>
-            {sub && <p className="text-xs text-gray-400 mt-0.5">{sub}</p>}
+            {sub && <p className="text-xs text-ink-muted mt-0.5">{sub}</p>}
         </div>
     );
 }

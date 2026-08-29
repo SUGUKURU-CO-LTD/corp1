@@ -53,7 +53,7 @@ export default function Footer() {
                                 className="h-10 w-auto"
                             />
                         </Link>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                        <p className="text-ink-inverse-muted text-sm leading-relaxed mb-6">
                             「スグクル」、だから変われる。<br />
                             外国人材の力で、日本の農業を支えます。
                         </p>
@@ -62,20 +62,20 @@ export default function Footer() {
                         <div className="space-y-3">
                             <div className="flex items-start gap-3 text-sm">
                                 <MapPin className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                                <span className="text-gray-300">
+                                <span className="text-ink-inverse-muted">
                                     〒{COMPANY_ADDRESS.postalCode}<br />
                                     {COMPANY_ADDRESS_LINE_JA}
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
                                 <Phone className="w-4 h-4 text-accent" />
-                                <a href="tel:0995-73-9939" className="text-gray-300 hover:text-white transition-colors">
+                                <a href="tel:0995-73-9939" className="text-ink-inverse-muted hover:text-white transition-colors">
                                     0995-73-9939
                                 </a>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
                                 <Mail className="w-4 h-4 text-accent" />
-                                <a href="mailto:info@sugu-kuru.co.jp" className="text-gray-300 hover:text-white transition-colors">
+                                <a href="mailto:info@sugu-kuru.co.jp" className="text-ink-inverse-muted hover:text-white transition-colors">
                                     info@sugu-kuru.co.jp
                                 </a>
                             </div>
@@ -90,7 +90,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 text-sm hover:text-white transition-colors"
+                                        className="text-ink-inverse-muted text-sm hover:text-white transition-colors"
                                     >
                                         {link.name}
                                     </Link>
@@ -107,7 +107,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 text-sm hover:text-white transition-colors"
+                                        className="text-ink-inverse-muted text-sm hover:text-white transition-colors"
                                     >
                                         {link.name}
                                     </Link>
@@ -124,7 +124,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 text-sm hover:text-white transition-colors"
+                                        className="text-ink-inverse-muted text-sm hover:text-white transition-colors"
                                     >
                                         {link.name}
                                     </Link>
@@ -135,7 +135,7 @@ export default function Footer() {
                 </div>
 
                 {/* Offices */}
-                <div className="mt-12 pt-8 border-t border-gray-800">
+                <div className="mt-12 pt-8 border-t border-white/10">
                     <h3 className="text-accent-light font-bold mb-6">全国の拠点</h3>
                     <div className="flex flex-wrap gap-4">
                         {offices.map((office) => (
@@ -144,14 +144,14 @@ export default function Footer() {
                                 className="bg-gray-800/50 rounded-lg px-4 py-2 text-sm"
                             >
                                 <span className="text-white font-medium">{office.name}</span>
-                                <span className="text-gray-400 ml-2">{office.location}</span>
+                                <span className="text-ink-inverse-muted ml-2">{office.location}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* License Badges */}
-                <div className="mt-12 pt-8 border-t border-gray-800">
+                <div className="mt-12 pt-8 border-t border-white/10">
                     <div className="flex flex-wrap gap-4">
                         <div className="license-badge">
                             労働者派遣事業許可: 派46-300262
@@ -164,13 +164,13 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-800 py-6">
+            <div className="border-t border-white/10 py-6">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-ink-inverse-muted text-sm">
                             © 2025 SUGUKURU Inc. All Rights Reserved.
                         </p>
-                        <p className="text-gray-500 text-sm flex items-center gap-2">
+                        <p className="text-ink-inverse-muted text-sm flex items-center gap-2">
                             Made in Kirishima, Kagoshima
                             <span className="text-lg">🌋</span>
                         </p>

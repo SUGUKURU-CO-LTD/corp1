@@ -57,7 +57,7 @@ export function TempToPermTimeline() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-30px" }}
                         transition={{ duration: 0.4, delay: i * 0.1 }}
-                        className="relative bg-white rounded-xl border border-gray-100 p-5"
+                        className="relative bg-white rounded-xl border border-line p-5"
                     >
                         <div className="flex items-center gap-3 mb-2">
                             <div className="w-9 h-9 rounded-lg bg-accent-soft flex items-center justify-center flex-shrink-0">
@@ -66,9 +66,9 @@ export function TempToPermTimeline() {
                             <h4 className="font-bold text-ink text-sm">{step.title}</h4>
                         </div>
                         <p className="text-xs font-medium text-accent-strong mb-1.5">{step.employer}</p>
-                        <p className="text-xs text-gray-600 leading-relaxed">{step.description}</p>
+                        <p className="text-xs text-ink-muted leading-relaxed">{step.description}</p>
                         {i < steps.length - 1 && (
-                            <div className="hidden @2xl:block absolute top-1/2 -right-3 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-gray-300 rotate-45" />
+                            <div className="hidden @2xl:block absolute top-1/2 -right-3 -translate-y-1/2 w-3 h-3 border-t-2 border-r-2 border-line rotate-45" />
                         )}
                     </motion.div>
                 ))}
@@ -84,7 +84,7 @@ export function TempToPermTimeline() {
                         viewport={{ once: true, margin: "-30px" }}
                         transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                         className={`rounded-xl p-5 ${
-                            outcome.positive ? "bg-accent text-white" : "bg-gray-50 border border-gray-100"
+                            outcome.positive ? "bg-accent text-white" : "bg-canvas border border-line"
                         }`}
                     >
                         <div className="flex items-center gap-3 mb-2">
@@ -94,19 +94,19 @@ export function TempToPermTimeline() {
                                 }`}
                             >
                                 <outcome.icon
-                                    className={`w-4.5 h-4.5 ${outcome.positive ? "text-white" : "text-gray-500"}`}
+                                    className={`w-4.5 h-4.5 ${outcome.positive ? "text-white" : "text-ink-muted"}`}
                                 />
                             </div>
                             <h4 className="font-bold text-sm">{outcome.title}</h4>
                         </div>
                         <p
                             className={`text-xs font-medium mb-1.5 ${
-                                outcome.positive ? "text-white/85" : "text-gray-500"
+                                outcome.positive ? "text-white/85" : "text-ink-muted"
                             }`}
                         >
                             {outcome.employer}
                         </p>
-                        <p className={`text-xs leading-relaxed ${outcome.positive ? "text-white/85" : "text-gray-600"}`}>
+                        <p className={`text-xs leading-relaxed ${outcome.positive ? "text-white/85" : "text-ink-muted"}`}>
                             {outcome.description}
                         </p>
                     </motion.div>

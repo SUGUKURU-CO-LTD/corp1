@@ -129,7 +129,7 @@ export default function ContractingPage() {
                         >
                             あなたの時間を、取り戻す。
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-ink-muted text-lg leading-relaxed">
                             農業経営者の時間は、限られている。<br />
                             経営判断、品質向上、販路開拓——本当にやるべきことは山ほどある。<br /><br />
                             だからこそ、私たちは「作業」を引き受ける。<br />
@@ -177,7 +177,7 @@ export default function ContractingPage() {
                                 <h3 className="text-lg font-bold text-ink mb-2">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-ink-muted text-sm leading-relaxed">
                                     {service.description}
                                 </p>
                             </motion.div>
@@ -253,7 +253,7 @@ export default function ContractingPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="max-w-3xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100"
+                        className="max-w-3xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-line"
                     >
                         <div className="flex flex-col md:flex-row gap-8">
                             <div className="flex-1">
@@ -261,7 +261,7 @@ export default function ContractingPage() {
                                 <h3 className="text-xl font-bold text-ink mb-4">
                                     茶摘みシーズンに20名を一斉派遣
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">
+                                <p className="text-ink-muted leading-relaxed mb-6">
                                     毎年の繁忙期、人手の確保に苦労していました。スグクルさんに相談したところ、
                                     南大隅から霧島エリアまで、20名のチームを一斉に派遣いただきました。
                                     作業の質も高く、今では毎年お願いしています。

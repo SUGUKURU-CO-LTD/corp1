@@ -24,9 +24,9 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
     <button
       type="button"
       onClick={() => onOpen(job)}
-      className="flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
+      className="flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-white text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
     >
-      <div className="relative aspect-[4/3] w-full flex-shrink-0 bg-gray-100">
+      <div className="relative aspect-[4/3] w-full flex-shrink-0 bg-canvas">
         <Image
           src={jobPhoto(job.id)}
           alt={job.occupationId}
@@ -44,15 +44,15 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
 
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-lg font-bold leading-snug text-ink">{job.occupationId}</h3>
-        <p className="mt-0.5 text-xs text-gray-400">{job.occupationJa}</p>
+        <p className="mt-0.5 text-xs text-ink-muted">{job.occupationJa}</p>
 
         <p className="mt-3 text-xl font-bold text-accent">
           {formatYen(job.annualSalaryMin)} – {formatYen(job.annualSalaryMax)}
-          <span className="ml-1 text-sm font-normal text-gray-500">/tahun</span>
+          <span className="ml-1 text-sm font-normal text-ink-muted">/tahun</span>
         </p>
 
-        <div className="mt-3 flex flex-wrap items-center gap-1.5 text-sm text-gray-600">
-          <MapPin className="h-4 w-4 text-gray-400" />
+        <div className="mt-3 flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
+          <MapPin className="h-4 w-4 text-ink-muted" />
           {job.remote ? (
             <span>Remote (Seluruh Jepang)</span>
           ) : (
@@ -64,7 +64,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
         </div>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700">
+          <span className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-ink">
             {JAPANESE_LEVEL_LABELS[job.japaneseLevel].id}
           </span>
           {job.visaTags.map((tag) => (
@@ -77,7 +77,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
           ))}
         </div>
 
-        <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-3 text-[11px] text-gray-400">
+        <div className="mt-4 flex items-center justify-between border-t border-line pt-3 text-[11px] text-ink-muted">
           <span>Sumber: {SOURCE_LABELS[job.source]}</span>
           <span>Diperbarui: {job.reviewedAt}</span>
         </div>

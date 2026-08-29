@@ -157,7 +157,7 @@ export default function DispatchPage() {
                         >
                             なぜ、外国人材なのか。
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-ink-muted text-lg leading-relaxed">
                             日本の農業は今、静かな危機に直面している。<br />
                             高齢化、後継者不足、そして増え続ける耕作放棄地。<br /><br />
                             しかし、海の向こうには「働きたい」と願う若者たちがいる。<br />
@@ -205,7 +205,7 @@ export default function DispatchPage() {
                                 <h3 className="text-lg font-bold text-ink mb-2">
                                     {feature.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-ink-muted text-sm leading-relaxed">
                                     {feature.description}
                                 </p>
                             </motion.div>
@@ -251,7 +251,7 @@ export default function DispatchPage() {
                                             {item.step}
                                         </div>
                                         <h3 className="font-bold text-white mb-2">{item.title}</h3>
-                                        <p className="text-sm text-gray-400">{item.description}</p>
+                                        <p className="text-sm text-ink-inverse-muted">{item.description}</p>
                                     </div>
                                     {i < 4 && (
                                         <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">
@@ -292,15 +292,15 @@ export default function DispatchPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100"
+                            className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-line"
                         >
                             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                                 <div>
-                                    <p className="text-gray-500 text-sm mb-2">標準時給</p>
+                                    <p className="text-ink-muted text-sm mb-2">標準時給</p>
                                     <p className="text-4xl md:text-5xl font-bold text-accent">
                                         {pricing.hourlyRate}
                                     </p>
-                                    <p className="text-gray-500 text-sm mt-2">{pricing.note}</p>
+                                    <p className="text-ink-muted text-sm mt-2">{pricing.note}</p>
                                 </div>
                                 <div className="mt-6 md:mt-0">
                                     <Link
@@ -313,13 +313,13 @@ export default function DispatchPage() {
                                 </div>
                             </div>
 
-                            <div className="border-t border-gray-100 pt-8">
+                            <div className="border-t border-line pt-8">
                                 <p className="font-bold text-ink mb-4">含まれるサポート</p>
                                 <div className="grid md:grid-cols-2 gap-3">
                                     {pricing.includes.map((item) => (
                                         <div key={item} className="flex items-center gap-2">
                                             <CheckCircle2 className="w-5 h-5 text-accent" />
-                                            <span className="text-gray-600">{item}</span>
+                                            <span className="text-ink-muted">{item}</span>
                                         </div>
                                     ))}
                                 </div>

@@ -51,7 +51,7 @@ export default function KerjaPage() {
       <JobBoard jobs={jobs} />
 
       {/* Track for SSW / agriculture visitors who landed here by mistake */}
-      <section className="border-t border-gray-200 bg-canvas px-4 py-10">
+      <section className="border-t border-line bg-canvas px-4 py-10">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-start gap-4 rounded-2xl border border-accent/15 bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div className="flex items-start gap-3">
@@ -60,7 +60,7 @@ export default function KerjaPage() {
                 <p className="font-semibold text-ink">
                   Mencari kerja pertanian dengan visa Tokutei Ginou (特定技能)?
                 </p>
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-ink-muted">
                   Halaman ini khusus untuk transfer kerja kantoran. Untuk lowongan pertanian dan dukungan visa
                   Tokutei Ginou, silakan hubungi kami langsung.
                 </p>
@@ -78,7 +78,7 @@ export default function KerjaPage() {
       </section>
 
       {/* Legal disclosures — Indonesian primary, Japanese small */}
-      <section className="border-t border-gray-200 bg-white px-4 py-10 text-sm leading-6 text-gray-600">
+      <section className="border-t border-line bg-white px-4 py-10 text-sm leading-6 text-ink-muted">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-base font-semibold text-ink">Informasi penting</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">
@@ -114,18 +114,18 @@ export default function KerjaPage() {
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
-            <Link href="/" className="text-gray-500 underline underline-offset-2 hover:text-accent">
+            <Link href="/" className="text-ink-muted underline underline-offset-2 hover:text-accent">
               ← Beranda (日本語)
             </Link>
-            <Link href="/careers" className="text-gray-500 underline underline-offset-2 hover:text-accent">
+            <Link href="/careers" className="text-ink-muted underline underline-offset-2 hover:text-accent">
               Lowongan staf kantor internal (日本語)
             </Link>
-            <Link href="/margin-rate" className="text-gray-500 underline underline-offset-2 hover:text-accent">
+            <Link href="/margin-rate" className="text-ink-muted underline underline-offset-2 hover:text-accent">
               Informasi margin (公開情報)
             </Link>
           </div>
 
-          <footer className="mt-6 border-t border-gray-100 pt-5 text-xs leading-6 text-gray-400">
+          <footer className="mt-6 border-t border-line pt-5 text-xs leading-6 text-ink-muted">
             Sugukuru Co., Ltd. / スグクル株式会社
             <br />
             Izin: 労働者派遣事業 派46-300262 ／ 有料職業紹介事業 46-ユ-300203

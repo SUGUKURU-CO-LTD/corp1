@@ -49,7 +49,7 @@ export default function MissionSection() {
                     >
                         私たちの使命
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-ink-muted max-w-2xl mx-auto leading-relaxed">
                         人手不足を解決するだけでなく、人材が安心して働き、暮らせる環境をつくる。
                         その先に、日本の農業の持続を見据えています。
                     </p>
@@ -74,7 +74,7 @@ export default function MissionSection() {
                             <h3 className="text-xl font-bold text-ink mb-3">
                                 {mission.title}
                             </h3>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-ink-muted leading-relaxed">
                                 {mission.description}
                             </p>
                         </motion.div>

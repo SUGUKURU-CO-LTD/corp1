@@ -67,16 +67,16 @@ function StatusBadge({ cell }: { cell: Cell }) {
                 <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center">
                     <AlertTriangle className="w-4 h-4 text-amber-600" strokeWidth={2.5} />
                 </div>
-                {cell.note && <p className="text-[10px] text-gray-500 text-center leading-tight">{cell.note}</p>}
+                {cell.note && <p className="text-[10px] text-ink-muted text-center leading-tight">{cell.note}</p>}
             </div>
         );
     }
     return (
         <div className="flex flex-col items-center gap-1">
             <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                <X className="w-4 h-4 text-gray-400" strokeWidth={2.5} />
+                <X className="w-4 h-4 text-ink-muted" strokeWidth={2.5} />
             </div>
-            {cell.note && <p className="text-[10px] text-gray-400 text-center leading-tight">{cell.note}</p>}
+            {cell.note && <p className="text-[10px] text-ink-muted text-center leading-tight">{cell.note}</p>}
         </div>
     );
 }
@@ -104,11 +104,11 @@ export function VisaEligibilityMatrix() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: "-30px" }}
                                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                                className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-2 items-center bg-white rounded-xl border border-gray-100 p-3"
+                                className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-2 items-center bg-white rounded-xl border border-line p-3"
                             >
                                 <div>
                                     <p className="font-bold text-ink text-sm">{row.visa}</p>
-                                    {row.sub && <p className="text-xs text-gray-500">{row.sub}</p>}
+                                    {row.sub && <p className="text-xs text-ink-muted">{row.sub}</p>}
                                 </div>
                                 {row.cells.map((cell, ci) => (
                                     <div key={ci} className="flex justify-center">
@@ -121,7 +121,7 @@ export function VisaEligibilityMatrix() {
                 </div>
             </div>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-xs text-gray-500">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-xs text-ink-muted">
                 <span className="flex items-center gap-1.5">
                     <span className="w-4 h-4 rounded-full bg-accent-soft inline-flex items-center justify-center">
                         <Check className="w-2.5 h-2.5 text-accent" strokeWidth={3} />
@@ -136,7 +136,7 @@ export function VisaEligibilityMatrix() {
                 </span>
                 <span className="flex items-center gap-1.5">
                     <span className="w-4 h-4 rounded-full bg-gray-100 inline-flex items-center justify-center">
-                        <X className="w-2.5 h-2.5 text-gray-400" strokeWidth={3} />
+                        <X className="w-2.5 h-2.5 text-ink-muted" strokeWidth={3} />
                     </span>
                     不可
                 </span>

@@ -139,7 +139,7 @@ export default function ITPage() {
                         >
                             技術は、手段に過ぎない。
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-ink-muted text-lg leading-relaxed">
                             私たちは、技術のための技術を追わない。<br />
                             大切なのは、「何を解決するか」——<br /><br />
                             業務の非効率、データの断絶、コミュニケーションの摩擦。<br />
@@ -187,7 +187,7 @@ export default function ITPage() {
                                 <h3 className="text-lg font-bold text-ink mb-2">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-ink-muted text-sm leading-relaxed">
                                     {service.description}
                                 </p>
                             </motion.div>
@@ -266,12 +266,12 @@ export default function ITPage() {
                                     transition={{ duration: 0.4, delay: i * 0.1 }}
                                     className="relative"
                                 >
-                                    <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 h-full">
+                                    <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-line h-full">
                                         <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                                             {item.step}
                                         </div>
                                         <h3 className="font-bold text-ink mb-2">{item.title}</h3>
-                                        <p className="text-sm text-gray-500">{item.description}</p>
+                                        <p className="text-sm text-ink-muted">{item.description}</p>
                                     </div>
                                     {i < 4 && (
                                         <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">

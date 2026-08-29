@@ -117,7 +117,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
             transition={{ duration: 0.8, delay: service.delay }}
             className={`relative overflow-hidden rounded-3xl ${service.isMain
                     ? "bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent"
-                    : "bg-white border border-gray-100"
+                    : "bg-white border border-line"
                 }`}
         >
             {/* Hover gradient overlay */}
@@ -166,11 +166,11 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                                         </motion.span>
                                     )}
                                 </div>
-                                <p className="text-gray-500 mt-1">{service.tagline}</p>
+                                <p className="text-ink-muted mt-1">{service.tagline}</p>
                             </div>
                         </div>
 
-                        <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
+                        <p className="text-ink-muted mb-8 leading-relaxed">{service.description}</p>
 
                         <div className="grid md:grid-cols-2 gap-3">
                             {service.features.map((feature, index) => (
@@ -188,25 +188,25 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                                     >
                                         <Check className="w-3 h-3 text-accent" />
                                     </motion.div>
-                                    <span className="text-gray-700 text-sm">{feature}</span>
+                                    <span className="text-ink text-sm">{feature}</span>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
 
                     {/* Right Column - Pricing / CTA */}
-                    <div className="lg:w-1/3 lg:border-l lg:border-gray-100 lg:pl-8 flex flex-col justify-center">
+                    <div className="lg:w-1/3 lg:border-l lg:border-line lg:pl-8 flex flex-col justify-center">
                         {service.pricing && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: service.delay + 0.3 }}
-                                className="mb-6 p-4 bg-gray-50 rounded-2xl"
+                                className="mb-6 p-4 bg-canvas rounded-2xl"
                             >
-                                <p className="text-sm text-gray-500 mb-2">料金目安</p>
+                                <p className="text-sm text-ink-muted mb-2">料金目安</p>
                                 <p className="text-2xl font-bold text-ink">{service.pricing.baseRate}</p>
-                                <p className="text-sm text-gray-500 mt-1">{service.pricing.initialFee}</p>
+                                <p className="text-sm text-ink-muted mt-1">{service.pricing.initialFee}</p>
                             </motion.div>
                         )}
 
@@ -247,7 +247,7 @@ const FlowStep = ({ step, index }: { step: { step: number; title: string; desc: 
                     {step.step}
                 </motion.div>
                 <h3 className="font-bold text-ink mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500">{step.desc}</p>
+                <p className="text-sm text-ink-muted">{step.desc}</p>
             </div>
             {index < 4 && (
                 <motion.div
@@ -328,7 +328,7 @@ export default function ServicesPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
-                            className="text-xl text-gray-300 leading-relaxed max-w-2xl"
+                            className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
                             派遣、受託、紹介、そしてテクノロジー。<br />
                             私たちは「農業の人手不足」という複雑な課題を、あらゆる角度から解きほぐす。
@@ -423,7 +423,7 @@ export default function ServicesPage() {
                                 >
                                     {stat.number}
                                 </motion.p>
-                                <p className="text-gray-600 font-medium">{stat.label}</p>
+                                <p className="text-ink-muted font-medium">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -456,7 +456,7 @@ export default function ServicesPage() {
                                     <span className="text-2xl">{area.icon}</span>
                                     <div>
                                         <p className="font-bold text-ink">{area.region}</p>
-                                        <p className="text-sm text-gray-500">{area.type}</p>
+                                        <p className="text-sm text-ink-muted">{area.type}</p>
                                     </div>
                                 </motion.div>
                             ))}

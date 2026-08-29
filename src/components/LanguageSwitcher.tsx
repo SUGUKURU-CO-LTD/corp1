@@ -57,7 +57,7 @@ export default function LanguageSwitcher() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-100 z-50"
+                        className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-line z-50"
                     >
                         {languages.map((lang) => (
                             <button

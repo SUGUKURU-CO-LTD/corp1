@@ -158,7 +158,7 @@ export default function GijinkokuPage() {
                         >
                             技人国とは
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-ink-muted text-lg leading-relaxed">
                             大学卒業等の学歴・専門性と職務内容の関連が求められる在留資格です。<br />
                             すでに技人国ビザを保有する方の転職は、<strong className="text-ink">入管の許可が不要（届出のみ）</strong>
                             のため、特定技能等の在留資格変更に比べて立ち上がりが速いのが特長です
@@ -187,7 +187,7 @@ export default function GijinkokuPage() {
                         >
                             できること／できないこと
                         </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-ink-muted max-w-2xl mx-auto">
                             技人国は専門職としての在留資格です。求人票の職種をそのまま当てはめるのではなく、
                             学歴・専門性と関連づく職務内容として設計する必要があります。
                         </p>
@@ -249,7 +249,7 @@ export default function GijinkokuPage() {
                                 </div>
                                 <h3 className="font-bold text-ink mb-1">{ind.name}</h3>
                                 <p className="text-sm text-accent-strong font-medium mb-3">{ind.roles}</p>
-                                <p className="text-sm text-gray-600 leading-relaxed">{ind.note}</p>
+                                <p className="text-sm text-ink-muted leading-relaxed">{ind.note}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -275,7 +275,7 @@ export default function GijinkokuPage() {
                         >
                             建設分野の法的な線引き
                         </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-ink-muted max-w-2xl mx-auto">
                             建設「現場作業」への職業紹介・労働者派遣は法律で禁止されています（職業安定法・労働者派遣法）。
                             一方で、施工管理・現場監督等の<strong className="text-ink">管理業務は対象外ではありません</strong>。
                             判定は実際の作業内容に基づいて行います。
@@ -363,8 +363,8 @@ export default function GijinkokuPage() {
                                 </div>
                                 <h3 className="font-bold text-white mb-1">{proc.title}</h3>
                                 <p className="text-xs text-accent-light font-medium mb-1">担当：{proc.who}</p>
-                                <p className="text-xs text-gray-400 mb-3">{proc.deadline}</p>
-                                <p className="text-sm text-gray-300 leading-relaxed">{proc.description}</p>
+                                <p className="text-xs text-ink-inverse-muted mb-3">{proc.deadline}</p>
+                                <p className="text-sm text-ink-inverse-muted leading-relaxed">{proc.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -398,9 +398,9 @@ export default function GijinkokuPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-100"
+                            className="bg-canvas rounded-2xl p-8 md:p-12 border border-line"
                         >
-                            <p className="text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-ink-muted mb-8 leading-relaxed">
                                 職業紹介は成功報酬型、派遣は派遣料金、紹介予定派遣は派遣料金＋転換時の紹介手数料という
                                 構成です。具体的な料金は職務内容・雇用形態により異なるため、まずはお見積りをご案内します。
                             </p>
@@ -413,7 +413,7 @@ export default function GijinkokuPage() {
                                 ].map((item) => (
                                     <div key={item} className="flex items-center gap-2">
                                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                                        <span className="text-gray-600 text-sm">{item}</span>
+                                        <span className="text-ink-muted text-sm">{item}</span>
                                     </div>
                                 ))}
                             </div>

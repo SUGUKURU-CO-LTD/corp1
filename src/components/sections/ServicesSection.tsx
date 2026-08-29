@@ -120,7 +120,7 @@ export default function ServicesSection() {
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     return (
-        <section ref={sectionRef} className="section relative bg-gray-50 overflow-hidden">
+        <section ref={sectionRef} className="section relative bg-canvas overflow-hidden">
             {/* Background decorations */}
             <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
@@ -177,7 +177,7 @@ export default function ServicesSection() {
                                 >
                                     {service.name}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                                <p className="text-ink-muted text-sm leading-relaxed">{service.description}</p>
 
                                 {/* Arrow indicator */}
                                 <motion.div

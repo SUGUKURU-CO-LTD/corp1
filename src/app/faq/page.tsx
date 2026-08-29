@@ -149,13 +149,13 @@ export default function FaqPage() {
                                     {group.items.map((item) => (
                                         <details
                                             key={item.q}
-                                            className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
+                                            className="group bg-white rounded-xl border border-line shadow-sm overflow-hidden"
                                         >
                                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-ink">
                                                 {item.q}
-                                                <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" />
+                                                <ChevronDown className="w-5 h-5 text-ink-muted flex-shrink-0 transition-transform group-open:rotate-180" />
                                             </summary>
-                                            <div className="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+                                            <div className="px-5 pb-5 text-ink-muted text-sm leading-relaxed">
                                                 {item.a}
                                             </div>
                                         </details>

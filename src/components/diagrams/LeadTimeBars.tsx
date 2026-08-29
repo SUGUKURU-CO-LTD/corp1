@@ -37,7 +37,7 @@ export function LeadTimeBars() {
                         <div className="flex items-baseline justify-between mb-1.5 gap-2">
                             <div>
                                 <span className="text-sm font-bold text-ink whitespace-pre">{row.label}</span>
-                                <span className="text-xs text-gray-500 ml-2">{row.sublabel}</span>
+                                <span className="text-xs text-ink-muted ml-2">{row.sublabel}</span>
                             </div>
                             <span className="text-xs font-medium text-accent-strong flex-shrink-0">{row.note}</span>
                         </div>
@@ -53,7 +53,7 @@ export function LeadTimeBars() {
                     </motion.div>
                 ))}
             </div>
-            <p className="text-xs text-gray-400 mt-4">
+            <p className="text-xs text-ink-muted mt-4">
                 ※ 目安であり、個別の在留審査・書類準備の状況により変動します。
             </p>
         </div>

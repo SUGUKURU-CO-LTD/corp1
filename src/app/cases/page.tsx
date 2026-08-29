@@ -138,7 +138,7 @@ export default function CasesPage() {
                                 >
                                     {stat.value}
                                 </p>
-                                <p className="text-gray-400 text-sm">{stat.label}</p>
+                                <p className="text-ink-inverse-muted text-sm">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -164,7 +164,7 @@ export default function CasesPage() {
                         >
                             導入企業様の声
                         </h2>
-                        <p className="text-gray-400 text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
+                        <p className="text-ink-muted text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
                     </motion.div>
 
                     <div className="space-y-12">
@@ -175,7 +175,7 @@ export default function CasesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+                                className="bg-white rounded-2xl shadow-sm border border-line overflow-hidden"
                             >
                                 {/* Image Section */}
                                 <div className="relative h-64 md:h-80 overflow-hidden">
@@ -224,34 +224,34 @@ export default function CasesPage() {
                                 <div className="p-8 md:p-10">
                                     {/* Content Grid */}
                                     <div className="grid md:grid-cols-3 gap-6 mb-8">
-                                        <div className="bg-gray-50 rounded-xl p-6">
+                                        <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">
                                                     課
                                                 </span>
                                                 導入前の課題
                                             </h4>
-                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                            <p className="text-ink-muted text-sm leading-relaxed">
                                                 {caseStudy.challenge}
                                             </p>
                                         </div>
-                                        <div className="bg-gray-50 rounded-xl p-6">
+                                        <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
                                                     解
                                                 </span>
                                                 スグクルの対応
                                             </h4>
-                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                            <p className="text-ink-muted text-sm leading-relaxed">
                                                 {caseStudy.solution}
                                             </p>
                                         </div>
-                                        <div className="bg-gray-50 rounded-xl p-6">
+                                        <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <CheckCircle2 className="w-6 h-6 text-accent" />
                                                 導入後の成果
                                             </h4>
-                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                            <p className="text-ink-muted text-sm leading-relaxed">
                                                 {caseStudy.result}
                                             </p>
                                         </div>
@@ -261,10 +261,10 @@ export default function CasesPage() {
                                     {caseStudy.testimonial && (
                                         <div className="rounded-xl p-6 relative bg-accent/[0.03]">
                                             <Quote className="absolute top-4 left-4 w-8 h-8 opacity-20 text-accent" />
-                                            <p className="text-gray-700 leading-relaxed pl-8 italic">
+                                            <p className="text-ink leading-relaxed pl-8 italic">
                                                 「{caseStudy.testimonial}」
                                             </p>
-                                            <p className="text-right mt-4 text-sm text-gray-500">
+                                            <p className="text-right mt-4 text-sm text-ink-muted">
                                                 — {caseStudy.company} {caseStudy.testimonialAuthor}
                                             </p>
                                         </div>
@@ -317,7 +317,7 @@ export default function CasesPage() {
                                 <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                                 <div>
                                     <p className="font-bold text-ink">{item.title}</p>
-                                    <p className="text-gray-500 text-sm">{item.desc}</p>
+                                    <p className="text-ink-muted text-sm">{item.desc}</p>
                                 </div>
                             </motion.div>
                         ))}

@@ -111,18 +111,18 @@ export default function GuidePage() {
                     <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                         申請は大きく3種類
                     </h2>
-                    <p className="text-center text-gray-500 text-sm mb-12">
+                    <p className="text-center text-ink-muted text-sm mb-12">
                         受け入れる人材の状況によって、必要な申請が変わります。
                     </p>
                     <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {applicationTypes.map((t) => (
-                            <div key={t.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
+                            <div key={t.title} className="bg-white rounded-2xl border border-line shadow-sm p-7">
                                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
                                     <t.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <p className="text-xs text-accent font-medium mb-1">{t.when}</p>
                                 <h3 className="font-bold text-ink mb-2 text-[15px] leading-snug">{t.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{t.desc}</p>
+                                <p className="text-ink-muted text-sm leading-relaxed">{t.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -138,12 +138,12 @@ export default function GuidePage() {
                     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4">
                         {flow.map((item, i) => (
                             <div key={item.step} className="relative">
-                                <div className="h-full rounded-xl border border-gray-100 bg-canvas p-5 text-center">
+                                <div className="h-full rounded-xl border border-line bg-canvas p-5 text-center">
                                     <div className="w-9 h-9 mx-auto mb-3 rounded-full bg-accent text-white font-bold flex items-center justify-center">
                                         {item.step}
                                     </div>
                                     <h3 className="font-bold text-ink text-sm mb-1">{item.title}</h3>
-                                    <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                                    <p className="text-ink-muted text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                                 {i < flow.length - 1 && (
                                     <div className="hidden md:flex absolute top-1/2 -right-2 -translate-y-1/2 text-accent z-10">
@@ -163,7 +163,7 @@ export default function GuidePage() {
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             試験免除の考え方（早見）
                         </h2>
-                        <p className="text-center text-gray-500 text-sm mb-12">
+                        <p className="text-center text-ink-muted text-sm mb-12">
                             技能実習の経歴により、試験が免除される場合があります。
                         </p>
                         <div className="space-y-4">
@@ -177,7 +177,7 @@ export default function GuidePage() {
                                     </div>
                                     <div>
                                         <p className="font-bold text-ink text-sm">{r.case}</p>
-                                        <p className="text-gray-600 text-sm mt-1">{r.result}</p>
+                                        <p className="text-ink-muted text-sm mt-1">{r.result}</p>
                                     </div>
                                 </div>
                             ))}
@@ -195,10 +195,10 @@ export default function GuidePage() {
                         </h2>
                         <div className="grid sm:grid-cols-2 gap-4">
                             {deadlines.map((d) => (
-                                <div key={d.label} className="rounded-xl border border-gray-100 bg-canvas p-5">
+                                <div key={d.label} className="rounded-xl border border-line bg-canvas p-5">
                                     <p className="text-xs text-accent font-medium mb-1">{d.label}</p>
                                     <p className="font-bold text-ink">{d.value}</p>
-                                    <p className="text-gray-500 text-xs mt-1">{d.note}</p>
+                                    <p className="text-ink-muted text-xs mt-1">{d.note}</p>
                                 </div>
                             ))}
                         </div>
@@ -213,32 +213,32 @@ export default function GuidePage() {
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             必要書類チェックリスト
                         </h2>
-                        <p className="text-center text-gray-500 text-sm mb-12">
+                        <p className="text-center text-ink-muted text-sm mb-12">
                             状況により異なります。多くはスグクルが作成・取得を支援します。
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
-                            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
+                            <div className="bg-white rounded-2xl border border-line shadow-sm p-7">
                                 <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
                                     <FileText className="w-5 h-5 text-accent" />
                                     受入企業側
                                 </h3>
                                 <ul className="space-y-3">
                                     {companyDocs.map((d) => (
-                                        <li key={d} className="flex items-start gap-2 text-gray-700 text-sm">
+                                        <li key={d} className="flex items-start gap-2 text-ink text-sm">
                                             <Check className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                             {d}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
+                            <div className="bg-white rounded-2xl border border-line shadow-sm p-7">
                                 <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
                                     <FileText className="w-5 h-5 text-accent" />
                                     候補者側
                                 </h3>
                                 <ul className="space-y-3">
                                     {workerDocs.map((d) => (
-                                        <li key={d} className="flex items-start gap-2 text-gray-700 text-sm">
+                                        <li key={d} className="flex items-start gap-2 text-ink text-sm">
                                             <Check className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                             {d}
                                         </li>
@@ -255,7 +255,7 @@ export default function GuidePage() {
                 <div className="container mx-auto px-6 py-16 md:py-20">
                     <div className="max-w-4xl mx-auto rounded-xl border border-amber-300/40 bg-amber-50 p-5 flex items-start gap-3">
                         <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-gray-700 leading-relaxed">
+                        <p className="text-sm text-ink leading-relaxed">
                             本ページは一般的な制度の概要をわかりやすくまとめたものです。
                             制度・要件・必要書類は変更される場合があり、個別事情により取り扱いが異なります。
                             最新かつ正確な内容は出入国在留管理庁の公表情報をご確認いただくか、スグクルへお問い合わせください。

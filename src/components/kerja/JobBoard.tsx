@@ -72,12 +72,12 @@ export default function JobBoard({ jobs }: JobBoardProps) {
       />
 
       <div className="mx-auto max-w-6xl px-4 py-6">
-        <p className="mb-4 text-sm text-gray-500">
+        <p className="mb-4 text-sm text-ink-muted">
           Menampilkan <strong className="text-accent">{filteredJobs.length}</strong> dari {facets.total} lowongan
         </p>
 
         {filteredJobs.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-gray-300 px-6 py-16 text-center text-gray-500">
+          <div className="rounded-2xl border border-dashed border-line px-6 py-16 text-center text-ink-muted">
             Tidak ada lowongan yang cocok. Coba ubah filter, atau hubungi kami langsung.
           </div>
         ) : (

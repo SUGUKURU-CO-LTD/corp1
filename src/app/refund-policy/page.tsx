@@ -26,7 +26,7 @@ export default function RefundPolicyPage() {
                             >
                                 返戻金制度
                             </h1>
-                            <p className="text-gray-400 mt-1">Refund Policy</p>
+                            <p className="text-ink-inverse-muted mt-1">Refund Policy</p>
                         </div>
                     </motion.div>
                 </div>
@@ -43,7 +43,7 @@ export default function RefundPolicyPage() {
                     >
                         {/* Introduction */}
                         <div className="prose prose-lg max-w-none mb-10">
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-ink-muted leading-relaxed">
                                 スグクル株式会社（以下「当社」）の有料職業紹介事業において、当社のご紹介により入社された求職者様が、入社後一定期間内に自己都合により退職された場合、求人企業様にお支払いいただいた紹介手数料の一部を返金する制度を設けております。
                             </p>
                         </div>
@@ -58,7 +58,7 @@ export default function RefundPolicyPage() {
                                     <h2 className="text-2xl font-bold text-ink mb-2">
                                         返金規定
                                     </h2>
-                                    <p className="text-gray-600">
+                                    <p className="text-ink-muted">
                                         退職時期に応じて、以下の通り紹介手数料の一部を返金いたします。
                                     </p>
                                 </div>
@@ -68,14 +68,14 @@ export default function RefundPolicyPage() {
                                 {/* Tier 1: 1 month */}
                                 <div className="bg-white rounded-xl p-6 border-2 border-accent/30 shadow-sm">
                                     <div className="flex items-baseline justify-between mb-3">
-                                        <span className="text-sm font-medium text-gray-500">
+                                        <span className="text-sm font-medium text-ink-muted">
                                             入社後 1ヶ月以内
                                         </span>
                                         <span className="text-3xl font-bold text-accent">
                                             50<span className="text-lg">%</span>
                                         </span>
                                     </div>
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-sm text-ink-muted">
                                         紹介手数料の <span className="font-bold text-ink">50％</span> を返金
                                     </p>
                                 </div>
@@ -83,26 +83,26 @@ export default function RefundPolicyPage() {
                                 {/* Tier 2: 3 months */}
                                 <div className="bg-white rounded-xl p-6 border-2 border-accent/20 shadow-sm">
                                     <div className="flex items-baseline justify-between mb-3">
-                                        <span className="text-sm font-medium text-gray-500">
+                                        <span className="text-sm font-medium text-ink-muted">
                                             入社後 3ヶ月以内
                                         </span>
                                         <span className="text-3xl font-bold text-accent">
                                             30<span className="text-lg">%</span>
                                         </span>
                                     </div>
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-sm text-ink-muted">
                                         紹介手数料の <span className="font-bold text-ink">30％</span> を返金
                                     </p>
                                 </div>
                             </div>
 
-                            <p className="text-sm text-gray-500 mt-6">
+                            <p className="text-sm text-ink-muted mt-6">
                                 ※ 返金額の算定基準は、求人企業様より実際にお支払いいただいた紹介手数料（消費税等を除いた本体価格）といたします。
                             </p>
                         </div>
 
                         {/* Exclusions */}
-                        <div className="bg-white rounded-2xl p-6 md:p-10 mb-10 border border-gray-200">
+                        <div className="bg-white rounded-2xl p-6 md:p-10 mb-10 border border-line">
                             <div className="flex items-start gap-4 mb-6">
                                 <div className="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center flex-shrink-0">
                                     <AlertCircle className="w-6 h-6 text-error" />
@@ -111,42 +111,42 @@ export default function RefundPolicyPage() {
                                     <h2 className="text-2xl font-bold text-ink mb-2">
                                         返金対象外となる場合
                                     </h2>
-                                    <p className="text-gray-600">
+                                    <p className="text-ink-muted">
                                         次のいずれかに該当する場合、返金の対象外となります。
                                     </p>
                                 </div>
                             </div>
 
                             <ul className="space-y-3">
-                                <li className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                                <li className="flex items-start gap-3 p-4 bg-canvas rounded-lg">
                                     <span className="w-6 h-6 rounded-full bg-error/10 text-error flex items-center justify-center text-sm font-bold flex-shrink-0">
                                         1
                                     </span>
-                                    <span className="text-gray-700 leading-relaxed">
+                                    <span className="text-ink leading-relaxed">
                                         会社都合による解雇または退職勧奨等による退職
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                                <li className="flex items-start gap-3 p-4 bg-canvas rounded-lg">
                                     <span className="w-6 h-6 rounded-full bg-error/10 text-error flex items-center justify-center text-sm font-bold flex-shrink-0">
                                         2
                                     </span>
-                                    <span className="text-gray-700 leading-relaxed">
+                                    <span className="text-ink leading-relaxed">
                                         天災、疾病、傷害その他やむを得ない事由による退職
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                                <li className="flex items-start gap-3 p-4 bg-canvas rounded-lg">
                                     <span className="w-6 h-6 rounded-full bg-error/10 text-error flex items-center justify-center text-sm font-bold flex-shrink-0">
                                         3
                                     </span>
-                                    <span className="text-gray-700 leading-relaxed">
+                                    <span className="text-ink leading-relaxed">
                                         求人企業様が提示された労働条件と実際の労働条件が著しく異なることに起因する退職
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                                <li className="flex items-start gap-3 p-4 bg-canvas rounded-lg">
                                     <span className="w-6 h-6 rounded-full bg-error/10 text-error flex items-center justify-center text-sm font-bold flex-shrink-0">
                                         4
                                     </span>
-                                    <span className="text-gray-700 leading-relaxed">
+                                    <span className="text-ink leading-relaxed">
                                         その他、当社の責に帰さない事由による退職
                                     </span>
                                 </li>
@@ -158,7 +158,7 @@ export default function RefundPolicyPage() {
                             <h3 className="text-lg font-bold text-ink mb-4">
                                 ご利用にあたっての注意事項
                             </h3>
-                            <ul className="space-y-2 text-gray-600 text-sm">
+                            <ul className="space-y-2 text-ink-muted text-sm">
                                 <li className="flex items-start gap-2">
                                     <span className="text-accent mt-1">•</span>
                                     返金のご請求は、退職日から30日以内にご連絡ください。
@@ -179,7 +179,7 @@ export default function RefundPolicyPage() {
                         </div>
 
                         {/* Last Updated */}
-                        <div className="text-right text-sm text-gray-500 mb-10">
+                        <div className="text-right text-sm text-ink-muted mb-10">
                             最終更新日: 2026年4月27日
                         </div>
 

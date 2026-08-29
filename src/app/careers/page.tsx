@@ -119,7 +119,7 @@ export default function CareersPage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed"
+                            className="text-lg md:text-xl text-ink-inverse-muted mb-8 max-w-2xl leading-relaxed"
                         >
                             スグクルは、AI×グローバル人材で日本の農業を変えるスタートアップ。<br />
                             毎年成長を続ける私たちと一緒に、社会課題に挑戦しませんか？
@@ -200,7 +200,7 @@ export default function CareersPage() {
                                         <item.icon className="w-7 h-7 text-accent" />
                                     </div>
                                     <h3 className="text-xl font-bold text-ink mb-3">{item.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                                    <p className="text-ink-muted leading-relaxed">{item.description}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -236,14 +236,14 @@ export default function CareersPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-start gap-5"
+                                className="bg-white rounded-xl p-6 shadow-sm border border-line flex items-start gap-5"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                                     <req.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-ink text-lg mb-1">{req.title}</h3>
-                                    <p className="text-gray-600">{req.description}</p>
+                                    <p className="text-ink-muted">{req.description}</p>
                                 </div>
                                 <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 ml-auto" />
                             </motion.div>
@@ -280,7 +280,7 @@ export default function CareersPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-shadow"
+                                className="bg-white rounded-2xl shadow-lg border border-line overflow-hidden group hover:shadow-xl transition-shadow"
                             >
                                 <div className="p-6 text-white bg-accent">
                                     <div className="flex items-start justify-between">
@@ -294,7 +294,7 @@ export default function CareersPage() {
                                     </div>
                                 </div>
                                 <div className="p-6">
-                                    <p className="text-gray-600 mb-6 leading-relaxed">
+                                    <p className="text-ink-muted mb-6 leading-relaxed">
                                         {position.description}
                                     </p>
                                     <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
@@ -303,7 +303,7 @@ export default function CareersPage() {
                                     </h4>
                                     <ul className="space-y-2 mb-6">
                                         {position.responsibilities.map((resp) => (
-                                            <li key={resp} className="flex items-start gap-2 text-gray-600 text-sm">
+                                            <li key={resp} className="flex items-start gap-2 text-ink-muted text-sm">
                                                 <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                                 {resp}
                                             </li>
@@ -357,7 +357,7 @@ export default function CareersPage() {
                                     <benefit.icon className="w-7 h-7 text-accent" />
                                 </div>
                                 <h3 className="font-bold text-white text-lg mb-1">{benefit.title}</h3>
-                                <p className="text-gray-400 text-sm">{benefit.desc}</p>
+                                <p className="text-ink-inverse-muted text-sm">{benefit.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -372,7 +372,7 @@ export default function CareersPage() {
                             <Award className="w-8 h-8 text-accent flex-shrink-0" />
                             <div>
                                 <h3 className="font-bold text-white mb-2">成果報酬制度について</h3>
-                                <p className="text-gray-400 text-sm leading-relaxed">
+                                <p className="text-ink-inverse-muted text-sm leading-relaxed">
                                     入社後の研修期間（約3ヶ月）を終えた後、成果に応じたコミッション制度があります。
                                     自分の頑張りがダイレクトに収入に反映される、モチベーションの高い環境です。
                                 </p>
@@ -425,7 +425,7 @@ export default function CareersPage() {
                                             <th className="px-6 py-4 text-left text-sm font-bold text-ink bg-gray-100 w-1/3">
                                                 {row.label}
                                             </th>
-                                            <td className="px-6 py-4 text-sm text-gray-700">
+                                            <td className="px-6 py-4 text-sm text-ink">
                                                 {row.value}
                                             </td>
                                         </tr>

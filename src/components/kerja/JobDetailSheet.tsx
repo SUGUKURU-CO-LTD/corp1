@@ -58,7 +58,7 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
             transition={{ type: "spring", damping: 28, stiffness: 300 }}
             className="relative z-10 max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white shadow-2xl md:max-h-[80vh] md:rounded-3xl"
           >
-            <div className="relative aspect-[16/9] w-full flex-shrink-0 bg-gray-100">
+            <div className="relative aspect-[16/9] w-full flex-shrink-0 bg-canvas">
               <Image
                 src={jobPhoto(job.id)}
                 alt={job.occupationId}
@@ -71,7 +71,7 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
                 type="button"
                 onClick={onClose}
                 aria-label="Tutup"
-                className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-gray-600 shadow hover:bg-white"
+                className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink-muted shadow hover:bg-white"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -81,24 +81,24 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
               <h2 id="kerja-job-detail-title" className="text-xl font-bold text-ink">
                 {job.occupationId}
               </h2>
-              <p className="mt-0.5 text-sm text-gray-400">{job.occupationJa}</p>
+              <p className="mt-0.5 text-sm text-ink-muted">{job.occupationJa}</p>
 
               <p className="mt-4 text-2xl font-bold text-accent">
                 {formatYen(job.annualSalaryMin)} – {formatYen(job.annualSalaryMax)}
-                <span className="ml-1 text-base font-normal text-gray-500">/tahun</span>
+                <span className="ml-1 text-base font-normal text-ink-muted">/tahun</span>
               </p>
 
               <dl className="mt-5 space-y-3 text-sm">
                 <div className="flex items-start gap-2">
-                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
-                  <span className="text-gray-700">
+                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-ink-muted" />
+                  <span className="text-ink">
                     {job.remote
                       ? "Remote (Seluruh Jepang)"
                       : job.prefectures.map((p) => prefectureRomaji(p)).join(", ")}
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700">
+                  <span className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-ink">
                     {JAPANESE_LEVEL_LABELS[job.japaneseLevel].id}
                   </span>
                   {job.inexperiencedOk && (
@@ -117,7 +117,7 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
                 </div>
               </dl>
 
-              <div className="mt-5 rounded-xl border border-gray-200 bg-canvas px-4 py-3 text-xs leading-6 text-gray-600">
+              <div className="mt-5 rounded-xl border border-line bg-canvas px-4 py-3 text-xs leading-6 text-ink-muted">
                 Nama perusahaan akan diberitahukan setelah Anda melamar. Sugukuru{" "}
                 <strong>tidak memungut biaya apa pun dari pelamar</strong> (izin 有料職業紹介事業 46-ユ-300203).
                 Sumber: {SOURCE_LABELS[job.source]} · Diperbarui: {job.reviewedAt}
@@ -131,7 +131,7 @@ export default function JobDetailSheet({ job, onClose }: JobDetailSheetProps) {
                     return (
                       <div
                         key={channel.id}
-                        className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-400"
+                        className="flex items-center justify-between gap-3 rounded-xl border border-line px-4 py-3 text-sm text-ink-muted"
                       >
                         <span className="flex items-center gap-2">
                           <Icon className="h-4 w-4" />
