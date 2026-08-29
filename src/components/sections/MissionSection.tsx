@@ -12,7 +12,7 @@ const missions = [
         icon: Globe,
         title: "ローカルをグローバルでつなぐ",
         description:
-            "過疎化が進む地方、人手が足りない農業。日本人だけでは届かない現場に、海外の人材の力を届けます。土地と人をつなぐ架け橋になります。",
+            "過疎化が進む地方、人手が足りない現場。日本人だけでは届かない場所に、海外の人材の力を届けます。土地と人をつなぐ架け橋になります。",
     },
     {
         icon: Users,
@@ -50,7 +50,7 @@ export default function MissionSection() {
                     </h2>
                     <p className="text-ink-muted max-w-2xl mx-auto leading-relaxed">
                         人手不足を解決するだけでなく、人材が安心して働き、暮らせる環境をつくる。
-                        その先に、日本の農業の持続を見据えています。
+                        その先に、日本の産業の持続を見据えています。
                     </p>
                     <div className="w-20 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                 </motion.div>

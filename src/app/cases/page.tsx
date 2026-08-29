@@ -107,8 +107,8 @@ export default function CasesPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
                         >
-                            全国の農業法人・農家様に、確かな成果をお届けしています。<br />
-                            人手不足という課題を解決し、農業の未来を共に創る——<br />
+                            全国の企業様に、確かな成果をお届けしています。<br />
+                            人手不足という課題を解決し、共に未来を創る——<br />
                             私たちのパートナーシップの実例をご紹介します。
                         </motion.p>
                     </div>
@@ -333,7 +333,7 @@ export default function CasesPage() {
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
                         >
-                            次は、あなたの農場で。
+                            次は、あなたの現場で。
                         </h2>
                         <p className="text-white/80 mb-8 max-w-xl mx-auto">
                             人手不足の課題、お聞かせください。<br />

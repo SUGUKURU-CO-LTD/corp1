@@ -329,8 +329,8 @@ export default function ServicesPage() {
                             transition={{ duration: 0.6, delay: 0.5 }}
                             className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
-                            派遣、受託、紹介、そしてテクノロジー。<br />
-                            私たちは「農業の人手不足」という複雑な課題を、あらゆる角度から解きほぐす。
+                            派遣、受託、紹介、技人国、そしてテクノロジー。<br />
+                            私たちは「人手不足」という複雑な課題を、あらゆる角度から解きほぐす。
                         </motion.p>
                     </div>
                 </motion.div>
@@ -432,7 +432,7 @@ export default function ServicesPage() {
                         transition={{ delay: 0.4 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <h3 className="text-2xl font-bold text-ink text-center mb-8">対応地域</h3>
+                        <h3 className="text-2xl font-bold text-ink text-center mb-8">対応地域（農業派遣）</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                             {[
                                 { region: "鹿児島県", type: "お茶・野菜・畜産", icon: "🌿" },

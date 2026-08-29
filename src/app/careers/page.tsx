@@ -28,9 +28,9 @@ const positions = [
         id: "sales",
         title: "営業部",
         subtitle: "Business Development",
-        description: "外国人材の派遣先開拓から、既存クライアントのサポートまで。農業・畜産業界のパートナーと共に、人手不足という社会課題を解決する最前線で活躍していただきます。",
+        description: "外国人材の派遣先開拓から、既存クライアントのサポートまで。農業・製造・建設・サービス業など様々な業界のパートナーと共に、人手不足という社会課題を解決する最前線で活躍していただきます。",
         responsibilities: [
-            "新規クライアント（農家・農業法人）への提案営業",
+            "新規クライアント（農家・農業法人、製造業・サービス業等）への提案営業",
             "既存クライアントのフォローアップ・関係構築",
             "派遣スタッフの現場訪問・状況確認",
             "業界イベント・展示会への参加",
@@ -111,7 +111,7 @@ export default function CareersPage() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
-                            <span className="text-accent">世界</span>と<span className="text-accent">農業</span>を繋ぐ<br />
+                            <span className="text-accent">世界</span>と<span className="text-accent">産業</span>を繋ぐ<br />
                             新しい仲間を募集
                         </motion.h1>
 
@@ -121,7 +121,7 @@ export default function CareersPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-lg md:text-xl text-ink-inverse-muted mb-8 max-w-2xl leading-relaxed"
                         >
-                            スグクルは、AI×グローバル人材で日本の農業を変えるスタートアップ。<br />
+                            スグクルは、AI×グローバル人材で日本の産業を変えるスタートアップ。<br />
                             毎年成長を続ける私たちと一緒に、社会課題に挑戦しませんか？
                         </motion.p>
 

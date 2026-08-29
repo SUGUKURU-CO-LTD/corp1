@@ -10,7 +10,7 @@ import { IS_CONTACT_FORM_ENABLED } from "@/lib/feature-flags";
 type InquiryType = "dispatch" | "it" | "recruit" | "other";
 
 const inquiryTypes = [
-    { id: "dispatch", label: "派遣・人材のご相談", icon: "👨‍🌾" },
+    { id: "dispatch", label: "派遣・人材のご相談", icon: "🤝" },
     { id: "it", label: "IT開発のご相談", icon: "💻" },
     { id: "recruit", label: "採用について", icon: "👥" },
     { id: "other", label: "その他", icon: "📝" },

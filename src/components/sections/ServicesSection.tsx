@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { Tractor, Wrench, Users, Code, ArrowUpRight } from "lucide-react";
+import { Tractor, Wrench, Users, GraduationCap, Code, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 
 // Holographic card effect
@@ -100,13 +100,22 @@ const services = [
         delay: 0.2,
     },
     {
+        id: "gijinkoku",
+        name: "技人国 派遣・紹介",
+        description: "専門職の外国人材を、製造・建設・サービス業へ。技人国は届出のみで、立ち上がりが速い。",
+        icon: GraduationCap,
+        href: "/services/gijinkoku",
+        size: "small",
+        delay: 0.3,
+    },
+    {
         id: "it",
         name: "IT事業",
-        description: "農業にもデジタルを。Webシステム・アプリ開発で、現場を進化させる。",
+        description: "Webシステム・アプリ開発で、あらゆる現場を進化させる。農業DXにも対応。",
         icon: Code,
         href: "/services/it",
         size: "medium",
-        delay: 0.3,
+        delay: 0.4,
     },
 ];
 

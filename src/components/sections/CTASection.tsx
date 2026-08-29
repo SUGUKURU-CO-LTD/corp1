@@ -111,7 +111,7 @@ export default function CTASection() {
                                 transition={{ delay: 0.1 }}
                                 className="block"
                             >
-                                耕す手が、足りない。
+                                人手が、足りない。
                             </motion.span>
                             <motion.span
                                 initial={{ opacity: 0, y: 20 }}

@@ -56,13 +56,13 @@ const values = [
     {
         icon: Target,
         title: "ミッション",
-        description: "疲弊する地方、消えゆく農地。日本人だけでは届かない場所へ、世界から手を伸ばす。人手の確保を通じて、耕作放棄地が再び実りある大地に戻る後押しをする。",
+        description: "人手が足りない地方、担い手が減る産業。日本人だけでは届かない場所へ、世界から手を伸ばす。人材の確保を通じて、地域と産業の持続を後押しする。",
         delay: 0,
     },
     {
         icon: Eye,
         title: "ビジョン",
-        description: "食料自給率が高く、地方が笑顔で溢れる日本へ。収穫の喜びが、次の世代へと受け継がれる社会を創る。",
+        description: "食料自給率を守り、地方が笑顔で溢れる日本へ。あらゆる産業の現場に活気を取り戻し、次の世代へ受け継がれる社会を創る。",
         delay: 0.1,
     },
     {
@@ -319,7 +319,7 @@ export default function AboutPage() {
                                 transition={{ duration: 1, delay: 0.5 }}
                                 className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent"
                             >
-                                日本を耕す。
+                                人を耕す。
                             </motion.span>
                         </motion.h1>
 
@@ -330,7 +330,7 @@ export default function AboutPage() {
                             className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
                             鹿児島・霧島。桜島の灰が降り注ぐこの地で、私たちは「スグクル」という名前を掲げた。
-                            すぐに来る——その約束を胸に、日本中の農地へ即戦力を届ける。
+                            すぐに来る——その約束を胸に、日本中の現場へ即戦力を届ける。
                         </motion.p>
                     </div>
                 </motion.div>

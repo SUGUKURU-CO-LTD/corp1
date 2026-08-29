@@ -8,6 +8,7 @@ const footerLinks = {
         { name: "農業派遣", href: "/services/dispatch" },
         { name: "農作業受託", href: "/services/contracting" },
         { name: "有料職業紹介", href: "/services/placement" },
+        { name: "技人国 派遣・紹介", href: "/services/gijinkoku" },
         { name: "IT事業", href: "/services/it" },
         { name: "料金について", href: "/pricing" },
     ],
@@ -55,7 +56,7 @@ export default function Footer() {
                         </Link>
                         <p className="text-ink-inverse-muted text-sm leading-relaxed mb-6">
                             「スグクル」、だから変われる。<br />
-                            外国人材の力で、日本の農業を支えます。
+                            外国人材の力で、日本の産業を支えます。
                         </p>
 
                         {/* Contact Info */}
