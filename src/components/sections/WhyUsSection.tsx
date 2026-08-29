@@ -181,7 +181,7 @@ export default function WhyUsSection() {
                     >
                         Why SUGUKURU
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-ink" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-ink">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

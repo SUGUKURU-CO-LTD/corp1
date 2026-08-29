@@ -103,7 +103,6 @@ export default function CTASection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
                             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             <motion.span
                                 initial={{ opacity: 0, y: 20 }}

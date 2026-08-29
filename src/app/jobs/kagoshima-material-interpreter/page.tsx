@@ -71,7 +71,6 @@ export default function KagoshimaMaterialInterpreterPage() {
                     </p>
                     <h1
                         className="mt-2 text-xl md:text-2xl font-bold text-[#1F1B16] leading-snug"
-                        style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                     >
                         {JOB_TITLE_ID}
                     </h1>

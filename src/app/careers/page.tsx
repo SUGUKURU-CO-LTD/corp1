@@ -163,7 +163,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             スグクルで働く魅力
                         </h2>
@@ -222,7 +221,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             こんな方を求めています
                         </h2>
@@ -266,7 +264,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             募集ポジション
                         </h2>
@@ -337,7 +334,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             待遇・給与
                         </h2>
@@ -396,7 +392,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             募集要項
                         </h2>
@@ -453,7 +448,6 @@ export default function CareersPage() {
                         <Zap className="w-12 h-12 text-accent mx-auto mb-6" />
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             まずは話を聞いてみませんか？
                         </h2>

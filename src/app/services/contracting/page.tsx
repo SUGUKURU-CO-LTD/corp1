@@ -68,7 +68,6 @@ export default function ContractingPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             収穫も選果も、<br />
                             <span className="text-accent">丸ごと任せる。</span>
@@ -125,7 +124,6 @@ export default function ContractingPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-8"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             あなたの時間を、取り戻す。
                         </h2>
@@ -155,7 +153,6 @@ export default function ContractingPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             対応可能な作業
                         </h2>
@@ -202,7 +199,6 @@ export default function ContractingPage() {
                             </span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold text-white"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 受託のメリット
                             </h2>
@@ -242,7 +238,6 @@ export default function ContractingPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入事例
                         </h2>
@@ -284,7 +279,6 @@ export default function ContractingPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             繁忙期の作業、<br />
                             丸ごとお任せください。

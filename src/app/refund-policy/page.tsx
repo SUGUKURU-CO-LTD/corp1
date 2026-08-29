@@ -22,7 +22,6 @@ export default function RefundPolicyPage() {
                         <div>
                             <h1
                                 className="text-3xl md:text-4xl font-bold"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 返戻金制度
                             </h1>
@@ -208,7 +207,6 @@ export default function RefundPolicyPage() {
                     >
                         <h2
                             className="text-2xl md:text-3xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             返戻金制度に関するお問い合わせ
                         </h2>

@@ -23,7 +23,6 @@ export default function PrivacyPage() {
                         <div>
                             <h1
                                 className="text-3xl md:text-4xl font-bold"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 プライバシーポリシー
                             </h1>

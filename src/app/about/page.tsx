@@ -304,7 +304,6 @@ export default function AboutPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             <motion.span
                                 initial={{ clipPath: "inset(0 100% 0 0)" }}
@@ -365,7 +364,6 @@ export default function AboutPage() {
                         </motion.span>
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             企業理念
                         </h2>
@@ -413,7 +411,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             会社概要
                         </h2>
@@ -534,7 +531,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             許認可情報
                         </h2>
@@ -561,7 +557,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             沿革
                         </h2>
@@ -588,7 +583,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             拠点・アクセス
                         </h2>
@@ -653,7 +647,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             お問い合わせ
                         </h2>

@@ -35,7 +35,6 @@ export default function KerjaPage() {
           </p>
           <h1
             className="mt-3 max-w-2xl text-3xl font-bold leading-tight text-white md:text-5xl"
-            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
           >
             Untuk orang Indonesia yang sudah tinggal di Jepang.
           </h1>

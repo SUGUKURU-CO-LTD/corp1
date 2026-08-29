@@ -144,7 +144,7 @@ export default function NumbersSection() {
                     >
                         Results
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

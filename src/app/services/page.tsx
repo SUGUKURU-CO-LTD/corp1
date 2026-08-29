@@ -312,7 +312,6 @@ export default function ServicesPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             <motion.span
                                 initial={{ clipPath: "inset(0 100% 0 0)" }}
@@ -356,7 +355,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             サービス一覧
                         </h2>
@@ -383,7 +381,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入実績
                         </h2>
@@ -477,7 +474,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             ご利用の流れ
                         </h2>
@@ -529,7 +525,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             どのサービスが最適かわからない？
                         </h2>

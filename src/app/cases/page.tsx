@@ -97,7 +97,6 @@ export default function CasesPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入事例・実績
                         </motion.h1>
@@ -160,7 +159,6 @@ export default function CasesPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入企業様の声
                         </h2>
@@ -197,7 +195,6 @@ export default function CasesPage() {
                                                     <div>
                                                         <h3
                                                             className="text-2xl font-bold text-white"
-                                                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                                                         >
                                                             {caseStudy.company}
                                                         </h3>
@@ -291,7 +288,6 @@ export default function CasesPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             選ばれる理由
                         </h2>
@@ -336,7 +332,6 @@ export default function CasesPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             次は、あなたの農場で。
                         </h2>

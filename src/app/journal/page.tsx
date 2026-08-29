@@ -141,7 +141,6 @@ export default function JournalPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
                                 className="text-3xl md:text-4xl font-bold mb-2"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 お知らせ
                             </motion.h1>

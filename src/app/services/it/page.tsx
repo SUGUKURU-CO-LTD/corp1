@@ -78,7 +78,6 @@ export default function ITPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             コードで、<br />
                             <span className="text-accent">課題を解く。</span>
@@ -135,7 +134,6 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-8"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術は、手段に過ぎない。
                         </h2>
@@ -165,7 +163,6 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             提供サービス
                         </h2>
@@ -211,7 +208,6 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術スタック
                         </h2>
@@ -249,7 +245,6 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             開発の流れ
                         </h2>
@@ -300,7 +295,6 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             自社開発プロダクト
                         </h2>
@@ -360,7 +354,6 @@ export default function ITPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術で、課題を解く。<br />
                             一緒に考えませんか。

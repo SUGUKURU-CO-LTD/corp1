@@ -45,7 +45,6 @@ export default function MissionSection() {
                     </span>
                     <h2
                         className="text-3xl md:text-5xl font-bold text-ink mb-5"
-                        style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                     >
                         私たちの使命
                     </h2>

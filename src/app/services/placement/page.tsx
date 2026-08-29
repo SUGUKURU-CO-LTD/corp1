@@ -94,7 +94,6 @@ export default function PlacementPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             正社員採用も、<br />
                             <span className="text-white">まず働きぶりを見てからも。</span>
@@ -150,7 +149,6 @@ export default function PlacementPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             3つの採用形態、雇用主で見分ける
                         </h2>
@@ -178,7 +176,6 @@ export default function PlacementPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             紹介予定派遣という選択肢
                         </h2>
@@ -208,7 +205,6 @@ export default function PlacementPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             在留資格ごとに、できる受け入れ方が違います
                         </h2>
@@ -237,7 +233,6 @@ export default function PlacementPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             業種別・受け入れの具体例
                         </h2>
@@ -281,7 +276,6 @@ export default function PlacementPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             ご利用の流れ
                         </h2>
@@ -333,7 +327,6 @@ export default function PlacementPage() {
                             </span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold text-ink"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 料金の考え方
                             </h2>
@@ -397,7 +390,6 @@ export default function PlacementPage() {
                             </span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold text-ink"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 私たちが「やらないこと」
                             </h2>
@@ -430,7 +422,6 @@ export default function PlacementPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             まずは、条件のご相談から。
                         </h2>

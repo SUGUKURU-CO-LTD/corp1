@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${notoSansJP.variable} ${shipporiMincho.variable} ${jetbrainsMono.variable}`}>
       <head>
         <OrganizationSchema />
         <WebsiteSchema />
@@ -86,9 +86,7 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body
-        className={`${notoSansJP.variable} ${shipporiMincho.variable} ${jetbrainsMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

@@ -23,7 +23,6 @@ export default function LegalPage() {
                         <div>
                             <h1
                                 className="text-3xl md:text-4xl font-bold"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 利用規約
                             </h1>

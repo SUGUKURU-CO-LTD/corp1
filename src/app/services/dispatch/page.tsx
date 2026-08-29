@@ -96,7 +96,6 @@ export default function DispatchPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             耕す手が足りない。<br />
                             <span className="text-accent">その声に、応えに行く。</span>
@@ -153,7 +152,6 @@ export default function DispatchPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-8"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             なぜ、外国人材なのか。
                         </h2>
@@ -183,7 +181,6 @@ export default function DispatchPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             私たちが選ばれる理由
                         </h2>
@@ -229,7 +226,6 @@ export default function DispatchPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             ご利用の流れ
                         </h2>
@@ -281,7 +277,6 @@ export default function DispatchPage() {
                             </span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold text-ink"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 料金について
                             </h2>
@@ -340,7 +335,6 @@ export default function DispatchPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             耕す手が、足りない。<br />
                             その声に、応えに行く。

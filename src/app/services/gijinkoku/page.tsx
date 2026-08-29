@@ -98,7 +98,6 @@ export default function GijinkokuPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             管理と専門知識で、<br />
                             <span className="text-white">現場を動かす人材を。</span>
@@ -154,7 +153,6 @@ export default function GijinkokuPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技人国とは
                         </h2>
@@ -183,7 +181,6 @@ export default function GijinkokuPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             できること／できないこと
                         </h2>
@@ -228,7 +225,6 @@ export default function GijinkokuPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             業種別の職務具体例
                         </h2>
@@ -271,7 +267,6 @@ export default function GijinkokuPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             建設分野の法的な線引き
                         </h2>
@@ -315,7 +310,6 @@ export default function GijinkokuPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             受け入れ方によるリードタイムの違い
                         </h2>
@@ -342,7 +336,6 @@ export default function GijinkokuPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             入社後に必要な手続き
                         </h2>
@@ -387,7 +380,6 @@ export default function GijinkokuPage() {
                             </span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold text-ink"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 料金の考え方
                             </h2>
@@ -433,7 +425,6 @@ export default function GijinkokuPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             御社の職務、技人国で設計できます。
                         </h2>
