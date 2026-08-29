@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { Tractor, Wrench, Users, Code, ArrowRight, Check, Sparkles } from "lucide-react";
+import { Tractor, Wrench, Users, Code, GraduationCap, ArrowRight, Check, Sparkles } from "lucide-react";
 import { useRef } from "react";
 
 const services = [
@@ -54,6 +54,18 @@ const services = [
         delay: 0.2,
     },
     {
+        id: "gijinkoku",
+        name: "技人国 派遣・紹介",
+        tagline: "九州の製造・建設・サービス業へ、専門職人材を",
+        description:
+            "技術・人文知識・国際業務（技人国）人材を、派遣・職業紹介・紹介予定派遣でご案内。生産管理・品質保証・通訳翻訳・施工管理等、専門性を活かせる職務を設計します。",
+        icon: GraduationCap,
+        features: ["派遣・紹介・紹介予定派遣に対応", "許可待ちなしで立ち上がりが速い", "業種別の職務設計を伴走", "建設は管理・監督業務に限定"],
+        href: "/services/gijinkoku",
+        isMain: false,
+        delay: 0.3,
+    },
+    {
         id: "it",
         name: "IT事業",
         tagline: "農業DXから業務システムまで",
@@ -63,7 +75,7 @@ const services = [
         features: ["要件定義から運用まで一貫対応", "アジャイル開発", "クラウドネイティブ", "技術コンサルティング"],
         href: "/services/it",
         isMain: false,
-        delay: 0.3,
+        delay: 0.4,
     },
 ];
 

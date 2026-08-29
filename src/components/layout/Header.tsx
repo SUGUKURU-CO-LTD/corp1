@@ -23,6 +23,7 @@ const navigation: NavItem[] = [
             { name: "農業派遣", href: "/services/dispatch" },
             { name: "農作業受託", href: "/services/contracting" },
             { name: "有料職業紹介", href: "/services/placement" },
+            { name: "技人国 派遣・紹介", href: "/services/gijinkoku" },
             { name: "IT事業", href: "/services/it" },
         ],
     },
