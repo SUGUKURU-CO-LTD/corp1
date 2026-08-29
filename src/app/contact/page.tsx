@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import { Send, Phone, Mail, MapPin, Check, ArrowRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
+import { COMPANY_ADDRESS, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
 
 type InquiryType = "dispatch" | "it" | "recruit" | "other";
 
@@ -568,7 +569,7 @@ export default function ContactPage() {
                         {[
                             { icon: Phone, title: "お電話", value: "0995-73-9939", sub: "平日 9:00〜18:00", color: "#1B5E38" },
                             { icon: Mail, title: "メール", value: "info@sugu-kuru.co.jp", sub: "24時間受付", color: "#D4A853" },
-                            { icon: MapPin, title: "所在地", value: "鹿児島県霧島市国分中央3-42-8", sub: "翔陽A103", color: "#7C3AED" },
+                            { icon: MapPin, title: "所在地", value: COMPANY_ADDRESS_LINE_JA, sub: `〒${COMPANY_ADDRESS.postalCode}`, color: "#7C3AED" },
                         ].map((item, index) => (
                             <GlassCard key={item.title} delay={index * 0.1}>
                                 <motion.div

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
+import { COMPANY_ADDRESS, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
 
 const footerLinks = {
     services: [
@@ -63,8 +64,8 @@ export default function Footer() {
                             <div className="flex items-start gap-3 text-sm">
                                 <MapPin className="w-4 h-4 text-[#D4A853] mt-1 flex-shrink-0" />
                                 <span className="text-gray-300">
-                                    〒899-4332<br />
-                                    鹿児島県霧島市国分中央3丁目42-8 翔陽A103
+                                    〒{COMPANY_ADDRESS.postalCode}<br />
+                                    {COMPANY_ADDRESS_LINE_JA}
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
