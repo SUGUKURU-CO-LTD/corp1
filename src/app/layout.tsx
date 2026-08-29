@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Shippori_Mincho, Inter, JetBrains_Mono } from "next/font/google";
+import { Noto_Sans_JP, Shippori_Mincho, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -14,12 +14,6 @@ const notoSansJP = Noto_Sans_JP({
 
 const shipporiMincho = Shippori_Mincho({
   variable: "--font-shippori-mincho",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -93,7 +87,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${notoSansJP.variable} ${shipporiMincho.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${notoSansJP.variable} ${shipporiMincho.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <Header />
         <main>{children}</main>
