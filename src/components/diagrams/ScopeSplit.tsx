@@ -19,7 +19,7 @@ type ScopeSplitProps = {
 export function ScopeSplit({ okTitle, okItems, noTitle, noItems, noSubtext }: ScopeSplitProps) {
     return (
         <div className="@container">
-            <div className="grid grid-cols-1 @xl:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 @xl:grid-cols-2 gap-6">
                 <motion.div
                     initial={{ opacity: 0, x: -16 }}
                     whileInView={{ opacity: 1, x: 0 }}

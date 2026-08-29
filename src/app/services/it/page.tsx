@@ -171,7 +171,7 @@ export default function ITPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
@@ -256,7 +256,7 @@ export default function ITPage() {
                     </motion.div>
 
                     <div className="max-w-4xl mx-auto">
-                        <div className="grid md:grid-cols-5 gap-4">
+                        <div className="grid md:grid-cols-5 gap-6">
                             {flow.map((item, i) => (
                                 <motion.div
                                     key={item.step}
@@ -306,7 +306,7 @@ export default function ITPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                    <div className="grid md:grid-cols-1 gap-10 max-w-2xl mx-auto">
                         {/* NENKIN-PASS */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

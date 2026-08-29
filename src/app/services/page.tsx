@@ -172,7 +172,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
 
                         <p className="text-ink-muted mb-8 leading-relaxed">{service.description}</p>
 
-                        <div className="grid md:grid-cols-2 gap-3">
+                        <div className="grid md:grid-cols-2 gap-4">
                             {service.features.map((feature, index) => (
                                 <motion.div
                                     key={feature}
@@ -390,7 +390,7 @@ export default function ServicesPage() {
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent-light" />
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-12">
                         {[
                             { number: "120", label: "稼働スタッフ数", icon: "👥" },
                             { number: "60+", label: "導入企業数", icon: "🏢" },
@@ -436,7 +436,7 @@ export default function ServicesPage() {
                         className="max-w-4xl mx-auto"
                     >
                         <h3 className="text-2xl font-bold text-ink text-center mb-8">対応地域</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                             {[
                                 { region: "鹿児島県", type: "お茶・野菜・畜産", icon: "🌿" },
                                 { region: "福島県", type: "野菜", icon: "🥬" },
@@ -485,7 +485,7 @@ export default function ServicesPage() {
                     </motion.div>
 
                     <div className="max-w-5xl mx-auto">
-                        <div className="grid md:grid-cols-5 gap-4">
+                        <div className="grid md:grid-cols-5 gap-6">
                             {[
                                 { step: 1, title: "お問い合わせ", desc: "Web・電話・SNS" },
                                 { step: 2, title: "ヒアリング", desc: "オンライン・訪問" },
@@ -501,7 +501,7 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA */}
-            <section className="relative overflow-hidden bg-ink-strong">
+            <section className="section relative overflow-hidden bg-ink-strong">
                 {/* Animated background */}
                 <motion.div
                     animate={{
@@ -520,7 +520,7 @@ export default function ServicesPage() {
                     className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"
                 />
 
-                <div className="container mx-auto relative z-10 text-center py-24">
+                <div className="container mx-auto relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}

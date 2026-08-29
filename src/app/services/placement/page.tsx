@@ -243,7 +243,7 @@ export default function PlacementPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {industries.map((ind, i) => (
                             <motion.div
                                 key={ind.name}
@@ -288,7 +288,7 @@ export default function PlacementPage() {
                     </motion.div>
 
                     <div className="max-w-5xl mx-auto">
-                        <div className="grid md:grid-cols-5 gap-4">
+                        <div className="grid md:grid-cols-5 gap-6">
                             {flow.map((item, i) => (
                                 <motion.div
                                     key={item.step}
@@ -362,7 +362,7 @@ export default function PlacementPage() {
                             </div>
 
                             <div className="border-t border-line pt-8">
-                                <div className="grid md:grid-cols-2 gap-4">
+                                <div className="grid md:grid-cols-2 gap-6">
                                     {[
                                         "求職者からは一切費用をいただきません（職業安定法）",
                                         "成功報酬型で初期費用のリスクを抑制",

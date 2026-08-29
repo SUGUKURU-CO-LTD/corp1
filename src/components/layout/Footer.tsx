@@ -43,7 +43,7 @@ export default function Footer() {
             <div className="h-16 bg-ink" />
             {/* Main Footer */}
             <div className="container mx-auto px-6 pt-8 pb-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16">
                     {/* Company Info */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="inline-block mb-6">

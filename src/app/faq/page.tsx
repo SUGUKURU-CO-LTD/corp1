@@ -119,8 +119,8 @@ export default function FaqPage() {
             <FaqSchema />
 
             {/* Hero */}
-            <section className="bg-accent-dark text-white">
-                <div className="container mx-auto px-6 py-20 md:py-24">
+            <section className="section bg-accent-dark text-white">
+                <div className="container mx-auto">
                     <div className="max-w-3xl">
                         <span className="text-accent-light text-sm font-medium tracking-wider uppercase">
                             FAQ
@@ -137,8 +137,8 @@ export default function FaqPage() {
             </section>
 
             {/* FAQ本体 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-3xl mx-auto space-y-14 md:space-y-16">
                         {faqGroups.map((group) => (
                             <div key={group.category}>
@@ -168,8 +168,8 @@ export default function FaqPage() {
             </section>
 
             {/* CTA */}
-            <section className="bg-accent">
-                <div className="container mx-auto px-6 py-20 md:py-24 text-center">
+            <section className="section bg-accent">
+                <div className="container mx-auto text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                         解決しないご質問は、お気軽に
                     </h2>

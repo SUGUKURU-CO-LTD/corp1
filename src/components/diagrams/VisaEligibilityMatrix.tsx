@@ -87,7 +87,7 @@ export function VisaEligibilityMatrix() {
             <div className="overflow-x-auto">
                 <div className="min-w-[560px]">
                     {/* Header row */}
-                    <div className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-2 mb-2">
+                    <div className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-3 mb-2">
                         <div />
                         {columns.map((col) => (
                             <div key={col} className="text-center text-xs font-bold text-ink px-2">
@@ -104,7 +104,7 @@ export function VisaEligibilityMatrix() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: "-30px" }}
                                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                                className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-2 items-center bg-white rounded-xl border border-line p-3"
+                                className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-3 items-center bg-white rounded-xl border border-line p-3"
                             >
                                 <div>
                                     <p className="font-bold text-ink text-sm">{row.visa}</p>

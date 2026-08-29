@@ -87,8 +87,8 @@ export default function GuidePage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="bg-accent-dark text-white">
-                <div className="container mx-auto px-6 py-20 md:py-24">
+            <section className="section bg-accent-dark text-white">
+                <div className="container mx-auto">
                     <div className="max-w-3xl">
                         <span className="text-accent-light text-sm font-medium tracking-wider uppercase">
                             Guide
@@ -106,15 +106,15 @@ export default function GuidePage() {
             </section>
 
             {/* 申請の3種別 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                         申請は大きく3種類
                     </h2>
                     <p className="text-center text-ink-muted text-sm mb-12">
                         受け入れる人材の状況によって、必要な申請が変わります。
                     </p>
-                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {applicationTypes.map((t) => (
                             <div key={t.title} className="bg-white rounded-2xl border border-line shadow-sm p-7">
                                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
@@ -130,12 +130,12 @@ export default function GuidePage() {
             </section>
 
             {/* 受入れの流れ（図解） */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-12">
                         受入れの流れ
                     </h2>
-                    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6">
                         {flow.map((item, i) => (
                             <div key={item.step} className="relative">
                                 <div className="h-full rounded-xl border border-line bg-canvas p-5 text-center">
@@ -157,8 +157,8 @@ export default function GuidePage() {
             </section>
 
             {/* 試験免除の早見 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             試験免除の考え方（早見）
@@ -187,13 +187,13 @@ export default function GuidePage() {
             </section>
 
             {/* 重要な期限 */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-12">
                             知っておきたい重要な期限
                         </h2>
-                        <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="grid sm:grid-cols-2 gap-6">
                             {deadlines.map((d) => (
                                 <div key={d.label} className="rounded-xl border border-line bg-canvas p-5">
                                     <p className="text-xs text-accent font-medium mb-1">{d.label}</p>
@@ -207,8 +207,8 @@ export default function GuidePage() {
             </section>
 
             {/* 必要書類チェックリスト */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             必要書類チェックリスト
@@ -216,7 +216,7 @@ export default function GuidePage() {
                         <p className="text-center text-ink-muted text-sm mb-12">
                             状況により異なります。多くはスグクルが作成・取得を支援します。
                         </p>
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-8">
                             <div className="bg-white rounded-2xl border border-line shadow-sm p-7">
                                 <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
                                     <FileText className="w-5 h-5 text-accent" />
@@ -251,8 +251,8 @@ export default function GuidePage() {
             </section>
 
             {/* 注意書き（誇張しない・正確性の担保） */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-16 md:py-20">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto rounded-xl border border-amber-300/40 bg-amber-50 p-5 flex items-start gap-3">
                         <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                         <p className="text-sm text-ink leading-relaxed">
@@ -265,8 +265,8 @@ export default function GuidePage() {
             </section>
 
             {/* CTA */}
-            <section className="bg-accent">
-                <div className="container mx-auto px-6 py-20 md:py-24 text-center">
+            <section className="section bg-accent">
+                <div className="container mx-auto text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                         手続きの不安は、まるごとお任せください
                     </h2>

@@ -86,7 +86,7 @@ export default function KagoshimaMaterialGijinkokuPage() {
                 </header>
 
                 {/* 職種比較 */}
-                <nav className="mt-8 grid gap-3 sm:grid-cols-2">
+                <nav className="mt-8 grid gap-4 sm:grid-cols-2">
                     <Link
                         href="/jobs/kagoshima-material-quality-control"
                         className="block rounded-xl border border-[rgba(31,27,22,.14)] bg-white px-4 py-4 hover:border-[#B8924A] transition-colors"

@@ -81,7 +81,7 @@ export default function JobBoard({ jobs }: JobBoardProps) {
             Tidak ada lowongan yang cocok. Coba ubah filter, atau hubungi kami langsung.
           </div>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredJobs.map((job) => (
               <JobCard key={job.id} job={job} onOpen={setSelectedJob} />
             ))}

@@ -49,7 +49,7 @@ export function TempToPermTimeline() {
     return (
         <div className="@container">
             {/* Main flow: 3 steps */}
-            <div className="grid grid-cols-1 @2xl:grid-cols-3 gap-3 mb-3">
+            <div className="grid grid-cols-1 @2xl:grid-cols-3 gap-4 mb-3">
                 {steps.map((step, i) => (
                     <motion.div
                         key={step.title}
@@ -75,7 +75,7 @@ export function TempToPermTimeline() {
             </div>
 
             {/* Branch: two outcomes */}
-            <div className="grid grid-cols-1 @lg:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 @lg:grid-cols-2 gap-4">
                 {outcomes.map((outcome, i) => (
                     <motion.div
                         key={outcome.title}

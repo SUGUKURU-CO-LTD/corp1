@@ -49,8 +49,8 @@ export default function PricingPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="bg-accent-dark text-white">
-                <div className="container mx-auto px-6 py-20 md:py-24">
+            <section className="section bg-accent-dark text-white">
+                <div className="container mx-auto">
                     <div className="max-w-3xl">
                         <span className="text-accent-light text-sm font-medium tracking-wider uppercase">
                             Pricing
@@ -68,8 +68,8 @@ export default function PricingPage() {
             </section>
 
             {/* 料金の考え方 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <div className="bg-white rounded-2xl border border-line shadow-sm p-8 md:p-10">
                             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -114,13 +114,13 @@ export default function PricingPage() {
             </section>
 
             {/* 含まれるもの / 含まれないもの */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-12">
                             料金に含まれるもの・別途のもの
                         </h2>
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-8">
                             <div className="rounded-2xl border border-accent/20 bg-accent/[0.03] p-7">
                                 <h3 className="font-bold text-accent mb-4 flex items-center gap-2">
                                     <Check className="w-5 h-5" />
@@ -155,8 +155,8 @@ export default function PricingPage() {
             </section>
 
             {/* 見積もり例 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             見積もりの考え方（モデルケース）
@@ -189,9 +189,9 @@ export default function PricingPage() {
             </section>
 
             {/* 流れの簡易導線 */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-24 md:py-32">
-                    <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
+                    <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
                         <Link href="/services/dispatch" className="card group block">
                             <Clock className="w-6 h-6 text-accent mb-3" />
                             <h3 className="font-bold text-ink mb-1">サービス詳細</h3>
@@ -212,8 +212,8 @@ export default function PricingPage() {
             </section>
 
             {/* CTA */}
-            <section className="bg-accent">
-                <div className="container mx-auto px-6 py-20 md:py-24 text-center">
+            <section className="section bg-accent">
+                <div className="container mx-auto text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                         まずは無料でご相談ください
                     </h2>

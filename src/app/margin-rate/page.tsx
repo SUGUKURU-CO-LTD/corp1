@@ -121,7 +121,7 @@ function DisclosureList({ items }: { items: string[] }) {
 export default function MarginRatePage() {
     return (
         <div className="pt-20">
-            <section className="bg-canvas px-6 py-20 md:py-28">
+            <section className="section bg-canvas">
                 <article className="mx-auto max-w-4xl rounded-3xl border border-accent/10 bg-white p-6 shadow-sm md:p-10">
                     <header>
                         <p className="mb-3 text-sm font-medium tracking-[0.18em] text-accent uppercase">

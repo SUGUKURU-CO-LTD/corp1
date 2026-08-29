@@ -166,7 +166,7 @@ export default function ServicesSection() {
                 </motion.div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service) => (
                         <HolographicCard key={service.id} service={service}>
                             <Link href={service.href} className="block h-full">

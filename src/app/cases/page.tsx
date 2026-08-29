@@ -119,7 +119,7 @@ export default function CasesPage() {
             {/* Stats Section */}
             <section className="section bg-ink">
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -223,7 +223,7 @@ export default function CasesPage() {
 
                                 <div className="p-8 md:p-10">
                                     {/* Content Grid */}
-                                    <div className="grid md:grid-cols-3 gap-6 mb-8">
+                                    <div className="grid md:grid-cols-3 gap-8 mb-8">
                                         <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">
@@ -297,7 +297,7 @@ export default function CasesPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
                             { title: "最短2週間で就業開始", desc: "条件が整えばスピード対応" },
                             { title: "多言語で現場をサポート", desc: "日本語・英語・インドネシア語対応" },

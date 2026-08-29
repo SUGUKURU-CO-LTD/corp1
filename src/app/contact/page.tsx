@@ -316,7 +316,7 @@ export default function ContactPage() {
                                     <h2 className="text-2xl font-bold text-ink mb-8 text-center">
                                         お問い合わせの種類を選択してください
                                     </h2>
-                                    <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="grid md:grid-cols-2 gap-6">
                                         {inquiryTypes.map((type, index) => (
                                             <motion.button
                                                 key={type.id}
@@ -377,7 +377,7 @@ export default function ContactPage() {
                                     <h2 className="text-2xl font-bold text-ink mb-6 text-center">
                                         基本情報をご入力ください
                                     </h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="grid md:grid-cols-2 gap-8">
                                         {[
                                             { label: "会社名", key: "companyName", required: true, placeholder: "株式会社○○" },
                                             { label: "お名前", key: "name", required: true, placeholder: "山田 太郎" },
@@ -449,7 +449,7 @@ export default function ContactPage() {
                                         <motion.div
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="grid md:grid-cols-3 gap-6 p-6 bg-accent/5 rounded-2xl"
+                                            className="grid md:grid-cols-3 gap-8 p-6 bg-accent/5 rounded-2xl"
                                         >
                                             {[
                                                 { label: "希望人数", key: "workerCount", placeholder: "例: 5名" },
@@ -484,7 +484,7 @@ export default function ContactPage() {
                                         <motion.div
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="grid md:grid-cols-3 gap-6 p-6 bg-accent/5 rounded-2xl"
+                                            className="grid md:grid-cols-3 gap-8 p-6 bg-accent/5 rounded-2xl"
                                         >
                                             {[
                                                 { label: "開発種別", key: "projectType", options: ["選択してください", "Webアプリ開発", "モバイルアプリ開発", "業務システム開発", "技術コンサルティング"] },
@@ -609,7 +609,7 @@ export default function ContactPage() {
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-3 gap-8">
                         {[
                             { icon: Phone, title: "お電話", value: "0995-73-9939", sub: "平日 9:00〜18:00" },
                             { icon: Mail, title: "メール", value: "info@sugu-kuru.co.jp", sub: "24時間受付" },

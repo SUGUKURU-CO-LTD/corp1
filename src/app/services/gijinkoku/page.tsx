@@ -234,7 +234,7 @@ export default function GijinkokuPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {industries.map((ind, i) => (
                             <motion.div
                                 key={ind.name}
@@ -348,7 +348,7 @@ export default function GijinkokuPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {procedures.map((proc, i) => (
                             <motion.div
                                 key={proc.title}
@@ -404,7 +404,7 @@ export default function GijinkokuPage() {
                                 職業紹介は成功報酬型、派遣は派遣料金、紹介予定派遣は派遣料金＋転換時の紹介手数料という
                                 構成です。具体的な料金は職務内容・雇用形態により異なるため、まずはお見積りをご案内します。
                             </p>
-                            <div className="grid md:grid-cols-2 gap-4">
+                            <div className="grid md:grid-cols-2 gap-6">
                                 {[
                                     "求職者からは一切費用をいただきません（職業安定法）",
                                     "職業紹介は成功報酬型",

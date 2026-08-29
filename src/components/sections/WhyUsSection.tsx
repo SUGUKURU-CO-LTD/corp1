@@ -202,7 +202,7 @@ export default function WhyUsSection() {
                 </motion.div>
 
                 {/* Reasons Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {reasons.map((reason, index) => (
                         <ModernCard key={reason.title} reason={reason} index={index} />
                     ))}

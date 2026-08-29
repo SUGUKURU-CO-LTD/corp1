@@ -31,7 +31,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-accent-dark via-accent-dark/90 to-accent-dark/60" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center py-24 md:py-28">
+                <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center py-24 md:py-28">
                     {/* 左: メッセージ */}
                     <div className="max-w-2xl">
                         <motion.span
@@ -97,7 +97,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.28 }}
-                            className="mt-10 grid sm:grid-cols-2 gap-2.5"
+                            className="mt-10 grid sm:grid-cols-2 gap-3"
                         >
                             {trustBadges.map((badge) => (
                                 <li

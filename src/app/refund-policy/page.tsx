@@ -8,8 +8,8 @@ export default function RefundPolicyPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 bg-ink text-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-ink text-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -33,8 +33,8 @@ export default function RefundPolicyPage() {
             </section>
 
             {/* Content */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function RefundPolicyPage() {
                                 </div>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-4">
+                            <div className="grid md:grid-cols-2 gap-6">
                                 {/* Tier 1: 1 month */}
                                 <div className="bg-white rounded-xl p-6 border-2 border-accent/30 shadow-sm">
                                     <div className="flex items-baseline justify-between mb-3">
@@ -198,8 +198,8 @@ export default function RefundPolicyPage() {
             </section>
 
             {/* Contact CTA */}
-            <section className="py-16 bg-accent">
-                <div className="container mx-auto px-6 text-center">
+            <section className="section bg-accent">
+                <div className="container mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

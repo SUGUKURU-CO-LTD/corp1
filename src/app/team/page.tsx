@@ -178,7 +178,7 @@ export default function TeamIntelPage() {
                         </span>
                     </div>
                     <p className="text-ink-muted text-sm leading-relaxed mb-6">{d.labor.summary}</p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <Stat label="農業就業人口 (2020)" value={`${d.labor.stats.population2020.toLocaleString()}人`} sub={`2015: ${d.labor.stats.population2015.toLocaleString()}人`} />
                         <Stat label="5年間変化" value={`${d.labor.stats.changePct}%`} sub="九州内で最小の減少率" />
                         <Stat label="平均年齢" value={`${d.labor.stats.averageAge}歳`} sub={`65歳以上 ${d.labor.stats.over65Pct}%`} />
@@ -193,7 +193,7 @@ export default function TeamIntelPage() {
                         <Compass className="w-5 h-5 text-[#1B5E38]" />
                         <h2 className="text-lg font-bold text-[#1A1A1A]">SSW派遣適性コンパス（作物）</h2>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-8">
                         {d.sswCompass.map((c) => (
                             <div key={c.crop} className="bg-white rounded-2xl border border-line shadow-sm p-6">
                                 <div className="flex items-center gap-4 mb-4">
@@ -274,7 +274,7 @@ export default function TeamIntelPage() {
                         <h2 className="text-lg font-bold text-[#1A1A1A]">畜産SSW適性</h2>
                     </div>
                     <p className="text-ink-muted text-sm leading-relaxed mb-6">{d.livestock.summary}</p>
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
                         {d.livestock.categories.map((cat) => (
                             <div key={cat.name} className="rounded-xl border border-line bg-[#FAFAF7] p-5">
                                 <div className="flex items-center justify-between mb-2">

@@ -63,7 +63,7 @@ const types: EmploymentType[] = [
 export function EmploymentTypeCompare() {
     return (
         <div className="@container">
-            <div className="grid grid-cols-1 @2xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 @2xl:grid-cols-3 gap-6">
                 {types.map((type, i) => (
                     <motion.div
                         key={type.name}

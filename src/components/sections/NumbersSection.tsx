@@ -165,7 +165,7 @@ export default function NumbersSection() {
                 </motion.div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={stat.label}
@@ -237,7 +237,7 @@ export default function NumbersSection() {
                     <p className="text-center text-ink-inverse-muted text-sm mb-8">
                         地域ごとの繁忙期に合わせて人材を配置し、年間を通じた安定就業につなげます。
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
                         {[
                             { region: "鹿児島", crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月" },
                             { region: "福島", crops: "野菜", season: "夏〜秋" },

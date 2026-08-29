@@ -9,8 +9,8 @@ export default function LegalPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 bg-ink text-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-ink text-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -34,8 +34,8 @@ export default function LegalPage() {
             </section>
 
             {/* Content */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

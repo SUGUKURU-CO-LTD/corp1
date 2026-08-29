@@ -53,8 +53,8 @@ export default function HomeInfoSection() {
     return (
         <>
             {/* 情報導線 */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-20 md:py-28">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink">
                             気になることを、先に明確に
@@ -63,7 +63,7 @@ export default function HomeInfoSection() {
                             料金・制度・必要書類・よくある質問を、わかりやすくまとめています。
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {quickLinks.map((link) => (
                             <Link
                                 key={link.title}
@@ -86,8 +86,8 @@ export default function HomeInfoSection() {
             </section>
 
             {/* FAQ抜粋 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-20 md:py-28">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-3xl mx-auto">
                         <div className="text-center mb-10">
                             <h2 className="text-2xl md:text-3xl font-bold text-ink">

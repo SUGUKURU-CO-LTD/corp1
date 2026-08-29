@@ -377,7 +377,7 @@ export default function AboutPage() {
                         />
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-10">
                         {values.map((value) => (
                             <GlassCard key={value.title} delay={value.delay}>
                                 <GlowingIcon icon={value.icon} delay={0} />
@@ -541,7 +541,7 @@ export default function AboutPage() {
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
-                    <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-6">
+                    <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
                         {licenses.map((license, index) => (
                             <LicenseBadge key={license.name} license={license} index={index} />
                         ))}
@@ -595,7 +595,7 @@ export default function AboutPage() {
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
-                    <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
+                    <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
                         {offices.map((office) => (
                             <OfficeCard key={office.name} office={office} />
                         ))}

@@ -81,14 +81,14 @@ export default function CareersPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="py-20 md:py-28 bg-ink text-white relative overflow-hidden">
+            <section className="section bg-ink text-white relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-[100px]" />
                     <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-[120px]" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -150,8 +150,8 @@ export default function CareersPage() {
             </section>
 
             {/* Why Join Us */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export default function CareersPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                         {[
                             {
                                 icon: Rocket,
@@ -209,8 +209,8 @@ export default function CareersPage() {
             </section>
 
             {/* Requirements */}
-            <section className="py-20 bg-canvas">
-                <div className="container mx-auto px-6">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -253,8 +253,8 @@ export default function CareersPage() {
             </section>
 
             {/* Open Positions */}
-            <section id="positions" className="py-20 bg-white scroll-mt-20">
-                <div className="container mx-auto px-6">
+            <section id="positions" className="section bg-white scroll-mt-20">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -272,7 +272,7 @@ export default function CareersPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                         {positions.map((position, index) => (
                             <motion.div
                                 key={position.id}
@@ -324,8 +324,8 @@ export default function CareersPage() {
             </section>
 
             {/* Benefits */}
-            <section className="py-20 bg-ink text-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-ink text-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -343,7 +343,7 @@ export default function CareersPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
                         {benefits.map((benefit, index) => (
                             <motion.div
                                 key={benefit.title}
@@ -383,8 +383,8 @@ export default function CareersPage() {
             </section>
 
             {/* Work Details */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -438,13 +438,13 @@ export default function CareersPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-br from-accent via-accent-light to-accent relative overflow-hidden">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-[80px]" />
                     <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent rounded-full blur-[100px]" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

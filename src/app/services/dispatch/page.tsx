@@ -189,7 +189,7 @@ export default function DispatchPage() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {features.map((feature, index) => (
                             <motion.div
                                 key={feature.title}
@@ -236,7 +236,7 @@ export default function DispatchPage() {
                     </motion.div>
 
                     <div className="max-w-4xl mx-auto">
-                        <div className="grid md:grid-cols-5 gap-4">
+                        <div className="grid md:grid-cols-5 gap-6">
                             {flow.map((item, i) => (
                                 <motion.div
                                     key={item.step}
@@ -315,7 +315,7 @@ export default function DispatchPage() {
 
                             <div className="border-t border-line pt-8">
                                 <p className="font-bold text-ink mb-4">含まれるサポート</p>
-                                <div className="grid md:grid-cols-2 gap-3">
+                                <div className="grid md:grid-cols-2 gap-4">
                                     {pricing.includes.map((item) => (
                                         <div key={item} className="flex items-center gap-2">
                                             <CheckCircle2 className="w-5 h-5 text-accent" />

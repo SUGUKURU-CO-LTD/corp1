@@ -57,7 +57,7 @@ export default function MissionSection() {
                 </motion.div>
 
                 {/* ミッションカード */}
-                <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
                     {missions.map((mission, i) => (
                         <motion.div
                             key={mission.title}

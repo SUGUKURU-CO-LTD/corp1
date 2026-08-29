@@ -131,9 +131,9 @@ export default function JournalPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 md:py-20 bg-accent text-white relative overflow-hidden">
+            <section className="section bg-accent text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                         <div>
                             <motion.h1
@@ -175,9 +175,9 @@ export default function JournalPage() {
             </section>
 
             {/* Main Content */}
-            <section className="py-16 bg-canvas">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-3 gap-8">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
+                    <div className="grid lg:grid-cols-3 gap-10">
                         {/* Posts Feed - Main Column */}
                         <div className="lg:col-span-2 space-y-6">
                             <div className="flex items-center gap-3 mb-8">
