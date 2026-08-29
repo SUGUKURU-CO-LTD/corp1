@@ -62,7 +62,7 @@ const flow = [
 ];
 
 const pricing = {
-    hourlyRate: "1,550円〜",
+    hourlyRate: "1,600円〜",
     note: "税抜 / 経験・スキルにより変動",
     includes: [
         "住居手配・入退去サポート",

@@ -40,9 +40,9 @@ const notIncluded = [
 
 // 見積もりの考え方（モデルケース・概算）
 const exampleRows = [
-    { item: "標準時給（派遣料金）の目安", value: "1,550円〜 / 時間", note: "税抜・経験・地域により変動" },
+    { item: "標準時給（派遣料金）の目安", value: "1,600円〜 / 時間", note: "税抜・経験・地域により変動" },
     { item: "想定就業", value: "1日8時間 × 月22日", note: "繁忙期・契約により変動" },
-    { item: "1名あたり月額の目安", value: "約27万円〜", note: "上記時給×想定就業の概算" },
+    { item: "1名あたり月額の目安", value: "約28万円〜", note: "上記時給×想定就業の概算" },
 ];
 
 export default function PricingPage() {
@@ -76,7 +76,7 @@ export default function PricingPage() {
                                 <div>
                                     <p className="text-gray-500 text-sm mb-1">標準時給（目安）</p>
                                     <p className="text-4xl md:text-5xl font-bold text-accent">
-                                        1,550円〜
+                                        1,600円〜
                                     </p>
                                     <p className="text-gray-500 text-sm mt-2">
                                         税抜 / 経験・スキル・地域・作業内容により変動します

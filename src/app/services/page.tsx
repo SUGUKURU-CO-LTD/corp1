@@ -22,7 +22,7 @@ const services = [
             "住宅手配・入退去サポート込み",
         ],
         pricing: {
-            baseRate: "1,550円/時間〜（税抜）",
+            baseRate: "1,600円/時間〜（税抜）",
             initialFee: "採用コスト・住宅費用削減",
         },
         href: "/services/dispatch",
