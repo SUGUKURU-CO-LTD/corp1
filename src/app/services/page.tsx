@@ -22,7 +22,7 @@ const services = [
             "住宅手配・入退去サポート込み",
         ],
         pricing: {
-            baseRate: "1,550円/時間〜（税抜）",
+            baseRate: "1,600円/時間〜（税抜）",
             initialFee: "採用コスト・住宅費用削減",
         },
         href: "/services/dispatch",
@@ -117,7 +117,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
             transition={{ duration: 0.8, delay: service.delay }}
             className={`relative overflow-hidden rounded-3xl ${service.isMain
                     ? "bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent"
-                    : "bg-white border border-gray-100"
+                    : "bg-white border border-line"
                 }`}
         >
             {/* Hover gradient overlay */}
@@ -166,13 +166,13 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                                         </motion.span>
                                     )}
                                 </div>
-                                <p className="text-gray-500 mt-1">{service.tagline}</p>
+                                <p className="text-ink-muted mt-1">{service.tagline}</p>
                             </div>
                         </div>
 
-                        <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
+                        <p className="text-ink-muted mb-8 leading-relaxed">{service.description}</p>
 
-                        <div className="grid md:grid-cols-2 gap-3">
+                        <div className="grid md:grid-cols-2 gap-4">
                             {service.features.map((feature, index) => (
                                 <motion.div
                                     key={feature}
@@ -188,25 +188,25 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                                     >
                                         <Check className="w-3 h-3 text-accent" />
                                     </motion.div>
-                                    <span className="text-gray-700 text-sm">{feature}</span>
+                                    <span className="text-ink text-sm">{feature}</span>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
 
                     {/* Right Column - Pricing / CTA */}
-                    <div className="lg:w-1/3 lg:border-l lg:border-gray-100 lg:pl-8 flex flex-col justify-center">
+                    <div className="lg:w-1/3 lg:border-l lg:border-line lg:pl-8 flex flex-col justify-center">
                         {service.pricing && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: service.delay + 0.3 }}
-                                className="mb-6 p-4 bg-gray-50 rounded-2xl"
+                                className="mb-6 p-4 bg-canvas rounded-2xl"
                             >
-                                <p className="text-sm text-gray-500 mb-2">料金目安</p>
+                                <p className="text-sm text-ink-muted mb-2">料金目安</p>
                                 <p className="text-2xl font-bold text-ink">{service.pricing.baseRate}</p>
-                                <p className="text-sm text-gray-500 mt-1">{service.pricing.initialFee}</p>
+                                <p className="text-sm text-ink-muted mt-1">{service.pricing.initialFee}</p>
                             </motion.div>
                         )}
 
@@ -247,7 +247,7 @@ const FlowStep = ({ step, index }: { step: { step: number; title: string; desc: 
                     {step.step}
                 </motion.div>
                 <h3 className="font-bold text-ink mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500">{step.desc}</p>
+                <p className="text-sm text-ink-muted">{step.desc}</p>
             </div>
             {index < 4 && (
                 <motion.div
@@ -312,7 +312,6 @@ export default function ServicesPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             <motion.span
                                 initial={{ clipPath: "inset(0 100% 0 0)" }}
@@ -328,10 +327,10 @@ export default function ServicesPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
-                            className="text-xl text-gray-300 leading-relaxed max-w-2xl"
+                            className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
-                            派遣、受託、紹介、そしてテクノロジー。<br />
-                            私たちは「農業の人手不足」という複雑な課題を、あらゆる角度から解きほぐす。
+                            派遣、受託、紹介、技人国、そしてテクノロジー。<br />
+                            私たちは「人手不足」という複雑な課題を、あらゆる角度から解きほぐす。
                         </motion.p>
                     </div>
                 </motion.div>
@@ -356,7 +355,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             サービス一覧
                         </h2>
@@ -383,14 +381,13 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入実績
                         </h2>
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent-light" />
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-12">
                         {[
                             { number: "120", label: "稼働スタッフ数", icon: "👥" },
                             { number: "60+", label: "導入企業数", icon: "🏢" },
@@ -423,7 +420,7 @@ export default function ServicesPage() {
                                 >
                                     {stat.number}
                                 </motion.p>
-                                <p className="text-gray-600 font-medium">{stat.label}</p>
+                                <p className="text-ink-muted font-medium">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -435,8 +432,8 @@ export default function ServicesPage() {
                         transition={{ delay: 0.4 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <h3 className="text-2xl font-bold text-ink text-center mb-8">対応地域</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <h3 className="text-2xl font-bold text-ink text-center mb-8">対応地域（農業派遣）</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                             {[
                                 { region: "鹿児島県", type: "お茶・野菜・畜産", icon: "🌿" },
                                 { region: "福島県", type: "野菜", icon: "🥬" },
@@ -456,7 +453,7 @@ export default function ServicesPage() {
                                     <span className="text-2xl">{area.icon}</span>
                                     <div>
                                         <p className="font-bold text-ink">{area.region}</p>
-                                        <p className="text-sm text-gray-500">{area.type}</p>
+                                        <p className="text-sm text-ink-muted">{area.type}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -477,7 +474,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             ご利用の流れ
                         </h2>
@@ -485,7 +481,7 @@ export default function ServicesPage() {
                     </motion.div>
 
                     <div className="max-w-5xl mx-auto">
-                        <div className="grid md:grid-cols-5 gap-4">
+                        <div className="grid md:grid-cols-5 gap-6">
                             {[
                                 { step: 1, title: "お問い合わせ", desc: "Web・電話・SNS" },
                                 { step: 2, title: "ヒアリング", desc: "オンライン・訪問" },
@@ -501,7 +497,7 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA */}
-            <section className="relative overflow-hidden bg-ink-strong">
+            <section className="section relative overflow-hidden bg-ink-strong">
                 {/* Animated background */}
                 <motion.div
                     animate={{
@@ -520,7 +516,7 @@ export default function ServicesPage() {
                     className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"
                 />
 
-                <div className="container mx-auto relative z-10 text-center py-24">
+                <div className="container mx-auto relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -529,7 +525,6 @@ export default function ServicesPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             どのサービスが最適かわからない？
                         </h2>

@@ -24,7 +24,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                 >
                     <Link
                         href="/"
-                        className="flex items-center gap-1 text-gray-500 hover:text-accent transition-colors"
+                        className="flex items-center gap-1 text-ink-muted hover:text-accent transition-colors"
                     >
                         <Home className="w-4 h-4" />
                         <span>ホーム</span>
@@ -39,15 +39,15 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                         transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
                         className="flex items-center gap-2"
                     >
-                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                        <ChevronRight className="w-4 h-4 text-ink-muted" />
                         {index === items.length - 1 ? (
-                            <span className="text-gray-700 font-medium" aria-current="page">
+                            <span className="text-ink font-medium" aria-current="page">
                                 {item.name}
                             </span>
                         ) : (
                             <Link
                                 href={item.href}
-                                className="text-gray-500 hover:text-accent transition-colors"
+                                className="text-ink-muted hover:text-accent transition-colors"
                             >
                                 {item.name}
                             </Link>

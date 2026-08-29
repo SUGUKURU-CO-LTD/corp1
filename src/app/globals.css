@@ -30,12 +30,13 @@
 
   /* ---- プリミティブ：アクセント（グリーン。旧#1B5E38比で明度・彩度を引き上げ） ---- */
   /* 旧 #1B5E38 = oklch(43.0% 0.092 154.4) → 色相154°は維持し、明度・彩度を現代的な水準へ */
+  /* accent-500 は WCAG AA (4.5:1) 適合のため 55%→50% に調整済み（本番実測: 白地4.34:1→5.46:1） */
   --accent-50: oklch(95% 0.035 154);
   --accent-100: oklch(90% 0.06 154);
   --accent-200: oklch(82% 0.09 154);
   --accent-300: oklch(72% 0.12 154);
   --accent-400: oklch(63% 0.145 154);
-  --accent-500: oklch(55% 0.155 154);
+  --accent-500: oklch(50% 0.145 154);
   --accent-600: oklch(47% 0.145 154);
   --accent-700: oklch(39% 0.13 154);
   --accent-800: oklch(30% 0.1 154);
@@ -47,6 +48,10 @@
   --color-ink: var(--gray-900);
   --color-ink-muted: var(--gray-600);
   --color-ink-strong: var(--gray-950);
+  /* 暗背景（Hero/Footer/CTA等）用の文字トークン。実測: inverse 97.4%は白同等、
+     inverse-muted 65%は代表的な暗背景(rgb(14,13,11))で6.00:1・AA適合 */
+  --color-ink-inverse: var(--gray-50);
+  --color-ink-inverse-muted: var(--gray-400);
   --color-line: var(--gray-200);
   --color-accent-soft: var(--accent-50);
   --color-accent-light: var(--accent-400);
@@ -76,8 +81,20 @@
   /* Background & Foreground */
   --background: var(--warm-white);
   --foreground: var(--carbon-black);
+}
 
-  /* Spacing */
+/* ===========================================
+   構造トークン（角丸・影・余白）— @theme に置く。
+   :root（unlayeredなカスタムプロパティ）に置くと、Tailwindが
+   @layer theme 内に生成する同名スケールに対して常に優先してしまい、
+   rounded- / shadow- 系ユーティリティの詳細度に関係なく上書きしてしまう
+   （実測済みバグ：rounded-2xl と rounded-3xl が両方24pxになる等）。
+   @theme に置くことで「Tailwindのスケールそのものをこの値に差し替える」
+   形になり、ユーティリティの生成過程に正しく組み込まれる。
+   =========================================== */
+@theme {
+  /* Spacing（Tailwind標準の --spacing とは別の、コンポーネント専用トークン。
+     ユーティリティ生成には関与しないが、cascade layer内に置いて一貫性を保つ） */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -97,9 +114,13 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-2xl: 24px;
+  /* Tailwind既定の --radius-3xl(1.5rem=24px) が上のradius-2xlと衝突し
+     見分けがつかなくなっていたため、明示的に一段大きい値を定義する */
+  --radius-3xl: 32px;
   --radius-full: 9999px;
 
-  /* Shadows */
+  /* Shadows（Tailwind v4既定の2層シャドウと、.card用の1層シャドウが
+     併存していたため、このプロジェクトの1層シャドウに統一する） */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -121,6 +142,8 @@
   --color-ink: var(--color-ink);
   --color-ink-muted: var(--color-ink-muted);
   --color-ink-strong: var(--color-ink-strong);
+  --color-ink-inverse: var(--color-ink-inverse);
+  --color-ink-inverse-muted: var(--color-ink-inverse-muted);
   --color-line: var(--color-line);
   --color-accent-soft: var(--color-accent-soft);
   --color-accent-light: var(--color-accent-light);
@@ -155,141 +178,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-/* Utility Classes */
-.text-gradient {
-  background: linear-gradient(135deg, var(--golden-harvest), var(--golden-harvest-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.bg-gradient-brand {
-  background: linear-gradient(135deg, var(--forest-green), var(--forest-green-light));
-}
-
-.bg-gradient-accent {
-  background: linear-gradient(135deg, var(--golden-harvest), var(--golden-harvest-light));
-}
-
-/* Button Base Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: var(--forest-green);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--forest-green-light);
-  transform: scale(1.02);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--carbon-black);
-  border: 1px solid var(--border-gray);
-}
-
-.btn-secondary:hover {
-  background: var(--light-gray);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--forest-green);
-}
-
-.btn-ghost:hover {
-  text-decoration: underline;
-}
-
-/* Card Styles */
-.card {
-  background: white;
-  border: 1px solid var(--border-gray);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
-  border-color: var(--forest-green);
-}
-
-/* Section Styles */
-.section {
-  /* セクション間にゆとりを持たせ、内容を見やすくする */
-  /* More breathing room between sections for readability */
-  /* Lebih banyak ruang antar bagian agar mudah dibaca */
-  padding: clamp(80px, 9vw, 128px) var(--space-6);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-6);
-}
-
-/* Hero Section */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 26, 26, 0.6),
-    rgba(27, 94, 56, 0.3)
-  );
-}
-
-/* License Badge */
-.license-badge {
-  background: linear-gradient(135deg, var(--forest-green), var(--forest-green-light));
-  border: 2px solid var(--golden-harvest);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-5);
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* Stat Number */
-.stat-number {
-  font-family: var(--font-mono), "Courier New", monospace;
-  font-size: 3.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--golden-harvest), var(--golden-harvest-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@media (min-width: 768px) {
-  .stat-number {
-    font-size: 4.5rem;
-  }
-}
-
-/* Animations */
+/* Animations（@keyframes はレイヤー外のままで問題ない。
+   animation-name経由で参照されるだけで、セレクタの詳細度競合が
+   発生しないため） */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -310,12 +201,162 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
-}
+/* ===========================================
+   カスタムコンポーネントクラス — @layer components に置く。
+   Tailwindのレイヤー順は theme → base → components → utilities。
+   ここに置くことで、同じ要素に付与したTailwindユーティリティ
+   （例: className="card rounded-full"）が正しく上書きできるようになる
+   （従来は unlayered だったため常にこちら側が勝っていた）。
+   =========================================== */
+@layer components {
+  /* Utility Classes */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--golden-harvest), var(--golden-harvest-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-.animate-delay-100 { animation-delay: 100ms; }
-.animate-delay-200 { animation-delay: 200ms; }
-.animate-delay-300 { animation-delay: 300ms; }
-.animate-delay-400 { animation-delay: 400ms; }
-.animate-delay-500 { animation-delay: 500ms; }
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, var(--forest-green), var(--forest-green-light));
+  }
+
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, var(--golden-harvest), var(--golden-harvest-light));
+  }
+
+  /* Button Base Styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--forest-green);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--forest-green-light);
+    transform: scale(1.02);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--carbon-black);
+    border: 1px solid var(--border-gray);
+  }
+
+  .btn-secondary:hover {
+    background: var(--light-gray);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--forest-green);
+  }
+
+  .btn-ghost:hover {
+    text-decoration: underline;
+  }
+
+  /* Card Styles */
+  .card {
+    background: white;
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--forest-green);
+  }
+
+  /* Section Styles */
+  .section {
+    /* セクション間にゆとりを持たせ、内容を見やすくする */
+    /* More breathing room between sections for readability */
+    /* Lebih banyak ruang antar bagian agar mudah dibaca */
+    padding: clamp(96px, 10vw, 160px) var(--space-6);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+    /* 旧: padding: 0 var(--space-6) というショートハンドが
+       padding-block を 0 にリセットしていたため、container と
+       py- / pt- / pb- 系ユーティリティを併記した箇所
+       （ヘッダー・フッター等25箇所）で縦方向のpaddingが
+       常に0pxになっていた（実測確認済み）。
+       padding-inline に変えることで block 軸を Tailwind の
+       py- 系ユーティリティに委ねる。 */
+    padding-inline: var(--space-6);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.6),
+      rgba(27, 94, 56, 0.3)
+    );
+  }
+
+  /* License Badge */
+  .license-badge {
+    background: linear-gradient(135deg, var(--forest-green), var(--forest-green-light));
+    border: 2px solid var(--golden-harvest);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-5);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  /* Stat Number */
+  .stat-number {
+    font-family: var(--font-mono), "Courier New", monospace;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--golden-harvest), var(--golden-harvest-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @media (min-width: 768px) {
+    .stat-number {
+      font-size: 4.5rem;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}

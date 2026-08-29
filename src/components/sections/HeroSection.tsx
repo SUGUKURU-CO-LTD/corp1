@@ -31,7 +31,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-accent-dark via-accent-dark/90 to-accent-dark/60" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center py-24 md:py-28">
+                <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center py-24 md:py-28">
                     {/* 左: メッセージ */}
                     <div className="max-w-2xl">
                         <motion.span
@@ -40,7 +40,7 @@ export default function HeroSection() {
                             transition={{ duration: 0.5 }}
                             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-sm text-white/90 mb-6"
                         >
-                            農業 × 特定技能 × 一貫サポート
+                            外国人材 × 全業種対応 × 一貫サポート
                         </motion.span>
 
                         <motion.h1
@@ -49,7 +49,7 @@ export default function HeroSection() {
                             transition={{ duration: 0.6, delay: 0.05 }}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-5"
                         >
-                            鹿児島の農業に、
+                            鹿児島から、
                             <br className="hidden md:block" />
                             <span className="text-accent-light">すぐ来る即戦力</span>を。
                         </motion.h1>
@@ -60,8 +60,9 @@ export default function HeroSection() {
                             transition={{ duration: 0.6, delay: 0.12 }}
                             className="text-base md:text-lg text-white/85 leading-relaxed mb-8"
                         >
-                            特定技能の外国人材を、住まいの手配から行政手続き・多言語サポートまで
-                            一貫して支援し、農場へ派遣します。人手不足のご相談から、お気軽にどうぞ。
+                            特定技能・技術人文知識国際業務（技人国）等、様々な在留資格の外国人材を、
+                            住まいの手配から行政手続き・多言語サポートまで一貫して支援。派遣・職業紹介など、
+                            業種に応じた最適な形でご案内します。人手不足のご相談から、お気軽にどうぞ。
                         </motion.p>
 
                         <motion.div
@@ -97,7 +98,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.28 }}
-                            className="mt-10 grid sm:grid-cols-2 gap-2.5"
+                            className="mt-10 grid sm:grid-cols-2 gap-3"
                         >
                             {trustBadges.map((badge) => (
                                 <li

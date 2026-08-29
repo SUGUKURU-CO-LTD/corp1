@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Shippori_Mincho, Inter, JetBrains_Mono } from "next/font/google";
+import { Noto_Sans_JP, Shippori_Mincho, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -18,12 +18,6 @@ const shipporiMincho = Shippori_Mincho({
   weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
@@ -32,12 +26,12 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sugu-kuru.co.jp'),
-  title: "スグクル株式会社 | 農業派遣・IT事業 | Sugukuru",
-  description: "スグクル株式会社は、農業派遣・農作業受託・有料職業紹介・IT事業を通じて、日本の農業を外国人材の力で支えます。「すぐ来る」、だから変われる。",
-  keywords: "農業派遣, 外国人材, 特定技能, 農作業受託, IT開発, 鹿児島, スグクル",
+  title: "スグクル株式会社 | 外国人材の総合人材サービス | Sugukuru",
+  description: "スグクル株式会社は、農業派遣・有料職業紹介・技術人文知識国際業務（技人国）人材の派遣紹介・IT事業を通じて、外国人材の力で日本の産業を支える人材総合会社です。「すぐ来る」、だから変われる。",
+  keywords: "外国人材, 特定技能, 技人国, 人材派遣, 有料職業紹介, 農業派遣, IT開発, 鹿児島, スグクル",
   openGraph: {
-    title: "スグクル株式会社 | 農業派遣・IT事業",
-    description: "日本の農業を外国人材の力で支える。「すぐ来る」、だから変われる。",
+    title: "スグクル株式会社 | 外国人材の総合人材サービス",
+    description: "外国人材の力で、日本の産業を支える。「すぐ来る」、だから変われる。",
     url: "https://sugu-kuru.co.jp",
     siteName: "スグクル株式会社",
     locale: "ja_JP",
@@ -45,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "スグクル株式会社 | 農業派遣・IT事業",
-    description: "日本の農業を外国人材の力で支える。「すぐ来る」、だから変われる。",
+    title: "スグクル株式会社 | 外国人材の総合人材サービス",
+    description: "外国人材の力で、日本の産業を支える。「すぐ来る」、だから変われる。",
   },
   robots: {
     index: true,
@@ -70,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${notoSansJP.variable} ${shipporiMincho.variable} ${jetbrainsMono.variable}`}>
       <head>
         <OrganizationSchema />
         <WebsiteSchema />
@@ -92,9 +86,7 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body
-        className={`${notoSansJP.variable} ${shipporiMincho.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

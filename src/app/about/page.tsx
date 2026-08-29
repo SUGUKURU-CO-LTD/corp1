@@ -56,13 +56,13 @@ const values = [
     {
         icon: Target,
         title: "ミッション",
-        description: "疲弊する地方、消えゆく農地。日本人だけでは届かない場所へ、世界から手を伸ばす。人手の確保を通じて、耕作放棄地が再び実りある大地に戻る後押しをする。",
+        description: "人手が足りない地方、担い手が減る産業。日本人だけでは届かない場所へ、世界から手を伸ばす。人材の確保を通じて、地域と産業の持続を後押しする。",
         delay: 0,
     },
     {
         icon: Eye,
         title: "ビジョン",
-        description: "食料自給率が高く、地方が笑顔で溢れる日本へ。収穫の喜びが、次の世代へと受け継がれる社会を創る。",
+        description: "食料自給率を守り、地方が笑顔で溢れる日本へ。あらゆる産業の現場に活気を取り戻し、次の世代へ受け継がれる社会を創る。",
         delay: 0.1,
     },
     {
@@ -147,7 +147,7 @@ const LicenseBadge = ({ license, index }: { license: typeof licenses[0]; index: 
                 >
                     <Award className="w-6 h-6 text-accent" />
                 </motion.div>
-                <p className="text-sm text-gray-600 mb-2">{license.name}</p>
+                <p className="text-sm text-ink-muted mb-2">{license.name}</p>
                 <p className="text-xl font-bold text-ink">{license.number}</p>
             </div>
         </motion.div>
@@ -173,7 +173,7 @@ const TimelineItem = ({ item, index }: { item: typeof timeline[0]; index: number
                 <motion.p
                     initial={{ opacity: 0.7 }}
                     whileHover={{ opacity: 1 }}
-                    className="text-gray-700 text-lg leading-relaxed"
+                    className="text-ink text-lg leading-relaxed"
                 >
                     {item.event}
                 </motion.p>
@@ -193,7 +193,7 @@ const OfficeCard = ({ office }: { office: typeof offices[0] }) => {
             transition={{ duration: 0.5 }}
             className={`relative p-6 rounded-2xl overflow-hidden ${office.isHQ
                     ? "bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent"
-                    : "bg-white border border-gray-200"
+                    : "bg-white border border-line"
                 }`}
         >
             <div className="flex items-start gap-4">
@@ -218,7 +218,7 @@ const OfficeCard = ({ office }: { office: typeof offices[0] }) => {
                             </motion.span>
                         )}
                     </h3>
-                    <p className="text-gray-600 mt-2">{office.location}</p>
+                    <p className="text-ink-muted mt-2">{office.location}</p>
                 </div>
             </div>
         </motion.div>
@@ -304,7 +304,6 @@ export default function AboutPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             <motion.span
                                 initial={{ clipPath: "inset(0 100% 0 0)" }}
@@ -320,7 +319,7 @@ export default function AboutPage() {
                                 transition={{ duration: 1, delay: 0.5 }}
                                 className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent"
                             >
-                                日本を耕す。
+                                人を耕す。
                             </motion.span>
                         </motion.h1>
 
@@ -328,10 +327,10 @@ export default function AboutPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.7 }}
-                            className="text-xl text-gray-300 leading-relaxed max-w-2xl"
+                            className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
                             鹿児島・霧島。桜島の灰が降り注ぐこの地で、私たちは「スグクル」という名前を掲げた。
-                            すぐに来る——その約束を胸に、日本中の農地へ即戦力を届ける。
+                            すぐに来る——その約束を胸に、日本中の現場へ即戦力を届ける。
                         </motion.p>
                     </div>
                 </motion.div>
@@ -365,7 +364,6 @@ export default function AboutPage() {
                         </motion.span>
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             企業理念
                         </h2>
@@ -377,7 +375,7 @@ export default function AboutPage() {
                         />
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-10">
                         {values.map((value) => (
                             <GlassCard key={value.title} delay={value.delay}>
                                 <GlowingIcon icon={value.icon} delay={0} />
@@ -391,7 +389,7 @@ export default function AboutPage() {
                                 <motion.p
                                     initial={{ opacity: 0.6 }}
                                     whileHover={{ opacity: 1 }}
-                                    className="text-gray-600 leading-relaxed relative z-10"
+                                    className="text-ink-muted leading-relaxed relative z-10"
                                 >
                                     {value.description}
                                 </motion.p>
@@ -402,7 +400,7 @@ export default function AboutPage() {
             </section>
 
             {/* Company Info */}
-            <section className="section bg-gray-50">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -413,7 +411,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             会社概要
                         </h2>
@@ -429,36 +426,36 @@ export default function AboutPage() {
                     >
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Left: Basic Info */}
-                            <div className="p-8 border-b md:border-b-0 md:border-r border-gray-100">
+                            <div className="p-8 border-b md:border-b-0 md:border-r border-line">
                                 <table className="w-full">
                                     <tbody>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink w-1/3">会社名</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.name}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink w-1/3">会社名</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.name}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">英語表記</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.nameEn}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">英語表記</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.nameEn}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">設立</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.established}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">設立</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.established}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">資本金</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.capital}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">資本金</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.capital}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">所在地</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.address}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">所在地</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.address}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">電話番号</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.phone}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">電話番号</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.phone}</td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-4 bg-gray-50/50 font-medium text-ink">稼働スタッフ</td>
-                                            <td className="px-4 py-4 text-gray-700">{companyInfo.employees}</td>
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">稼働スタッフ</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.employees}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -489,7 +486,7 @@ export default function AboutPage() {
                                                     {index + 1}
                                                 </motion.span>
                                                 <span className="font-medium text-ink">{officer.position}</span>
-                                                <span className="text-gray-600">{officer.name}</span>
+                                                <span className="text-ink-muted">{officer.name}</span>
                                             </motion.div>
                                         ))}
                                     </div>
@@ -511,7 +508,7 @@ export default function AboutPage() {
                                                 className="flex items-start gap-2"
                                             >
                                                 <span className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                                                <span className="text-gray-700 text-sm">{item}</span>
+                                                <span className="text-ink text-sm">{item}</span>
                                             </motion.li>
                                         ))}
                                     </ul>
@@ -534,14 +531,13 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             許認可情報
                         </h2>
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
-                    <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-6">
+                    <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
                         {licenses.map((license, index) => (
                             <LicenseBadge key={license.name} license={license} index={index} />
                         ))}
@@ -561,7 +557,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             沿革
                         </h2>
@@ -588,14 +583,13 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             拠点・アクセス
                         </h2>
                         <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
-                    <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
+                    <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
                         {offices.map((office) => (
                             <OfficeCard key={office.name} office={office} />
                         ))}
@@ -616,8 +610,8 @@ export default function AboutPage() {
                                 className="text-center"
                             >
                                 <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
-                                <p className="text-gray-600">{COMPANY_ADDRESS_LINE_JA}</p>
-                                <p className="text-sm text-gray-500 mt-2">Google Maps 埋め込み</p>
+                                <p className="text-ink-muted">{COMPANY_ADDRESS_LINE_JA}</p>
+                                <p className="text-sm text-ink-muted mt-2">Google Maps 埋め込み</p>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -653,7 +647,6 @@ export default function AboutPage() {
                     >
                         <h2
                             className="text-4xl md:text-5xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             お問い合わせ
                         </h2>

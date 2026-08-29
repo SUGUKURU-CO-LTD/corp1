@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { Tractor, Wrench, Users, Code, ArrowUpRight } from "lucide-react";
+import { Tractor, Wrench, Users, GraduationCap, Code, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 
 // Holographic card effect
@@ -100,13 +100,22 @@ const services = [
         delay: 0.2,
     },
     {
+        id: "gijinkoku",
+        name: "技人国 派遣・紹介",
+        description: "専門職の外国人材を、製造・建設・サービス業へ。技人国は届出のみで、立ち上がりが速い。",
+        icon: GraduationCap,
+        href: "/services/gijinkoku",
+        size: "small",
+        delay: 0.3,
+    },
+    {
         id: "it",
         name: "IT事業",
-        description: "農業にもデジタルを。Webシステム・アプリ開発で、現場を進化させる。",
+        description: "Webシステム・アプリ開発で、あらゆる現場を進化させる。農業DXにも対応。",
         icon: Code,
         href: "/services/it",
         size: "medium",
-        delay: 0.3,
+        delay: 0.4,
     },
 ];
 
@@ -120,7 +129,7 @@ export default function ServicesSection() {
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     return (
-        <section ref={sectionRef} className="section relative bg-gray-50 overflow-hidden">
+        <section ref={sectionRef} className="section relative bg-canvas overflow-hidden">
             {/* Background decorations */}
             <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
@@ -145,7 +154,7 @@ export default function ServicesSection() {
                     >
                         Our Services
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-ink" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-ink">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -166,7 +175,7 @@ export default function ServicesSection() {
                 </motion.div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service) => (
                         <HolographicCard key={service.id} service={service}>
                             <Link href={service.href} className="block h-full">
@@ -177,7 +186,7 @@ export default function ServicesSection() {
                                 >
                                     {service.name}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                                <p className="text-ink-muted text-sm leading-relaxed">{service.description}</p>
 
                                 {/* Arrow indicator */}
                                 <motion.div

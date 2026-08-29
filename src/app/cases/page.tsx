@@ -97,7 +97,6 @@ export default function CasesPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入事例・実績
                         </motion.h1>
@@ -108,8 +107,8 @@ export default function CasesPage() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
                         >
-                            全国の農業法人・農家様に、確かな成果をお届けしています。<br />
-                            人手不足という課題を解決し、農業の未来を共に創る——<br />
+                            全国の企業様に、確かな成果をお届けしています。<br />
+                            人手不足という課題を解決し、共に未来を創る——<br />
                             私たちのパートナーシップの実例をご紹介します。
                         </motion.p>
                     </div>
@@ -119,7 +118,7 @@ export default function CasesPage() {
             {/* Stats Section */}
             <section className="section bg-ink">
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -138,7 +137,7 @@ export default function CasesPage() {
                                 >
                                     {stat.value}
                                 </p>
-                                <p className="text-gray-400 text-sm">{stat.label}</p>
+                                <p className="text-ink-inverse-muted text-sm">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -160,11 +159,10 @@ export default function CasesPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入企業様の声
                         </h2>
-                        <p className="text-gray-400 text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
+                        <p className="text-ink-muted text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
                     </motion.div>
 
                     <div className="space-y-12">
@@ -175,7 +173,7 @@ export default function CasesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+                                className="bg-white rounded-2xl shadow-sm border border-line overflow-hidden"
                             >
                                 {/* Image Section */}
                                 <div className="relative h-64 md:h-80 overflow-hidden">
@@ -197,7 +195,6 @@ export default function CasesPage() {
                                                     <div>
                                                         <h3
                                                             className="text-2xl font-bold text-white"
-                                                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                                                         >
                                                             {caseStudy.company}
                                                         </h3>
@@ -223,35 +220,35 @@ export default function CasesPage() {
 
                                 <div className="p-8 md:p-10">
                                     {/* Content Grid */}
-                                    <div className="grid md:grid-cols-3 gap-6 mb-8">
-                                        <div className="bg-gray-50 rounded-xl p-6">
+                                    <div className="grid md:grid-cols-3 gap-8 mb-8">
+                                        <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">
                                                     課
                                                 </span>
                                                 導入前の課題
                                             </h4>
-                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                            <p className="text-ink-muted text-sm leading-relaxed">
                                                 {caseStudy.challenge}
                                             </p>
                                         </div>
-                                        <div className="bg-gray-50 rounded-xl p-6">
+                                        <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
                                                     解
                                                 </span>
                                                 スグクルの対応
                                             </h4>
-                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                            <p className="text-ink-muted text-sm leading-relaxed">
                                                 {caseStudy.solution}
                                             </p>
                                         </div>
-                                        <div className="bg-gray-50 rounded-xl p-6">
+                                        <div className="bg-canvas rounded-xl p-6">
                                             <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <CheckCircle2 className="w-6 h-6 text-accent" />
                                                 導入後の成果
                                             </h4>
-                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                            <p className="text-ink-muted text-sm leading-relaxed">
                                                 {caseStudy.result}
                                             </p>
                                         </div>
@@ -261,10 +258,10 @@ export default function CasesPage() {
                                     {caseStudy.testimonial && (
                                         <div className="rounded-xl p-6 relative bg-accent/[0.03]">
                                             <Quote className="absolute top-4 left-4 w-8 h-8 opacity-20 text-accent" />
-                                            <p className="text-gray-700 leading-relaxed pl-8 italic">
+                                            <p className="text-ink leading-relaxed pl-8 italic">
                                                 「{caseStudy.testimonial}」
                                             </p>
-                                            <p className="text-right mt-4 text-sm text-gray-500">
+                                            <p className="text-right mt-4 text-sm text-ink-muted">
                                                 — {caseStudy.company} {caseStudy.testimonialAuthor}
                                             </p>
                                         </div>
@@ -291,13 +288,12 @@ export default function CasesPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             選ばれる理由
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
                             { title: "最短2週間で就業開始", desc: "条件が整えばスピード対応" },
                             { title: "多言語で現場をサポート", desc: "日本語・英語・インドネシア語対応" },
@@ -317,7 +313,7 @@ export default function CasesPage() {
                                 <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                                 <div>
                                     <p className="font-bold text-ink">{item.title}</p>
-                                    <p className="text-gray-500 text-sm">{item.desc}</p>
+                                    <p className="text-ink-muted text-sm">{item.desc}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -336,9 +332,8 @@ export default function CasesPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
-                            次は、あなたの農場で。
+                            次は、あなたの現場で。
                         </h2>
                         <p className="text-white/80 mb-8 max-w-xl mx-auto">
                             人手不足の課題、お聞かせください。<br />

@@ -16,7 +16,7 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
             }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.8, delay: reason.delay, ease: [0.25, 0.4, 0.25, 1] }}
-            className="relative group bg-white border border-gray-100 shadow-sm rounded-2xl p-6 overflow-hidden"
+            className="relative group bg-white border border-line shadow-sm rounded-2xl p-6 overflow-hidden"
         >
             {/* Hover gradient overlay */}
             <motion.div
@@ -98,7 +98,7 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-700 text-[15px] leading-relaxed">
+                    <p className="text-ink text-[15px] leading-relaxed">
                         {reason.description}
                     </p>
                 </div>
@@ -156,7 +156,7 @@ export default function WhyUsSection() {
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     return (
-        <section ref={sectionRef} className="section relative bg-gray-50 overflow-hidden">
+        <section ref={sectionRef} className="section relative bg-canvas overflow-hidden">
             {/* Background decorations */}
             <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/3 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -181,7 +181,7 @@ export default function WhyUsSection() {
                     >
                         Why SUGUKURU
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-ink" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-ink">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ export default function WhyUsSection() {
                 </motion.div>
 
                 {/* Reasons Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {reasons.map((reason, index) => (
                         <ModernCard key={reason.title} reason={reason} index={index} />
                     ))}

@@ -131,9 +131,9 @@ export default function JournalPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 md:py-20 bg-accent text-white relative overflow-hidden">
+            <section className="section bg-accent text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto relative z-10">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                         <div>
                             <motion.h1
@@ -141,7 +141,6 @@ export default function JournalPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
                                 className="text-3xl md:text-4xl font-bold mb-2"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 お知らせ
                             </motion.h1>
@@ -175,9 +174,9 @@ export default function JournalPage() {
             </section>
 
             {/* Main Content */}
-            <section className="py-16 bg-canvas">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-3 gap-8">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
+                    <div className="grid lg:grid-cols-3 gap-10">
                         {/* Posts Feed - Main Column */}
                         <div className="lg:col-span-2 space-y-6">
                             <div className="flex items-center gap-3 mb-8">
@@ -186,7 +185,7 @@ export default function JournalPage() {
                                 </div>
                                 <div>
                                     <h2 className="font-bold text-ink">最新の投稿</h2>
-                                    <p className="text-gray-500 text-sm">
+                                    <p className="text-ink-muted text-sm">
                                         Sugukuru Agency
                                         <span
                                             className={`ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
@@ -214,7 +213,7 @@ export default function JournalPage() {
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.4, delay: index * 0.1 }}
-                                        className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden p-5"
+                                        className="bg-white rounded-xl shadow-sm border border-line overflow-hidden p-5"
                                     >
                                         <div className="h-4 w-40 rounded bg-gray-200 animate-pulse mb-3" />
                                         <div className="h-4 w-full rounded bg-gray-100 animate-pulse mb-2" />
@@ -231,7 +230,7 @@ export default function JournalPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+                                    className="bg-white rounded-xl shadow-sm border border-line overflow-hidden hover:shadow-md transition-shadow"
                                 >
                                     {/* Post Header */}
                                     <div className="p-5 pb-4 flex items-center gap-3">
@@ -240,7 +239,7 @@ export default function JournalPage() {
                                         </div>
                                         <div className="flex-1">
                                             <p className="font-bold text-ink text-sm">スグクル株式会社</p>
-                                            <div className="flex items-center gap-1 text-gray-400 text-xs">
+                                            <div className="flex items-center gap-1 text-ink-muted text-xs">
                                                 <Calendar className="w-3 h-3" />
                                                 {post.date}
                                             </div>
@@ -249,14 +248,14 @@ export default function JournalPage() {
 
                                     {/* Post Content */}
                                     <div className="px-5 pb-4">
-                                        <p className="text-gray-700 leading-relaxed whitespace-pre-line text-[15px]">
+                                        <p className="text-ink leading-relaxed whitespace-pre-line text-[15px]">
                                             {post.content}
                                         </p>
                                     </div>
 
                                     {/* Post Image */}
                                     {post.image && (
-                                        <div className="relative h-64 bg-gray-100">
+                                        <div className="relative h-64 bg-canvas">
                                             <img
                                                 src={post.image}
                                                 alt=""
@@ -266,12 +265,12 @@ export default function JournalPage() {
                                     )}
 
                                     {/* Post Actions */}
-                                    <div className="px-5 py-3 border-t border-gray-100 flex items-center gap-6">
-                                        <button className="flex items-center gap-2 text-gray-500 hover:text-[#1877F2] transition-colors text-sm">
+                                    <div className="px-5 py-3 border-t border-line flex items-center gap-6">
+                                        <button className="flex items-center gap-2 text-ink-muted hover:text-[#1877F2] transition-colors text-sm">
                                             <ThumbsUp className="w-4 h-4" />
                                             <span>{post.likes}</span>
                                         </button>
-                                        <button className="flex items-center gap-2 text-gray-500 hover:text-[#1877F2] transition-colors text-sm">
+                                        <button className="flex items-center gap-2 text-ink-muted hover:text-[#1877F2] transition-colors text-sm">
                                             <MessageCircle className="w-4 h-4" />
                                             <span>{post.comments}</span>
                                         </button>
@@ -280,7 +279,7 @@ export default function JournalPage() {
                                                 href={post.permalink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-gray-500 hover:text-[#1877F2] transition-colors text-sm ml-auto"
+                                                className="flex items-center gap-2 text-ink-muted hover:text-[#1877F2] transition-colors text-sm ml-auto"
                                             >
                                                 <Share2 className="w-4 h-4" />
                                                 <span>投稿を見る</span>
@@ -316,7 +315,7 @@ export default function JournalPage() {
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-white rounded-xl shadow-sm border border-gray-100 p-5"
+                                className="bg-white rounded-xl shadow-sm border border-line p-5"
                             >
                                 <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
                                     <Facebook className="w-5 h-5 text-[#1877F2]" />
@@ -359,7 +358,7 @@ export default function JournalPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="bg-white rounded-xl shadow-sm border border-gray-100 p-5"
+                                className="bg-white rounded-xl shadow-sm border border-line p-5"
                             >
                                 <h3 className="font-bold text-ink mb-4">関連リンク</h3>
                                 <div className="space-y-3">
@@ -372,7 +371,7 @@ export default function JournalPage() {
                                         </div>
                                         <div>
                                             <p className="font-medium text-ink text-sm">導入事例</p>
-                                            <p className="text-gray-500 text-xs">企業様の声をご紹介</p>
+                                            <p className="text-ink-muted text-xs">企業様の声をご紹介</p>
                                         </div>
                                     </Link>
                                     <Link
@@ -384,7 +383,7 @@ export default function JournalPage() {
                                         </div>
                                         <div>
                                             <p className="font-medium text-ink text-sm">人材派遣サービス</p>
-                                            <p className="text-gray-500 text-xs">サービスの詳細はこちら</p>
+                                            <p className="text-ink-muted text-xs">サービスの詳細はこちら</p>
                                         </div>
                                     </Link>
                                 </div>

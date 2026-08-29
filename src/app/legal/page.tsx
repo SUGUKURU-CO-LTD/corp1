@@ -9,8 +9,8 @@ export default function LegalPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 bg-ink text-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-ink text-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -23,19 +23,18 @@ export default function LegalPage() {
                         <div>
                             <h1
                                 className="text-3xl md:text-4xl font-bold"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 利用規約
                             </h1>
-                            <p className="text-gray-400 mt-1">Terms of Service</p>
+                            <p className="text-ink-inverse-muted mt-1">Terms of Service</p>
                         </div>
                     </motion.div>
                 </div>
             </section>
 
             {/* Content */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +42,7 @@ export default function LegalPage() {
                         className="max-w-4xl mx-auto"
                     >
                         <div className="prose prose-lg max-w-none">
-                            <p className="text-gray-600 mb-8">
+                            <p className="text-ink-muted mb-8">
                                 本利用規約（以下「本規約」）は、スグクル株式会社（以下「当社」）が提供するウェブサイトおよびサービス（以下「本サービス」）の利用条件を定めるものです。本サービスをご利用いただく前に、本規約をよくお読みください。
                             </p>
 
@@ -54,7 +53,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">1</span>
                                         適用範囲
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-ink-muted leading-relaxed">
                                         本規約は、本サービスの利用に関わる一切の関係に適用されます。
                                         当社が本サービス上で別途定める個別規定は、本規約の一部を構成します。
                                         本規約と個別規定が矛盾する場合は、個別規定が優先されます。
@@ -67,10 +66,10 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">2</span>
                                         サービス内容
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed mb-4">
+                                    <p className="text-ink-muted leading-relaxed mb-4">
                                         当社は、以下のサービスを提供します：
                                     </p>
-                                    <ul className="space-y-2 text-gray-600">
+                                    <ul className="space-y-2 text-ink-muted">
                                         <li className="flex items-start gap-2">
                                             <span className="text-accent mt-1">•</span>
                                             農業・畜産分野における外国人材の派遣サービス
@@ -100,10 +99,10 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">3</span>
                                         禁止事項
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed mb-4">
+                                    <p className="text-ink-muted leading-relaxed mb-4">
                                         利用者は、本サービスの利用にあたり、以下の行為をしてはなりません：
                                     </p>
-                                    <ul className="space-y-2 text-gray-600">
+                                    <ul className="space-y-2 text-ink-muted">
                                         <li className="flex items-start gap-2">
                                             <span className="text-accent mt-1">•</span>
                                             法令または公序良俗に違反する行為
@@ -145,7 +144,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">4</span>
                                         知的財産権
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-ink-muted leading-relaxed">
                                         本サービスに含まれるすべてのコンテンツ（テキスト、画像、ロゴ、デザイン等）に関する知的財産権は、当社または正当な権利者に帰属します。
                                         利用者は、当社の書面による事前の承諾なく、これらのコンテンツを複製、転載、改変、配布することはできません。
                                     </p>
@@ -157,7 +156,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">5</span>
                                         免責事項
                                     </h2>
-                                    <ul className="space-y-3 text-gray-600">
+                                    <ul className="space-y-3 text-ink-muted">
                                         <li className="flex items-start gap-2">
                                             <span className="text-accent mt-1">•</span>
                                             当社は、本サービスの内容の正確性、完全性、有用性等について、いかなる保証も行いません。
@@ -179,7 +178,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">6</span>
                                         サービスの変更・中断・終了
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-ink-muted leading-relaxed">
                                         当社は、利用者への事前の通知なく、本サービスの内容を変更し、または本サービスの提供を中断・終了することができます。
                                         これにより利用者に生じた損害について、当社は一切の責任を負いません。
                                     </p>
@@ -191,7 +190,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">7</span>
                                         利用規約の変更
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-ink-muted leading-relaxed">
                                         当社は、必要と判断した場合には、利用者への事前の通知なく本規約を変更することができます。
                                         変更後の利用規約は、当社ウェブサイトに掲載した時点から効力を生じます。
                                         変更後も本サービスの利用を継続された場合、利用者は変更後の規約に同意したものとみなされます。
@@ -204,7 +203,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">8</span>
                                         準拠法・管轄裁判所
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-ink-muted leading-relaxed">
                                         本規約の解釈および適用は、日本法に準拠します。
                                         本サービスに関して紛争が生じた場合には、鹿児島地方裁判所を第一審の専属的合意管轄裁判所とします。
                                     </p>
@@ -216,7 +215,7 @@ export default function LegalPage() {
                                         <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">9</span>
                                         分離可能性
                                     </h2>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <p className="text-ink-muted leading-relaxed">
                                         本規約のいずれかの条項が無効または執行不能と判断された場合でも、
                                         残りの条項は引き続き完全に有効であり、執行可能であるものとします。
                                     </p>
@@ -227,7 +226,7 @@ export default function LegalPage() {
                                     <h2 className="text-xl font-bold text-ink mb-4">
                                         お問い合わせ窓口
                                     </h2>
-                                    <div className="text-gray-600 space-y-2">
+                                    <div className="text-ink-muted space-y-2">
                                         <p><strong>スグクル株式会社</strong></p>
                                         <p>{COMPANY_ADDRESS_FULL_JA}</p>
                                         <p>TEL: 0995-73-9939</p>
@@ -236,7 +235,7 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Date */}
-                                <div className="text-right text-gray-500 text-sm">
+                                <div className="text-right text-ink-muted text-sm">
                                     <p>制定日：2024年1月1日</p>
                                     <p>最終改定日：2024年12月1日</p>
                                 </div>
@@ -244,7 +243,7 @@ export default function LegalPage() {
                         </div>
 
                         {/* Back Link */}
-                        <div className="mt-12 pt-8 border-t border-gray-200">
+                        <div className="mt-12 pt-8 border-t border-line">
                             <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-accent hover:underline"

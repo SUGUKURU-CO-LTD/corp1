@@ -71,7 +71,6 @@ export default function KagoshimaMaterialQualityControlPage() {
                     </p>
                     <h1
                         className="mt-2 text-xl md:text-2xl font-bold text-[#1F1B16] leading-snug"
-                        style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                     >
                         {JOB_TITLE_ID}
                     </h1>
@@ -84,7 +83,7 @@ export default function KagoshimaMaterialQualityControlPage() {
                 </header>
 
                 {/* 基本条件 */}
-                <section className="mt-6 grid gap-3 sm:grid-cols-3">
+                <section className="mt-6 grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg bg-white border border-[rgba(31,27,22,.1)] px-4 py-3">
                         <p className="text-[10px] font-mono tracking-[0.1em] text-[#B8924A]">UPAH PER JAM</p>
                         <p className="text-lg font-bold text-[#8B1A1A] mt-1">

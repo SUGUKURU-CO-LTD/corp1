@@ -86,18 +86,18 @@ function SectionHeading({ children }: { children: ReactNode }) {
 
 function DisclosureTable({ rows }: { rows: TableRow[] }) {
     return (
-        <div className="mt-4 overflow-x-auto rounded-xl border border-gray-200" tabIndex={0}>
+        <div className="mt-4 overflow-x-auto rounded-xl border border-line" tabIndex={0}>
             <table className="w-full min-w-[640px] border-collapse text-left text-sm md:text-base">
                 <tbody>
                     {rows.map((row) => (
-                        <tr key={row.label} className="border-b border-gray-200 last:border-b-0">
+                        <tr key={row.label} className="border-b border-line last:border-b-0">
                             <th
                                 scope="row"
                                 className="w-[38%] bg-accent-soft px-4 py-3 align-top font-semibold text-ink"
                             >
                                 {row.label}
                             </th>
-                            <td className={`px-4 py-3 align-top text-gray-700 ${row.valueClassName ?? ""}`}>
+                            <td className={`px-4 py-3 align-top text-ink ${row.valueClassName ?? ""}`}>
                                 {row.value}
                             </td>
                         </tr>
@@ -110,7 +110,7 @@ function DisclosureTable({ rows }: { rows: TableRow[] }) {
 
 function DisclosureList({ items }: { items: string[] }) {
     return (
-        <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-700">
+        <ul className="mt-4 list-disc space-y-2 pl-6 text-ink">
             {items.map((item) => (
                 <li key={item}>{item}</li>
             ))}
@@ -121,7 +121,7 @@ function DisclosureList({ items }: { items: string[] }) {
 export default function MarginRatePage() {
     return (
         <div className="pt-20">
-            <section className="bg-canvas px-6 py-20 md:py-28">
+            <section className="section bg-canvas">
                 <article className="mx-auto max-w-4xl rounded-3xl border border-accent/10 bg-white p-6 shadow-sm md:p-10">
                     <header>
                         <p className="mb-3 text-sm font-medium tracking-[0.18em] text-accent uppercase">
@@ -130,7 +130,7 @@ export default function MarginRatePage() {
                         <h1 className="border-b-4 border-accent pb-4 text-3xl font-bold text-accent md:text-4xl">
                             マージン率等の情報公開
                         </h1>
-                        <p className="mt-6 leading-8 text-gray-700">
+                        <p className="mt-6 leading-8 text-ink">
                             労働者派遣事業の適正な運営の確保及び派遣労働者の保護等に関する法律（労働者派遣法）第23条第5項に基づき、当社のマージン率等の情報を公開します。
                         </p>
                     </header>
@@ -141,13 +141,13 @@ export default function MarginRatePage() {
                     <SectionHeading>マージン率等</SectionHeading>
                     <DisclosureTable rows={marginRows} />
 
-                    <div className="mt-5 rounded-xl border border-dashed border-gray-300 bg-gray-50 px-5 py-4 text-sm leading-7 text-gray-700">
+                    <div className="mt-5 rounded-xl border border-dashed border-line bg-canvas px-5 py-4 text-sm leading-7 text-ink">
                         <strong className="block text-ink">マージン率の計算方法</strong>
                         マージン率 ＝（派遣料金の平均額 − 派遣労働者の賃金の平均額）÷ 派遣料金の平均額
                     </div>
 
                     <SectionHeading>マージンに含まれるもの</SectionHeading>
-                    <p className="mt-4 leading-8 text-gray-700">
+                    <p className="mt-4 leading-8 text-ink">
                         マージンは、すべてが当社の利益となるものではありません。主に次の費用に充てられています。
                     </p>
                     <DisclosureList items={marginCostItems} />
@@ -161,7 +161,7 @@ export default function MarginRatePage() {
                     <SectionHeading>福利厚生等</SectionHeading>
                     <DisclosureList items={welfareItems} />
 
-                    <footer className="mt-12 border-t border-gray-200 pt-5 text-sm leading-7 text-gray-600">
+                    <footer className="mt-12 border-t border-line pt-5 text-sm leading-7 text-ink-muted">
                         最終更新日：2026年8月2日
                         <br />
                         本ページに関するお問い合わせ：スグクル株式会社（TEL 0995-73-9939）

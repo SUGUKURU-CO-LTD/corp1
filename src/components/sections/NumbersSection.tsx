@@ -144,7 +144,7 @@ export default function NumbersSection() {
                     >
                         Results
                     </motion.span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white" style={{ fontFamily: "var(--font-shippori-mincho), serif" }}>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -165,7 +165,7 @@ export default function NumbersSection() {
                 </motion.div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={stat.label}
@@ -210,13 +210,13 @@ export default function NumbersSection() {
                             <motion.p
                                 initial={{ opacity: 0.5 }}
                                 whileHover={{ opacity: 1 }}
-                                className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors"
+                                className="text-ink-inverse-muted text-sm group-hover:text-ink-inverse transition-colors"
                             >
                                 {stat.description}
                             </motion.p>
 
                             {/* Number badge */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold opacity-15 bg-accent text-accent">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold bg-accent text-on-accent">
                                 {index + 1}
                             </div>
                         </motion.div>
@@ -234,10 +234,10 @@ export default function NumbersSection() {
                     <h3 className="text-center text-xl font-bold text-white mb-2">
                         全国の収穫リレー（稼働エリア）
                     </h3>
-                    <p className="text-center text-gray-400 text-sm mb-8">
+                    <p className="text-center text-ink-inverse-muted text-sm mb-8">
                         地域ごとの繁忙期に合わせて人材を配置し、年間を通じた安定就業につなげます。
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
                         {[
                             { region: "鹿児島", crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月" },
                             { region: "福島", crops: "野菜", season: "夏〜秋" },
@@ -248,13 +248,13 @@ export default function NumbersSection() {
                             <RegionBadge key={item.region} {...item} delay={0.1 + i * 0.08} />
                         ))}
                     </div>
-                    <p className="text-center text-gray-500 text-xs mt-8">
+                    <p className="text-center text-ink-inverse-muted text-xs mt-8">
                         ※ 労働者派遣法に基づく許可事業所の派遣労働者数（78名・2026年6月1日現在）と、農作業受託・請負受託を含む稼働スタッフ総数は定義が異なります。稼働スタッフ数・許認可情報は
-                        <a href="/about" className="underline hover:text-gray-300">会社概要</a>
+                        <a href="/about" className="underline hover:text-ink-inverse">会社概要</a>
                         {IS_MARGIN_RATE_PUBLISHED && (
                             <>
                                 ・
-                                <a href="/margin-rate" className="underline hover:text-gray-300">マージン率等の情報公開</a>
+                                <a href="/margin-rate" className="underline hover:text-ink-inverse">マージン率等の情報公開</a>
                             </>
                         )}
                         をご確認ください。

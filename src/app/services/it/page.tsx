@@ -78,7 +78,6 @@ export default function ITPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             コードで、<br />
                             <span className="text-accent">課題を解く。</span>
@@ -135,11 +134,10 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-8"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術は、手段に過ぎない。
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-ink-muted text-lg leading-relaxed">
                             私たちは、技術のための技術を追わない。<br />
                             大切なのは、「何を解決するか」——<br /><br />
                             業務の非効率、データの断絶、コミュニケーションの摩擦。<br />
@@ -165,13 +163,12 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             提供サービス
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
@@ -187,7 +184,7 @@ export default function ITPage() {
                                 <h3 className="text-lg font-bold text-ink mb-2">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-ink-muted text-sm leading-relaxed">
                                     {service.description}
                                 </p>
                             </motion.div>
@@ -211,7 +208,6 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術スタック
                         </h2>
@@ -249,14 +245,13 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             開発の流れ
                         </h2>
                     </motion.div>
 
                     <div className="max-w-4xl mx-auto">
-                        <div className="grid md:grid-cols-5 gap-4">
+                        <div className="grid md:grid-cols-5 gap-6">
                             {flow.map((item, i) => (
                                 <motion.div
                                     key={item.step}
@@ -266,12 +261,12 @@ export default function ITPage() {
                                     transition={{ duration: 0.4, delay: i * 0.1 }}
                                     className="relative"
                                 >
-                                    <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 h-full">
+                                    <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-line h-full">
                                         <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                                             {item.step}
                                         </div>
                                         <h3 className="font-bold text-ink mb-2">{item.title}</h3>
-                                        <p className="text-sm text-gray-500">{item.description}</p>
+                                        <p className="text-sm text-ink-muted">{item.description}</p>
                                     </div>
                                     {i < 4 && (
                                         <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">
@@ -300,13 +295,12 @@ export default function ITPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             自社開発プロダクト
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                    <div className="grid md:grid-cols-1 gap-10 max-w-2xl mx-auto">
                         {/* NENKIN-PASS */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -360,7 +354,6 @@ export default function ITPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             技術で、課題を解く。<br />
                             一緒に考えませんか。

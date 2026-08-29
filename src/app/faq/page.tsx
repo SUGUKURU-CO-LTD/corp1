@@ -22,7 +22,7 @@ const faqGroups: FaqGroup[] = [
         items: [
             {
                 q: "料金はどのくらいかかりますか？",
-                a: "時給ベースの派遣料金が基本で、標準時給の目安は1,550円〜（税抜）です。人数・期間・作業内容・地域により変動します。正式なお見積もりは無料でご案内します。",
+                a: "時給ベースの派遣料金が基本で、標準時給の目安は1,600円〜（税抜）です。人数・期間・作業内容・地域により変動します。正式なお見積もりは無料でご案内します。",
             },
             {
                 q: "料金にはどこまで含まれますか？",
@@ -119,8 +119,8 @@ export default function FaqPage() {
             <FaqSchema />
 
             {/* Hero */}
-            <section className="bg-accent-dark text-white">
-                <div className="container mx-auto px-6 py-20 md:py-24">
+            <section className="section bg-accent-dark text-white">
+                <div className="container mx-auto">
                     <div className="max-w-3xl">
                         <span className="text-accent-light text-sm font-medium tracking-wider uppercase">
                             FAQ
@@ -137,8 +137,8 @@ export default function FaqPage() {
             </section>
 
             {/* FAQ本体 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-24 md:py-32">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-3xl mx-auto space-y-14 md:space-y-16">
                         {faqGroups.map((group) => (
                             <div key={group.category}>
@@ -149,13 +149,13 @@ export default function FaqPage() {
                                     {group.items.map((item) => (
                                         <details
                                             key={item.q}
-                                            className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
+                                            className="group bg-white rounded-xl border border-line shadow-sm overflow-hidden"
                                         >
                                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-ink">
                                                 {item.q}
-                                                <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" />
+                                                <ChevronDown className="w-5 h-5 text-ink-muted flex-shrink-0 transition-transform group-open:rotate-180" />
                                             </summary>
-                                            <div className="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+                                            <div className="px-5 pb-5 text-ink-muted text-sm leading-relaxed">
                                                 {item.a}
                                             </div>
                                         </details>
@@ -168,8 +168,8 @@ export default function FaqPage() {
             </section>
 
             {/* CTA */}
-            <section className="bg-accent">
-                <div className="container mx-auto px-6 py-20 md:py-24 text-center">
+            <section className="section bg-accent">
+                <div className="container mx-auto text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                         解決しないご質問は、お気軽に
                     </h2>

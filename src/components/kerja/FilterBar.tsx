@@ -40,7 +40,7 @@ function Chip({
       className={`min-h-11 flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
         active
           ? "border-accent bg-accent text-white"
-          : "border-gray-200 bg-white text-gray-700 hover:border-accent/50"
+          : "border-line bg-white text-ink hover:border-accent/50"
       }`}
     >
       {children}
@@ -62,7 +62,7 @@ export default function FilterBar({
   const topPrefectures = prefectures.slice(0, 10);
 
   return (
-    <div className="sticky top-20 z-30 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
+    <div className="sticky top-20 z-30 border-b border-line bg-white/95 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <Chip active={activePrefecture === null} onClick={() => onSelectPrefecture(null)}>

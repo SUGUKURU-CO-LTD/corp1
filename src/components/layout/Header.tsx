@@ -86,14 +86,14 @@ export default function Header() {
                                         href={item.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-accent"
+                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-ink hover:text-accent"
                                     >
                                         {item.name}
                                     </a>
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-accent"
+                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-ink hover:text-accent"
                                     >
                                         {item.name}
                                         {item.children && <ChevronDown className="w-4 h-4" />}
@@ -108,13 +108,13 @@ export default function Header() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
                                             transition={{ duration: 0.2 }}
-                                            className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-100"
+                                            className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-line"
                                         >
                                             {item.children.map((child) => (
                                                 <Link
                                                     key={child.name}
                                                     href={child.href}
-                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-accent hover:text-white transition-colors"
+                                                    className="block px-4 py-2 text-sm text-ink hover:bg-accent hover:text-white transition-colors"
                                                 >
                                                     {child.name}
                                                 </Link>
@@ -150,9 +150,9 @@ export default function Header() {
                         aria-label="メニュー"
                     >
                         {isMobileMenuOpen ? (
-                            <X className="w-6 h-6 text-gray-700" />
+                            <X className="w-6 h-6 text-ink" />
                         ) : (
-                            <Menu className="w-6 h-6 text-gray-700" />
+                            <Menu className="w-6 h-6 text-ink" />
                         )}
                     </button>
                 </div>
@@ -171,18 +171,18 @@ export default function Header() {
                                     <div key={item.name}>
                                         <Link
                                             href={item.href}
-                                            className="block px-6 py-3 text-gray-700 hover:bg-accent hover:text-white transition-colors"
+                                            className="block px-6 py-3 text-ink hover:bg-accent hover:text-white transition-colors"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             {item.name}
                                         </Link>
                                         {item.children && (
-                                            <div className="pl-4 bg-gray-50">
+                                            <div className="pl-4 bg-canvas">
                                                 {item.children.map((child) => (
                                                     <Link
                                                         key={child.name}
                                                         href={child.href}
-                                                        className="block px-6 py-2 text-sm text-gray-600 hover:text-accent"
+                                                        className="block px-6 py-2 text-sm text-ink-muted hover:text-accent"
                                                         onClick={() => setIsMobileMenuOpen(false)}
                                                     >
                                                         {child.name}

@@ -63,7 +63,7 @@ const types: EmploymentType[] = [
 export function EmploymentTypeCompare() {
     return (
         <div className="@container">
-            <div className="grid grid-cols-1 @2xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 @2xl:grid-cols-3 gap-6">
                 {types.map((type, i) => (
                     <motion.div
                         key={type.name}
@@ -74,7 +74,7 @@ export function EmploymentTypeCompare() {
                         className={`rounded-2xl p-6 flex flex-col ${
                             type.highlight
                                 ? "bg-accent text-white ring-2 ring-accent"
-                                : "bg-white border border-gray-100"
+                                : "bg-white border border-line"
                         }`}
                     >
                         <div className="flex items-center gap-3 mb-4">
@@ -90,14 +90,14 @@ export function EmploymentTypeCompare() {
 
                         <div
                             className={`rounded-xl p-4 mb-4 ${
-                                type.highlight ? "bg-white/10" : "bg-gray-50"
+                                type.highlight ? "bg-white/10" : "bg-canvas"
                             }`}
                         >
-                            <p className={`text-xs mb-1 ${type.highlight ? "text-white/70" : "text-gray-500"}`}>
+                            <p className={`text-xs mb-1 ${type.highlight ? "text-white/70" : "text-ink-muted"}`}>
                                 雇用主
                             </p>
                             <p className="font-bold text-xl mb-1">{type.employer}</p>
-                            <p className={`text-xs ${type.highlight ? "text-white/70" : "text-gray-500"}`}>
+                            <p className={`text-xs ${type.highlight ? "text-white/70" : "text-ink-muted"}`}>
                                 {type.employerNote}
                             </p>
                         </div>
@@ -111,7 +111,7 @@ export function EmploymentTypeCompare() {
                                 <li
                                     key={point}
                                     className={`text-sm leading-relaxed flex gap-2 ${
-                                        type.highlight ? "text-white/85" : "text-gray-600"
+                                        type.highlight ? "text-white/85" : "text-ink-muted"
                                     }`}
                                 >
                                     <span className={type.highlight ? "text-white" : "text-accent"}>•</span>

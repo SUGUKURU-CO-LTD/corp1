@@ -68,7 +68,6 @@ export default function ContractingPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             収穫も選果も、<br />
                             <span className="text-accent">丸ごと任せる。</span>
@@ -125,11 +124,10 @@ export default function ContractingPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink mb-8"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             あなたの時間を、取り戻す。
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed">
+                        <p className="text-ink-muted text-lg leading-relaxed">
                             農業経営者の時間は、限られている。<br />
                             経営判断、品質向上、販路開拓——本当にやるべきことは山ほどある。<br /><br />
                             だからこそ、私たちは「作業」を引き受ける。<br />
@@ -155,13 +153,12 @@ export default function ContractingPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             対応可能な作業
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
@@ -177,7 +174,7 @@ export default function ContractingPage() {
                                 <h3 className="text-lg font-bold text-ink mb-2">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-ink-muted text-sm leading-relaxed">
                                     {service.description}
                                 </p>
                             </motion.div>
@@ -202,13 +199,12 @@ export default function ContractingPage() {
                             </span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold text-white"
-                                style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 受託のメリット
                             </h2>
                         </motion.div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {benefits.map((benefit, index) => (
                                 <motion.div
                                     key={benefit}
@@ -242,7 +238,6 @@ export default function ContractingPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入事例
                         </h2>
@@ -253,7 +248,7 @@ export default function ContractingPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="max-w-3xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100"
+                        className="max-w-3xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-line"
                     >
                         <div className="flex flex-col md:flex-row gap-8">
                             <div className="flex-1">
@@ -261,7 +256,7 @@ export default function ContractingPage() {
                                 <h3 className="text-xl font-bold text-ink mb-4">
                                     茶摘みシーズンに20名を一斉派遣
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">
+                                <p className="text-ink-muted leading-relaxed mb-6">
                                     毎年の繁忙期、人手の確保に苦労していました。スグクルさんに相談したところ、
                                     南大隅から霧島エリアまで、20名のチームを一斉に派遣いただきました。
                                     作業の質も高く、今では毎年お願いしています。
@@ -284,7 +279,6 @@ export default function ContractingPage() {
                     >
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-6"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             繁忙期の作業、<br />
                             丸ごとお任せください。

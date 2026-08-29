@@ -25,7 +25,7 @@ export function OrganizationSchema({
     name = 'スグクル株式会社',
     url = 'https://sugu-kuru.co.jp',
     logo = 'https://sugu-kuru.co.jp/images/logo-horizontal-white.png',
-    description = 'スグクル株式会社は、農業派遣・農作業受託・有料職業紹介・IT事業を通じて、日本の農業を外国人材の力で支えます。',
+    description = 'スグクル株式会社は、農業派遣・有料職業紹介・技術人文知識国際業務（技人国）人材の派遣紹介・IT事業を通じて、外国人材の力で日本の産業を支える人材総合会社です。',
     address = COMPANY_ADDRESS,
     contactPoint = {
         telephone: '+81-995-73-9939',
@@ -70,7 +70,7 @@ interface WebsiteSchemaProps {
 export function WebsiteSchema({
     name = 'スグクル株式会社',
     url = 'https://sugu-kuru.co.jp',
-    description = 'スグクル株式会社は、農業派遣・農作業受託・有料職業紹介・IT事業を通じて、日本の農業を外国人材の力で支えます。',
+    description = 'スグクル株式会社は、農業派遣・有料職業紹介・技術人文知識国際業務（技人国）人材の派遣紹介・IT事業を通じて、外国人材の力で日本の産業を支える人材総合会社です。',
 }: WebsiteSchemaProps) {
     const schema = {
         '@context': 'https://schema.org',
@@ -150,7 +150,7 @@ interface LocalBusinessSchemaProps {
 
 export function LocalBusinessSchema({
     name = 'スグクル株式会社',
-    description = 'スグクル株式会社は、農業派遣・農作業受託・有料職業紹介・IT事業を通じて、日本の農業を外国人材の力で支えます。',
+    description = 'スグクル株式会社は、農業派遣・有料職業紹介・技術人文知識国際業務（技人国）人材の派遣紹介・IT事業を通じて、外国人材の力で日本の産業を支える人材総合会社です。',
     url = 'https://sugu-kuru.co.jp',
     telephone = '+81-995-73-9939',
     email = 'info@sugu-kuru.co.jp',

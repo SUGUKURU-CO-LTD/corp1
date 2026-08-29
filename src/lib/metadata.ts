@@ -28,7 +28,7 @@ export function generatePageMetadata({
     return {
         title: fullTitle,
         description,
-        keywords: keywords || '農業派遣, 外国人材, 特定技能, 農作業受託, IT開発, 鹿児島, スグクル',
+        keywords: keywords || '外国人材, 特定技能, 技人国, 人材派遣, 有料職業紹介, 農業派遣, IT開発, 鹿児島, スグクル',
         openGraph: {
             title: fullTitle,
             description,
@@ -63,14 +63,14 @@ export function generatePageMetadata({
 export const pageMetadata = {
     about: generatePageMetadata({
         title: '会社概要',
-        description: '鹿児島・霧島を拠点に、農業派遣・農作業受託・有料職業紹介・IT事業を展開するスグクル株式会社の会社概要。企業理念、沿革、拠点情報をご紹介します。',
-        keywords: '会社概要, スグクル, 企業情報, 鹿児島, 霧島, 農業派遣',
+        description: '鹿児島・霧島を拠点に、農業派遣・技人国人材の派遣紹介・有料職業紹介・IT事業を展開する人材総合会社、スグクル株式会社の会社概要。企業理念、沿革、拠点情報をご紹介します。',
+        keywords: '会社概要, スグクル, 企業情報, 鹿児島, 霧島, 農業派遣, 技人国',
         path: '/about',
     }),
     services: generatePageMetadata({
         title: 'サービス一覧',
-        description: 'スグクル株式会社が提供する農業派遣、農作業受託、有料職業紹介、IT事業の各サービスをご紹介。日本の農業を外国人材の力で支えます。',
-        keywords: 'サービス, 農業派遣, 農作業受託, 有料職業紹介, IT事業, 特定技能',
+        description: 'スグクル株式会社が提供する農業派遣、農作業受託、技人国人材の派遣・紹介、有料職業紹介、IT事業の各サービスをご紹介。外国人材の力で、日本の産業を支えます。',
+        keywords: 'サービス, 農業派遣, 農作業受託, 技人国, 有料職業紹介, IT事業, 特定技能',
         path: '/services',
     }),
     servicesDispatch: generatePageMetadata({
@@ -99,14 +99,14 @@ export const pageMetadata = {
     }),
     servicesIt: generatePageMetadata({
         title: 'IT事業',
-        description: 'システム開発・コンサルティングを通じて、農業のDX化を推進。MCPサーバーベースのシステム開発など自社プロダクトも展開。',
-        keywords: 'IT事業, システム開発, DX, 農業IT, MCP, NENKIN-PASS',
+        description: 'Webアプリ・モバイルアプリ開発からクラウド構築、農業分野のDX推進まで。システム開発・コンサルティングを通じて企業のDX化を支援。MCPサーバーベースの自社プロダクトも展開。',
+        keywords: 'IT事業, システム開発, DX, Webアプリ開発, 農業IT, MCP, NENKIN-PASS',
         path: '/services/it',
     }),
     cases: generatePageMetadata({
         title: '導入事例',
-        description: 'スグクル株式会社のサービス導入事例をご紹介。全国各地の農業現場で活躍する外国人材の実績をご覧ください。',
-        keywords: '導入事例, 実績, 成功事例, 農業派遣実績',
+        description: 'スグクル株式会社のサービス導入事例をご紹介。全国各地の現場で活躍する外国人材の実績をご覧ください。',
+        keywords: '導入事例, 実績, 成功事例, 外国人材活用実績',
         path: '/cases',
     }),
     kerja: generatePageMetadata({
@@ -117,14 +117,14 @@ export const pageMetadata = {
     }),
     careers: generatePageMetadata({
         title: '採用情報',
-        description: 'スグクル株式会社の採用情報。一緒に日本の農業を支える仲間を募集しています。',
-        keywords: '採用情報, 求人, リクルート, キャリア, 農業派遣求人',
+        description: 'スグクル株式会社の採用情報。外国人材の力で日本の産業を支える仲間を募集しています。',
+        keywords: '採用情報, 求人, リクルート, キャリア, 外国人材業界',
         path: '/careers',
     }),
     journal: generatePageMetadata({
         title: 'ジャーナル',
-        description: 'スグクル株式会社のジャーナル。農業、外国人材、地方創生に関する最新情報をお届けします。',
-        keywords: 'ジャーナル, ブログ, ニュース, 農業情報',
+        description: 'スグクル株式会社のジャーナル。外国人材、農業、地方創生に関する最新情報をお届けします。',
+        keywords: 'ジャーナル, ブログ, ニュース, 外国人材, 農業',
         path: '/journal',
     }),
     marginRate: generatePageMetadata({
@@ -150,5 +150,11 @@ export const pageMetadata = {
         description: 'スグクル株式会社の特定商取引法に基づく表記。',
         keywords: '特定商取引法, 法的情報',
         path: '/legal',
+    }),
+    refundPolicy: generatePageMetadata({
+        title: '返戻金制度',
+        description: 'スグクル株式会社の有料職業紹介サービスにおける返戻金制度についてご案内します。',
+        keywords: '返戻金制度, 有料職業紹介, スグクル',
+        path: '/refund-policy',
     }),
 };

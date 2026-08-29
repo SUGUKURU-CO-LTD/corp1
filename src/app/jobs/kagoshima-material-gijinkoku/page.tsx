@@ -52,7 +52,6 @@ export default function KagoshimaMaterialGijinkokuPage() {
                     </p>
                     <h1
                         className="mt-3 text-2xl md:text-3xl font-bold text-[#1F1B16] leading-snug"
-                        style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                     >
                         Bekerja Sebagai Tenaga Profesional
                     </h1>
@@ -86,7 +85,7 @@ export default function KagoshimaMaterialGijinkokuPage() {
                 </header>
 
                 {/* 職種比較 */}
-                <nav className="mt-8 grid gap-3 sm:grid-cols-2">
+                <nav className="mt-8 grid gap-4 sm:grid-cols-2">
                     <Link
                         href="/jobs/kagoshima-material-quality-control"
                         className="block rounded-xl border border-[rgba(31,27,22,.14)] bg-white px-4 py-4 hover:border-[#B8924A] transition-colors"

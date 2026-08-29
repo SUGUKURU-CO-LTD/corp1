@@ -28,9 +28,9 @@ const positions = [
         id: "sales",
         title: "営業部",
         subtitle: "Business Development",
-        description: "外国人材の派遣先開拓から、既存クライアントのサポートまで。農業・畜産業界のパートナーと共に、人手不足という社会課題を解決する最前線で活躍していただきます。",
+        description: "外国人材の派遣先開拓から、既存クライアントのサポートまで。農業・製造・建設・サービス業など様々な業界のパートナーと共に、人手不足という社会課題を解決する最前線で活躍していただきます。",
         responsibilities: [
-            "新規クライアント（農家・農業法人）への提案営業",
+            "新規クライアント（農家・農業法人、製造業・サービス業等）への提案営業",
             "既存クライアントのフォローアップ・関係構築",
             "派遣スタッフの現場訪問・状況確認",
             "業界イベント・展示会への参加",
@@ -81,14 +81,14 @@ export default function CareersPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="py-20 md:py-28 bg-ink text-white relative overflow-hidden">
+            <section className="section bg-ink text-white relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-[100px]" />
                     <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-[120px]" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export default function CareersPage() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
-                            <span className="text-accent">世界</span>と<span className="text-accent">農業</span>を繋ぐ<br />
+                            <span className="text-accent">世界</span>と<span className="text-accent">産業</span>を繋ぐ<br />
                             新しい仲間を募集
                         </motion.h1>
 
@@ -119,9 +119,9 @@ export default function CareersPage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed"
+                            className="text-lg md:text-xl text-ink-inverse-muted mb-8 max-w-2xl leading-relaxed"
                         >
-                            スグクルは、AI×グローバル人材で日本の農業を変えるスタートアップ。<br />
+                            スグクルは、AI×グローバル人材で日本の産業を変えるスタートアップ。<br />
                             毎年成長を続ける私たちと一緒に、社会課題に挑戦しませんか？
                         </motion.p>
 
@@ -150,8 +150,8 @@ export default function CareersPage() {
             </section>
 
             {/* Why Join Us */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -163,13 +163,12 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             スグクルで働く魅力
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                         {[
                             {
                                 icon: Rocket,
@@ -200,7 +199,7 @@ export default function CareersPage() {
                                         <item.icon className="w-7 h-7 text-accent" />
                                     </div>
                                     <h3 className="text-xl font-bold text-ink mb-3">{item.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                                    <p className="text-ink-muted leading-relaxed">{item.description}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -209,8 +208,8 @@ export default function CareersPage() {
             </section>
 
             {/* Requirements */}
-            <section className="py-20 bg-canvas">
-                <div className="container mx-auto px-6">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +221,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             こんな方を求めています
                         </h2>
@@ -236,14 +234,14 @@ export default function CareersPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-start gap-5"
+                                className="bg-white rounded-xl p-6 shadow-sm border border-line flex items-start gap-5"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                                     <req.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-ink text-lg mb-1">{req.title}</h3>
-                                    <p className="text-gray-600">{req.description}</p>
+                                    <p className="text-ink-muted">{req.description}</p>
                                 </div>
                                 <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 ml-auto" />
                             </motion.div>
@@ -253,8 +251,8 @@ export default function CareersPage() {
             </section>
 
             {/* Open Positions */}
-            <section id="positions" className="py-20 bg-white scroll-mt-20">
-                <div className="container mx-auto px-6">
+            <section id="positions" className="section bg-white scroll-mt-20">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -266,13 +264,12 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             募集ポジション
                         </h2>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                         {positions.map((position, index) => (
                             <motion.div
                                 key={position.id}
@@ -280,7 +277,7 @@ export default function CareersPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-shadow"
+                                className="bg-white rounded-2xl shadow-lg border border-line overflow-hidden group hover:shadow-xl transition-shadow"
                             >
                                 <div className="p-6 text-white bg-accent">
                                     <div className="flex items-start justify-between">
@@ -294,7 +291,7 @@ export default function CareersPage() {
                                     </div>
                                 </div>
                                 <div className="p-6">
-                                    <p className="text-gray-600 mb-6 leading-relaxed">
+                                    <p className="text-ink-muted mb-6 leading-relaxed">
                                         {position.description}
                                     </p>
                                     <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
@@ -303,7 +300,7 @@ export default function CareersPage() {
                                     </h4>
                                     <ul className="space-y-2 mb-6">
                                         {position.responsibilities.map((resp) => (
-                                            <li key={resp} className="flex items-start gap-2 text-gray-600 text-sm">
+                                            <li key={resp} className="flex items-start gap-2 text-ink-muted text-sm">
                                                 <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                                 {resp}
                                             </li>
@@ -324,8 +321,8 @@ export default function CareersPage() {
             </section>
 
             {/* Benefits */}
-            <section className="py-20 bg-ink text-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-ink text-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -337,13 +334,12 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             待遇・給与
                         </h2>
                     </motion.div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
                         {benefits.map((benefit, index) => (
                             <motion.div
                                 key={benefit.title}
@@ -357,7 +353,7 @@ export default function CareersPage() {
                                     <benefit.icon className="w-7 h-7 text-accent" />
                                 </div>
                                 <h3 className="font-bold text-white text-lg mb-1">{benefit.title}</h3>
-                                <p className="text-gray-400 text-sm">{benefit.desc}</p>
+                                <p className="text-ink-inverse-muted text-sm">{benefit.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -372,7 +368,7 @@ export default function CareersPage() {
                             <Award className="w-8 h-8 text-accent flex-shrink-0" />
                             <div>
                                 <h3 className="font-bold text-white mb-2">成果報酬制度について</h3>
-                                <p className="text-gray-400 text-sm leading-relaxed">
+                                <p className="text-ink-inverse-muted text-sm leading-relaxed">
                                     入社後の研修期間（約3ヶ月）を終えた後、成果に応じたコミッション制度があります。
                                     自分の頑張りがダイレクトに収入に反映される、モチベーションの高い環境です。
                                 </p>
@@ -383,8 +379,8 @@ export default function CareersPage() {
             </section>
 
             {/* Work Details */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -396,7 +392,6 @@ export default function CareersPage() {
                         </span>
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             募集要項
                         </h2>
@@ -425,7 +420,7 @@ export default function CareersPage() {
                                             <th className="px-6 py-4 text-left text-sm font-bold text-ink bg-gray-100 w-1/3">
                                                 {row.label}
                                             </th>
-                                            <td className="px-6 py-4 text-sm text-gray-700">
+                                            <td className="px-6 py-4 text-sm text-ink">
                                                 {row.value}
                                             </td>
                                         </tr>
@@ -438,13 +433,13 @@ export default function CareersPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-br from-accent via-accent-light to-accent relative overflow-hidden">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-[80px]" />
                     <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent rounded-full blur-[100px]" />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -453,7 +448,6 @@ export default function CareersPage() {
                         <Zap className="w-12 h-12 text-accent mx-auto mb-6" />
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-4"
-                            style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             まずは話を聞いてみませんか？
                         </h2>

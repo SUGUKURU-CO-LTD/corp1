@@ -53,28 +53,28 @@ export default function HomeInfoSection() {
     return (
         <>
             {/* 情報導線 */}
-            <section className="bg-white">
-                <div className="container mx-auto px-6 py-20 md:py-28">
+            <section className="section bg-white">
+                <div className="container mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-bold text-ink">
                             気になることを、先に明確に
                         </h2>
-                        <p className="text-gray-500 text-sm mt-3">
+                        <p className="text-ink-muted text-sm mt-3">
                             料金・制度・必要書類・よくある質問を、わかりやすくまとめています。
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {quickLinks.map((link) => (
                             <Link
                                 key={link.title}
                                 href={link.href}
-                                className="group block rounded-2xl border border-gray-100 bg-canvas p-7 hover:shadow-md hover:border-accent/30 transition-all"
+                                className="group block rounded-2xl border border-line bg-canvas p-7 hover:shadow-md hover:border-accent/30 transition-all"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
                                     <link.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <h3 className="font-bold text-ink mb-2">{link.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">{link.desc}</p>
+                                <p className="text-ink-muted text-sm leading-relaxed mb-4">{link.desc}</p>
                                 <span className="inline-flex items-center gap-1 text-accent text-sm font-medium">
                                     詳しく見る
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -86,8 +86,8 @@ export default function HomeInfoSection() {
             </section>
 
             {/* FAQ抜粋 */}
-            <section className="bg-canvas">
-                <div className="container mx-auto px-6 py-20 md:py-28">
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
                     <div className="max-w-3xl mx-auto">
                         <div className="text-center mb-10">
                             <h2 className="text-2xl md:text-3xl font-bold text-ink">
@@ -98,13 +98,13 @@ export default function HomeInfoSection() {
                             {faqExcerpt.map((item) => (
                                 <details
                                     key={item.q}
-                                    className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
+                                    className="group bg-white rounded-xl border border-line shadow-sm overflow-hidden"
                                 >
                                     <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-ink">
                                         {item.q}
-                                        <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" />
+                                        <ChevronDown className="w-5 h-5 text-ink-muted flex-shrink-0 transition-transform group-open:rotate-180" />
                                     </summary>
-                                    <div className="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+                                    <div className="px-5 pb-5 text-ink-muted text-sm leading-relaxed">
                                         {item.a}
                                     </div>
                                 </details>
@@ -124,15 +124,15 @@ export default function HomeInfoSection() {
             </section>
 
             {/* 信頼帯（許認可・コンプラ） */}
-            <section className="bg-white border-t border-gray-100">
+            <section className="bg-white border-t border-line">
                 <div className="container mx-auto px-6 py-12">
                     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-                            <span className="inline-flex items-center gap-2 text-sm text-gray-700">
+                            <span className="inline-flex items-center gap-2 text-sm text-ink">
                                 <ShieldCheck className="w-4 h-4 text-accent" />
                                 労働者派遣事業許可 派46-300262
                             </span>
-                            <span className="inline-flex items-center gap-2 text-sm text-gray-700">
+                            <span className="inline-flex items-center gap-2 text-sm text-ink">
                                 <ShieldCheck className="w-4 h-4 text-accent" />
                                 有料職業紹介事業許可 46-ユ-300203
                             </span>
