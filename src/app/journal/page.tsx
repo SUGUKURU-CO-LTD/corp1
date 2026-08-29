@@ -131,8 +131,8 @@ export default function JournalPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 md:py-20 bg-[#1B5E38] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]" />
+            <section className="py-16 md:py-20 bg-accent text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                         <div>
@@ -163,7 +163,7 @@ export default function JournalPage() {
                                 href="https://www.facebook.com/profile.php?id=61558366208114"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn bg-white text-[#1B5E38] hover:bg-gray-100 group"
+                                className="btn bg-white text-accent hover:bg-gray-100 group"
                             >
                                 <Facebook className="w-5 h-5" />
                                 Facebookをフォロー
@@ -175,7 +175,7 @@ export default function JournalPage() {
             </section>
 
             {/* Main Content */}
-            <section className="py-16 bg-[#FAFAF7]">
+            <section className="py-16 bg-canvas">
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-3 gap-8">
                         {/* Posts Feed - Main Column */}
@@ -185,7 +185,7 @@ export default function JournalPage() {
                                     <Facebook className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
-                                    <h2 className="font-bold text-[#1A1A1A]">最新の投稿</h2>
+                                    <h2 className="font-bold text-ink">最新の投稿</h2>
                                     <p className="text-gray-500 text-sm">
                                         Sugukuru Agency
                                         <span
@@ -235,11 +235,11 @@ export default function JournalPage() {
                                 >
                                     {/* Post Header */}
                                     <div className="p-5 pb-4 flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B5E38] to-[#2d7a4e] flex items-center justify-center">
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-light flex items-center justify-center">
                                             <span className="text-white font-bold text-sm">SG</span>
                                         </div>
                                         <div className="flex-1">
-                                            <p className="font-bold text-[#1A1A1A] text-sm">スグクル株式会社</p>
+                                            <p className="font-bold text-ink text-sm">スグクル株式会社</p>
                                             <div className="flex items-center gap-1 text-gray-400 text-xs">
                                                 <Calendar className="w-3 h-3" />
                                                 {post.date}
@@ -318,7 +318,7 @@ export default function JournalPage() {
                                 viewport={{ once: true }}
                                 className="bg-white rounded-xl shadow-sm border border-gray-100 p-5"
                             >
-                                <h3 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                                <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
                                     <Facebook className="w-5 h-5 text-[#1877F2]" />
                                     公式Facebook
                                 </h3>
@@ -346,7 +346,7 @@ export default function JournalPage() {
                                     href="https://www.facebook.com/profile.php?id=61558366208114"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn bg-[#1877F2] text-white hover:bg-[#1565d8] w-full mt-4"
+                                    className="btn bg-[#1877F2] text-white hover:bg-accent-strong w-full mt-4"
                                 >
                                     <Facebook className="w-4 h-4" />
                                     フォローする
@@ -361,17 +361,17 @@ export default function JournalPage() {
                                 transition={{ delay: 0.1 }}
                                 className="bg-white rounded-xl shadow-sm border border-gray-100 p-5"
                             >
-                                <h3 className="font-bold text-[#1A1A1A] mb-4">関連リンク</h3>
+                                <h3 className="font-bold text-ink mb-4">関連リンク</h3>
                                 <div className="space-y-3">
                                     <Link
                                         href="/cases"
                                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
                                     >
-                                        <div className="w-10 h-10 rounded-lg bg-[#1B5E38]/10 flex items-center justify-center group-hover:bg-[#1B5E38]/20 transition-colors">
-                                            <Newspaper className="w-5 h-5 text-[#1B5E38]" />
+                                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                            <Newspaper className="w-5 h-5 text-accent" />
                                         </div>
                                         <div>
-                                            <p className="font-medium text-[#1A1A1A] text-sm">導入事例</p>
+                                            <p className="font-medium text-ink text-sm">導入事例</p>
                                             <p className="text-gray-500 text-xs">企業様の声をご紹介</p>
                                         </div>
                                     </Link>
@@ -379,11 +379,11 @@ export default function JournalPage() {
                                         href="/services/dispatch"
                                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
                                     >
-                                        <div className="w-10 h-10 rounded-lg bg-[#1B5E38]/10 flex items-center justify-center group-hover:bg-[#1B5E38]/20 transition-colors">
-                                            <Bell className="w-5 h-5 text-[#1B5E38]" />
+                                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                            <Bell className="w-5 h-5 text-accent" />
                                         </div>
                                         <div>
-                                            <p className="font-medium text-[#1A1A1A] text-sm">人材派遣サービス</p>
+                                            <p className="font-medium text-ink text-sm">人材派遣サービス</p>
                                             <p className="text-gray-500 text-xs">サービスの詳細はこちら</p>
                                         </div>
                                     </Link>
@@ -396,7 +396,7 @@ export default function JournalPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="bg-gradient-to-br from-[#1B5E38] to-[#2d7a4e] rounded-xl p-5 text-white"
+                                className="bg-gradient-to-br from-accent to-accent-light rounded-xl p-5 text-white"
                             >
                                 <h3 className="font-bold mb-2">お問い合わせ</h3>
                                 <p className="text-white/80 text-sm mb-4">
@@ -411,7 +411,7 @@ export default function JournalPage() {
                                 </a>
                                 <Link
                                     href="/contact"
-                                    className="btn bg-white text-[#1B5E38] hover:bg-gray-100 w-full"
+                                    className="btn bg-white text-accent hover:bg-gray-100 w-full"
                                 >
                                     お問い合わせフォーム
                                     <ArrowRight className="w-4 h-4" />

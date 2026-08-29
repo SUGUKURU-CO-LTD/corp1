@@ -28,9 +28,9 @@ export default function KerjaPage() {
   return (
     <div className="pt-20">
       {/* Hero — visually continues into JobBoard's VisaPicker (same dark green gradient) */}
-      <section className="bg-gradient-to-br from-[#1B5E38] to-[#0f3d24] px-4 pb-10 pt-14 md:pb-14 md:pt-20">
+      <section className="bg-gradient-to-br from-accent to-accent-dark px-4 pb-10 pt-14 md:pb-14 md:pt-20">
         <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-medium tracking-[0.18em] text-[#D4A853] uppercase">
+          <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
             Lowongan Kerja Kantoran
           </p>
           <h1
@@ -51,13 +51,13 @@ export default function KerjaPage() {
       <JobBoard jobs={jobs} />
 
       {/* Track for SSW / agriculture visitors who landed here by mistake */}
-      <section className="border-t border-gray-200 bg-[#FAFAF7] px-4 py-10">
+      <section className="border-t border-gray-200 bg-canvas px-4 py-10">
         <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col items-start gap-4 rounded-2xl border border-[#1B5E38]/15 bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col items-start gap-4 rounded-2xl border border-accent/15 bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div className="flex items-start gap-3">
-              <Wheat className="mt-0.5 h-6 w-6 flex-shrink-0 text-[#1B5E38]" />
+              <Wheat className="mt-0.5 h-6 w-6 flex-shrink-0 text-accent" />
               <div>
-                <p className="font-semibold text-[#1A1A1A]">
+                <p className="font-semibold text-ink">
                   Mencari kerja pertanian dengan visa Tokutei Ginou (特定技能)?
                 </p>
                 <p className="mt-1 text-sm text-gray-600">
@@ -68,7 +68,7 @@ export default function KerjaPage() {
             </div>
             <a
               href={recruitmentChannels[0].href ?? undefined}
-              className="inline-flex flex-shrink-0 items-center gap-2 rounded-full bg-[#1B5E38] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0f3d24]"
+              className="inline-flex flex-shrink-0 items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white hover:bg-accent-dark"
             >
               Hubungi kami
               <ArrowRight className="h-4 w-4" />
@@ -80,7 +80,7 @@ export default function KerjaPage() {
       {/* Legal disclosures — Indonesian primary, Japanese small */}
       <section className="border-t border-gray-200 bg-white px-4 py-10 text-sm leading-6 text-gray-600">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-base font-semibold text-[#1A1A1A]">Informasi penting</h2>
+          <h2 className="text-base font-semibold text-ink">Informasi penting</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
               Layanan ini adalah bagian dari izin usaha pengantar kerja berbayar (有料職業紹介事業 46-ユ-300203)
@@ -106,7 +106,7 @@ export default function KerjaPage() {
             </li>
             <li>
               Data pribadi Anda dikelola sesuai{" "}
-              <Link href="/privacy" className="text-[#1B5E38] underline underline-offset-2">
+              <Link href="/privacy" className="text-accent underline underline-offset-2">
                 Kebijakan Privasi
               </Link>{" "}
               kami.
@@ -114,13 +114,13 @@ export default function KerjaPage() {
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
-            <Link href="/" className="text-gray-500 underline underline-offset-2 hover:text-[#1B5E38]">
+            <Link href="/" className="text-gray-500 underline underline-offset-2 hover:text-accent">
               ← Beranda (日本語)
             </Link>
-            <Link href="/careers" className="text-gray-500 underline underline-offset-2 hover:text-[#1B5E38]">
+            <Link href="/careers" className="text-gray-500 underline underline-offset-2 hover:text-accent">
               Lowongan staf kantor internal (日本語)
             </Link>
-            <Link href="/margin-rate" className="text-gray-500 underline underline-offset-2 hover:text-[#1B5E38]">
+            <Link href="/margin-rate" className="text-gray-500 underline underline-offset-2 hover:text-accent">
               Informasi margin (公開情報)
             </Link>
           </div>

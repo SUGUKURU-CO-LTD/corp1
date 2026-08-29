@@ -85,14 +85,14 @@ export default function Header() {
                                         href={item.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-[#1B5E38]"
+                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-accent"
                                     >
                                         {item.name}
                                     </a>
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-[#1B5E38]"
+                                        className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-accent"
                                     >
                                         {item.name}
                                         {item.children && <ChevronDown className="w-4 h-4" />}
@@ -113,7 +113,7 @@ export default function Header() {
                                                 <Link
                                                     key={child.name}
                                                     href={child.href}
-                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#1B5E38] hover:text-white transition-colors"
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-accent hover:text-white transition-colors"
                                                 >
                                                     {child.name}
                                                 </Link>
@@ -127,7 +127,7 @@ export default function Header() {
                         {/* Bahasa Indonesia → インドネシア人向け求人 /kerja */}
                         <Link
                             href="/kerja"
-                            className="text-sm font-semibold px-3 py-1.5 rounded-full border border-[#1B5E38]/30 text-[#1B5E38] hover:bg-[#1B5E38] hover:text-white transition-colors"
+                            className="text-sm font-semibold px-3 py-1.5 rounded-full border border-accent/30 text-accent hover:bg-accent hover:text-white transition-colors"
                             lang="id"
                         >
                             Bahasa Indonesia
@@ -170,7 +170,7 @@ export default function Header() {
                                     <div key={item.name}>
                                         <Link
                                             href={item.href}
-                                            className="block px-6 py-3 text-gray-700 hover:bg-[#1B5E38] hover:text-white transition-colors"
+                                            className="block px-6 py-3 text-gray-700 hover:bg-accent hover:text-white transition-colors"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             {item.name}
@@ -181,7 +181,7 @@ export default function Header() {
                                                     <Link
                                                         key={child.name}
                                                         href={child.href}
-                                                        className="block px-6 py-2 text-sm text-gray-600 hover:text-[#1B5E38]"
+                                                        className="block px-6 py-2 text-sm text-gray-600 hover:text-accent"
                                                         onClick={() => setIsMobileMenuOpen(false)}
                                                     >
                                                         {child.name}
@@ -194,7 +194,7 @@ export default function Header() {
                                 <div className="px-6 pt-4 space-y-3">
                                     <Link
                                         href="/kerja"
-                                        className="block w-full text-center text-sm font-semibold px-3 py-2.5 rounded-full border border-[#1B5E38]/30 text-[#1B5E38]"
+                                        className="block w-full text-center text-sm font-semibold px-3 py-2.5 rounded-full border border-accent/30 text-accent"
                                         lang="id"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >

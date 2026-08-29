@@ -48,7 +48,7 @@ export default function JobBoard({ jobs }: JobBoardProps) {
 
   return (
     <div>
-      <div className="bg-gradient-to-br from-[#1B5E38] to-[#0f3d24] px-4 pb-8 pt-2">
+      <div className="bg-gradient-to-br from-accent to-accent-dark px-4 pb-8 pt-2">
         <div className="mx-auto max-w-6xl">
           <VisaPicker
             activeTags={activeVisaTags}
@@ -73,7 +73,7 @@ export default function JobBoard({ jobs }: JobBoardProps) {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <p className="mb-4 text-sm text-gray-500">
-          Menampilkan <strong className="text-[#1B5E38]">{filteredJobs.length}</strong> dari {facets.total} lowongan
+          Menampilkan <strong className="text-accent">{filteredJobs.length}</strong> dari {facets.total} lowongan
         </p>
 
         {filteredJobs.length === 0 ? (

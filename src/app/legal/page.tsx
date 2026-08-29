@@ -9,7 +9,7 @@ export default function LegalPage() {
     return (
         <div className="pt-20">
             {/* Hero - Compact */}
-            <section className="py-16 bg-[#1A1A1A] text-white">
+            <section className="py-16 bg-ink text-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -17,8 +17,8 @@ export default function LegalPage() {
                         transition={{ duration: 0.5 }}
                         className="flex items-center gap-4"
                     >
-                        <div className="w-14 h-14 rounded-2xl bg-[#D4A853]/20 flex items-center justify-center">
-                            <Scale className="w-7 h-7 text-[#D4A853]" />
+                        <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
+                            <Scale className="w-7 h-7 text-accent" />
                         </div>
                         <div>
                             <h1
@@ -49,9 +49,9 @@ export default function LegalPage() {
 
                             <div className="space-y-10">
                                 {/* Section 1 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">1</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">1</span>
                                         適用範囲
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -62,9 +62,9 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Section 2 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">2</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">2</span>
                                         サービス内容
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -72,32 +72,32 @@ export default function LegalPage() {
                                     </p>
                                     <ul className="space-y-2 text-gray-600">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             農業・畜産分野における外国人材の派遣サービス
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             有料職業紹介サービス
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             農作業受託サービス
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             IT関連サービス
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             その他当社が提供するサービス
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Section 3 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">3</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">3</span>
                                         禁止事項
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -105,44 +105,44 @@ export default function LegalPage() {
                                     </p>
                                     <ul className="space-y-2 text-gray-600">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             法令または公序良俗に違反する行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             犯罪行為に関連する行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             当社または第三者の知的財産権を侵害する行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             当社または第三者の名誉・信用を毀損する行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             本サービスの運営を妨害する行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             不正アクセス、または不正アクセスを試みる行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             虚偽の情報を登録・送信する行為
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             その他、当社が不適切と判断する行為
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Section 4 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">4</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">4</span>
                                         知的財産権
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -152,31 +152,31 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Section 5 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">5</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">5</span>
                                         免責事項
                                     </h2>
                                     <ul className="space-y-3 text-gray-600">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             当社は、本サービスの内容の正確性、完全性、有用性等について、いかなる保証も行いません。
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             当社は、本サービスの提供の中断、停止、終了、利用不能または変更について、利用者に事前に通知する義務を負いません。
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-[#D4A853] mt-1">•</span>
+                                            <span className="text-accent mt-1">•</span>
                                             当社は、本サービスの利用により生じた損害について、当社の故意または重過失による場合を除き、一切の責任を負いません。
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Section 6 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">6</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">6</span>
                                         サービスの変更・中断・終了
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -186,9 +186,9 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Section 7 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">7</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">7</span>
                                         利用規約の変更
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -199,9 +199,9 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Section 8 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">8</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">8</span>
                                         準拠法・管轄裁判所
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -211,9 +211,9 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Section 9 */}
-                                <div className="bg-[#FAFAF7] rounded-xl p-6 md:p-8">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4 flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-full bg-[#D4A853] text-white flex items-center justify-center text-sm font-bold">9</span>
+                                <div className="bg-canvas rounded-xl p-6 md:p-8">
+                                    <h2 className="text-xl font-bold text-ink mb-4 flex items-center gap-3">
+                                        <span className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">9</span>
                                         分離可能性
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed">
@@ -223,8 +223,8 @@ export default function LegalPage() {
                                 </div>
 
                                 {/* Contact */}
-                                <div className="bg-[#D4A853]/10 rounded-xl p-6 md:p-8 border border-[#D4A853]/20">
-                                    <h2 className="text-xl font-bold text-[#1A1A1A] mb-4">
+                                <div className="bg-accent/10 rounded-xl p-6 md:p-8 border border-accent/20">
+                                    <h2 className="text-xl font-bold text-ink mb-4">
                                         お問い合わせ窓口
                                     </h2>
                                     <div className="text-gray-600 space-y-2">
@@ -247,7 +247,7 @@ export default function LegalPage() {
                         <div className="mt-12 pt-8 border-t border-gray-200">
                             <Link
                                 href="/"
-                                className="inline-flex items-center gap-2 text-[#1B5E38] hover:underline"
+                                className="inline-flex items-center gap-2 text-accent hover:underline"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 トップページに戻る

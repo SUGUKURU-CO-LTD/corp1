@@ -48,8 +48,8 @@ export default function PlacementPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-[#7C3AED] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] via-[#9333ea] to-[#7C3AED]" />
+            <section className="section bg-accent text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
                 <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
@@ -70,7 +70,7 @@ export default function PlacementPage() {
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             派遣ではなく、<br />
-                            <span className="text-[#D4A853]">仲間として迎えたい。</span>
+                            <span className="text-accent">仲間として迎えたい。</span>
                         </motion.h1>
 
                         <motion.p
@@ -92,7 +92,7 @@ export default function PlacementPage() {
                         >
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#7C3AED] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 採用相談をする
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -110,7 +110,7 @@ export default function PlacementPage() {
             </section>
 
             {/* Philosophy */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -119,11 +119,11 @@ export default function PlacementPage() {
                         transition={{ duration: 0.6 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Philosophy
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8"
+                            className="text-3xl md:text-4xl font-bold text-ink mb-8"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             出会いを、確かなものに。
@@ -149,11 +149,11 @@ export default function PlacementPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Features
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             紹介予定派遣の特長
@@ -171,11 +171,11 @@ export default function PlacementPage() {
                                 className="card group"
                             >
                                 <div className="flex gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#7C3AED]/20 transition-colors">
-                                        <feature.icon className="w-6 h-6 text-[#7C3AED]" />
+                                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                                        <feature.icon className="w-6 h-6 text-accent" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
+                                        <h3 className="text-lg font-bold text-ink mb-2">
                                             {feature.title}
                                         </h3>
                                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -190,7 +190,7 @@ export default function PlacementPage() {
             </section>
 
             {/* Flow */}
-            <section className="section bg-[#1A1A1A]">
+            <section className="section bg-ink">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -199,7 +199,7 @@ export default function PlacementPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Flow
                         </span>
                         <h2
@@ -222,14 +222,14 @@ export default function PlacementPage() {
                                     className="relative"
                                 >
                                     <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center border border-white/10 h-full">
-                                        <div className="w-10 h-10 bg-[#7C3AED] text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+                                        <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                                             {item.step}
                                         </div>
                                         <h3 className="font-bold text-white mb-2">{item.title}</h3>
                                         <p className="text-sm text-gray-400">{item.description}</p>
                                     </div>
                                     {i < 4 && (
-                                        <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-[#D4A853]">
+                                        <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-accent">
                                             →
                                         </div>
                                     )}
@@ -241,7 +241,7 @@ export default function PlacementPage() {
             </section>
 
             {/* Pricing */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <div className="max-w-3xl mx-auto">
                         <motion.div
@@ -251,11 +251,11 @@ export default function PlacementPage() {
                             transition={{ duration: 0.6 }}
                             className="text-center mb-12"
                         >
-                            <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                            <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                                 Pricing
                             </span>
                             <h2
-                                className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                                className="text-3xl md:text-4xl font-bold text-ink"
                                 style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                             >
                                 料金体系
@@ -270,9 +270,9 @@ export default function PlacementPage() {
                             className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100"
                         >
                             <div className="flex items-start gap-4 mb-8">
-                                <Handshake className="w-8 h-8 text-[#7C3AED] flex-shrink-0" />
+                                <Handshake className="w-8 h-8 text-accent flex-shrink-0" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">
+                                    <h3 className="text-xl font-bold text-ink mb-2">
                                         成功報酬型
                                     </h3>
                                     <p className="text-gray-600">
@@ -291,7 +291,7 @@ export default function PlacementPage() {
                                         "定着支援プログラム",
                                     ].map((item) => (
                                         <div key={item} className="flex items-center gap-2">
-                                            <CheckCircle2 className="w-5 h-5 text-[#7C3AED]" />
+                                            <CheckCircle2 className="w-5 h-5 text-accent" />
                                             <span className="text-gray-600">{item}</span>
                                         </div>
                                     ))}
@@ -303,7 +303,7 @@ export default function PlacementPage() {
             </section>
 
             {/* CTA */}
-            <section className="section bg-gradient-to-br from-[#7C3AED] via-[#9333ea] to-[#7C3AED]">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent">
                 <div className="container mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -324,7 +324,7 @@ export default function PlacementPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#7C3AED] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 採用相談をする
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

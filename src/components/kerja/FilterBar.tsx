@@ -39,8 +39,8 @@ function Chip({
       aria-pressed={active}
       className={`min-h-11 flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
         active
-          ? "border-[#1B5E38] bg-[#1B5E38] text-white"
-          : "border-gray-200 bg-white text-gray-700 hover:border-[#1B5E38]/50"
+          ? "border-accent bg-accent text-white"
+          : "border-gray-200 bg-white text-gray-700 hover:border-accent/50"
       }`}
     >
       {children}

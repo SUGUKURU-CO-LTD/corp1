@@ -40,7 +40,7 @@ export default function CTASection() {
                     backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
                 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]"
+                className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent"
                 style={{
                     backgroundSize: "200% 200%",
                 }}
@@ -53,7 +53,7 @@ export default function CTASection() {
                     y: [0, 30, 0],
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-[#D4A853]/10 rounded-full blur-3xl"
+                className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"
             />
             <motion.div
                 animate={{
@@ -61,7 +61,7 @@ export default function CTASection() {
                     y: [0, -30, 0],
                 }}
                 transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] bg-[#D4A853]/10 rounded-full blur-3xl"
+                className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"
             />
 
             {/* Floating particles */}
@@ -70,7 +70,7 @@ export default function CTASection() {
                     key={i}
                     delay={i * 0.3}
                     duration={4 + Math.random() * 3}
-                    color={i % 2 === 0 ? "#D4A853" : "#ffffff"}
+                    color={i % 2 === 0 ? "var(--color-accent-light)" : "#ffffff"}
                 />
             ))}
 
@@ -91,7 +91,7 @@ export default function CTASection() {
                                     animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.2, 1] }}
                                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
                                 >
-                                    <Sparkles className="w-5 h-5 text-[#D4A853]" />
+                                    <Sparkles className="w-5 h-5 text-accent" />
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -119,7 +119,7 @@ export default function CTASection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="block bg-gradient-to-r from-[#D4A853] via-[#F0C850] to-[#D4A853] bg-clip-text text-transparent"
+                                className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent"
                             >
                                 その声に、応えに行く。
                             </motion.span>
@@ -149,14 +149,14 @@ export default function CTASection() {
                             >
                                 <Link
                                     href="/contact"
-                                    className="relative inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1B5E38] text-lg font-bold rounded-full shadow-xl shadow-black/20 overflow-hidden group"
+                                    className="relative inline-flex items-center gap-2 px-8 py-4 bg-white text-accent text-lg font-bold rounded-full shadow-xl shadow-black/20 overflow-hidden group"
                                 >
                                     {/* Animated gradient overlay */}
                                     <motion.div
                                         initial={{ x: "-100%" }}
                                         whileHover={{ x: "100%" }}
                                         transition={{ duration: 0.5 }}
-                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1B5E38]/10 to-transparent"
+                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/10 to-transparent"
                                     />
                                     <span className="relative z-10 flex items-center gap-2">
                                         今すぐ相談する
@@ -208,7 +208,7 @@ export default function CTASection() {
                                     <motion.span
                                         animate={{ scale: [1, 1.3, 1] }}
                                         transition={{ repeat: Infinity, duration: 2, delay: i * 0.3 }}
-                                        className="w-2 h-2 rounded-full bg-[#D4A853]"
+                                        className="w-2 h-2 rounded-full bg-accent"
                                     />
                                     {item.text}
                                 </motion.div>
@@ -224,7 +224,7 @@ export default function CTASection() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.2 }}
-                className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent pointer-events-none"
+                className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-canvas to-transparent pointer-events-none"
             />
         </section>
     );

@@ -20,7 +20,7 @@ const trustBadges = [
 
 export default function HeroSection() {
     return (
-        <section className="relative bg-[#0E2A1B] text-white overflow-hidden">
+        <section className="relative bg-accent-dark text-white overflow-hidden">
             {/* 実写真の背景（可読性のため濃いオーバーレイ） */}
             {/* Real photo background with dark overlay for readability */}
             {/* Latar foto asli dengan lapisan gelap agar mudah dibaca */}
@@ -28,7 +28,7 @@ export default function HeroSection() {
                 className="absolute inset-0 bg-center bg-cover opacity-30"
                 style={{ backgroundImage: 'url("/images/cases/organic-tea-cultivation.png")' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0E2A1B] via-[#0E2A1B]/90 to-[#0E2A1B]/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-dark via-accent-dark/90 to-accent-dark/60" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center py-24 md:py-28">
@@ -51,7 +51,7 @@ export default function HeroSection() {
                         >
                             鹿児島の農業に、
                             <br className="hidden md:block" />
-                            <span className="text-[#E8C77A]">すぐ来る即戦力</span>を。
+                            <span className="text-accent-light">すぐ来る即戦力</span>を。
                         </motion.h1>
 
                         <motion.p
@@ -72,7 +72,7 @@ export default function HeroSection() {
                         >
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0E2A1B] font-bold hover:bg-gray-100 transition-colors"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-accent-dark font-bold hover:bg-gray-100 transition-colors"
                             >
                                 無料で相談する
                                 <ArrowRight className="w-5 h-5" />
@@ -104,7 +104,7 @@ export default function HeroSection() {
                                     key={badge.label}
                                     className="flex items-center gap-2.5 text-sm text-white/80"
                                 >
-                                    <badge.icon className="w-4 h-4 text-[#E8C77A] flex-shrink-0" />
+                                    <badge.icon className="w-4 h-4 text-accent-light flex-shrink-0" />
                                     {badge.label}
                                 </li>
                             ))}

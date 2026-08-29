@@ -24,7 +24,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
     <button
       type="button"
       onClick={() => onOpen(job)}
-      className="flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#1B5E38]/40 hover:shadow-md"
+      className="flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
     >
       <div className="relative aspect-[4/3] w-full flex-shrink-0 bg-gray-100">
         <Image
@@ -35,7 +35,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
           className="object-cover"
         />
         {job.inexperiencedOk && (
-          <span className="absolute right-3 top-3 rounded-full bg-[#D4A853] px-2.5 py-1 text-xs font-semibold text-[#1A1A1A] shadow">
+          <span className="absolute right-3 top-3 rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-ink shadow">
             <Sparkles className="mr-1 inline h-3 w-3" />
             Pemula OK
           </span>
@@ -43,10 +43,10 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-lg font-bold leading-snug text-[#1A1A1A]">{job.occupationId}</h3>
+        <h3 className="text-lg font-bold leading-snug text-ink">{job.occupationId}</h3>
         <p className="mt-0.5 text-xs text-gray-400">{job.occupationJa}</p>
 
-        <p className="mt-3 text-xl font-bold text-[#1B5E38]">
+        <p className="mt-3 text-xl font-bold text-accent">
           {formatYen(job.annualSalaryMin)} – {formatYen(job.annualSalaryMax)}
           <span className="ml-1 text-sm font-normal text-gray-500">/tahun</span>
         </p>
@@ -70,7 +70,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
           {job.visaTags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-[#1B5E38]/10 px-2.5 py-1 text-xs font-medium text-[#1B5E38]"
+              className="rounded-full bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent"
             >
               {VISA_TAG_LABELS[tag].id}
             </span>

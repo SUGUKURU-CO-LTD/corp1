@@ -87,10 +87,10 @@ export default function GuidePage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="bg-[#0E2A1B] text-white">
+            <section className="bg-accent-dark text-white">
                 <div className="container mx-auto px-6 py-20 md:py-24">
                     <div className="max-w-3xl">
-                        <span className="text-[#E8C77A] text-sm font-medium tracking-wider uppercase">
+                        <span className="text-accent-light text-sm font-medium tracking-wider uppercase">
                             Guide
                         </span>
                         <h1 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
@@ -106,9 +106,9 @@ export default function GuidePage() {
             </section>
 
             {/* 申請の3種別 */}
-            <section className="bg-[#FAFAF7]">
+            <section className="bg-canvas">
                 <div className="container mx-auto px-6 py-24 md:py-32">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] text-center mb-3">
+                    <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                         申請は大きく3種類
                     </h2>
                     <p className="text-center text-gray-500 text-sm mb-12">
@@ -117,11 +117,11 @@ export default function GuidePage() {
                     <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {applicationTypes.map((t) => (
                             <div key={t.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                                <div className="w-12 h-12 rounded-xl bg-[#1B5E38]/10 flex items-center justify-center mb-4">
-                                    <t.icon className="w-6 h-6 text-[#1B5E38]" />
+                                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                                    <t.icon className="w-6 h-6 text-accent" />
                                 </div>
-                                <p className="text-xs text-[#1B5E38] font-medium mb-1">{t.when}</p>
-                                <h3 className="font-bold text-[#1A1A1A] mb-2 text-[15px] leading-snug">{t.title}</h3>
+                                <p className="text-xs text-accent font-medium mb-1">{t.when}</p>
+                                <h3 className="font-bold text-ink mb-2 text-[15px] leading-snug">{t.title}</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">{t.desc}</p>
                             </div>
                         ))}
@@ -132,21 +132,21 @@ export default function GuidePage() {
             {/* 受入れの流れ（図解） */}
             <section className="bg-white">
                 <div className="container mx-auto px-6 py-24 md:py-32">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] text-center mb-12">
+                    <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-12">
                         受入れの流れ
                     </h2>
                     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4">
                         {flow.map((item, i) => (
                             <div key={item.step} className="relative">
-                                <div className="h-full rounded-xl border border-gray-100 bg-[#FAFAF7] p-5 text-center">
-                                    <div className="w-9 h-9 mx-auto mb-3 rounded-full bg-[#1B5E38] text-white font-bold flex items-center justify-center">
+                                <div className="h-full rounded-xl border border-gray-100 bg-canvas p-5 text-center">
+                                    <div className="w-9 h-9 mx-auto mb-3 rounded-full bg-accent text-white font-bold flex items-center justify-center">
                                         {item.step}
                                     </div>
-                                    <h3 className="font-bold text-[#1A1A1A] text-sm mb-1">{item.title}</h3>
+                                    <h3 className="font-bold text-ink text-sm mb-1">{item.title}</h3>
                                     <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                                 {i < flow.length - 1 && (
-                                    <div className="hidden md:flex absolute top-1/2 -right-2 -translate-y-1/2 text-[#D4A853] z-10">
+                                    <div className="hidden md:flex absolute top-1/2 -right-2 -translate-y-1/2 text-accent z-10">
                                         →
                                     </div>
                                 )}
@@ -157,10 +157,10 @@ export default function GuidePage() {
             </section>
 
             {/* 試験免除の早見 */}
-            <section className="bg-[#FAFAF7]">
+            <section className="bg-canvas">
                 <div className="container mx-auto px-6 py-24 md:py-32">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] text-center mb-3">
+                        <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             試験免除の考え方（早見）
                         </h2>
                         <p className="text-center text-gray-500 text-sm mb-12">
@@ -170,13 +170,13 @@ export default function GuidePage() {
                             {examRules.map((r) => (
                                 <div
                                     key={r.case}
-                                    className={`rounded-xl border p-5 flex items-start gap-4 ${r.ok ? "border-[#1B5E38]/25 bg-[#1B5E38]/[0.04]" : "border-amber-300/40 bg-amber-50"}`}
+                                    className={`rounded-xl border p-5 flex items-start gap-4 ${r.ok ? "border-accent/25 bg-accent/[0.04]" : "border-amber-300/40 bg-amber-50"}`}
                                 >
-                                    <div className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${r.ok ? "bg-[#1B5E38]" : "bg-amber-500"}`}>
+                                    <div className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${r.ok ? "bg-accent" : "bg-amber-500"}`}>
                                         {r.ok ? <Check className="w-4 h-4 text-white" /> : <AlertTriangle className="w-4 h-4 text-white" />}
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[#1A1A1A] text-sm">{r.case}</p>
+                                        <p className="font-bold text-ink text-sm">{r.case}</p>
                                         <p className="text-gray-600 text-sm mt-1">{r.result}</p>
                                     </div>
                                 </div>
@@ -190,14 +190,14 @@ export default function GuidePage() {
             <section className="bg-white">
                 <div className="container mx-auto px-6 py-24 md:py-32">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] text-center mb-12">
+                        <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-12">
                             知っておきたい重要な期限
                         </h2>
                         <div className="grid sm:grid-cols-2 gap-4">
                             {deadlines.map((d) => (
-                                <div key={d.label} className="rounded-xl border border-gray-100 bg-[#FAFAF7] p-5">
-                                    <p className="text-xs text-[#1B5E38] font-medium mb-1">{d.label}</p>
-                                    <p className="font-bold text-[#1A1A1A]">{d.value}</p>
+                                <div key={d.label} className="rounded-xl border border-gray-100 bg-canvas p-5">
+                                    <p className="text-xs text-accent font-medium mb-1">{d.label}</p>
+                                    <p className="font-bold text-ink">{d.value}</p>
                                     <p className="text-gray-500 text-xs mt-1">{d.note}</p>
                                 </div>
                             ))}
@@ -207,10 +207,10 @@ export default function GuidePage() {
             </section>
 
             {/* 必要書類チェックリスト */}
-            <section className="bg-[#FAFAF7]">
+            <section className="bg-canvas">
                 <div className="container mx-auto px-6 py-24 md:py-32">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] text-center mb-3">
+                        <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                             必要書類チェックリスト
                         </h2>
                         <p className="text-center text-gray-500 text-sm mb-12">
@@ -218,28 +218,28 @@ export default function GuidePage() {
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                                <h3 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
-                                    <FileText className="w-5 h-5 text-[#1B5E38]" />
+                                <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
+                                    <FileText className="w-5 h-5 text-accent" />
                                     受入企業側
                                 </h3>
                                 <ul className="space-y-3">
                                     {companyDocs.map((d) => (
                                         <li key={d} className="flex items-start gap-2 text-gray-700 text-sm">
-                                            <Check className="w-4 h-4 text-[#1B5E38] mt-0.5 flex-shrink-0" />
+                                            <Check className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                             {d}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                                <h3 className="font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
-                                    <FileText className="w-5 h-5 text-[#1B5E38]" />
+                                <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
+                                    <FileText className="w-5 h-5 text-accent" />
                                     候補者側
                                 </h3>
                                 <ul className="space-y-3">
                                     {workerDocs.map((d) => (
                                         <li key={d} className="flex items-start gap-2 text-gray-700 text-sm">
-                                            <Check className="w-4 h-4 text-[#1B5E38] mt-0.5 flex-shrink-0" />
+                                            <Check className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                             {d}
                                         </li>
                                     ))}
@@ -265,7 +265,7 @@ export default function GuidePage() {
             </section>
 
             {/* CTA */}
-            <section className="bg-[#1B5E38]">
+            <section className="bg-accent">
                 <div className="container mx-auto px-6 py-20 md:py-24 text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                         手続きの不安は、まるごとお任せください
@@ -274,7 +274,7 @@ export default function GuidePage() {
                         複雑な在留資格や書類の準備は、グループ内の体制と連携して支援します。
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/contact" className="btn bg-white text-[#1B5E38] hover:bg-gray-100">
+                        <Link href="/contact" className="btn bg-white text-accent hover:bg-gray-100">
                             無料で相談する
                             <ArrowRight className="w-5 h-5" />
                         </Link>

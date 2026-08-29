@@ -33,7 +33,6 @@ const caseStudies = [
         testimonial:
             "スグクルさんのおかげで、繁忙期も安心して乗り越えられるようになりました。スタッフの皆さんは真面目で、技術の習得も早いです。",
         testimonialAuthor: "代表取締役",
-        color: "#1B5E38",
     },
     {
         id: 2,
@@ -50,7 +49,6 @@ const caseStudies = [
         testimonial:
             "有機栽培は手間がかかりますが、派遣スタッフの皆さんは細かい作業も丁寧にこなしてくれます。言葉の壁もスグクルさんが通訳してくれるので安心です。",
         testimonialAuthor: "農場長",
-        color: "#2d7a4e",
     },
     {
         id: 3,
@@ -66,7 +64,6 @@ const caseStudies = [
         result: "2025年9月から受け入れを継続中です。",
         testimonial: null,
         testimonialAuthor: null,
-        color: "#D4A853",
     },
 ];
 
@@ -81,8 +78,8 @@ export default function CasesPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-[#1B5E38] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]" />
+            <section className="section bg-accent text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
                 <div className="container mx-auto relative z-10">
                     <div className="max-w-4xl">
                         <motion.div
@@ -120,7 +117,7 @@ export default function CasesPage() {
             </section>
 
             {/* Stats Section */}
-            <section className="section bg-[#1A1A1A]">
+            <section className="section bg-ink">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat, index) => (
@@ -132,11 +129,11 @@ export default function CasesPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="text-center"
                             >
-                                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#D4A853]/20 flex items-center justify-center">
-                                    <stat.icon className="w-6 h-6 text-[#D4A853]" />
+                                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center">
+                                    <stat.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <p
-                                    className="text-4xl md:text-5xl font-bold text-[#D4A853] mb-2"
+                                    className="text-4xl md:text-5xl font-bold text-accent mb-2"
                                     style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
                                 >
                                     {stat.value}
@@ -149,7 +146,7 @@ export default function CasesPage() {
             </section>
 
             {/* Case Studies */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -158,11 +155,11 @@ export default function CasesPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Success Stories
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入企業様の声
@@ -228,7 +225,7 @@ export default function CasesPage() {
                                     {/* Content Grid */}
                                     <div className="grid md:grid-cols-3 gap-6 mb-8">
                                         <div className="bg-gray-50 rounded-xl p-6">
-                                            <h4 className="font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
+                                            <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">
                                                     課
                                                 </span>
@@ -239,7 +236,7 @@ export default function CasesPage() {
                                             </p>
                                         </div>
                                         <div className="bg-gray-50 rounded-xl p-6">
-                                            <h4 className="font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
+                                            <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                                 <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
                                                     解
                                                 </span>
@@ -250,8 +247,8 @@ export default function CasesPage() {
                                             </p>
                                         </div>
                                         <div className="bg-gray-50 rounded-xl p-6">
-                                            <h4 className="font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
-                                                <CheckCircle2 className="w-6 h-6 text-[#1B5E38]" />
+                                            <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
+                                                <CheckCircle2 className="w-6 h-6 text-accent" />
                                                 導入後の成果
                                             </h4>
                                             <p className="text-gray-600 text-sm leading-relaxed">
@@ -262,14 +259,8 @@ export default function CasesPage() {
 
                                     {/* Testimonial（掲載許諾を得たコメントがある場合のみ表示） */}
                                     {caseStudy.testimonial && (
-                                        <div
-                                            className="rounded-xl p-6 relative"
-                                            style={{ backgroundColor: `${caseStudy.color}08` }}
-                                        >
-                                            <Quote
-                                                className="absolute top-4 left-4 w-8 h-8 opacity-20"
-                                                style={{ color: caseStudy.color }}
-                                            />
+                                        <div className="rounded-xl p-6 relative bg-accent/[0.03]">
+                                            <Quote className="absolute top-4 left-4 w-8 h-8 opacity-20 text-accent" />
                                             <p className="text-gray-700 leading-relaxed pl-8 italic">
                                                 「{caseStudy.testimonial}」
                                             </p>
@@ -295,11 +286,11 @@ export default function CasesPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-12"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Why Choose Us
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             選ばれる理由
@@ -323,9 +314,9 @@ export default function CasesPage() {
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                                 className="flex items-start gap-3 p-4"
                             >
-                                <CheckCircle2 className="w-5 h-5 text-[#1B5E38] mt-0.5 flex-shrink-0" />
+                                <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <p className="font-bold text-[#1A1A1A]">{item.title}</p>
+                                    <p className="font-bold text-ink">{item.title}</p>
                                     <p className="text-gray-500 text-sm">{item.desc}</p>
                                 </div>
                             </motion.div>
@@ -335,7 +326,7 @@ export default function CasesPage() {
             </section>
 
             {/* CTA */}
-            <section className="section bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]">
+            <section className="section bg-gradient-to-br from-accent via-accent-light to-accent">
                 <div className="container mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -356,7 +347,7 @@ export default function CasesPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#1B5E38] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 無料相談を予約
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

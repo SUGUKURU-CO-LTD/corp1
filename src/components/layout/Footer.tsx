@@ -38,9 +38,9 @@ const offices = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#1A1A1A] text-white">
+        <footer className="bg-ink text-white">
             {/* Dark Spacer */}
-            <div className="h-16 bg-[#1A1A1A]" />
+            <div className="h-16 bg-ink" />
             {/* Main Footer */}
             <div className="container mx-auto px-6 pt-8 pb-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -61,20 +61,20 @@ export default function Footer() {
                         {/* Contact Info */}
                         <div className="space-y-3">
                             <div className="flex items-start gap-3 text-sm">
-                                <MapPin className="w-4 h-4 text-[#D4A853] mt-1 flex-shrink-0" />
+                                <MapPin className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                                 <span className="text-gray-300">
                                     〒{COMPANY_ADDRESS.postalCode}<br />
                                     {COMPANY_ADDRESS_LINE_JA}
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
-                                <Phone className="w-4 h-4 text-[#D4A853]" />
+                                <Phone className="w-4 h-4 text-accent" />
                                 <a href="tel:0995-73-9939" className="text-gray-300 hover:text-white transition-colors">
                                     0995-73-9939
                                 </a>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
-                                <Mail className="w-4 h-4 text-[#D4A853]" />
+                                <Mail className="w-4 h-4 text-accent" />
                                 <a href="mailto:info@sugu-kuru.co.jp" className="text-gray-300 hover:text-white transition-colors">
                                     info@sugu-kuru.co.jp
                                 </a>
@@ -84,7 +84,7 @@ export default function Footer() {
 
                     {/* Services Links */}
                     <div>
-                        <h3 className="text-[#D4A853] font-bold mb-6">サービス</h3>
+                        <h3 className="text-accent font-bold mb-6">サービス</h3>
                         <ul className="space-y-3">
                             {footerLinks.services.map((link) => (
                                 <li key={link.name}>
@@ -101,7 +101,7 @@ export default function Footer() {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-[#D4A853] font-bold mb-6">会社情報</h3>
+                        <h3 className="text-accent font-bold mb-6">会社情報</h3>
                         <ul className="space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.name}>
@@ -118,7 +118,7 @@ export default function Footer() {
 
                     {/* Legal Links */}
                     <div>
-                        <h3 className="text-[#D4A853] font-bold mb-6">法令遵守情報</h3>
+                        <h3 className="text-accent font-bold mb-6">法令遵守情報</h3>
                         <ul className="space-y-3">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.name}>
@@ -136,7 +136,7 @@ export default function Footer() {
 
                 {/* Offices */}
                 <div className="mt-12 pt-8 border-t border-gray-800">
-                    <h3 className="text-[#D4A853] font-bold mb-6">全国の拠点</h3>
+                    <h3 className="text-accent font-bold mb-6">全国の拠点</h3>
                     <div className="flex flex-wrap gap-4">
                         {offices.map((office) => (
                             <div

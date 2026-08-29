@@ -56,7 +56,7 @@ export default function HomeInfoSection() {
             <section className="bg-white">
                 <div className="container mx-auto px-6 py-20 md:py-28">
                     <div className="text-center mb-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+                        <h2 className="text-2xl md:text-3xl font-bold text-ink">
                             気になることを、先に明確に
                         </h2>
                         <p className="text-gray-500 text-sm mt-3">
@@ -68,14 +68,14 @@ export default function HomeInfoSection() {
                             <Link
                                 key={link.title}
                                 href={link.href}
-                                className="group block rounded-2xl border border-gray-100 bg-[#FAFAF7] p-7 hover:shadow-md hover:border-[#1B5E38]/30 transition-all"
+                                className="group block rounded-2xl border border-gray-100 bg-canvas p-7 hover:shadow-md hover:border-accent/30 transition-all"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-[#1B5E38]/10 flex items-center justify-center mb-4">
-                                    <link.icon className="w-6 h-6 text-[#1B5E38]" />
+                                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                                    <link.icon className="w-6 h-6 text-accent" />
                                 </div>
-                                <h3 className="font-bold text-[#1A1A1A] mb-2">{link.title}</h3>
+                                <h3 className="font-bold text-ink mb-2">{link.title}</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">{link.desc}</p>
-                                <span className="inline-flex items-center gap-1 text-[#1B5E38] text-sm font-medium">
+                                <span className="inline-flex items-center gap-1 text-accent text-sm font-medium">
                                     詳しく見る
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </span>
@@ -86,11 +86,11 @@ export default function HomeInfoSection() {
             </section>
 
             {/* FAQ抜粋 */}
-            <section className="bg-[#FAFAF7]">
+            <section className="bg-canvas">
                 <div className="container mx-auto px-6 py-20 md:py-28">
                     <div className="max-w-3xl mx-auto">
                         <div className="text-center mb-10">
-                            <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+                            <h2 className="text-2xl md:text-3xl font-bold text-ink">
                                 よくある質問
                             </h2>
                         </div>
@@ -100,7 +100,7 @@ export default function HomeInfoSection() {
                                     key={item.q}
                                     className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
                                 >
-                                    <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-[#1A1A1A]">
+                                    <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-medium text-ink">
                                         {item.q}
                                         <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" />
                                     </summary>
@@ -113,7 +113,7 @@ export default function HomeInfoSection() {
                         <div className="text-center mt-8">
                             <Link
                                 href="/faq"
-                                className="inline-flex items-center gap-1 text-[#1B5E38] font-medium hover:underline"
+                                className="inline-flex items-center gap-1 text-accent font-medium hover:underline"
                             >
                                 すべての質問を見る
                                 <ArrowRight className="w-4 h-4" />
@@ -129,18 +129,18 @@ export default function HomeInfoSection() {
                     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                             <span className="inline-flex items-center gap-2 text-sm text-gray-700">
-                                <ShieldCheck className="w-4 h-4 text-[#1B5E38]" />
+                                <ShieldCheck className="w-4 h-4 text-accent" />
                                 労働者派遣事業許可 派46-300262
                             </span>
                             <span className="inline-flex items-center gap-2 text-sm text-gray-700">
-                                <ShieldCheck className="w-4 h-4 text-[#1B5E38]" />
+                                <ShieldCheck className="w-4 h-4 text-accent" />
                                 有料職業紹介事業許可 46-ユ-300203
                             </span>
                         </div>
                         {IS_MARGIN_RATE_PUBLISHED && (
                             <Link
                                 href="/margin-rate"
-                                className="inline-flex items-center gap-1 text-sm text-[#1B5E38] font-medium hover:underline whitespace-nowrap"
+                                className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline whitespace-nowrap"
                             >
                                 マージン率等の情報公開
                                 <ArrowRight className="w-4 h-4" />

@@ -13,7 +13,6 @@ const services = [
         description:
             "インドネシア・フィリピン出身の経験豊富な特定技能人材を、最短2週間で派遣。大型特殊免許・フォークリフト資格保持者も多数在籍。繁忙期に合わせた短期から長期まで柔軟に対応します。",
         icon: Tractor,
-        color: "#1B5E38",
         features: [
             "最短2週間・通常1.5ヶ月で派遣開始",
             "大型特殊・フォークリフト免許保持者在籍",
@@ -37,7 +36,6 @@ const services = [
         description:
             "収穫、選果、梱包などの作業を一括でお任せいただけます。人材の管理・労務はすべて当社が担当。お客様は本業に集中できます。",
         icon: Wrench,
-        color: "#0D9488",
         features: ["作業単位での契約可能", "スタッフ管理不要", "繁忙期のみの利用OK", "品質管理体制あり"],
         href: "/services/contracting",
         isMain: false,
@@ -50,7 +48,6 @@ const services = [
         description:
             "派遣ではなく正社員として外国人材を採用したい方向けのサービス。マッチングから入社後のフォローまで一貫してサポートします。",
         icon: Users,
-        color: "#7C3AED",
         features: ["成功報酬型", "入社後3ヶ月保証", "ビザ変更サポート", "定着支援プログラム"],
         href: "/services/placement",
         isMain: false,
@@ -63,7 +60,6 @@ const services = [
         description:
             "Webアプリ、モバイルアプリ、業務システムの企画・開発・運用を提供。農業分野のDX推進から一般企業の業務効率化まで対応します。",
         icon: Code,
-        color: "#2563EB",
         features: ["要件定義から運用まで一貫対応", "アジャイル開発", "クラウドネイティブ", "技術コンサルティング"],
         href: "/services/it",
         isMain: false,
@@ -85,7 +81,7 @@ const FloatingParticles = () => {
                     transition={{ duration: 4 + Math.random() * 2, repeat: Infinity, delay: i * 0.4 }}
                     className="absolute w-2 h-2 rounded-full"
                     style={{
-                        background: i % 2 === 0 ? "#1B5E38" : "#D4A853",
+                        background: i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-light)",
                         left: `${15 + i * 12}%`,
                         top: `${Math.random() * 100}%`,
                     }}
@@ -108,7 +104,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: service.delay }}
             className={`relative overflow-hidden rounded-3xl ${service.isMain
-                    ? "bg-gradient-to-br from-[#1B5E38]/10 to-[#1B5E38]/5 border-2 border-[#1B5E38]"
+                    ? "bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent"
                     : "bg-white border border-gray-100"
                 }`}
         >
@@ -119,7 +115,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                 transition={{ duration: 0.3 }}
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                    background: `radial-gradient(circle at 50% 0%, ${service.color}15 0%, transparent 70%)`,
+                    background: "radial-gradient(circle at 50% 0%, var(--color-accent-soft) 0%, transparent 70%)",
                 }}
             />
 
@@ -128,8 +124,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                 initial={{ scaleX: 0 }}
                 whileHover={{ scaleX: 1 }}
                 transition={{ duration: 0.3 }}
-                className="absolute bottom-0 left-0 right-0 h-1"
-                style={{ background: service.color }}
+                className="absolute bottom-0 left-0 right-0 h-1 bg-accent"
             />
 
             <div className="p-8 md:p-10 relative z-10">
@@ -141,20 +136,19 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                                 transition={{ type: "spring", stiffness: 400 }}
-                                className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                                style={{ backgroundColor: `${service.color}20` }}
+                                className="w-16 h-16 rounded-2xl flex items-center justify-center bg-accent/[0.125]"
                             >
-                                <service.icon className="w-8 h-8" style={{ color: service.color }} />
+                                <service.icon className="w-8 h-8 text-accent" />
                             </motion.div>
                             <div className="flex-1">
                                 <div className="flex items-center gap-3">
-                                    <h2 className="text-2xl font-bold text-[#1A1A1A]">{service.name}</h2>
+                                    <h2 className="text-2xl font-bold text-ink">{service.name}</h2>
                                     {service.isMain && (
                                         <motion.span
                                             initial={{ scale: 0 }}
                                             whileInView={{ scale: 1 }}
                                             viewport={{ once: true }}
-                                            className="px-3 py-1 bg-[#1B5E38] text-white text-xs font-bold rounded-full"
+                                            className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full"
                                         >
                                             メイン事業
                                         </motion.span>
@@ -178,10 +172,9 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                                 >
                                     <motion.div
                                         whileHover={{ scale: 1.2, rotate: 10 }}
-                                        className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
-                                        style={{ backgroundColor: `${service.color}20` }}
+                                        className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-accent/[0.125]"
                                     >
-                                        <Check className="w-3 h-3" style={{ color: service.color }} />
+                                        <Check className="w-3 h-3 text-accent" />
                                     </motion.div>
                                     <span className="text-gray-700 text-sm">{feature}</span>
                                 </motion.div>
@@ -200,7 +193,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                                 className="mb-6 p-4 bg-gray-50 rounded-2xl"
                             >
                                 <p className="text-sm text-gray-500 mb-2">料金目安</p>
-                                <p className="text-2xl font-bold text-[#1A1A1A]">{service.pricing.baseRate}</p>
+                                <p className="text-2xl font-bold text-ink">{service.pricing.baseRate}</p>
                                 <p className="text-sm text-gray-500 mt-1">{service.pricing.initialFee}</p>
                             </motion.div>
                         )}
@@ -208,8 +201,7 @@ const GlassServiceCard = ({ service }: { service: typeof services[0] }) => {
                         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                             <Link
                                 href="/contact"
-                                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 text-white font-bold rounded-full transition-colors shadow-lg"
-                                style={{ backgroundColor: service.color }}
+                                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 text-white font-bold rounded-full transition-colors shadow-lg bg-accent"
                             >
                                 詳細を相談
                                 <ArrowRight className="w-5 h-5" />
@@ -238,11 +230,11 @@ const FlowStep = ({ step, index }: { step: { step: number; title: string; desc: 
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, type: "spring" }}
-                    className="w-14 h-14 bg-gradient-to-br from-[#1B5E38] to-[#2d7a4e] text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-bold text-xl shadow-lg shadow-[#1B5E38]/30"
+                    className="w-14 h-14 bg-gradient-to-br from-accent to-accent-light text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-bold text-xl shadow-lg shadow-accent/30"
                 >
                     {step.step}
                 </motion.div>
-                <h3 className="font-bold text-[#1A1A1A] mb-2">{step.title}</h3>
+                <h3 className="font-bold text-ink mb-2">{step.title}</h3>
                 <p className="text-sm text-gray-500">{step.desc}</p>
             </div>
             {index < 4 && (
@@ -252,7 +244,7 @@ const FlowStep = ({ step, index }: { step: { step: number; title: string; desc: 
                     viewport={{ once: true }}
                     className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10"
                 >
-                    <ArrowRight className="w-8 h-8 text-[#1B5E38]" />
+                    <ArrowRight className="w-8 h-8 text-accent" />
                 </motion.div>
             )}
         </motion.div>
@@ -269,11 +261,11 @@ export default function ServicesPage() {
             {/* Scroll Progress */}
             <motion.div
                 style={{ scaleX: scrollYProgress, originX: 0 }}
-                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1B5E38] via-[#D4A853] to-[#7C3AED] z-50"
+                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent to-accent z-50"
             />
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#0A0A0A] min-h-[60vh] flex items-center">
+            <section className="relative overflow-hidden bg-ink-strong min-h-[60vh] flex items-center">
                 {/* Aurora Background */}
                 <motion.div
                     animate={{
@@ -282,8 +274,8 @@ export default function ServicesPage() {
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute inset-0 opacity-40"
                     style={{
-                        background: `radial-gradient(ellipse at 30% 30%, #1B5E38 0%, transparent 50%),
-                                     radial-gradient(ellipse at 70% 70%, #D4A853 0%, transparent 50%)`,
+                        background: `radial-gradient(ellipse at 30% 30%, var(--color-accent) 0%, transparent 50%),
+                                     radial-gradient(ellipse at 70% 70%, var(--color-accent-light) 0%, transparent 50%)`,
                         backgroundSize: "200% 200%",
                     }}
                 />
@@ -297,7 +289,7 @@ export default function ServicesPage() {
                             transition={{ duration: 0.8, ease: "backOut" }}
                             className="inline-flex items-center gap-2 mb-6"
                         >
-                            <Sparkles className="w-5 h-5 text-[#D4A853] animate-pulse" />
+                            <Sparkles className="w-5 h-5 text-accent animate-pulse" />
                             <span className="px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-sm font-medium text-white/90">
                                 Our Services
                             </span>
@@ -336,12 +328,12 @@ export default function ServicesPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent"
+                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-canvas to-transparent"
                 />
             </section>
 
             {/* Services List */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -351,12 +343,12 @@ export default function ServicesPage() {
                         className="text-center mb-16"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             サービス一覧
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <div className="space-y-8">
@@ -378,19 +370,19 @@ export default function ServicesPage() {
                         className="text-center mb-16"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             導入実績
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent-light" />
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
                         {[
-                            { number: "120", label: "稼働スタッフ数", icon: "👥", color: "#1B5E38" },
-                            { number: "60+", label: "導入企業数", icon: "🏢", color: "#D4A853" },
-                            { number: "5", label: "稼働エリア", icon: "📍", color: "#7C3AED" },
+                            { number: "120", label: "稼働スタッフ数", icon: "👥" },
+                            { number: "60+", label: "導入企業数", icon: "🏢" },
+                            { number: "5", label: "稼働エリア", icon: "📍" },
                         ].map((stat, i) => (
                             <motion.div
                                 key={stat.label}
@@ -415,8 +407,7 @@ export default function ServicesPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 + 0.3 }}
-                                    className="text-4xl font-bold mb-2"
-                                    style={{ color: stat.color }}
+                                    className="text-4xl font-bold mb-2 text-accent"
                                 >
                                     {stat.number}
                                 </motion.p>
@@ -432,7 +423,7 @@ export default function ServicesPage() {
                         transition={{ delay: 0.4 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <h3 className="text-2xl font-bold text-[#1A1A1A] text-center mb-8">対応地域</h3>
+                        <h3 className="text-2xl font-bold text-ink text-center mb-8">対応地域</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {[
                                 { region: "鹿児島県", type: "お茶・野菜・畜産", icon: "🌿" },
@@ -448,11 +439,11 @@ export default function ServicesPage() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.05 }}
-                                    className="flex items-center gap-3 p-4 bg-gradient-to-r from-[#1B5E38]/5 to-transparent rounded-xl"
+                                    className="flex items-center gap-3 p-4 bg-gradient-to-r from-accent/5 to-transparent rounded-xl"
                                 >
                                     <span className="text-2xl">{area.icon}</span>
                                     <div>
-                                        <p className="font-bold text-[#1A1A1A]">{area.region}</p>
+                                        <p className="font-bold text-ink">{area.region}</p>
                                         <p className="text-sm text-gray-500">{area.type}</p>
                                     </div>
                                 </motion.div>
@@ -463,7 +454,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Service Flow */}
-            <section className="section bg-[#FAFAF7]">
+            <section className="section bg-canvas">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -473,12 +464,12 @@ export default function ServicesPage() {
                         className="text-center mb-16"
                     >
                         <h2
-                            className="text-4xl md:text-5xl font-bold text-[#1A1A1A]"
+                            className="text-4xl md:text-5xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             ご利用の流れ
                         </h2>
-                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-[#1B5E38] to-[#D4A853]" />
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-accent to-accent" />
                     </motion.div>
 
                     <div className="max-w-5xl mx-auto">
@@ -498,14 +489,14 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA */}
-            <section className="relative overflow-hidden bg-[#0A0A0A]">
+            <section className="relative overflow-hidden bg-ink-strong">
                 {/* Animated background */}
                 <motion.div
                     animate={{
                         backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
                     }}
                     transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38]"
+                    className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent"
                     style={{ backgroundSize: "200% 200%" }}
                 />
                 <motion.div
@@ -514,7 +505,7 @@ export default function ServicesPage() {
                         y: [0, 30, 0],
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-[#D4A853]/10 rounded-full blur-3xl"
+                    className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl"
                 />
 
                 <div className="container mx-auto relative z-10 text-center py-24">
@@ -537,7 +528,7 @@ export default function ServicesPage() {
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1B5E38] text-lg font-bold rounded-full shadow-xl shadow-black/20"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent text-lg font-bold rounded-full shadow-xl shadow-black/20"
                             >
                                 無料相談を予約
                                 <ArrowRight className="w-5 h-5" />
@@ -550,7 +541,7 @@ export default function ServicesPage() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent pointer-events-none"
+                    className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-canvas to-transparent pointer-events-none"
                 />
             </section>
         </div>

@@ -36,7 +36,6 @@ const positions = [
             "業界イベント・展示会への参加",
         ],
         icon: Target,
-        color: "#1B5E38",
     },
     {
         id: "admin",
@@ -50,7 +49,6 @@ const positions = [
             "スタッフ研修の企画・運営",
         ],
         icon: Users,
-        color: "#D4A853",
     },
 ];
 
@@ -83,11 +81,11 @@ export default function CareersPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="py-20 md:py-28 bg-[#1A1A1A] text-white relative overflow-hidden">
+            <section className="py-20 md:py-28 bg-ink text-white relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#1B5E38] rounded-full blur-[100px]" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D4A853] rounded-full blur-[120px]" />
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-[100px]" />
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-[120px]" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10">
@@ -98,10 +96,10 @@ export default function CareersPage() {
                             transition={{ duration: 0.5 }}
                             className="flex items-center gap-3 mb-6"
                         >
-                            <span className="px-4 py-2 bg-[#D4A853]/20 text-[#D4A853] rounded-full text-sm font-medium">
+                            <span className="px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium">
                                 We&apos;re Hiring
                             </span>
-                            <span className="px-4 py-2 bg-[#1B5E38]/20 text-[#1B5E38] rounded-full text-sm font-medium flex items-center gap-1">
+                            <span className="px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium flex items-center gap-1">
                                 <Sparkles className="w-4 h-4" />
                                 急成長中
                             </span>
@@ -113,7 +111,7 @@ export default function CareersPage() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
-                            <span className="text-[#D4A853]">世界</span>と<span className="text-[#1B5E38]">農業</span>を繋ぐ<br />
+                            <span className="text-accent">世界</span>と<span className="text-accent">農業</span>を繋ぐ<br />
                             新しい仲間を募集
                         </motion.h1>
 
@@ -135,7 +133,7 @@ export default function CareersPage() {
                         >
                             <a
                                 href="#positions"
-                                className="btn bg-[#1B5E38] text-white hover:bg-[#164a2d] group"
+                                className="btn bg-accent text-white hover:bg-accent-strong group"
                             >
                                 募集ポジションを見る
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -160,11 +158,11 @@ export default function CareersPage() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Why Join Us
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             スグクルで働く魅力
@@ -177,19 +175,16 @@ export default function CareersPage() {
                                 icon: Rocket,
                                 title: "毎年成長するスタートアップ",
                                 description: "設立以来、右肩上がりの成長を続けています。あなたの活躍が会社の成長に直結する、手応えのある環境です。",
-                                color: "#1B5E38",
                             },
                             {
                                 icon: Bot,
                                 title: "AI × 業務効率化",
                                 description: "ChatGPT、翻訳AI、自動化ツールを積極導入。最先端技術を使いながら働くことで、市場価値の高いスキルが身につきます。",
-                                color: "#D4A853",
                             },
                             {
                                 icon: Globe,
                                 title: "グローバルな環境",
                                 description: "インドネシア、フィリピン、ベトナムなど多国籍なスタッフと協働。毎日が異文化交流の場です。",
-                                color: "#1B5E38",
                             },
                         ].map((item, index) => (
                             <motion.div
@@ -201,13 +196,10 @@ export default function CareersPage() {
                                 className="relative group"
                             >
                                 <div className="card h-full">
-                                    <div
-                                        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                                        style={{ backgroundColor: `${item.color}15` }}
-                                    >
-                                        <item.icon className="w-7 h-7" style={{ color: item.color }} />
+                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-accent/[0.08]">
+                                        <item.icon className="w-7 h-7 text-accent" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">{item.title}</h3>
+                                    <h3 className="text-xl font-bold text-ink mb-3">{item.title}</h3>
                                     <p className="text-gray-600 leading-relaxed">{item.description}</p>
                                 </div>
                             </motion.div>
@@ -217,7 +209,7 @@ export default function CareersPage() {
             </section>
 
             {/* Requirements */}
-            <section className="py-20 bg-[#FAFAF7]">
+            <section className="py-20 bg-canvas">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -225,11 +217,11 @@ export default function CareersPage() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Who We&apos;re Looking For
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             こんな方を求めています
@@ -246,14 +238,14 @@ export default function CareersPage() {
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-start gap-5"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-[#1B5E38]/10 flex items-center justify-center flex-shrink-0">
-                                    <req.icon className="w-6 h-6 text-[#1B5E38]" />
+                                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                    <req.icon className="w-6 h-6 text-accent" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-[#1A1A1A] text-lg mb-1">{req.title}</h3>
+                                    <h3 className="font-bold text-ink text-lg mb-1">{req.title}</h3>
                                     <p className="text-gray-600">{req.description}</p>
                                 </div>
-                                <CheckCircle2 className="w-6 h-6 text-[#1B5E38] flex-shrink-0 ml-auto" />
+                                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 ml-auto" />
                             </motion.div>
                         ))}
                     </div>
@@ -269,11 +261,11 @@ export default function CareersPage() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Open Positions
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             募集ポジション
@@ -290,10 +282,7 @@ export default function CareersPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-shadow"
                             >
-                                <div
-                                    className="p-6 text-white"
-                                    style={{ backgroundColor: position.color }}
-                                >
+                                <div className="p-6 text-white bg-accent">
                                     <div className="flex items-start justify-between">
                                         <div>
                                             <p className="text-white/70 text-sm mb-1">{position.subtitle}</p>
@@ -308,22 +297,21 @@ export default function CareersPage() {
                                     <p className="text-gray-600 mb-6 leading-relaxed">
                                         {position.description}
                                     </p>
-                                    <h4 className="font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
+                                    <h4 className="font-bold text-ink mb-3 flex items-center gap-2">
                                         <Briefcase className="w-4 h-4" />
                                         主な仕事内容
                                     </h4>
                                     <ul className="space-y-2 mb-6">
                                         {position.responsibilities.map((resp) => (
                                             <li key={resp} className="flex items-start gap-2 text-gray-600 text-sm">
-                                                <CheckCircle2 className="w-4 h-4 text-[#1B5E38] mt-0.5 flex-shrink-0" />
+                                                <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                                                 {resp}
                                             </li>
                                         ))}
                                     </ul>
                                     <Link
                                         href="/contact"
-                                        className="btn w-full justify-center"
-                                        style={{ backgroundColor: position.color, color: "white" }}
+                                        className="btn w-full justify-center bg-accent text-white"
                                     >
                                         このポジションに応募
                                         <ArrowRight className="w-4 h-4" />
@@ -336,7 +324,7 @@ export default function CareersPage() {
             </section>
 
             {/* Benefits */}
-            <section className="py-20 bg-[#1A1A1A] text-white">
+            <section className="py-20 bg-ink text-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -344,7 +332,7 @@ export default function CareersPage() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Compensation
                         </span>
                         <h2
@@ -365,8 +353,8 @@ export default function CareersPage() {
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                                 className="text-center p-6"
                             >
-                                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[#D4A853]/20 flex items-center justify-center">
-                                    <benefit.icon className="w-7 h-7 text-[#D4A853]" />
+                                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/20 flex items-center justify-center">
+                                    <benefit.icon className="w-7 h-7 text-accent" />
                                 </div>
                                 <h3 className="font-bold text-white text-lg mb-1">{benefit.title}</h3>
                                 <p className="text-gray-400 text-sm">{benefit.desc}</p>
@@ -381,7 +369,7 @@ export default function CareersPage() {
                         className="max-w-3xl mx-auto mt-12 p-6 bg-white/5 rounded-xl border border-white/10"
                     >
                         <div className="flex items-start gap-4">
-                            <Award className="w-8 h-8 text-[#D4A853] flex-shrink-0" />
+                            <Award className="w-8 h-8 text-accent flex-shrink-0" />
                             <div>
                                 <h3 className="font-bold text-white mb-2">成果報酬制度について</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -403,11 +391,11 @@ export default function CareersPage() {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <span className="text-[#D4A853] font-medium text-sm tracking-wider uppercase mb-4 block">
+                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
                             Details
                         </span>
                         <h2
-                            className="text-3xl md:text-4xl font-bold text-[#1A1A1A]"
+                            className="text-3xl md:text-4xl font-bold text-ink"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
                         >
                             募集要項
@@ -420,7 +408,7 @@ export default function CareersPage() {
                         viewport={{ once: true }}
                         className="max-w-3xl mx-auto"
                     >
-                        <div className="bg-[#FAFAF7] rounded-2xl overflow-hidden">
+                        <div className="bg-canvas rounded-2xl overflow-hidden">
                             <table className="w-full">
                                 <tbody className="divide-y divide-gray-200">
                                     {[
@@ -434,7 +422,7 @@ export default function CareersPage() {
                                         { label: "応募資格", value: "海外生活経験1年以上、普通自動車免許" },
                                     ].map((row) => (
                                         <tr key={row.label}>
-                                            <th className="px-6 py-4 text-left text-sm font-bold text-[#1A1A1A] bg-gray-100 w-1/3">
+                                            <th className="px-6 py-4 text-left text-sm font-bold text-ink bg-gray-100 w-1/3">
                                                 {row.label}
                                             </th>
                                             <td className="px-6 py-4 text-sm text-gray-700">
@@ -450,10 +438,10 @@ export default function CareersPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-br from-[#1B5E38] via-[#2d7a4e] to-[#1B5E38] relative overflow-hidden">
+            <section className="py-20 bg-gradient-to-br from-accent via-accent-light to-accent relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-[80px]" />
-                    <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#D4A853] rounded-full blur-[100px]" />
+                    <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent rounded-full blur-[100px]" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
@@ -462,7 +450,7 @@ export default function CareersPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <Zap className="w-12 h-12 text-[#D4A853] mx-auto mb-6" />
+                        <Zap className="w-12 h-12 text-accent mx-auto mb-6" />
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-4"
                             style={{ fontFamily: "var(--font-shippori-mincho), serif" }}
@@ -476,7 +464,7 @@ export default function CareersPage() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="btn bg-white text-[#1B5E38] hover:bg-gray-100 text-lg group"
+                                className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
                                 <Mail className="w-5 h-5" />
                                 応募・お問い合わせ
