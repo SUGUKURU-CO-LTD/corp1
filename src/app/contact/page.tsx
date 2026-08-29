@@ -83,6 +83,11 @@ export default function ContactPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        // 保存先（メール送信・CRM等）が未実装のため、フォームは IS_CONTACT_FORM_ENABLED で
+        // 非表示にしている。万一この関数が呼ばれても、偽の成功表示は絶対に出さない（フェイルクローズ）。
+        if (!IS_CONTACT_FORM_ENABLED) {
+            return;
+        }
         setIsSubmitting(true);
         await new Promise((resolve) => setTimeout(resolve, 1500));
         setIsSubmitting(false);
@@ -215,6 +220,43 @@ export default function ContactPage() {
             {/* Form Section */}
             <section className="section -mt-24 relative z-20">
                 <div className="container mx-auto max-w-4xl">
+                    {!IS_CONTACT_FORM_ENABLED ? (
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+                            className="bg-white rounded-3xl shadow-2xl overflow-hidden p-8 md:p-12 text-center"
+                        >
+                            <div className="w-16 h-16 bg-[#D4A853]/10 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                <Sparkles className="w-8 h-8 text-[#D4A853]" />
+                            </div>
+                            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+                                現在フォームを調整中です
+                            </h2>
+                            <p className="text-gray-600 mb-8 leading-relaxed">
+                                大変申し訳ございませんが、お問い合わせフォームは現在準備中のため、
+                                一時的にご利用いただけません。お急ぎのご相談は、お手数ですが
+                                下記のお電話またはメールにて直接ご連絡ください。
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a
+                                    href="tel:0995-73-9939"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#1B5E38] text-white font-bold rounded-full hover:bg-[#1B5E38]/90 transition-colors"
+                                >
+                                    <Phone className="w-4 h-4" />
+                                    0995-73-9939 に電話する
+                                </a>
+                                <a
+                                    href="mailto:info@sugu-kuru.co.jp"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-300 text-gray-700 font-bold rounded-full hover:bg-gray-50 transition-colors"
+                                >
+                                    <Mail className="w-4 h-4" />
+                                    info@sugu-kuru.co.jp
+                                </a>
+                            </div>
+                        </motion.div>
+                    ) : (
                     <motion.div
                         initial={{ opacity: 0, y: 40, rotateX: -5 }}
                         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -543,6 +585,7 @@ export default function ContactPage() {
                             )}
                         </form>
                     </motion.div>
+                    )}
                 </div>
             </section>
 
