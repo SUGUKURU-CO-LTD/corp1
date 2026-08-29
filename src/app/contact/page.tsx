@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Send, Phone, Mail, MapPin, Check, ArrowRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
 import { COMPANY_ADDRESS, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
+import { IS_CONTACT_FORM_ENABLED } from "@/lib/feature-flags";
 
 type InquiryType = "dispatch" | "it" | "recruit" | "other";
 
