@@ -66,7 +66,7 @@ function Counter({ end, duration = 2, color }: { end: number; duration?: number;
 const stats = [
     { value: 60, suffix: "社+", label: "導入企業", description: "農業法人・JA・食品関連など", color: "#1B5E38", delay: 0 },
     { value: 5, suffix: "エリア", label: "稼働地域", description: "鹿児島・福島・愛知・愛媛・青森", color: "#D4A853", delay: 0.1 },
-    { value: 3, suffix: "拠点", label: "事業所", description: "本社（霧島）・名古屋支所・ロンボク", color: "#0D9488", delay: 0.2 },
+    { value: 2, suffix: "拠点", label: "事業所", description: "本社（霧島）・ロンボク", color: "#0D9488", delay: 0.2 },
     { value: 2, suffix: "週間", label: "最短就業開始", description: "条件により異なります", color: "#7C3AED", delay: 0.3 },
 ];
 

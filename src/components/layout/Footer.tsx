@@ -33,7 +33,6 @@ const footerLinks = {
 
 const offices = [
     { name: "本社", location: "鹿児島県霧島市" },
-    { name: "名古屋支所", location: "愛知県名古屋市" },
     { name: "ロンボク拠点", location: "インドネシア・ロンボク島" },
 ];
 

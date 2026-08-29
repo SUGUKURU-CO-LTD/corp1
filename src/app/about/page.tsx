@@ -36,7 +36,6 @@ const licenses = [
 
 const offices = [
     { name: "本社", location: COMPANY_ADDRESS_LINE_JA, isHQ: true },
-    { name: "名古屋支所", location: "愛知県名古屋市名東区牧の原2-901", isHQ: false },
     { name: "ロンボク拠点", location: "インドネシア・ロンボク島", isHQ: false },
 ];
 
