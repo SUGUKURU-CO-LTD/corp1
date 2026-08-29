@@ -216,7 +216,7 @@ export default function NumbersSection() {
                             </motion.p>
 
                             {/* Number badge */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold opacity-15 bg-accent text-accent">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold bg-accent text-on-accent">
                                 {index + 1}
                             </div>
                         </motion.div>

@@ -84,7 +84,7 @@ export default function Footer() {
 
                     {/* Services Links */}
                     <div>
-                        <h3 className="text-accent font-bold mb-6">サービス</h3>
+                        <h3 className="text-accent-light font-bold mb-6">サービス</h3>
                         <ul className="space-y-3">
                             {footerLinks.services.map((link) => (
                                 <li key={link.name}>
@@ -101,7 +101,7 @@ export default function Footer() {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-accent font-bold mb-6">会社情報</h3>
+                        <h3 className="text-accent-light font-bold mb-6">会社情報</h3>
                         <ul className="space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.name}>
@@ -118,7 +118,7 @@ export default function Footer() {
 
                     {/* Legal Links */}
                     <div>
-                        <h3 className="text-accent font-bold mb-6">法令遵守情報</h3>
+                        <h3 className="text-accent-light font-bold mb-6">法令遵守情報</h3>
                         <ul className="space-y-3">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.name}>
@@ -136,7 +136,7 @@ export default function Footer() {
 
                 {/* Offices */}
                 <div className="mt-12 pt-8 border-t border-gray-800">
-                    <h3 className="text-accent font-bold mb-6">全国の拠点</h3>
+                    <h3 className="text-accent-light font-bold mb-6">全国の拠点</h3>
                     <div className="flex flex-wrap gap-4">
                         {offices.map((office) => (
                             <div
