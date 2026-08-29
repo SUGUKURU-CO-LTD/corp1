@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Wheat } from "lucide-react";
 import JobBoard from "@/components/kerja/JobBoard";
 import { getKerjaJobs } from "@/lib/kerja/jobs";
+import { COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
 import { recruitmentChannels } from "@/lib/recruitment-channels";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -129,7 +130,7 @@ export default function KerjaPage() {
             <br />
             Izin: 労働者派遣事業 派46-300262 ／ 有料職業紹介事業 46-ユ-300203
             <br />
-            Alamat: 鹿児島県霧島市国分中央3丁目42-8 翔陽A103
+            Alamat: {COMPANY_ADDRESS_LINE_JA}
           </footer>
         </div>
       </section>

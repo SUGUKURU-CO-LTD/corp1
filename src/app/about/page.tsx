@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
+import { COMPANY_ADDRESS_FULL_JA, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
 
 const companyInfo = {
     name: "スグクル株式会社",
@@ -17,7 +18,7 @@ const companyInfo = {
         "有料職業紹介事業",
         "IT事業（システム開発・コンサルティング、MCPサーバーベースのシステム開発）",
     ],
-    address: "〒899-4332 鹿児島県霧島市国分中央3丁目42-8 翔陽A103",
+    address: COMPANY_ADDRESS_FULL_JA,
     phone: "0995-73-9939",
     email: "info@sugu-kuru.co.jp",
     officers: [
@@ -34,7 +35,7 @@ const licenses = [
 ];
 
 const offices = [
-    { name: "本社", location: "鹿児島県霧島市国分中央3丁目42-8", isHQ: true },
+    { name: "本社", location: COMPANY_ADDRESS_LINE_JA, isHQ: true },
     { name: "名古屋支所", location: "愛知県名古屋市名東区牧の原2-901", isHQ: false },
     { name: "ロンボク拠点", location: "インドネシア・ロンボク島", isHQ: false },
 ];
@@ -627,7 +628,7 @@ export default function AboutPage() {
                                 className="text-center"
                             >
                                 <MapPin className="w-12 h-12 text-[#1B5E38] mx-auto mb-4" />
-                                <p className="text-gray-600">鹿児島県霧島市国分中央3丁目42-8</p>
+                                <p className="text-gray-600">{COMPANY_ADDRESS_LINE_JA}</p>
                                 <p className="text-sm text-gray-500 mt-2">Google Maps 埋め込み</p>
                             </motion.div>
                         </div>

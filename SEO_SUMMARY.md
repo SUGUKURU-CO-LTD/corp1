@@ -85,7 +85,7 @@ Sitemap: https://sugu-kuru.co.jp/sitemap.xml
   "logo": "https://sugu-kuru.co.jp/images/logo-horizontal-white.png",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "国府中央3丁目42-8 翔陽A103",
+    "streetAddress": "国分中央1丁目2-32 ポーラビル3階",
     "addressLocality": "霧島市",
     "addressRegion": "鹿児島県",
     "postalCode": "899-4332",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
 import { generatePageMetadata } from "@/lib/metadata";
+import { COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
 
 type TableRow = {
     label: string;
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 
 const businessRows: TableRow[] = [
     { label: "事業者名", value: "スグクル株式会社" },
-    { label: "事業所", value: "本社（鹿児島県霧島市国分中央三丁目42-8 翔陽A103）" },
+    { label: "事業所", value: `本社（${COMPANY_ADDRESS_LINE_JA}）` },
     {
         label: "許可番号",
         value: "労働者派遣事業 派46-300262 ／ 有料職業紹介事業 46-ユ-300203",
