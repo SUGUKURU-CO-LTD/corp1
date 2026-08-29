@@ -41,7 +41,7 @@ export default function VisaPicker({
               aria-pressed={active}
               className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                 active
-                  ? "border-accent bg-accent text-ink"
+                  ? "border-accent bg-accent text-on-accent"
                   : "border-white/30 bg-white/5 text-white hover:border-white/60"
               }`}
             >
@@ -56,7 +56,7 @@ export default function VisaPicker({
           aria-pressed={otherStatusSelected}
           className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
             otherStatusSelected
-              ? "border-accent bg-accent text-ink"
+              ? "border-accent bg-accent text-on-accent"
               : "border-dashed border-white/30 bg-transparent text-white/70 hover:border-white/60"
           }`}
         >

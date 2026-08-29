@@ -35,7 +35,7 @@ export default function JobCard({ job, onOpen }: JobCardProps) {
           className="object-cover"
         />
         {job.inexperiencedOk && (
-          <span className="absolute right-3 top-3 rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-ink shadow">
+          <span className="absolute right-3 top-3 rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-on-accent shadow">
             <Sparkles className="mr-1 inline h-3 w-3" />
             Pemula OK
           </span>
