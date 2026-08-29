@@ -57,6 +57,13 @@ export const metadata: Metadata = {
   },
 };
 
+// GA4測定ID。Next.jsのNEXT_PUBLIC_*はビルド時に値が固定されるため、
+// Preview環境とProduction環境で別ビルド（別イメージ）を作成し、
+// 環境ごとに異なる値（または未設定）でビルドする運用を前提とする。
+// このプロジェクトの値: Local/Preview = 未設定、Production = G-3X4MLRRVE0（本番デプロイ時のみ設定）。
+// 未設定の場合はgtag.js・googletagmanager.com参照・GA初期化コード・測定ID文字列のいずれも出力しない。
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,19 +74,23 @@ export default function RootLayout({
       <head>
         <OrganizationSchema />
         <WebsiteSchema />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-3X4MLRRVE0"
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            />
+            <Script id="google-analytics">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            gtag('config', 'G-3X4MLRRVE0');
-          `}
-        </Script>
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body
         className={`${notoSansJP.variable} ${shipporiMincho.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
