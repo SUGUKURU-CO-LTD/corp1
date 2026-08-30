@@ -37,6 +37,14 @@ const nextConfig: NextConfig = {
         destination: '/services',
         permanent: true,
       },
+      {
+        // /journal（Facebook投稿の自動取得）を廃止し、正式なお知らせページに一本化
+        // Retired /journal (auto-fetched Facebook posts); consolidated into the official news page
+        // Menghentikan /journal (posting Facebook otomatis); disatukan ke halaman berita resmi
+        source: '/journal',
+        destination: '/news',
+        permanent: true,
+      },
     ];
   },
   async headers() {

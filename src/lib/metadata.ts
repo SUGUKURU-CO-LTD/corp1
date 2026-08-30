@@ -121,11 +121,11 @@ export const pageMetadata = {
         keywords: '採用情報, 求人, リクルート, キャリア, 外国人材業界',
         path: '/careers',
     }),
-    journal: generatePageMetadata({
-        title: 'ジャーナル',
-        description: 'スグクル株式会社のジャーナル。外国人材、農業、地方創生に関する最新情報をお届けします。',
-        keywords: 'ジャーナル, ブログ, ニュース, 外国人材, 農業',
-        path: '/journal',
+    news: generatePageMetadata({
+        title: 'お知らせ',
+        description: 'スグクル株式会社からのお知らせ。事務所移転や制度変更など、公式な告知をお届けします。',
+        keywords: 'お知らせ, ニュース, プレスリリース, スグクル',
+        path: '/news',
     }),
     marginRate: generatePageMetadata({
         title: 'マージン率等の情報公開',

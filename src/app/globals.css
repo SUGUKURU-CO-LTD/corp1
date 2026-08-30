@@ -60,6 +60,11 @@
   --color-accent-dark: var(--accent-900);
   --color-on-accent: #ffffff;
   --color-error: oklch(63.7% 0.208 25.3);
+  /* bg-error/10 のような淡い背景の上で文字として使う暗いバリアント。
+     実測: bg-error/10の上で7.07:1（AA適合）。--color-error自体は
+     淡い背景色・境界線用で、白背景の上で文字にすると4.5:1未満のため
+     文字色には使わない */
+  --color-error-strong: oklch(45% 0.19 25.3);
   --color-warning: oklch(75% 0.16 70);
   --color-success: var(--color-accent);
 
@@ -152,6 +157,7 @@
   --color-accent-dark: var(--color-accent-dark);
   --color-on-accent: var(--color-on-accent);
   --color-error: var(--color-error);
+  --color-error-strong: var(--color-error-strong);
   --color-warning: var(--color-warning);
 
   --font-sans: var(--font-noto-sans);

@@ -123,9 +123,6 @@ This creates/updates a Cloud Build trigger with:
 
 - Do not store API keys/tokens/passwords in Cloud Build trigger substitutions.
 - Use Secret Manager for secrets that are actually required by runtime.
-- Facebook feed integration uses server-side env vars:
-  - `FACEBOOK_PAGE_ID` (default: `61558366208114`)
-  - `FACEBOOK_PAGE_ACCESS_TOKEN` (required for live feed)
 - Audit trigger substitutions:
 
 ```bash
