@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { IS_MARGIN_RATE_PUBLISHED } from '@/lib/feature-flags';
+import { newsItems } from '@/lib/news';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://sugu-kuru.co.jp';
@@ -74,11 +75,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/journal`,
+            url: `${baseUrl}/news`,
             lastModified: currentDate,
             changeFrequency: 'weekly' as const,
             priority: 0.6,
         },
+        ...newsItems.map((item) => ({
+            url: `${baseUrl}/news/${item.slug}`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly' as const,
+            priority: 0.4,
+        })),
         ...(IS_MARGIN_RATE_PUBLISHED
             ? [{
                 url: `${baseUrl}/margin-rate`,

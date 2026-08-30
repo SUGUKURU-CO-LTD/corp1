@@ -40,7 +40,14 @@ const navigation: NavItem[] = [
         ],
     },
     { name: "導入事例", href: "/cases" },
-    { name: "会社概要", href: "/about" },
+    {
+        name: "会社概要",
+        href: "/about",
+        children: [
+            { name: "会社概要", href: "/about" },
+            { name: "お知らせ", href: "/news" },
+        ],
+    },
     { name: "採用情報", href: "/careers" },
 ];
 

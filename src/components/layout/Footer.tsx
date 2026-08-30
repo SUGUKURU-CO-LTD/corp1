@@ -18,7 +18,7 @@ const footerLinks = {
         { name: "よくある質問", href: "/faq" },
         { name: "採用情報", href: "/careers" },
         { name: "Lowongan (Bahasa Indonesia)", href: "/kerja" },
-        { name: "お知らせ", href: "/journal" },
+        { name: "お知らせ", href: "/news" },
     ],
     legal: [
         ...(IS_MARGIN_RATE_PUBLISHED

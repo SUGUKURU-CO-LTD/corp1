@@ -67,15 +67,6 @@ If this script reports suspicious keys (`SECRET`, `TOKEN`, `KEY`, etc.), rotate 
 - Keep runtime secrets in Secret Manager.
 - Bind secrets to Cloud Run via `--set-secrets` (or equivalent IaC) only when needed.
 
-### Facebook feed secrets
-
-`/journal` uses server-side fetch via `/api/facebook/posts`.
-
-- `FACEBOOK_PAGE_ID` (plain env, non-secret)
-- `FACEBOOK_PAGE_ACCESS_TOKEN` (secret)
-
-If the token is missing or API fails, the page automatically falls back to sample posts and shows a warning banner.
-
 ## 6. Rollback Procedure
 
 1. Identify prior healthy revision:
