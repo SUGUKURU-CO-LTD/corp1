@@ -99,7 +99,7 @@ export default function DispatchPage() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
                             耕す手が足りない。<br />
-                            <span className="text-accent">その声に、応えに行く。</span>
+                            <span className="text-white">その声に、応えに行く。</span>
                         </motion.h1>
 
                         <motion.p

@@ -468,7 +468,7 @@ export default function CareersPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <Zap className="w-12 h-12 text-accent mx-auto mb-6" />
+                        <Zap className="w-12 h-12 text-white mx-auto mb-6" />
                         <h2
                             className="text-3xl md:text-4xl font-bold text-white mb-4"
                         >

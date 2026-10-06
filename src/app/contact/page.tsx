@@ -23,23 +23,36 @@ const inquiryTypes = [
     { id: "other", label: "その他", icon: "📝" },
 ];
 
-// Floating particles component
+// 水和不一致を避けるため、乱数は使わず固定値にする
+// Avoid hydration mismatch: use fixed values, not Math.random
+// Hindari mismatch hidrasi: pakai nilai tetap, bukan Math.random
+const CONTACT_PARTICLES = [
+    { top: "12%", duration: 4.2 },
+    { top: "55%", duration: 5.1 },
+    { top: "28%", duration: 4.6 },
+    { top: "81%", duration: 5.4 },
+    { top: "40%", duration: 4.8 },
+    { top: "67%", duration: 5.2 },
+    { top: "22%", duration: 4.4 },
+    { top: "74%", duration: 5.7 },
+] as const;
+
 const FloatingParticles = () => {
     return (
         <>
-            {[...Array(8)].map((_, i) => (
+            {CONTACT_PARTICLES.map((particle, i) => (
                 <motion.div
                     key={i}
                     animate={{
                         y: [0, -30, 0],
                         opacity: [0.2, 0.5, 0.2],
                     }}
-                    transition={{ duration: 4 + Math.random() * 2, repeat: Infinity, delay: i * 0.3 }}
+                    transition={{ duration: particle.duration, repeat: Infinity, delay: i * 0.3 }}
                     className="absolute w-2 h-2 rounded-full"
                     style={{
                         background: i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-light)",
                         left: `${10 + i * 10}%`,
-                        top: `${Math.random() * 100}%`,
+                        top: particle.top,
                     }}
                 />
             ))}

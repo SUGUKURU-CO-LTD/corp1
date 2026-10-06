@@ -7,7 +7,6 @@ import {
     Building2,
     Users,
     MapPin,
-    Quote,
     Phone,
     TrendingUp,
     CheckCircle2,
@@ -30,9 +29,6 @@ const caseStudies = [
         solution:
             "インドネシアからの特定技能人材10名を派遣。茶摘みから製茶工程まで、一貫したサポート体制を構築しました。",
         result: "繁忙期も安定した人材確保ができるようになり、品質を保った茶葉の生産を続けています。",
-        testimonial:
-            "スグクルさんのおかげで、繁忙期も安心して乗り越えられるようになりました。スタッフの皆さんは真面目で、技術の習得も早いです。",
-        testimonialAuthor: "代表取締役",
     },
     {
         id: 2,
@@ -44,11 +40,8 @@ const caseStudies = [
         challenge:
             "有機茶栽培は機械化が難しく、手作業が中心。熟練した労働力の確保が長年の課題でした。",
         solution:
-            "農業経験のあるインドネシア人材8名を派遣。有機栽培の特性を理解した丁寧な指導で、即戦力として活躍。",
+            "農業経験のあるインドネシア人材8名を派遣。有機栽培の作業に合わせて現場指導を行っています。",
         result: "品質を維持しながら、有機認証の基準をクリアし続けています。",
-        testimonial:
-            "有機栽培は手間がかかりますが、派遣スタッフの皆さんは細かい作業も丁寧にこなしてくれます。言葉の壁もスグクルさんが通訳してくれるので安心です。",
-        testimonialAuthor: "農場長",
     },
     {
         id: 3,
@@ -62,16 +55,13 @@ const caseStudies = [
         solution:
             "特定技能人材を派遣し、集出荷場での仕分け・積み込み業務からサポートしています。",
         result: "2025年9月から受け入れを継続中です。",
-        testimonial: null,
-        testimonialAuthor: null,
     },
 ];
 
 const stats = [
     { value: "60+", label: "導入企業数", icon: Building2 },
-    { value: "120", label: "稼働スタッフ", icon: Users },
+    { value: "約100", label: "稼働スタッフ", icon: Users },
     { value: "5", label: "稼働エリア", icon: TrendingUp },
-    { value: "15+", label: "連携産地", icon: MapPin },
 ];
 
 export default function CasesPage() {
@@ -118,7 +108,7 @@ export default function CasesPage() {
             {/* Stats Section */}
             <section className="section bg-ink">
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -141,6 +131,9 @@ export default function CasesPage() {
                             </motion.div>
                         ))}
                     </div>
+                    <p className="text-center text-ink-inverse-muted text-xs mt-8">
+                        ※ 稼働スタッフは労働者派遣・農作業受託・請負受託を含む総数（2026年10月時点）です。
+                    </p>
                 </div>
             </section>
 
@@ -160,7 +153,7 @@ export default function CasesPage() {
                         <h2
                             className="text-3xl md:text-4xl font-bold text-ink"
                         >
-                            導入企業様の声
+                            導入事例
                         </h2>
                         <p className="text-ink-muted text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
                     </motion.div>
@@ -253,19 +246,6 @@ export default function CasesPage() {
                                             </p>
                                         </div>
                                     </div>
-
-                                    {/* Testimonial（掲載許諾を得たコメントがある場合のみ表示） */}
-                                    {caseStudy.testimonial && (
-                                        <div className="rounded-xl p-6 relative bg-accent/[0.03]">
-                                            <Quote className="absolute top-4 left-4 w-8 h-8 opacity-20 text-accent" />
-                                            <p className="text-ink leading-relaxed pl-8 italic">
-                                                「{caseStudy.testimonial}」
-                                            </p>
-                                            <p className="text-right mt-4 text-sm text-ink-muted">
-                                                — {caseStudy.company} {caseStudy.testimonialAuthor}
-                                            </p>
-                                        </div>
-                                    )}
                                 </div>
                             </motion.div>
                         ))}

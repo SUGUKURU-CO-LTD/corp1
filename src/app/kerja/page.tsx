@@ -30,7 +30,7 @@ export default function KerjaPage() {
       {/* Hero — visually continues into JobBoard's VisaPicker (same dark green gradient) */}
       <section className="bg-gradient-to-br from-accent to-accent-dark px-4 pb-10 pt-14 md:pb-14 md:pt-20">
         <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
+          <p className="text-sm font-medium tracking-[0.18em] text-white/80 uppercase">
             Lowongan Kerja Kantoran
           </p>
           <h1

@@ -70,7 +70,7 @@ export default function ContractingPage() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
                             収穫も選果も、<br />
-                            <span className="text-accent">丸ごと任せる。</span>
+                            <span className="text-white">丸ごと任せる。</span>
                         </motion.h1>
 
                         <motion.p
