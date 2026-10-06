@@ -148,6 +148,15 @@ export default function ITPage() {
                 </div>
             </section>
 
+            <section className="section bg-white">
+                <div className="container mx-auto max-w-3xl text-ink text-sm leading-7">
+                    <h2 className="text-2xl font-bold mb-3">在留申請・派遣書類の自動化（Drapt）</h2>
+                    <p>
+                        在留申請・派遣書類の自動化を自社で開発し、自社の申請・帳簿で運用しています。登録支援機関・行政書士法人向けの提供は準備中です。書類の作成・提出は行政書士・申請等取次者が行い、システムは下書きと検証を担います。
+                    </p>
+                </div>
+            </section>
+
             {/* Services */}
             <section className="section bg-white">
                 <div className="container mx-auto">

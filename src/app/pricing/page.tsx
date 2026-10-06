@@ -108,6 +108,12 @@ export default function PricingPage() {
                                         : "マージン率の考え方は公開準備中です。"}
                                 </span>
                             </div>
+                            <div className="mt-4 flex items-start gap-2 rounded-xl bg-canvas border border-line p-4 text-sm text-ink-muted">
+                                <Info className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                                <span>
+                                    有料職業紹介において求職者の費用は無料です。紹介手数料は、届出済みの手数料表の範囲でご案内します。
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

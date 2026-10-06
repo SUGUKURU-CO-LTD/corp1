@@ -148,6 +148,10 @@ export default function PrivacyPage() {
                                         </li>
                                         <li className="flex items-start gap-2">
                                             <span className="text-accent mt-1">•</span>
+                                            有料職業紹介において、求人企業および提携する求人媒体（Zキャリア、Ex-ord）へ、職業紹介に必要な範囲で提供する場合
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-accent mt-1">•</span>
                                             業務委託先に対して、業務遂行上必要な範囲で提供する場合
                                         </li>
                                     </ul>

@@ -13,13 +13,14 @@ import {
     CheckCircle2,
     Phone,
 } from "lucide-react";
+import { WIN_SUPPORT_ORG_NAME, WIN_SUPPORT_ORG_NUMBER } from "@/lib/company";
 
 const features = [
     {
         icon: Clock,
-        title: "最短2週間で就業開始",
+        title: "受入れの3か月前から準備",
         description:
-            "条件が整っていれば最短2週間が目安です（状況により異なります）。お急ぎのご相談も承ります。",
+            "受入れの3か月前から、派遣契約・入管への届出・寮・生活の準備を始め、すべて整ってから配属します。",
     },
     {
         icon: Shield,
@@ -54,11 +55,11 @@ const features = [
 ];
 
 const flow = [
-    { step: 1, title: "お問い合わせ", description: "Web・電話・SNSから" },
-    { step: 2, title: "ヒアリング", description: "課題と必要人数を確認" },
-    { step: 3, title: "ご契約", description: "料金・条件の合意" },
-    { step: 4, title: "入国・準備", description: "住居・手続きを手配" },
-    { step: 5, title: "派遣開始", description: "最短2週間で就業" },
+    { step: 1, title: "お問い合わせ", description: "Web・電話・メールから" },
+    { step: 2, title: "3か月前：契約・届出", description: "派遣契約と入管への届出" },
+    { step: 3, title: "寮・生活の準備", description: "住まいと行政手続き" },
+    { step: 4, title: "準備の確認", description: "すべて整ったことを確認" },
+    { step: 5, title: "配属", description: "整ってから就業を開始" },
 ];
 
 const pricing = {
@@ -109,7 +110,7 @@ export default function DispatchPage() {
                         >
                             農業の最前線で、人手不足という課題に直面する農家へ。<br />
                             インドネシア・フィリピンから来た、経験豊富な特定技能人材を——<br />
-                            条件が整えば最短2週間で、あなたの農場へご紹介します。
+                            受入れの3か月前から準備を始め、整ってからご紹介します。
                         </motion.p>
 
                         <motion.div
@@ -122,7 +123,7 @@ export default function DispatchPage() {
                                 href="/contact"
                                 className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
-                                今すぐ相談する
+                                無料で相談する
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <a
@@ -207,6 +208,29 @@ export default function DispatchPage() {
                                 </p>
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section bg-canvas">
+                <div className="container mx-auto max-w-3xl space-y-8 text-ink text-sm leading-7">
+                    <div>
+                        <h2 className="text-2xl font-bold mb-3">畜産（養豚・養鶏・養牛）</h2>
+                        <p>
+                            養豚・養鶏・養牛の飼養管理に対応します。深夜・早朝の作業は、割増を含めた契約とします。
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold mb-3">ご利用の条件</h2>
+                        <p>
+                            特定技能の農業分野で派遣を受け入れる場合、派遣先は6か月以上の雇用経験があること、または派遣先責任者講習を受講していることが必要です。
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold mb-3">1号特定技能外国人の支援</h2>
+                        <p>
+                            1号特定技能外国人の支援は、登録支援機関 {WIN_SUPPORT_ORG_NAME}（{WIN_SUPPORT_ORG_NUMBER}）に全部委託しています。
+                        </p>
                     </div>
                 </div>
             </section>
@@ -340,14 +364,14 @@ export default function DispatchPage() {
                             その声に、応えに行く。
                         </h2>
                         <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                            まずは話を聞くだけでも。条件が整えば最短2週間で、あなたの農場にご紹介します。
+                            受入れの3か月前から準備を始めます。まずはお話をお聞かせください。
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/contact"
                                 className="btn bg-white text-accent hover:bg-gray-100 text-lg group"
                             >
-                                今すぐ相談する
+                                無料で相談する
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <a

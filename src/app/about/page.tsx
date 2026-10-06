@@ -4,14 +4,30 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
-import { COMPANY_ADDRESS_FULL_JA, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
+import {
+    COMPANY_ADDRESS_FULL_JA,
+    COMPANY_ADDRESS_LINE_JA,
+    COMPANY_CORPORATE_NUMBER,
+    COMPANY_EMAIL,
+    COMPANY_PHONE,
+    DISPATCH_SUPERVISOR_NAME,
+    DISPATCH_SUPERVISOR_TITLE,
+    LICENSE_DISPATCH,
+    LICENSE_PLACEMENT,
+    LOMBOK_PARTNER_NAME,
+    PLACEMENT_SUPERVISOR_NAME,
+    PLACEMENT_SUPERVISOR_TITLE,
+    WIN_SUPPORT_ORG_NAME,
+    WIN_SUPPORT_ORG_NUMBER,
+} from "@/lib/company";
 
 const companyInfo = {
     name: "スグクル株式会社",
     nameEn: "SUGUKURU., CO., LTD",
     established: "2023年12月",
     capital: "2,000万円",
-    employees: "120名（労働者派遣・農作業受託・請負受託を含む・2026年8月1日現在）",
+    employees: "約100名（労働者派遣・農作業受託・請負受託を含む・2026年10月時点）",
+    corporateNumber: COMPANY_CORPORATE_NUMBER,
     business: [
         "特定技能 農業・畜産派遣事業",
         "農作業受託事業",
@@ -25,18 +41,23 @@ const companyInfo = {
         { position: "代表取締役", name: "壁 晃弘" },
         { position: "取締役", name: "壁 美和子" },
         { position: "社外取締役", name: "花井 紀文" },
-        { position: "監査", name: "高平 早紀" },
+        { position: "監査役", name: "高平 早紀" },
     ],
 };
 
 const licenses = [
-    { name: "労働者派遣事業許可", number: "派46-300262" },
-    { name: "有料職業紹介事業許可", number: "46-ユ-300203" },
+    { name: "労働者派遣事業許可", number: LICENSE_DISPATCH },
+    { name: "有料職業紹介事業許可", number: LICENSE_PLACEMENT },
 ];
 
 const offices = [
     { name: "本社", location: COMPANY_ADDRESS_LINE_JA, isHQ: true },
-    { name: "ロンボク拠点", location: "インドネシア・ロンボク島", isHQ: false },
+    { name: "海外の協力先", location: `インドネシア・ロンボク島（${LOMBOK_PARTNER_NAME}）`, isHQ: false },
+];
+
+const organization = [
+    { title: DISPATCH_SUPERVISOR_TITLE, name: DISPATCH_SUPERVISOR_NAME },
+    { title: PLACEMENT_SUPERVISOR_TITLE, name: PLACEMENT_SUPERVISOR_NAME },
 ];
 
 const timeline = [
@@ -49,7 +70,8 @@ const timeline = [
     { year: "2025年7月", event: "名古屋支所 開設" },
     { year: "2025年9月", event: "農業物流分野への派遣開始" },
     { year: "2026年6月", event: "第4期事業年度 開始（派遣・農作業受託・ロンボク送り出しを主軸に）" },
-    { year: "2026年8月", event: "ロンボク拠点（PT MIRAI JAPAN）設立" },
+    { year: "2026年7月", event: "本店をポーラビル3階へ移転" },
+    { year: "2026年8月", event: `海外の協力先 ${LOMBOK_PARTNER_NAME} 設立（送出機関ライセンス申請中）` },
 ];
 
 const values = [
@@ -330,7 +352,7 @@ export default function AboutPage() {
                             className="text-xl text-ink-inverse-muted leading-relaxed max-w-2xl"
                         >
                             鹿児島・霧島。桜島の灰が降り注ぐこの地で、私たちは「スグクル」という名前を掲げた。
-                            すぐに来る——その約束を胸に、日本中の現場へ即戦力を届ける。
+                            準備は3か月前から。整ったら、スグクル。
                         </motion.p>
                     </div>
                 </motion.div>
@@ -446,6 +468,10 @@ export default function AboutPage() {
                                             <td className="px-4 py-4 text-ink">{companyInfo.capital}</td>
                                         </tr>
                                         <tr className="border-b border-gray-50">
+                                            <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">法人番号</td>
+                                            <td className="px-4 py-4 text-ink">{companyInfo.corporateNumber}</td>
+                                        </tr>
+                                        <tr className="border-b border-gray-50">
                                             <td className="px-4 py-4 bg-canvas/50 font-medium text-ink">所在地</td>
                                             <td className="px-4 py-4 text-ink">{companyInfo.address}</td>
                                         </tr>
@@ -488,6 +514,21 @@ export default function AboutPage() {
                                                 <span className="font-medium text-ink">{officer.position}</span>
                                                 <span className="text-ink-muted">{officer.name}</span>
                                             </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="mb-8">
+                                    <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
+                                        <Users className="w-5 h-5 text-accent" />
+                                        体制
+                                    </h3>
+                                    <div className="space-y-3">
+                                        {organization.map((row) => (
+                                            <div key={row.name} className="text-sm">
+                                                <span className="font-medium text-ink">{row.title}</span>
+                                                <span className="text-ink-muted ml-2">{row.name}</span>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
@@ -541,6 +582,42 @@ export default function AboutPage() {
                         {licenses.map((license, index) => (
                             <LicenseBadge key={license.name} license={license} index={index} />
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 特定技能の支援・コンプライアンス・苦情窓口 */}
+            <section className="section bg-canvas">
+                <div className="container mx-auto">
+                    <div className="max-w-3xl mx-auto space-y-10 text-ink text-sm leading-7">
+                        <div>
+                            <h2 className="text-2xl font-bold mb-3">特定技能の支援</h2>
+                            <p>
+                                1号特定技能外国人の支援は、登録支援機関 {WIN_SUPPORT_ORG_NAME}（{WIN_SUPPORT_ORG_NUMBER}）に全部委託しています。
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-2xl font-bold mb-3">海外の協力先</h2>
+                            <p>
+                                {LOMBOK_PARTNER_NAME}（インドネシア・ロンボク島。2026年8月設立）。送出機関ライセンスを申請中で、取得後に送出しを始める予定です。
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-2xl font-bold mb-3">コンプライアンス</h2>
+                            <p>
+                                顧問弁護士・行政書士と連携し、入管への届出は事由発生から14日以内、労働者派遣法に基づく台帳の整備とマージン率等の情報公開を行っています。社会保険労務士は就任後に追記します。
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-2xl font-bold mb-3">苦情・ご意見の窓口</h2>
+                            <p>
+                                職業紹介に関する苦情：{PLACEMENT_SUPERVISOR_TITLE} {PLACEMENT_SUPERVISOR_NAME}
+                                <br />
+                                労働者派遣に関する苦情：{DISPATCH_SUPERVISOR_TITLE} {DISPATCH_SUPERVISOR_NAME}
+                                <br />
+                                電話 {COMPANY_PHONE} ／ メール {COMPANY_EMAIL}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

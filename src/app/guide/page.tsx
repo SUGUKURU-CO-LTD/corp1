@@ -46,11 +46,11 @@ const applicationTypes = [
 
 // 受入れの流れ
 const flow = [
-    { step: 1, title: "お問い合わせ・ヒアリング", desc: "課題・必要人数・時期を確認" },
+    { step: 1, title: "お問い合わせ・ヒアリング", desc: "受入れの3か月前からご相談ください" },
     { step: 2, title: "人材のご提案・マッチング", desc: "経験・資格を踏まえてご提案" },
-    { step: 3, title: "契約・受入れ準備", desc: "条件合意、住居・手続きの手配" },
+    { step: 3, title: "契約・届出・寮の準備", desc: "派遣契約、入管への届出、住居の手配" },
     { step: 4, title: "申請・入国/変更", desc: "在留資格の手続きを支援" },
-    { step: 5, title: "就業開始・定着支援", desc: "多言語サポートで継続支援" },
+    { step: 5, title: "就業開始・定着支援", desc: "すべて整ってから配属し、継続支援" },
 ];
 
 // 試験免除の早見
@@ -132,9 +132,12 @@ export default function GuidePage() {
             {/* 受入れの流れ（図解） */}
             <section className="section bg-white">
                 <div className="container mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-12">
+                    <h2 className="text-2xl md:text-3xl font-bold text-ink text-center mb-3">
                         受入れの流れ
                     </h2>
+                    <p className="text-center text-ink-muted text-sm mb-12">
+                        受入れの3か月前から、派遣契約・入管への届出・寮の準備を始めます。
+                    </p>
                     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6">
                         {flow.map((item, i) => (
                             <div key={item.step} className="relative">

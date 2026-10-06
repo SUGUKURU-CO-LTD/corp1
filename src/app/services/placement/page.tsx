@@ -106,7 +106,7 @@ export default function PlacementPage() {
                             className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
                         >
                             鹿児島を拠点に、九州の企業様へ外国人材の有料職業紹介・紹介予定派遣を提供しています。<br />
-                            直接雇用ならすぐに。じっくり見極めたいなら、紹介予定派遣で。
+                            紹介予定派遣（6か月以内に直接雇用へ転換）と、通常の職業紹介の2つの形があります。
                         </motion.p>
 
                         <motion.div
@@ -358,7 +358,7 @@ export default function PlacementPage() {
                                 <div className="grid md:grid-cols-2 gap-6">
                                     {[
                                         "求職者からは一切費用をいただきません（職業安定法）",
-                                        "成功報酬型で初期費用のリスクを抑制",
+                                        "返戻金制度あり（返戻金制度のページをご覧ください）",
                                         "ビザ変更・在留手続きのご案内",
                                         "入社後の定着フォロー",
                                     ].map((item) => (
@@ -371,6 +371,15 @@ export default function PlacementPage() {
                             </div>
                         </motion.div>
                     </div>
+                </div>
+            </section>
+
+            <section className="section bg-canvas">
+                <div className="container mx-auto max-w-3xl text-ink text-sm leading-7">
+                    <h2 className="text-2xl font-bold mb-3">対象</h2>
+                    <p>
+                        紹介予定派遣（6か月以内に直接雇用へ転換）と通常紹介があります。特定技能は農業・漁業が紹介予定派遣の対象になり得ます。宿泊・外食は通常紹介のみです。技人国・永住者等の身分系にも対応します。求職者の費用は無料です。
+                    </p>
                 </div>
             </section>
 

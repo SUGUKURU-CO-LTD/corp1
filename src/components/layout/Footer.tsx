@@ -5,11 +5,11 @@ import { COMPANY_ADDRESS, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
 
 const footerLinks = {
     services: [
-        { name: "農業派遣", href: "/services/dispatch" },
+        { name: "派遣（農業・畜産）", href: "/services/dispatch" },
         { name: "農作業受託", href: "/services/contracting" },
-        { name: "有料職業紹介", href: "/services/placement" },
-        { name: "技人国 派遣・紹介", href: "/services/gijinkoku" },
-        { name: "IT事業", href: "/services/it" },
+        { name: "職業紹介・紹介予定派遣", href: "/services/placement" },
+        { name: "技人国・身分系", href: "/services/gijinkoku" },
+        { name: "IT（受託開発と Drapt）", href: "/services/it" },
         { name: "料金について", href: "/pricing" },
     ],
     company: [
@@ -34,7 +34,7 @@ const footerLinks = {
 
 const offices = [
     { name: "本社", location: "鹿児島県霧島市" },
-    { name: "ロンボク拠点", location: "インドネシア・ロンボク島" },
+    { name: "ロンボク（協力先）", location: "インドネシア・ロンボク島" },
 ];
 
 export default function Footer() {
@@ -160,6 +160,12 @@ export default function Footer() {
                         <div className="license-badge">
                             有料職業紹介事業許可: 46-ユ-300203
                         </div>
+                        <div className="license-badge">
+                            求職者の費用は無料
+                        </div>
+                        <div className="license-badge">
+                            法人番号: 9340001026142
+                        </div>
                     </div>
                 </div>
             </div>
@@ -169,7 +175,7 @@ export default function Footer() {
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-ink-inverse-muted text-sm">
-                            © 2025 SUGUKURU Inc. All Rights Reserved.
+                            © 2026 SUGUKURU Inc. All Rights Reserved.
                         </p>
                         <p className="text-ink-inverse-muted text-sm flex items-center gap-2">
                             Made in Kirishima, Kagoshima

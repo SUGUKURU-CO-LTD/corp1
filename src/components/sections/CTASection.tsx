@@ -158,7 +158,7 @@ export default function CTASection() {
                                         className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/10 to-transparent"
                                     />
                                     <span className="relative z-10 flex items-center gap-2">
-                                        今すぐ相談する
+                                        無料で相談する
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </Link>
