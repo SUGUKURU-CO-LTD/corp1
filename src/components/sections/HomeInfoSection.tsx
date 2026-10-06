@@ -9,9 +9,9 @@ import {
     ChevronDown,
 } from "lucide-react";
 
-// トップ用の情報導線・FAQ抜粋・信頼帯。誇張せず、知りたい情報へ最短で案内する。
-// Home info links, FAQ excerpt, and trust band. Honest, fast routing to key info.
-// Tautan info beranda, cuplikan FAQ, dan pita kepercayaan. Jujur dan cepat.
+// トップ用の情報導線・FAQ抜粋・信頼帯。誇張せず、知りたい情報へ案内する。
+// Home info links, FAQ excerpt, and trust band. Honest routing to key info.
+// Tautan info beranda, cuplikan FAQ, dan pita kepercayaan. Jujur.
 
 const quickLinks = [
     {
@@ -37,7 +37,7 @@ const quickLinks = [
 const faqExcerpt = [
     {
         q: "どのくらいで就業を開始できますか？",
-        a: "条件が整っていれば最短2週間が目安です。状況により異なります。",
+        a: "受入れの3か月前から派遣契約・入管への届出・寮の準備を始め、すべて整ってから配属します。",
     },
     {
         q: "在留資格の手続きは自分でやる必要がありますか？",

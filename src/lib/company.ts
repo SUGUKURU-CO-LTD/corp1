@@ -6,9 +6,8 @@
  * 法人番号 9340001026142「スグクル株式会社」の登記上の本店所在地:
  * 「鹿児島県霧島市国分中央1丁目2－32ポーラビル3階」
  * 変更履歴: 事由発生年月日 令和8年7月27日、本店又は主たる事務所の所在地の変更
- * （旧情報: 鹿児島県霧島市国分中央3丁目42－8翔陽A103）
  *
- * 旧住所（鹿児島県霧島市国分中央三丁目42-8 翔陽A103）は出力しないこと（社内共通ルール）。
+ * 旧本店所在地は出力しないこと（社内共通ルール）。
  * 建物名「ポーラビル」は上記一次資料で確認済み（社内データ辞書v4.1には建物名の記載が
  * なかったため、今回の一次資料確認で補完した）。
  *
@@ -44,3 +43,20 @@ export const COMPANY_PHONE = '0995-73-9939';
 export const COMPANY_PHONE_TEL_URI = 'tel:0995-73-9939';
 export const COMPANY_EMAIL = 'info@sugu-kuru.co.jp';
 export const COMPANY_CORPORATE_NUMBER = '9340001026142';
+
+/** 労働者派遣事業許可番号（辞書 v6.0） */
+export const LICENSE_DISPATCH = '派46-300262';
+/** 有料職業紹介事業許可番号（辞書 v6.0） */
+export const LICENSE_PLACEMENT = '46-ユ-300203';
+
+/** 1号特定技能の支援委託先（スグクルは登録支援機関の登録なし） */
+export const WIN_SUPPORT_ORG_NAME = 'WIN国際協同組合';
+export const WIN_SUPPORT_ORG_NUMBER = '21登-006344';
+
+/** ロンボクの協力先（送出ライセンスは申請中。当社の海外拠点ではない） */
+export const LOMBOK_PARTNER_NAME = 'PT SASAKA ADIKARA INDONESIA';
+
+export const DISPATCH_SUPERVISOR_NAME = 'ワロ クレモ';
+export const DISPATCH_SUPERVISOR_TITLE = '事業本部長（派遣元責任者）';
+export const PLACEMENT_SUPERVISOR_NAME = '吉原 伸';
+export const PLACEMENT_SUPERVISOR_TITLE = 'キャリア支援・人材育成担当（職業紹介責任者）';

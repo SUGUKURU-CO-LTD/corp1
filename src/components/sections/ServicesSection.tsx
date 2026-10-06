@@ -74,8 +74,8 @@ const RotatingIcon = ({ icon: Icon }: { icon: any }) => {
 const services = [
     {
         id: "dispatch",
-        name: "農業派遣",
-        description: "人手が足りない——その声に、最短2週間で応える。即戦力の外国人材をあなたの農場へ。",
+        name: "派遣（農業・畜産）",
+        description: "特定技能の派遣が認められている農業・畜産分野で、派遣元として農家・JA・農業法人へ派遣します。受入れの3か月前から準備を始めます。",
         icon: Tractor,
         href: "/services/dispatch",
         size: "large",
@@ -92,8 +92,8 @@ const services = [
     },
     {
         id: "placement",
-        name: "有料職業紹介",
-        description: "派遣ではなく、仲間として迎えたい。直接雇用へ導く、じっくりマッチング。",
+        name: "職業紹介・紹介予定派遣",
+        description: "外国人材専門の有料職業紹介。紹介予定派遣（最長6か月）で見極めてから直接雇用へ。求職者の費用は無料です。",
         icon: Users,
         href: "/services/placement",
         size: "small",
@@ -101,8 +101,8 @@ const services = [
     },
     {
         id: "gijinkoku",
-        name: "技人国 派遣・紹介",
-        description: "専門職の外国人材を、製造・建設・サービス業へ。技人国は届出のみで、立ち上がりが速い。",
+        name: "技人国・身分系",
+        description: "宿泊・空港地上業務や製造の専門職など、技人国・永住者等の方を派遣・紹介します。",
         icon: GraduationCap,
         href: "/services/gijinkoku",
         size: "small",
@@ -110,8 +110,8 @@ const services = [
     },
     {
         id: "it",
-        name: "IT事業",
-        description: "Webシステム・アプリ開発で、あらゆる現場を進化させる。農業DXにも対応。",
+        name: "IT（受託開発と Drapt）",
+        description: "Webシステム・アプリの受託開発と、在留申請・派遣書類の自動化（Drapt。外部提供は準備中）。",
         icon: Code,
         href: "/services/it",
         size: "medium",

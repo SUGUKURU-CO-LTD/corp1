@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Wheat } from "lucide-react";
 import JobBoard from "@/components/kerja/JobBoard";
 import { getKerjaJobs } from "@/lib/kerja/jobs";
-import { COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
+import { COMPANY_ADDRESS_LINE_JA, LOMBOK_PARTNER_NAME } from "@/lib/company";
 import { recruitmentChannels } from "@/lib/recruitment-channels";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -128,6 +128,8 @@ export default function KerjaPage() {
             Sugukuru Co., Ltd. / スグクル株式会社
             <br />
             Izin: 労働者派遣事業 派46-300262 ／ 有料職業紹介事業 46-ユ-300203
+            <br />
+            Mitra di Lombok: {LOMBOK_PARTNER_NAME} (lisensi pengirim sedang dalam pengajuan)
             <br />
             Alamat: {COMPANY_ADDRESS_LINE_JA}
           </footer>

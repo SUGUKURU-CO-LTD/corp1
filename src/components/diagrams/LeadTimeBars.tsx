@@ -17,9 +17,9 @@ type LeadTimeRow = {
 };
 
 const rows: LeadTimeRow[] = [
-    { label: "有料職業紹介", sublabel: "直接雇用", width: 30, note: "最短1ヶ月台" },
-    { label: "労働者派遣", sublabel: "紹介予定派遣", width: 32, note: "派遣開始まで約1ヶ月" },
-    { label: "　└ 直接雇用へ転換", sublabel: "見極め期間を含む", width: 100, note: "3〜6ヶ月で転換判断" },
+    { label: "有料職業紹介", sublabel: "直接雇用", width: 70, note: "届出・契約の準備後に就業" },
+    { label: "労働者派遣", sublabel: "紹介予定派遣", width: 72, note: "受入れの3か月前から準備" },
+    { label: "　└ 直接雇用へ転換", sublabel: "見極め期間を含む", width: 100, note: "6か月以内に転換判断" },
 ];
 
 export function LeadTimeBars() {

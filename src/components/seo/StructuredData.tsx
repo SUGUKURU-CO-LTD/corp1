@@ -1,5 +1,5 @@
 import Script from 'next/script';
-import { COMPANY_ADDRESS } from '@/lib/company';
+import { COMPANY_ADDRESS, COMPANY_CORPORATE_NUMBER } from '@/lib/company';
 
 interface OrganizationSchemaProps {
     name?: string;
@@ -45,6 +45,7 @@ export function OrganizationSchema({
             '@type': 'PostalAddress',
             ...address,
         },
+        taxID: COMPANY_CORPORATE_NUMBER,
         contactPoint: {
             '@type': 'ContactPoint',
             ...contactPoint,
@@ -171,6 +172,7 @@ export function LocalBusinessSchema({
             '@type': 'PostalAddress',
             ...address,
         },
+        taxID: COMPANY_CORPORATE_NUMBER,
         ...(geo && {
             geo: {
                 '@type': 'GeoCoordinates',

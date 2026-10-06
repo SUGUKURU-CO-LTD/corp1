@@ -27,15 +27,15 @@ const industries = [
     },
     {
         icon: HardHat,
-        name: "建設",
+        name: "建設（施工管理・現場監督等の管理職に限る）",
         roles: "施工管理・現場監督・工事管理者・設備管理",
-        note: "九州でもデータセンター建設等で需要が拡大している分野。現場作業ではなく、管理・監督業務が対象です。",
+        note: "建設の現場作業は法令で紹介・派遣ともできません。管理・監督業務が対象です。",
     },
     {
         icon: Building,
-        name: "ホテル・宿泊",
-        roles: "海外顧客対応・通訳・企画",
-        note: "インバウンド対応の中核として、語学力を活かした職務設計がしやすい業種です。",
+        name: "ホテル・宿泊・空港地上業務",
+        roles: "海外顧客対応・通訳・企画・地上業務",
+        note: "技人国・永住者等の方を派遣・紹介します。特定技能の「宿泊」「航空」は直接雇用のみのため、職業紹介で対応します。",
     },
     {
         icon: ShoppingBag,
@@ -57,7 +57,7 @@ const procedures = [
         title: "契約機関に関する届出",
         who: "本人",
         deadline: "入社・転籍から14日以内",
-        description: "入管への届出。許可制ではなく届出制のため、審査待ちが発生しません。",
+        description: "入管への届出（入管法第19条の16第2号）。転職時は許可申請ではなく届出です。在留期間の更新・変更は、下記の別要件があります。",
     },
     {
         icon: CalendarClock,
@@ -110,7 +110,7 @@ export default function GijinkokuPage() {
                             className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
                         >
                             技術・人文知識・国際業務（技人国）ビザを持つ人材を、
-                            九州の製造・建設・サービス業へ派遣・職業紹介・紹介予定派遣でご案内します。
+                            九州の製造・宿泊・空港・建設（管理職）へ派遣・職業紹介・紹介予定派遣でご案内します。
                         </motion.p>
 
                         <motion.div
@@ -158,9 +158,13 @@ export default function GijinkokuPage() {
                         </h2>
                         <p className="text-ink-muted text-lg leading-relaxed">
                             大学卒業等の学歴・専門性と職務内容の関連が求められる在留資格です。<br />
-                            すでに技人国ビザを保有する方の転職は、<strong className="text-ink">入管の許可が不要（届出のみ）</strong>
-                            のため、特定技能等の在留資格変更に比べて立ち上がりが速いのが特長です
-                            （目安として、最短1ヶ月台での稼働も可能です）。
+                            すでに技人国ビザを保有する方の転職は、入管法第19条の16第2号に基づき、事由発生から14日以内の届出が必要です。
+                        </p>
+                        <p className="text-ink-muted text-base leading-relaxed mt-6 text-left">
+                            在留期間の更新・在留資格の変更を行う場合は、派遣先が確定していることが必要です。在留期間は派遣契約期間に応じて決定され、更新時には派遣元・派遣先の管理台帳と就業状況報告書を提出します（出入国在留管理庁、令和8年3月9日申請分〜）。
+                        </p>
+                        <p className="text-ink-muted text-base leading-relaxed mt-4 text-left">
+                            言語能力を用いた対人業務（通訳・翻訳・接客等）では、CEFR B2 相当の証明が必要な場合があります（JLPT N2 以上等で免除されることがあります。令和8年4月15日申請分〜）。
                         </p>
                     </motion.div>
                 </div>

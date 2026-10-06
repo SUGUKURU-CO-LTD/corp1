@@ -74,8 +74,8 @@ export const pageMetadata = {
         path: '/services',
     }),
     servicesDispatch: generatePageMetadata({
-        title: '農業派遣サービス',
-        description: '特定技能外国人材による農業派遣サービス。即戦力となる人材を迅速に派遣し、日本の農業を支えます。',
+        title: '派遣（農業・畜産）',
+        description: '特定技能外国人材による農業・畜産の派遣サービス。受入れの3か月前から準備し、整ってから配属します。',
         keywords: '農業派遣, 特定技能, 外国人材, 人材派遣, 農業労働力',
         path: '/services/dispatch',
     }),

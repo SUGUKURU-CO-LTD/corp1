@@ -4,7 +4,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import { Send, Phone, Mail, MapPin, Check, ArrowRight, Sparkles } from "lucide-react";
 import { useRef } from "react";
-import { COMPANY_ADDRESS, COMPANY_ADDRESS_LINE_JA } from "@/lib/company";
+import {
+    COMPANY_ADDRESS,
+    COMPANY_ADDRESS_LINE_JA,
+    DISPATCH_SUPERVISOR_NAME,
+    DISPATCH_SUPERVISOR_TITLE,
+    PLACEMENT_SUPERVISOR_NAME,
+    PLACEMENT_SUPERVISOR_TITLE,
+} from "@/lib/company";
 import { IS_CONTACT_FORM_ENABLED } from "@/lib/feature-flags";
 
 type InquiryType = "dispatch" | "it" | "recruit" | "other";
@@ -636,6 +643,24 @@ export default function ContactPage() {
                                 <p className="text-sm text-ink-muted mt-2">{item.sub}</p>
                             </GlassCard>
                         ))}
+                    </div>
+
+                    <div className="mt-16 max-w-2xl mx-auto">
+                        <h3 className="font-serif text-xl font-bold text-ink mb-4">苦情・ご意見の窓口</h3>
+                        <p className="text-sm text-ink-muted leading-relaxed mb-4">
+                            職業紹介に関する苦情は職業紹介責任者、派遣に関する苦情は派遣元責任者がお受けします。
+                        </p>
+                        <div className="space-y-3 text-sm">
+                            <p className="text-ink">
+                                職業紹介：{PLACEMENT_SUPERVISOR_NAME}（{PLACEMENT_SUPERVISOR_TITLE}）
+                            </p>
+                            <p className="text-ink">
+                                派遣：{DISPATCH_SUPERVISOR_NAME}（{DISPATCH_SUPERVISOR_TITLE}）
+                            </p>
+                            <p className="text-ink-muted">
+                                電話：0995-73-9939　／　メール：info@sugu-kuru.co.jp
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

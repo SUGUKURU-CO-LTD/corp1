@@ -295,7 +295,7 @@ export default function CasesPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
-                            { title: "最短2週間で就業開始", desc: "条件が整えばスピード対応" },
+                            { title: "受入れの3か月前から準備", desc: "契約・届出・寮を整え、配属します" },
                             { title: "多言語で現場をサポート", desc: "日本語・英語・インドネシア語対応" },
                             { title: "住居・行政手続き代行", desc: "受け入れの手間を最小化" },
                             { title: "農業・畜産経験者をご紹介", desc: "経験を踏まえたマッチング" },

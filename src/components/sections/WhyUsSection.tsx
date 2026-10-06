@@ -110,8 +110,8 @@ const ModernCard = ({ reason, index }: { reason: any; index: number }) => {
 const reasons = [
     {
         icon: Zap,
-        title: "最短2週間で就業開始",
-        description: "条件が整っていれば最短2週間が目安です（状況により異なります）。お急ぎのご相談も承ります。",
+        title: "受入れの3か月前から準備",
+        description: "受入れの3か月前から、派遣契約・入管への届出・寮・生活の準備を始め、すべて整ってから配属します。",
         delay: 0,
     },
     {

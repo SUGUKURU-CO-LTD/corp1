@@ -64,8 +64,8 @@ function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
 const stats = [
     { value: 60, suffix: "社+", label: "導入企業", description: "農業法人・JA・食品関連など", delay: 0 },
     { value: 5, suffix: "エリア", label: "稼働地域", description: "鹿児島・福島・愛知・愛媛・青森", delay: 0.1 },
-    { value: 2, suffix: "拠点", label: "事業所", description: "本社（霧島）・ロンボク", delay: 0.2 },
-    { value: 2, suffix: "週間", label: "最短就業開始", description: "条件により異なります", delay: 0.3 },
+    { value: 2, suffix: "拠点", label: "事業所", description: "本社（霧島）・ロンボク（協力先）", delay: 0.2 },
+    { value: 3, suffix: "か月前", label: "準備開始", description: "受入れの3か月前から契約・届出・寮を整えます", delay: 0.3 },
 ];
 
 // 稼働エリアのカード（収穫リレー）。地域・作目・繁忙期を見やすく示す。

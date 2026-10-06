@@ -50,6 +50,26 @@ const positions = [
         ],
         icon: Users,
     },
+    {
+        id: "corporate-sales-junior",
+        title: "法人営業（若手）",
+        subtitle: "Corporate Sales",
+        description: "条件・待遇の詳細はお問い合わせください。",
+        responsibilities: [
+            "条件の詳細はお問い合わせください。",
+        ],
+        icon: Briefcase,
+    },
+    {
+        id: "gijinkoku-english",
+        title: "技人国スタッフ（海外経験・英語）",
+        subtitle: "Engineer / Specialist",
+        description: "条件・待遇の詳細はお問い合わせください。",
+        responsibilities: [
+            "条件の詳細はお問い合わせください。",
+        ],
+        icon: Globe,
+    },
 ];
 
 const benefits = [
@@ -267,6 +287,9 @@ export default function CareersPage() {
                         >
                             募集ポジション
                         </h2>
+                        <p className="text-ink-muted mt-4 max-w-2xl mx-auto leading-relaxed">
+                            全正社員に職務別の研修を実施しています。外国人正社員には、職務に必要な日本語研修もあります。
+                        </p>
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">

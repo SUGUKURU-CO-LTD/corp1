@@ -8,13 +8,13 @@ import { ArrowRight, Phone, ShieldCheck, Clock, MapPin } from "lucide-react";
 // Public hero. Honest, readable first view without exaggeration.
 // Hero publik. Tampilan pertama yang jujur dan mudah dibaca tanpa berlebihan.
 
-// 信頼バッジ（許認可・スピード・地域）
-// Trust badges (license, speed, region)
-// Lencana kepercayaan (lisensi, kecepatan, wilayah)
+// 信頼バッジ（許認可・準備期間・地域）
+// Trust badges (license, preparation, region)
+// Lencana kepercayaan (lisensi, persiapan, wilayah)
 const trustBadges = [
     { icon: ShieldCheck, label: "労働者派遣事業許可 派46-300262" },
     { icon: ShieldCheck, label: "有料職業紹介事業許可 46-ユ-300203" },
-    { icon: Clock, label: "最短2週間で就業開始（条件により異なります）" },
+    { icon: Clock, label: "受入れの3か月前から準備" },
     { icon: MapPin, label: "鹿児島・霧島が本拠地" },
 ];
 
@@ -49,9 +49,9 @@ export default function HeroSection() {
                             transition={{ duration: 0.6, delay: 0.05 }}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-5"
                         >
-                            鹿児島から、
+                            <span className="text-accent-light">準備は3か月前から。</span>
                             <br className="hidden md:block" />
-                            <span className="text-accent-light">すぐ来る即戦力</span>を。
+                            整ったら、スグクル。
                         </motion.h1>
 
                         <motion.p
@@ -128,10 +128,10 @@ export default function HeroSection() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                             <div className="absolute bottom-0 left-0 right-0 p-6">
                                 <p className="text-white text-lg font-bold mb-1">
-                                    現場で機能する即戦力を、最短2週間で。
+                                    準備は3か月前から。整ったら、スグクル。
                                 </p>
                                 <p className="text-white/75 text-sm">
-                                    農業・畜産の経験者を、現場のニーズに合わせて派遣します。
+                                    受入れの3か月前から派遣契約・届出・寮を整え、すべて整ってから配属します。
                                 </p>
                             </div>
                         </div>
