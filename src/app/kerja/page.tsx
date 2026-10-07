@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Wheat } from "lucide-react";
 import JobBoard from "@/components/kerja/JobBoard";
+import PhotoPageHero from "@/components/ui/photo-page-hero";
+import StaffLifeSection from "@/components/sections/StaffLifeSection";
 import { getKerjaJobs } from "@/lib/kerja/jobs";
 import { COMPANY_ADDRESS_LINE_JA, LOMBOK_PARTNER_NAME } from "@/lib/company";
 import { recruitmentChannels } from "@/lib/recruitment-channels";
@@ -27,10 +29,16 @@ export default function KerjaPage() {
 
   return (
     <div className="pt-20">
-      {/* Hero — visually continues into JobBoard's VisaPicker (same dark green gradient) */}
-      <section className="bg-gradient-to-br from-accent to-accent-dark px-4 pb-10 pt-14 md:pb-14 md:pt-20">
+      {/* Hero — 実写背景。VisaPicker の暗い緑とつながるようオーバーレイを濃くする */}
+      {/* Real-photo hero. Overlay stays dark so it continues into VisaPicker. */}
+      {/* Hero foto asli. Overlay tetap gelap agar menyatu dengan VisaPicker. */}
+      <PhotoPageHero
+        photoId="kerja-1"
+        className="relative overflow-hidden px-4 pb-10 pt-14 text-white md:pb-14 md:pt-20"
+        overlayClassName="absolute inset-0 bg-gradient-to-r from-accent-dark via-accent-dark/90 to-accent-dark/65"
+      >
         <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-medium tracking-[0.18em] text-accent uppercase">
+          <p className="text-sm font-medium tracking-[0.18em] text-white/80 uppercase">
             Lowongan Kerja Kantoran
           </p>
           <h1
@@ -44,7 +52,7 @@ export default function KerjaPage() {
             pelamar.
           </p>
         </div>
-      </section>
+      </PhotoPageHero>
 
       {/* Interactive board: visa filter + job grid + detail sheet (client component) */}
       <JobBoard jobs={jobs} />
@@ -75,6 +83,8 @@ export default function KerjaPage() {
           </div>
         </div>
       </section>
+
+      <StaffLifeSection locale="id" />
 
       {/* Legal disclosures — Indonesian primary, Japanese small */}
       <section className="border-t border-line bg-white px-4 py-10 text-sm leading-6 text-ink-muted">

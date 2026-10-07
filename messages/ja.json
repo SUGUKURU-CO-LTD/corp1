@@ -10,7 +10,7 @@
     "dispatch": "派遣（農業・畜産）",
     "contracting": "農作業受託",
     "placement": "職業紹介・紹介予定派遣",
-    "it": "IT（受託開発と Drapt）"
+    "it": "IT（受託開発）"
   },
   "hero": {
     "badge": "農業 × 特定技能 × テクノロジー",
@@ -41,7 +41,7 @@
     "contractingDesc": "収穫も選果も、丸ごと任せる。繁忙期の「困った」を、チームで解決。",
     "placementTitle": "職業紹介・紹介予定派遣",
     "placementDesc": "派遣ではなく、仲間として迎えたい。直接雇用へ導く、じっくりマッチング。",
-    "itTitle": "IT（受託開発と Drapt）",
+    "itTitle": "IT（受託開発）",
     "itDesc": "農業にもデジタルを。Webシステム・アプリ開発で、現場を進化させる。"
   },
   "numbers": {
@@ -64,7 +64,7 @@
     "reason1Title": "受入れの3か月前から準備",
     "reason1Desc": "派遣契約・入管への届出・寮・生活の準備を始め、すべて整ってから配属します。",
     "reason2Title": "在留資格の手続きを支援",
-    "reason2Desc": "複雑な在留資格、煩雑な書類。グループ内監理組合との連携で、すべてお任せください。",
+    "reason2Desc": "複雑な在留資格や書類は、グループ内の体制と連携して支援します。お客様の負担を抑えます。",
     "reason3Title": "言葉の壁は、私たちが壊す",
     "reason3Desc": "日本語・英語・インドネシア語。24時間体制で、現場の「困った」に即座に応える。",
     "reason4Title": "住む場所から、私たちは創る",
@@ -91,7 +91,7 @@
     "legalTitle": "法令遵守情報",
     "officesTitle": "全国の拠点",
     "headquarters": "本社",
-    "nagoyaOffice": "名古屋支所",
+    "lombokPartner": "ロンボク（協力先）",
     "dispatchLicense": "労働者派遣事業許可: 派46-300262",
     "placementLicense": "有料職業紹介事業許可: 46-ユ-300203",
     "copyright": "© 2026 SUGUKURU Inc. All Rights Reserved.",

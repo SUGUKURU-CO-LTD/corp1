@@ -14,6 +14,7 @@ import {
     Factory,
     HardHat,
 } from "lucide-react";
+import PhotoPageHero from "@/components/ui/photo-page-hero";
 import { EmploymentTypeCompare } from "@/components/diagrams/EmploymentTypeCompare";
 import { VisaEligibilityMatrix } from "@/components/diagrams/VisaEligibilityMatrix";
 import { TempToPermTimeline } from "@/components/diagrams/TempToPermTimeline";
@@ -75,9 +76,7 @@ export default function PlacementPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-accent text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
-                <div className="container mx-auto relative z-10">
+            <PhotoPageHero photoId="service-placement-1">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -131,8 +130,7 @@ export default function PlacementPage() {
                             </a>
                         </motion.div>
                     </div>
-                </div>
-            </section>
+            </PhotoPageHero>
 
             {/* 図① 3つの採用形態くらべ */}
             <section className="section bg-canvas">

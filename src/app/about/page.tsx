@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles } from "lucide-react";
+import { MapPin, Award, Users, Building2, Target, Eye, Heart, Sparkles, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 import {
@@ -10,6 +10,8 @@ import {
     COMPANY_CORPORATE_NUMBER,
     COMPANY_EMAIL,
     COMPANY_PHONE,
+    ACCOUNTING_LEAD_NAME,
+    ACCOUNTING_LEAD_TITLE,
     DISPATCH_SUPERVISOR_NAME,
     DISPATCH_SUPERVISOR_TITLE,
     LICENSE_DISPATCH,
@@ -23,7 +25,7 @@ import {
 
 const companyInfo = {
     name: "スグクル株式会社",
-    nameEn: "SUGUKURU., CO., LTD",
+    nameEn: "SUGUKURU CO., LTD.",
     established: "2023年12月",
     capital: "2,000万円",
     employees: "約100名（労働者派遣・農作業受託・請負受託を含む・2026年10月時点）",
@@ -55,9 +57,13 @@ const offices = [
     { name: "海外の協力先", location: `インドネシア・ロンボク島（${LOMBOK_PARTNER_NAME}）`, isHQ: false },
 ];
 
-const organization = [
-    { title: DISPATCH_SUPERVISOR_TITLE, name: DISPATCH_SUPERVISOR_NAME },
-    { title: PLACEMENT_SUPERVISOR_TITLE, name: PLACEMENT_SUPERVISOR_NAME },
+// 運営本部（役員の下に掲載する実務の体制）
+// Operations headquarters (shown below officers)
+// Markas operasi (ditampilkan di bawah dewan)
+const operationsHeadquarters = [
+    { title: "事業本部長", name: DISPATCH_SUPERVISOR_NAME },
+    { title: "キャリアコンサルタント", name: PLACEMENT_SUPERVISOR_NAME },
+    { title: ACCOUNTING_LEAD_TITLE, name: ACCOUNTING_LEAD_NAME },
 ];
 
 const timeline = [
@@ -67,7 +73,6 @@ const timeline = [
     { year: "2024年6月", event: "有料職業紹介事業許可 取得" },
     { year: "2024年8月", event: "IT事業部 設立" },
     { year: "2024年10月", event: "福島・愛知・愛媛・青森など全国の就業エリアへ展開" },
-    { year: "2025年7月", event: "名古屋支所 開設" },
     { year: "2025年9月", event: "農業物流分野への派遣開始" },
     { year: "2026年6月", event: "第4期事業年度 開始（派遣・農作業受託・ロンボク送り出しを主軸に）" },
     { year: "2026年7月", event: "本店をポーラビル3階へ移転" },
@@ -276,20 +281,31 @@ export default function AboutPage() {
                         backgroundSize: "200% 200%",
                     }}
                 />
-                {/* Floating particles */}
-                {[...Array(8)].map((_, i) => (
+                {/* Floating particles（位置・秒数は固定。乱数だと水和不一致になる） */}
+                {/* Particle positions and durations are fixed. Random values cause hydration mismatch. */}
+                {/* Posisi dan durasi partikel tetap. Nilai acak menyebabkan mismatch hidrasi. */}
+                {[
+                    { top: "28%", duration: 5.2 },
+                    { top: "72%", duration: 6.8 },
+                    { top: "35%", duration: 5.9 },
+                    { top: "55%", duration: 7.1 },
+                    { top: "42%", duration: 5.4 },
+                    { top: "68%", duration: 6.3 },
+                    { top: "31%", duration: 7.4 },
+                    { top: "60%", duration: 5.7 },
+                ].map((particle, i) => (
                     <motion.div
                         key={i}
                         animate={{
                             y: [0, -50, 0],
                             opacity: [0.2, 0.5, 0.2],
                         }}
-                        transition={{ duration: 5 + Math.random() * 3, repeat: Infinity, delay: i * 0.3 }}
+                        transition={{ duration: particle.duration, repeat: Infinity, delay: i * 0.3 }}
                         className="absolute w-2 h-2 rounded-full"
                         style={{
                             background: i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-light)",
                             left: `${10 + i * 10}%`,
-                            top: `${20 + Math.random() * 60}%`,
+                            top: particle.top,
                         }}
                     />
                 ))}
@@ -520,14 +536,19 @@ export default function AboutPage() {
 
                                 <div className="mb-8">
                                     <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
-                                        <Users className="w-5 h-5 text-accent" />
-                                        体制
+                                        <Briefcase className="w-5 h-5 text-accent" />
+                                        運営本部
                                     </h3>
-                                    <div className="space-y-3">
-                                        {organization.map((row) => (
-                                            <div key={row.name} className="text-sm">
-                                                <span className="font-medium text-ink">{row.title}</span>
-                                                <span className="text-ink-muted ml-2">{row.name}</span>
+                                    <div className="rounded-xl border border-line bg-canvas/60 overflow-hidden">
+                                        {operationsHeadquarters.map((row, index) => (
+                                            <div
+                                                key={row.name}
+                                                className={`flex items-center justify-between gap-4 px-4 py-3 ${
+                                                    index > 0 ? "border-t border-line" : ""
+                                                }`}
+                                            >
+                                                <span className="text-sm text-ink-muted">{row.title}</span>
+                                                <span className="font-medium text-ink">{row.name}</span>
                                             </div>
                                         ))}
                                     </div>

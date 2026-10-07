@@ -8,9 +8,7 @@ import {
     Smartphone,
     Cloud,
     Cpu,
-    GitBranch,
     Phone,
-    CheckCircle2,
 } from "lucide-react";
 
 const services = [
@@ -80,7 +78,7 @@ export default function ITPage() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
                             コードで、<br />
-                            <span className="text-accent">課題を解く。</span>
+                            <span className="text-white">課題を解く。</span>
                         </motion.h1>
 
                         <motion.p
@@ -145,15 +143,6 @@ export default function ITPage() {
                             それが、私たちのIT事業。
                         </p>
                     </motion.div>
-                </div>
-            </section>
-
-            <section className="section bg-white">
-                <div className="container mx-auto max-w-3xl text-ink text-sm leading-7">
-                    <h2 className="text-2xl font-bold mb-3">在留申請・派遣書類の自動化（Drapt）</h2>
-                    <p>
-                        在留申請・派遣書類の自動化を自社で開発し、自社の申請・帳簿で運用しています。登録支援機関・行政書士法人向けの提供は準備中です。書類の作成・提出は行政書士・申請等取次者が行い、システムは下書きと検証を担います。
-                    </p>
                 </div>
             </section>
 
@@ -285,69 +274,6 @@ export default function ITPage() {
                                 </motion.div>
                             ))}
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Case - 自社開発プロダクト */}
-            <section className="section bg-white">
-                <div className="container mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center mb-12"
-                    >
-                        <span className="text-accent font-medium text-sm tracking-wider uppercase mb-4 block">
-                            Products
-                        </span>
-                        <h2
-                            className="text-3xl md:text-4xl font-bold text-ink"
-                        >
-                            自社開発プロダクト
-                        </h2>
-                    </motion.div>
-
-                    <div className="grid md:grid-cols-1 gap-10 max-w-2xl mx-auto">
-                        {/* NENKIN-PASS */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="bg-gradient-to-br from-accent-light to-accent-light rounded-2xl p-8 hover:shadow-xl transition-shadow"
-                        >
-                            <div className="flex items-center gap-3 mb-4">
-                                <CheckCircle2 className="w-8 h-8 text-white" />
-                                <span className="text-white font-bold text-xl">NENKIN-PASS</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3">
-                                外国人のための年金申請支援サービス
-                            </h3>
-                            <p className="text-white/90 leading-relaxed mb-6 text-sm">
-                                複雑な年金申請手続きを、AIとチャットで簡単に。
-                                外国人材が安心して日本で働き続けるための、デジタル支援プラットフォーム。
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-                                    AI対応
-                                </span>
-                                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-                                    年金申請
-                                </span>
-                                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-                                    多言語対応
-                                </span>
-                            </div>
-                            <Link
-                                href="/contact?service=nenkin-pass"
-                                className="btn bg-white text-accent hover:bg-gray-50 w-full justify-center group"
-                            >
-                                NENKIN-PASSを見る
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </motion.div>
                     </div>
                 </div>
             </section>

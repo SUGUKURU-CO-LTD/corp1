@@ -16,7 +16,7 @@ export function generatePageMetadata({
     description,
     keywords,
     path = '',
-    image = '/images/og-image.png',
+    image = '/images/og-image.jpg',
     type = 'website',
     publishedTime,
     modifiedTime,
@@ -99,8 +99,8 @@ export const pageMetadata = {
     }),
     servicesIt: generatePageMetadata({
         title: 'IT事業',
-        description: 'Webアプリ・モバイルアプリ開発からクラウド構築、農業分野のDX推進まで。システム開発・コンサルティングを通じて企業のDX化を支援。MCPサーバーベースの自社プロダクトも展開。',
-        keywords: 'IT事業, システム開発, DX, Webアプリ開発, 農業IT, MCP, NENKIN-PASS',
+        description: 'Webアプリ・モバイルアプリ開発からクラウド構築、農業分野のDX推進まで。システム開発・コンサルティングを通じて企業のDX化を支援します。',
+        keywords: 'IT事業, システム開発, DX, Webアプリ開発, 農業IT',
         path: '/services/it',
     }),
     cases: generatePageMetadata({

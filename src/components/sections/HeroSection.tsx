@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Phone, ShieldCheck, Clock, MapPin } from "lucide-react";
+import SitePhoto from "@/components/ui/site-photo";
+import { getPhoto } from "@/lib/photos";
 
 // 公開トップのヒーロー。誇張せず、誠実で読みやすいファーストビューにする。
 // Public hero. Honest, readable first view without exaggeration.
@@ -24,11 +26,16 @@ export default function HeroSection() {
             {/* 実写真の背景（可読性のため濃いオーバーレイ） */}
             {/* Real photo background with dark overlay for readability */}
             {/* Latar foto asli dengan lapisan gelap agar mudah dibaca */}
-            <div
-                className="absolute inset-0 bg-center bg-cover opacity-30"
-                style={{ backgroundImage: 'url("/images/cases/organic-tea-cultivation.png")' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-accent-dark via-accent-dark/90 to-accent-dark/60" />
+            <div className="absolute inset-0">
+                <SitePhoto
+                    id="hero-1"
+                    className="block h-full w-full"
+                    imgClassName="h-full w-full object-cover"
+                    sizes="100vw"
+                    priority
+                />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-dark via-accent-dark/92 to-accent-dark/70" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center py-24 md:py-28">
@@ -120,10 +127,12 @@ export default function HeroSection() {
                         className="hidden lg:block"
                     >
                         <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl shadow-black/40">
-                            <img
-                                src="/images/cases/tea-farm-workers.png"
-                                alt="スグクルの派遣スタッフが農場で働く様子"
-                                className="w-full h-[460px] object-cover"
+                            <SitePhoto
+                                id="hero-2"
+                                className="block w-full"
+                                imgClassName="w-full h-[460px] object-cover"
+                                sizes="(min-width: 1024px) 480px, 100vw"
+                                alt={getPhoto("hero-2").alt}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                             <div className="absolute bottom-0 left-0 right-0 p-6">

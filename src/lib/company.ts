@@ -60,3 +60,7 @@ export const DISPATCH_SUPERVISOR_NAME = 'ワロ クレモ';
 export const DISPATCH_SUPERVISOR_TITLE = '事業本部長（派遣元責任者）';
 export const PLACEMENT_SUPERVISOR_NAME = '吉原 伸';
 export const PLACEMENT_SUPERVISOR_TITLE = 'キャリア支援・人材育成担当（職業紹介責任者）';
+
+/** 運営本部の会計主任 / Accounting lead, operations HQ / Kepala akuntansi markas operasi */
+export const ACCOUNTING_LEAD_NAME = '後藤 秀晃';
+export const ACCOUNTING_LEAD_TITLE = '会計主任';

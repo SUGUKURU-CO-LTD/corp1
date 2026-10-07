@@ -67,35 +67,46 @@ const services = [
     },
     {
         id: "it",
-        name: "IT（受託開発と Drapt）",
+        name: "IT（受託開発）",
         tagline: "農業DXから業務システムまで",
         description:
-            "Webアプリ、モバイルアプリ、業務システムの企画・開発・運用に加え、在留申請・派遣書類の自動化（Drapt）を自社で運用しています。外部提供は準備中です。",
+            "Webアプリ、モバイルアプリ、業務システムの企画・開発・運用に対応します。",
         icon: Code,
-        features: ["要件定義から運用まで一貫対応", "Drapt（自社運用・外部提供は準備中）", "クラウドネイティブ", "技術コンサルティング"],
+        features: ["要件定義から運用まで一貫対応", "農業DX支援", "クラウドネイティブ", "技術コンサルティング"],
         href: "/services/it",
         isMain: false,
         delay: 0.4,
     },
 ];
 
-// Floating particles
+// 水和不一致を避けるため、乱数は使わず固定値にする
+// Avoid hydration mismatch: use fixed values, not Math.random
+// Hindari mismatch hidrasi: pakai nilai tetap, bukan Math.random
+const SERVICE_PARTICLES = [
+    { top: "18%", duration: 4.2 },
+    { top: "64%", duration: 5.1 },
+    { top: "32%", duration: 4.8 },
+    { top: "78%", duration: 5.6 },
+    { top: "45%", duration: 4.4 },
+    { top: "22%", duration: 5.3 },
+] as const;
+
 const FloatingParticles = () => {
     return (
         <>
-            {[...Array(6)].map((_, i) => (
+            {SERVICE_PARTICLES.map((particle, i) => (
                 <motion.div
                     key={i}
                     animate={{
                         y: [0, -30, 0],
                         opacity: [0.2, 0.5, 0.2],
                     }}
-                    transition={{ duration: 4 + Math.random() * 2, repeat: Infinity, delay: i * 0.4 }}
+                    transition={{ duration: particle.duration, repeat: Infinity, delay: i * 0.4 }}
                     className="absolute w-2 h-2 rounded-full"
                     style={{
                         background: i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-light)",
                         left: `${15 + i * 12}%`,
-                        top: `${Math.random() * 100}%`,
+                        top: particle.top,
                     }}
                 />
             ))}
@@ -389,7 +400,7 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-12">
                         {[
-                            { number: "120", label: "稼働スタッフ数", icon: "👥" },
+                            { number: "約100", label: "稼働スタッフ数", icon: "👥" },
                             { number: "60+", label: "導入企業数", icon: "🏢" },
                             { number: "5", label: "稼働エリア", icon: "📍" },
                         ].map((stat, i) => (
@@ -425,6 +436,10 @@ export default function ServicesPage() {
                         ))}
                     </div>
 
+                    <p className="text-center text-ink-muted text-sm mt-8">
+                        ※ 稼働スタッフ数は労働者派遣・農作業受託・請負受託を含む総数（2026年10月時点）です。労働者派遣法に基づく許可事業所の派遣労働者数とは定義が異なります。
+                    </p>
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -439,7 +454,7 @@ export default function ServicesPage() {
                                 { region: "福島県", type: "野菜", icon: "🥬" },
                                 { region: "愛媛県", type: "柑橘", icon: "🍊" },
                                 { region: "青森県", type: "りんご", icon: "🍎" },
-                                { region: "愛知県", type: "野菜・IT", icon: "💻" },
+                                { region: "愛知県", type: "野菜", icon: "🥬" },
                                 { region: "その他", type: "全国対応可", icon: "🗾" },
                             ].map((area, i) => (
                                 <motion.div

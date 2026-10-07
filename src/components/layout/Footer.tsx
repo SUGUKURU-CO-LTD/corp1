@@ -9,7 +9,7 @@ const footerLinks = {
         { name: "農作業受託", href: "/services/contracting" },
         { name: "職業紹介・紹介予定派遣", href: "/services/placement" },
         { name: "技人国・身分系", href: "/services/gijinkoku" },
-        { name: "IT（受託開発と Drapt）", href: "/services/it" },
+        { name: "IT（受託開発）", href: "/services/it" },
         { name: "料金について", href: "/pricing" },
     ],
     company: [

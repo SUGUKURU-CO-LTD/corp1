@@ -14,6 +14,7 @@ import {
     Phone,
 } from "lucide-react";
 import { WIN_SUPPORT_ORG_NAME, WIN_SUPPORT_ORG_NUMBER } from "@/lib/company";
+import PhotoPageHero from "@/components/ui/photo-page-hero";
 
 const features = [
     {
@@ -78,9 +79,7 @@ export default function DispatchPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-accent text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
-                <div className="container mx-auto relative z-10">
+            <PhotoPageHero photoId="service-dispatch-1">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +98,7 @@ export default function DispatchPage() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
                             耕す手が足りない。<br />
-                            <span className="text-accent">その声に、応えに行く。</span>
+                            <span className="text-white">その声に、応えに行く。</span>
                         </motion.h1>
 
                         <motion.p
@@ -135,8 +134,7 @@ export default function DispatchPage() {
                             </a>
                         </motion.div>
                     </div>
-                </div>
-            </section>
+            </PhotoPageHero>
 
             {/* Philosophy Section */}
             <section className="section bg-canvas">

@@ -5,8 +5,35 @@ import Link from "next/link";
 import { ArrowRight, Phone, Sparkles } from "lucide-react";
 import { useRef } from "react";
 
-// Floating particle
-const FloatingParticle = ({ delay, duration, color }: { delay: number; duration: number; color: string }) => {
+// 水和不一致を避けるため、乱数は使わず固定値にする
+// Avoid hydration mismatch: use fixed values, not Math.random
+// Hindari mismatch hidrasi: pakai nilai tetap, bukan Math.random
+const CTA_PARTICLES = [
+    { delay: 0, duration: 4.2, width: 7, height: 5, color: "var(--color-accent-light)" },
+    { delay: 0.3, duration: 6.1, width: 11, height: 8, color: "#ffffff" },
+    { delay: 0.6, duration: 5.0, width: 9, height: 6, color: "var(--color-accent-light)" },
+    { delay: 0.9, duration: 5.4, width: 5, height: 9, color: "#ffffff" },
+    { delay: 1.2, duration: 6.2, width: 8, height: 4, color: "var(--color-accent-light)" },
+    { delay: 1.5, duration: 4.8, width: 10, height: 9, color: "#ffffff" },
+    { delay: 1.8, duration: 6.4, width: 8, height: 11, color: "var(--color-accent-light)" },
+    { delay: 2.1, duration: 5.7, width: 5, height: 7, color: "#ffffff" },
+    { delay: 2.4, duration: 6.3, width: 10, height: 4, color: "var(--color-accent-light)" },
+    { delay: 2.7, duration: 6.2, width: 12, height: 5, color: "#ffffff" },
+] as const;
+
+const FloatingParticle = ({
+    delay,
+    duration,
+    color,
+    width,
+    height,
+}: {
+    delay: number;
+    duration: number;
+    color: string;
+    width: number;
+    height: number;
+}) => {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -14,8 +41,8 @@ const FloatingParticle = ({ delay, duration, color }: { delay: number; duration:
             transition={{ duration, delay, repeat: Infinity, ease: "easeInOut" }}
             className="absolute rounded-full"
             style={{
-                width: Math.random() * 8 + 4,
-                height: Math.random() * 8 + 4,
+                width,
+                height,
                 backgroundColor: color,
             }}
         />
@@ -65,13 +92,8 @@ export default function CTASection() {
             />
 
             {/* Floating particles */}
-            {[...Array(10)].map((_, i) => (
-                <FloatingParticle
-                    key={i}
-                    delay={i * 0.3}
-                    duration={4 + Math.random() * 3}
-                    color={i % 2 === 0 ? "var(--color-accent-light)" : "#ffffff"}
-                />
+            {CTA_PARTICLES.map((particle, i) => (
+                <FloatingParticle key={i} {...particle} />
             ))}
 
             {/* Parallax content */}
@@ -91,7 +113,7 @@ export default function CTASection() {
                                     animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.2, 1] }}
                                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
                                 >
-                                    <Sparkles className="w-5 h-5 text-accent" />
+                                    <Sparkles className="w-5 h-5 text-white" />
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -118,7 +140,7 @@ export default function CTASection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent"
+                                className="block text-white"
                             >
                                 その声に、応えに行く。
                             </motion.span>
@@ -207,7 +229,7 @@ export default function CTASection() {
                                     <motion.span
                                         animate={{ scale: [1, 1.3, 1] }}
                                         transition={{ repeat: Infinity, duration: 2, delay: i * 0.3 }}
-                                        className="w-2 h-2 rounded-full bg-accent"
+                                        className="w-2 h-2 rounded-full bg-white"
                                     />
                                     {item.text}
                                 </motion.div>

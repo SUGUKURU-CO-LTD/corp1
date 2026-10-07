@@ -110,8 +110,8 @@ const services = [
     },
     {
         id: "it",
-        name: "IT（受託開発と Drapt）",
-        description: "Webシステム・アプリの受託開発と、在留申請・派遣書類の自動化（Drapt。外部提供は準備中）。",
+        name: "IT（受託開発）",
+        description: "Webシステム・アプリの受託開発。農業にもデジタルを、現場の課題に合わせて設計します。",
         icon: Code,
         href: "/services/it",
         size: "medium",

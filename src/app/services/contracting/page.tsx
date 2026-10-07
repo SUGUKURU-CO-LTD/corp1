@@ -12,6 +12,7 @@ import {
     Phone,
     CheckCircle2,
 } from "lucide-react";
+import PhotoPageHero from "@/components/ui/photo-page-hero";
 
 const services = [
     {
@@ -49,9 +50,7 @@ export default function ContractingPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-accent text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent-light to-accent" />
-                <div className="container mx-auto relative z-10">
+            <PhotoPageHero photoId="service-contracting-1">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +69,7 @@ export default function ContractingPage() {
                             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                         >
                             収穫も選果も、<br />
-                            <span className="text-accent">丸ごと任せる。</span>
+                            <span className="text-white">丸ごと任せる。</span>
                         </motion.h1>
 
                         <motion.p
@@ -106,8 +105,7 @@ export default function ContractingPage() {
                             </a>
                         </motion.div>
                     </div>
-                </div>
-            </section>
+            </PhotoPageHero>
 
             {/* Philosophy */}
             <section className="section bg-canvas">
