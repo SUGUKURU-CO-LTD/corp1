@@ -16,7 +16,7 @@ export function generatePageMetadata({
     description,
     keywords,
     path = '',
-    image = '/images/og-image.png',
+    image = '/images/og-image.jpg',
     type = 'website',
     publishedTime,
     modifiedTime,

@@ -12,6 +12,9 @@ import {
     CheckCircle2,
     Leaf,
 } from "lucide-react";
+import SitePhoto from "@/components/ui/site-photo";
+import FieldGallery from "@/components/sections/FieldGallery";
+import { getPhoto } from "@/lib/photos";
 
 // 取引先の実名は開示しない。地域・業種のみを記載し「〜様」として匿名化する。
 // Client company names are not disclosed. Only region and industry are shown, anonymized as "〜様".
@@ -23,7 +26,7 @@ const caseStudies = [
         industry: "茶業（製茶・茶園管理）",
         location: "鹿児島県霧島市",
         staffCount: 10,
-        image: "/images/cases/tea-farm-workers.png",
+        imageId: "case-1",
         challenge:
             "繁忙期の茶摘みシーズンに人手が大幅に不足。地元の雇用だけでは対応しきれず、収穫期の品質維持が課題でした。",
         solution:
@@ -36,7 +39,7 @@ const caseStudies = [
         industry: "茶業（有機茶栽培）",
         location: "鹿児島県",
         staffCount: 8,
-        image: "/images/cases/organic-tea-cultivation.png",
+        imageId: "case-2",
         challenge:
             "有機茶栽培は機械化が難しく、手作業が中心。熟練した労働力の確保が長年の課題でした。",
         solution:
@@ -49,7 +52,7 @@ const caseStudies = [
         industry: "農業物流（集出荷・配送）",
         location: "鹿児島県",
         staffCount: null,
-        image: "/images/cases/ja-logistics-kagoshima.jpg",
+        imageId: "case-3",
         challenge:
             "集出荷場での仕分け・積み込み作業の人手が不足し、繁忙期の出荷対応に課題を抱えていました。",
         solution:
@@ -155,7 +158,7 @@ export default function CasesPage() {
                         >
                             導入事例
                         </h2>
-                        <p className="text-ink-muted text-xs mt-3">※ 掲載写真はイメージです。実際の現場の写真ではありません。</p>
+                        <p className="text-ink-muted text-xs mt-3">掲載写真は、スタッフの同意を得た現場の実写です。取引先名が分かる看板等は掲載していません。</p>
                     </motion.div>
 
                     <div className="space-y-12">
@@ -170,10 +173,12 @@ export default function CasesPage() {
                             >
                                 {/* Image Section */}
                                 <div className="relative h-64 md:h-80 overflow-hidden">
-                                    <img
-                                        src={caseStudy.image}
-                                        alt={`${caseStudy.industry}のイメージ写真`}
-                                        className="w-full h-full object-cover"
+                                    <SitePhoto
+                                        id={caseStudy.imageId}
+                                        className="block w-full h-full"
+                                        imgClassName="w-full h-full object-cover"
+                                        sizes="100vw"
+                                        alt={getPhoto(caseStudy.imageId).alt}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -252,6 +257,8 @@ export default function CasesPage() {
                     </div>
                 </div>
             </section>
+
+            <FieldGallery />
 
             {/* Why Choose Us */}
             <section className="section bg-white">

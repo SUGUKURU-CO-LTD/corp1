@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { IS_MARGIN_RATE_PUBLISHED } from "@/lib/feature-flags";
+import SitePhoto from "@/components/ui/site-photo";
+import { relayPhotoForRegion } from "@/lib/photos";
 
 // Animated counter with glow
 function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
@@ -71,20 +73,45 @@ const stats = [
 // 稼働エリアのカード（収穫リレー）。地域・作目・繁忙期を見やすく示す。
 // Region card (harvest relay): region, crops, peak season — easy to scan.
 // Kartu wilayah (estafet panen): wilayah, tanaman, musim sibuk.
-const RegionBadge = ({ region, crops, season, delay }: { region: string; crops: string; season: string; delay: number }) => {
+const RegionBadge = ({
+    region,
+    crops,
+    season,
+    delay,
+    photoId,
+}: {
+    region: string;
+    crops: string;
+    season: string;
+    delay: number;
+    photoId?: string;
+}) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay }}
-            className="flex items-start gap-3 px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-left"
+            className="overflow-hidden bg-white/[0.04] border border-white/10 rounded-xl text-left"
         >
-            <span className="mt-0.5 h-2.5 w-2.5 rounded-full flex-shrink-0 bg-accent" />
-            <div>
-                <p className="text-white font-bold text-sm">{region}</p>
-                <p className="text-white/70 text-xs mt-0.5">{crops}</p>
-                <p className="text-accent-light text-xs mt-1">繁忙期: {season}</p>
+            {photoId && (
+                <div className="relative h-28">
+                    <SitePhoto
+                        id={photoId}
+                        className="block h-full w-full"
+                        imgClassName="h-full w-full object-cover"
+                        sizes="(min-width: 1024px) 200px, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                </div>
+            )}
+            <div className="flex items-start gap-3 px-5 py-4">
+                <span className="mt-0.5 h-2.5 w-2.5 rounded-full flex-shrink-0 bg-accent" />
+                <div>
+                    <p className="text-white font-bold text-sm">{region}</p>
+                    <p className="text-white/70 text-xs mt-0.5">{crops}</p>
+                    <p className="text-accent-light text-xs mt-1">繁忙期: {season}</p>
+                </div>
             </div>
         </motion.div>
     );
@@ -238,15 +265,27 @@ export default function NumbersSection() {
                         地域ごとの繁忙期に合わせて人材を配置し、年間を通じた安定就業につなげます。
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
-                        {[
-                            { region: "鹿児島", crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月" },
-                            { region: "福島", crops: "野菜", season: "夏〜秋" },
-                            { region: "愛知", crops: "野菜", season: "通年" },
-                            { region: "愛媛", crops: "柑橘", season: "11〜2月" },
-                            { region: "青森", crops: "りんご", season: "9〜11月" },
-                        ].map((item, i) => (
-                            <RegionBadge key={item.region} {...item} delay={0.1 + i * 0.08} />
-                        ))}
+                        {([
+                            { region: "鹿児島", regionKey: "kagoshima" as const, crops: "さつまいも・お茶・畜産", season: "4〜5月 / 10〜11月" },
+                            { region: "福島", regionKey: undefined, crops: "野菜", season: "夏〜秋" },
+                            { region: "愛知", regionKey: "aichi" as const, crops: "野菜", season: "通年" },
+                            { region: "愛媛", regionKey: "ehime" as const, crops: "柑橘", season: "11〜2月" },
+                            { region: "青森", regionKey: undefined, crops: "りんご", season: "9〜11月" },
+                        ]).map((item, i) => {
+                            const photo = item.regionKey
+                                ? relayPhotoForRegion(item.regionKey)
+                                : undefined;
+                            return (
+                                <RegionBadge
+                                    key={item.region}
+                                    region={item.region}
+                                    crops={item.crops}
+                                    season={item.season}
+                                    delay={0.1 + i * 0.08}
+                                    photoId={photo?.id}
+                                />
+                            );
+                        })}
                     </div>
                     <p className="text-center text-ink-inverse-muted text-xs mt-8">
                         ※ 労働者派遣法に基づく許可事業所の派遣労働者数（78名・2026年6月1日現在）と、農作業受託・請負受託を含む稼働スタッフ総数は定義が異なります。稼働スタッフ数・許認可情報は
