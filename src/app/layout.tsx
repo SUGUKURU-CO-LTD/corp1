@@ -29,18 +29,27 @@ export const metadata: Metadata = {
   title: "スグクル株式会社 | 外国人材の総合人材サービス | Sugukuru",
   description: "スグクル株式会社は、農業派遣・有料職業紹介・技術人文知識国際業務（技人国）人材の派遣紹介・IT事業を通じて、外国人材の力で日本の産業を支える人材総合会社です。「すぐ来る」、だから変われる。",
   keywords: "外国人材, 特定技能, 技人国, 人材派遣, 有料職業紹介, 農業派遣, IT開発, 鹿児島, スグクル",
-  openGraph: {
+    openGraph: {
     title: "スグクル株式会社 | 外国人材の総合人材サービス",
     description: "外国人材の力で、日本の産業を支える。「すぐ来る」、だから変われる。",
     url: "https://sugu-kuru.co.jp",
     siteName: "スグクル株式会社",
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "スグクル株式会社",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "スグクル株式会社 | 外国人材の総合人材サービス",
     description: "外国人材の力で、日本の産業を支える。「すぐ来る」、だから変われる。",
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,

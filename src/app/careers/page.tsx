@@ -22,6 +22,8 @@ import {
     Target,
     Award,
 } from "lucide-react";
+import PhotoPageHero from "@/components/ui/photo-page-hero";
+import StaffLifeSection from "@/components/sections/StaffLifeSection";
 
 const positions = [
     {
@@ -101,14 +103,10 @@ export default function CareersPage() {
     return (
         <div className="pt-20">
             {/* Hero */}
-            <section className="section bg-ink text-white relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-[100px]" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-[120px]" />
-                </div>
-
-                <div className="container mx-auto relative z-10">
+            <PhotoPageHero
+                photoId="careers-1"
+                overlayClassName="absolute inset-0 bg-gradient-to-r from-ink via-ink/88 to-ink/55"
+            >
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -166,8 +164,7 @@ export default function CareersPage() {
                             </Link>
                         </motion.div>
                     </div>
-                </div>
-            </section>
+            </PhotoPageHero>
 
             {/* Why Join Us */}
             <section className="section bg-white">
@@ -454,6 +451,8 @@ export default function CareersPage() {
                     </motion.div>
                 </div>
             </section>
+
+            <StaffLifeSection locale="ja" />
 
             {/* CTA */}
             <section className="section bg-gradient-to-br from-accent via-accent-light to-accent relative overflow-hidden">
